@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ROUGATECH | Digital Transformation for Africa</title>
+<title>Digital Transformation for Africa</title>
 <meta name="description" content="ROUGATECH accompagne les entreprises et institutions africaines dans leur transformation digitale grâce aux solutions web, plateformes digitales, IA et automatisation.">
 <link rel="canonical" href="https://rougatech.com/">
 <meta name="robots" content="index, follow">
@@ -58,6 +58,7 @@
     --blue:#2F5CFF;
     --blue-deep:#1436B0;
     --cyan:#7FE3FF;
+    --gold:#F5A623;
     --line: rgba(247,247,244,0.12);
     --line-soft: rgba(8,9,10,0.10);
     --ease: cubic-bezier(.16,.84,.32,1);
@@ -162,8 +163,13 @@
   .tl-step p{font-size:14px; color:var(--gray-mute);}
 
   /* industries */
-  .industry-grid{display:flex; flex-wrap:wrap; gap:12px;}
-  .industry-tag{font-size:14px; padding:14px 22px; border-radius:100px; color:#fff; font-weight:600;}
+  .industry-marquee{overflow:hidden; width:100%; -webkit-mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);}
+  .industry-track{display:flex; width:max-content; gap:12px; animation:industryScroll 32s linear infinite;}
+  .industry-track:hover{animation-play-state:paused;}
+  .industry-grid{display:flex; flex-wrap:nowrap; gap:12px; flex-shrink:0;}
+  @keyframes industryScroll{from{transform:translateX(-50%);} to{transform:translateX(0);}}
+  @media (prefers-reduced-motion: reduce){.industry-track{animation:none;}}
+  .industry-tag{font-size:14px; padding:14px 22px; border-radius:100px; color:#fff; font-weight:600; white-space:nowrap;}
   .industry-tag:nth-child(10n+1){background:#2F5CFF;}
   .industry-tag:nth-child(10n+2){background:#0EA5A5;}
   .industry-tag:nth-child(10n+3){background:#E0663B;}
@@ -208,6 +214,23 @@
   .trusted-chip:hover{color:var(--cream); border-color:rgba(127,227,255,.35);}
   .section-alt .trusted-chip{border-color:var(--line-soft); color:#8a8b91;}
   .section-alt .trusted-chip:hover{color:var(--black); border-color:var(--blue-deep);}
+
+  /* academy teaser */
+  .academy-card{border:1px solid var(--line); border-radius:24px; padding:56px; background:linear-gradient(135deg, rgba(245,166,35,.10), rgba(127,227,255,.05));}
+  .academy-card .tagline{font-family:'JetBrains Mono',monospace; font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:var(--gold); margin-top:12px;}
+  .academy-card h2{margin-top:6px;}
+  .academy-card p{color:var(--gray-mute); font-size:16px; max-width:56ch; margin-top:18px;}
+  .academy-card .btn{margin-top:30px;}
+  @media (max-width:720px){.academy-card{padding:36px 26px;}}
+
+  /* founder */
+  .founder-wrap{display:grid; grid-template-columns:320px 1fr; gap:60px; align-items:center;}
+  .founder-photo{border-radius:20px; overflow:hidden; border:1px solid var(--line); aspect-ratio:5/6;}
+  .founder-photo img{width:100%; height:100%; object-fit:cover; display:block;}
+  .founder-role{font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--cyan); margin-top:8px;}
+  .founder-name{font-size:28px; margin-top:16px;}
+  .founder-wrap .founder-text p{color:var(--gray-mute); font-size:16px; max-width:58ch; margin-top:16px;}
+  @media (max-width:900px){.founder-wrap{grid-template-columns:1fr; gap:34px;} .founder-photo{max-width:300px;}}
 
   /* how we work */
   .how-list{border-top:1px solid var(--line);}
@@ -318,9 +341,9 @@
   <nav class="main-nav" id="main-nav">
     <a href="#solutions"><span class="fr">Solutions</span><span class="en">Solutions</span></a>
     <a href="#industries"><span class="fr">Industries</span><span class="en">Industries</span></a>
-    <a href="#work"><span class="fr">Réalisations</span><span class="en">Work</span></a>
+    <a href="#work"><span class="fr">Projets</span><span class="en">Projects</span></a>
     <a href="#about"><span class="fr">À propos</span><span class="en">About</span></a>
-    <a href="#insights"><span class="fr">Insights</span><span class="en">Insights</span></a>
+    <a href="academy/index.html">Academy</a>
     <a href="#contact"><span class="fr">Contact</span><span class="en">Contact</span></a>
   </nav>
   <div class="header-right">
@@ -457,17 +480,33 @@
         <div class="eyebrow">04 / INDUSTRIES</div>
         <h2><span class="fr">Une technologie pensée pour votre secteur.</span><span class="en">Technology built around your industry.</span></h2>
       </div>
-      <div class="industry-grid reveal">
-        <span class="industry-tag"><span class="fr">Entreprises &amp; Corporates</span><span class="en">Business &amp; Corporates</span></span>
-        <span class="industry-tag"><span class="fr">Éducation</span><span class="en">Education</span></span>
-        <span class="industry-tag"><span class="fr">Services financiers</span><span class="en">Financial Services</span></span>
-        <span class="industry-tag"><span class="fr">Commerce &amp; Distribution</span><span class="en">Retail &amp; Commerce</span></span>
-        <span class="industry-tag"><span class="fr">Transport &amp; Logistique</span><span class="en">Transport &amp; Logistics</span></span>
-        <span class="industry-tag"><span class="fr">Construction &amp; Ingénierie</span><span class="en">Construction &amp; Engineering</span></span>
-        <span class="industry-tag"><span class="fr">Hôtellerie</span><span class="en">Hospitality</span></span>
-        <span class="industry-tag"><span class="fr">Santé</span><span class="en">Healthcare</span></span>
-        <span class="industry-tag"><span class="fr">ONG &amp; Organisations de développement</span><span class="en">NGOs &amp; Development Organizations</span></span>
-        <span class="industry-tag"><span class="fr">Institutions publiques</span><span class="en">Public Institutions</span></span>
+      <div class="industry-marquee reveal">
+        <div class="industry-track">
+          <div class="industry-grid">
+            <span class="industry-tag"><span class="fr">Entreprises &amp; Corporates</span><span class="en">Business &amp; Corporates</span></span>
+            <span class="industry-tag"><span class="fr">Éducation</span><span class="en">Education</span></span>
+            <span class="industry-tag"><span class="fr">Services financiers</span><span class="en">Financial Services</span></span>
+            <span class="industry-tag"><span class="fr">Commerce &amp; Distribution</span><span class="en">Retail &amp; Commerce</span></span>
+            <span class="industry-tag"><span class="fr">Transport &amp; Logistique</span><span class="en">Transport &amp; Logistics</span></span>
+            <span class="industry-tag"><span class="fr">Construction &amp; Ingénierie</span><span class="en">Construction &amp; Engineering</span></span>
+            <span class="industry-tag"><span class="fr">Hôtellerie</span><span class="en">Hospitality</span></span>
+            <span class="industry-tag"><span class="fr">Santé</span><span class="en">Healthcare</span></span>
+            <span class="industry-tag"><span class="fr">ONG &amp; Organisations de développement</span><span class="en">NGOs &amp; Development Organizations</span></span>
+            <span class="industry-tag"><span class="fr">Institutions publiques</span><span class="en">Public Institutions</span></span>
+          </div>
+          <div class="industry-grid" aria-hidden="true">
+            <span class="industry-tag"><span class="fr">Entreprises &amp; Corporates</span><span class="en">Business &amp; Corporates</span></span>
+            <span class="industry-tag"><span class="fr">Éducation</span><span class="en">Education</span></span>
+            <span class="industry-tag"><span class="fr">Services financiers</span><span class="en">Financial Services</span></span>
+            <span class="industry-tag"><span class="fr">Commerce &amp; Distribution</span><span class="en">Retail &amp; Commerce</span></span>
+            <span class="industry-tag"><span class="fr">Transport &amp; Logistique</span><span class="en">Transport &amp; Logistics</span></span>
+            <span class="industry-tag"><span class="fr">Construction &amp; Ingénierie</span><span class="en">Construction &amp; Engineering</span></span>
+            <span class="industry-tag"><span class="fr">Hôtellerie</span><span class="en">Hospitality</span></span>
+            <span class="industry-tag"><span class="fr">Santé</span><span class="en">Healthcare</span></span>
+            <span class="industry-tag"><span class="fr">ONG &amp; Organisations de développement</span><span class="en">NGOs &amp; Development Organizations</span></span>
+            <span class="industry-tag"><span class="fr">Institutions publiques</span><span class="en">Public Institutions</span></span>
+          </div>
+        </div>
       </div>
       <p class="industry-note reveal">
         <span class="fr">Ces secteurs représentent les domaines que ROUGATECH est en mesure d'accompagner, en s'adaptant aux réalités et contraintes de chaque organisation.</span>
@@ -522,7 +561,7 @@
           en: "A premium digital platform designed to present Coach Marina's coaching programs, community, events and services."
         },
         url: "https://coachmarina.pages.dev/",
-        image: "work-coachmarina.jpg"
+        image: "work-marina.jpg"
       },
       {
         name: "KPS Consulting",
@@ -590,11 +629,24 @@
     </div>
   </section>
 
+  <!-- ACADEMY TEASER -->
+  <section class="section" id="academy">
+    <div class="wrap">
+      <div class="academy-card reveal">
+        <div class="eyebrow">08 / ACADEMY</div>
+        <h2>ROUGATECH Academy</h2>
+        <div class="tagline">Learn. Build. Transform.</div>
+        <p><span class="fr">Une éducation technologique et digitale pratique, pensée pour la nouvelle génération d'entrepreneurs et de professionnels africains.</span><span class="en">Practical technology and digital business education for Africa's next generation.</span></p>
+        <a href="academy/index.html" class="btn btn-primary"><span class="fr">Visiter l'Academy</span><span class="en">Visit Academy</span></a>
+      </div>
+    </div>
+  </section>
+
   <!-- HOW WE WORK -->
   <section class="section section-alt" id="how-we-work">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="eyebrow">08 / HOW WE WORK</div>
+        <div class="eyebrow">09 / HOW WE WORK</div>
         <h2><span class="fr">De l'idée au produit digital.</span><span class="en">From idea to digital product.</span></h2>
       </div>
       <div class="how-list reveal">
@@ -612,7 +664,7 @@
   <section class="section" id="why">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="eyebrow">09 / WHY ROUGATECH</div>
+        <div class="eyebrow">10 / WHY ROUGATECH</div>
         <h2><span class="fr">Pensé pour l'Afrique. Conçu pour le monde.</span><span class="en">Built for Africa. Designed for the world.</span></h2>
       </div>
       <div class="why-grid reveal">
@@ -631,7 +683,7 @@
     <div class="wrap">
       <div class="about-wrap">
         <div class="reveal">
-          <div class="eyebrow">10 / ABOUT</div>
+          <div class="eyebrow">11 / ABOUT</div>
           <h2 style="margin-top:20px; font-size:clamp(28px,3.6vw,44px);"><span class="fr">Une technologie pour une Afrique plus connectée.</span><span class="en">Technology for a more connected Africa.</span></h2>
         </div>
         <div class="reveal">
@@ -644,11 +696,29 @@
     </div>
   </section>
 
+  <!-- FOUNDER -->
+  <section class="section" id="founder">
+    <div class="wrap">
+      <div class="founder-wrap">
+        <div class="founder-photo reveal">
+          <img src="founder.jpg" alt="Amadou Rouga Achirou" loading="lazy">
+        </div>
+        <div class="founder-text reveal">
+          <div class="eyebrow">12 / FOUNDER</div>
+          <div class="founder-role">Founder &amp; CEO — ROUGATECH</div>
+          <h2 class="founder-name">Amadou Rouga Achirou</h2>
+          <p style="color:var(--cream); font-size:19px; margin-top:14px; max-width:44ch;"><span class="fr">Construire l'avenir digital de l'Afrique.</span><span class="en">Building Africa's Digital Future.</span></p>
+          <p><span class="fr">Amadou Rouga Achirou est le fondateur de ROUGATECH, une entreprise technologique dédiée à la conception de produits digitaux, de solutions IA et d'expériences numériques pour les entreprises et institutions africaines.</span><span class="en">Amadou Rouga Achirou is the founder of ROUGATECH, a technology company focused on building digital products, AI solutions and digital experiences for African businesses and institutions.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- INSIGHTS -->
   <section class="section" id="insights">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="eyebrow">11 / INSIGHTS</div>
+        <div class="eyebrow">13 / INSIGHTS</div>
         <h2><span class="fr">Perspectives sur la transformation digitale.</span><span class="en">Perspectives on digital transformation.</span></h2>
       </div>
       <div class="insights-note reveal">
@@ -741,8 +811,9 @@
           <h5>Menu</h5>
           <a href="#solutions"><span class="fr">Solutions</span><span class="en">Solutions</span></a>
           <a href="#industries">Industries</a>
-          <a href="#work"><span class="fr">Réalisations</span><span class="en">Work</span></a>
+          <a href="#work"><span class="fr">Projets</span><span class="en">Projects</span></a>
           <a href="#about"><span class="fr">À propos</span><span class="en">About</span></a>
+          <a href="academy/index.html">Academy</a>
           <a href="#insights">Insights</a>
           <a href="#contact">Contact</a>
         </div>
