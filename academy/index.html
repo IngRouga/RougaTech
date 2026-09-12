@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ROUGATECH Academy | Learn. Build. Transform.</title>
+<meta name="description" content="Practical technology, AI and digital business education for entrepreneurs, creators and professionals across Africa.">
+<link rel="canonical" href="https://rougatech.com/academy/">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="ROUGATECH Academy | Learn. Build. Transform.">
+<meta property="og:description" content="Practical technology, AI and digital business education for entrepreneurs, creators and professionals across Africa.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rougatech.com/academy/">
+<meta property="og:site_name" content="ROUGATECH Academy">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ROUGATECH Academy | Learn. Build. Transform.">
+<meta name="twitter:description" content="Practical technology, AI and digital business education for entrepreneurs, creators and professionals across Africa.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "ROUGATECH Academy",
+  "url": "https://rougatech.com/academy/",
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "ROUGATECH",
+    "url": "https://rougatech.com"
+  }
+}
+</script>
+<link rel="icon" href="../logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#08090A;
+    --black-soft:#131110;
+    --cream:#F7F7F4;
+    --gray-mute:#a6a3a0;
+    --gold:#F5A623;
+    --gold-deep:#C97F0E;
+    --violet:#8B5CF6;
+    --line: rgba(247,247,244,0.12);
+    --ease: cubic-bezier(.16,.84,.32,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--black); color:var(--cream); font-family:'Plus Jakarta Sans',sans-serif; font-size:16px; line-height:1.55; overflow-x:hidden; -webkit-font-smoothing:antialiased;}
+  ::selection{background:var(--gold); color:#1a1a1a;}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  button{font-family:inherit; cursor:pointer; border:none; background:none; color:inherit;}
+  :focus-visible{outline:2px solid var(--gold); outline-offset:3px;}
+
+  .eyebrow{font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); display:flex; align-items:center; gap:10px;}
+  .eyebrow::before{content:''; width:22px; height:1px; background:linear-gradient(90deg,var(--gold),transparent);}
+  h1,h2,h3{font-family:'Sora',sans-serif; font-weight:700; letter-spacing:-0.02em; line-height:1.05;}
+  .wrap{max-width:1240px; margin:0 auto; padding:0 40px;}
+
+  .btn{display:inline-flex; align-items:center; gap:10px; font-size:13px; font-weight:600; letter-spacing:.02em; text-transform:uppercase; padding:14px 24px; border-radius:100px; position:relative; overflow:hidden; isolation:isolate;}
+  .btn-primary{background:var(--gold); color:#1a1200;}
+  .btn-primary::before{content:''; position:absolute; inset:0; background:linear-gradient(120deg,#ffd27a,var(--gold-deep)); transform:translateY(101%); transition:transform .35s var(--ease); z-index:-1;}
+  .btn-primary:hover::before{transform:translateY(0);}
+  .btn-outline{border:1px solid var(--line); color:var(--cream); background:transparent;}
+  .btn-outline:hover{border-color:var(--gold); color:var(--gold);}
+  .btn-ghost{border:1px solid var(--line); color:var(--cream); background:transparent; padding:10px 18px;}
+  .btn-ghost:hover{border-color:var(--gold); color:var(--gold);}
+  .btn[disabled]{opacity:.45; cursor:default; pointer-events:none;}
+
+  section{position:relative;}
+  .reveal{opacity:0; transform:translateY(26px); transition:opacity .5s var(--ease), transform .5s var(--ease);}
+  .reveal.in{opacity:1; transform:translateY(0);}
+  .section{padding:100px 0;}
+  .section-head{max-width:720px; margin-bottom:56px;}
+  .section-head h2{font-size:clamp(28px,4vw,46px); margin-top:20px;}
+  .section-head p{color:var(--gray-mute); font-size:17px; margin-top:16px; max-width:60ch;}
+  .section-alt{background:var(--black-soft);}
+
+  /* header */
+  header{position:fixed; top:0; left:0; width:100%; z-index:50; padding:18px 40px; display:flex; align-items:center; justify-content:space-between; transition:background .4s var(--ease), backdrop-filter .4s var(--ease), border-color .4s var(--ease); border-bottom:1px solid transparent;}
+  header.scrolled{background:rgba(8,9,10,0.85); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--line);}
+  .a-brand{display:flex; align-items:center; gap:10px;}
+  .a-brand .logo-plate{background:var(--cream); border-radius:8px; padding:6px 10px; display:flex; align-items:center; line-height:0;}
+  .a-brand img{height:15px; width:auto;}
+  .a-brand .brand-name{font-family:'Sora',sans-serif; font-weight:700; font-size:15px;}
+  .a-brand .brand-name .accent{color:var(--gold);}
+  nav.a-nav{display:flex; align-items:center; gap:30px;}
+  nav.a-nav a{font-size:14px; color:var(--gray-mute); position:relative; padding:4px 0; transition:color .25s var(--ease);}
+  nav.a-nav a:hover{color:var(--cream);}
+  .header-right{display:flex; align-items:center; gap:14px;}
+  .back-link{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--gray-mute); border:1px solid var(--line); border-radius:100px; padding:9px 16px; transition:color .25s var(--ease), border-color .25s var(--ease);}
+  .back-link:hover{color:var(--gold); border-color:var(--gold);}
+  .menu-toggle{display:none;}
+
+  /* hero */
+  .a-hero{min-height:100vh; display:flex; flex-direction:column; justify-content:center; padding:150px 0 80px; overflow:hidden;}
+  .a-hero-bg{position:absolute; inset:0; z-index:-1; overflow:hidden;}
+  .a-hero-bg span{position:absolute; border-radius:50%; filter:blur(120px); opacity:.28; will-change:transform;}
+  .a-hero-bg span:nth-child(1){width:560px; height:560px; background:var(--gold); top:-18%; right:-10%; animation:aMove1 30s ease-in-out infinite;}
+  .a-hero-bg span:nth-child(2){width:480px; height:480px; background:var(--violet); bottom:-20%; left:-10%; animation:aMove2 36s ease-in-out infinite;}
+  @keyframes aMove1{0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(-70px,50px) scale(1.12);}}
+  @keyframes aMove2{0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(60px,-40px) scale(0.92);}}
+  @media (prefers-reduced-motion: reduce){.a-hero-bg span{animation:none;} .a-chip{animation:none !important;}}
+  .a-hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:50px; align-items:center;}
+  .a-hero h1{font-size:clamp(38px,6vw,80px); margin:22px 0 24px;}
+  .a-hero h1 .accent{background:linear-gradient(100deg,var(--gold),#ffd27a 60%); -webkit-background-clip:text; background-clip:text; color:transparent;}
+  .a-hero-sub{font-size:18px; color:var(--gray-mute); max-width:520px; margin-bottom:38px;}
+  .a-hero-ctas{display:flex; gap:16px; flex-wrap:wrap;}
+
+  .a-visual{position:relative; height:420px;}
+  .a-visual-panel{position:absolute; inset:6%; border:1px solid var(--line); border-radius:24px; background:linear-gradient(160deg, rgba(245,166,35,.10), rgba(139,92,246,.08)); overflow:hidden;}
+  .a-visual-panel::before{content:''; position:absolute; inset:0; background-image:linear-gradient(rgba(247,247,244,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(247,247,244,.05) 1px, transparent 1px); background-size:40px 40px;}
+  .a-chip{position:absolute; font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.05em; text-transform:uppercase; padding:10px 16px; border-radius:100px; border:1px solid var(--line); background:rgba(8,9,10,.55); backdrop-filter:blur(6px); white-space:nowrap;}
+  .a-chip:nth-child(2){top:14%; left:8%; color:var(--gold); animation:chipFloat1 7s ease-in-out infinite;}
+  .a-chip:nth-child(3){top:38%; right:10%; color:var(--violet); animation:chipFloat2 8s ease-in-out infinite;}
+  .a-chip:nth-child(4){bottom:28%; left:16%; color:#7FE3FF; animation:chipFloat3 6.5s ease-in-out infinite;}
+  .a-chip:nth-child(5){bottom:10%; right:18%; color:var(--gold); animation:chipFloat1 9s ease-in-out infinite;}
+  .a-chip:nth-child(6){top:8%; right:28%; color:var(--cream); animation:chipFloat2 7.5s ease-in-out infinite;}
+  @keyframes chipFloat1{0%,100%{transform:translateY(0);} 50%{transform:translateY(-12px);}}
+  @keyframes chipFloat2{0%,100%{transform:translateY(0);} 50%{transform:translateY(10px);}}
+  @keyframes chipFloat3{0%,100%{transform:translateY(0);} 50%{transform:translateY(-8px);}}
+  @media (max-width:980px){.a-hero-grid{grid-template-columns:1fr;} .a-visual{height:280px; order:-1;}}
+
+  /* filters */
+  .filter-row{display:flex; flex-wrap:wrap; gap:10px; margin-bottom:40px;}
+  .filter-pill{font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.06em; text-transform:uppercase; padding:10px 18px; border-radius:100px; border:1px solid var(--line); color:var(--gray-mute); transition:all .25s var(--ease);}
+  .filter-pill:hover{color:var(--cream); border-color:var(--gold);}
+  .filter-pill.active{background:var(--gold); color:#1a1200; border-color:var(--gold);}
+
+  /* course cards */
+  .course-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .course-card{background:var(--black-soft); border:1px solid var(--line); border-radius:18px; padding:30px; display:flex; flex-direction:column; gap:14px; transition:transform .35s var(--ease), border-color .35s var(--ease);}
+  .course-card:hover{transform:translateY(-5px); border-color:rgba(245,166,35,.4);}
+  .course-top{display:flex; align-items:center; justify-content:space-between; gap:10px;}
+  .course-category{font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); border:1px solid rgba(245,166,35,.35); border-radius:100px; padding:5px 12px;}
+  .course-status{font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--gray-mute);}
+  .course-card h3{font-size:20px;}
+  .course-card p.course-desc{font-size:14px; color:var(--gray-mute); flex:1;}
+  .course-meta{display:flex; gap:18px; font-size:12px; color:var(--gray-mute); font-family:'JetBrains Mono',monospace; padding-top:14px; border-top:1px solid var(--line);}
+  .course-cta{margin-top:6px; text-align:center; justify-content:center;}
+  @media (max-width:980px){.course-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:640px){.course-grid{grid-template-columns:1fr;}}
+
+  /* categories */
+  .category-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  .category-card{border:1px solid var(--line); border-radius:16px; padding:30px; transition:border-color .3s var(--ease), transform .3s var(--ease); cursor:pointer;}
+  .category-card:hover{border-color:var(--gold); transform:translateY(-4px);}
+  .category-card h3{font-size:18px; margin-bottom:8px;}
+  .category-card p{font-size:13px; color:var(--gray-mute);}
+  @media (max-width:900px){.category-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:600px){.category-grid{grid-template-columns:1fr;}}
+
+  /* why */
+  .why-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .why-card{border-top:2px solid var(--gold); padding-top:20px;}
+  .why-card h3{font-size:18px; margin-bottom:10px;}
+  .why-card p{font-size:14px; color:var(--gray-mute);}
+  @media (max-width:900px){.why-grid{grid-template-columns:1fr;}}
+
+  /* about academy */
+  .about-a-wrap{max-width:760px;}
+  .about-a-wrap p{font-size:18px; color:var(--gray-mute); margin-top:18px; max-width:62ch;}
+
+  /* final cta */
+  .a-final{padding:150px 0; text-align:center; position:relative; overflow:hidden;}
+  .a-final-glow{position:absolute; left:50%; top:0; transform:translate(-50%,-40%); width:900px; height:600px; background:radial-gradient(circle, rgba(245,166,35,.22), transparent 65%); pointer-events:none;}
+  .a-final h2{font-size:clamp(30px,5vw,58px); position:relative; z-index:1; max-width:16ch; margin:0 auto;}
+  .a-final .sub{margin:22px auto 40px; max-width:520px; color:var(--gray-mute); font-size:17px; position:relative; z-index:1;}
+
+  /* footer */
+  footer.a-footer{padding:60px 0 34px; border-top:1px solid var(--line);}
+  .a-footer-top{display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:36px; margin-bottom:44px;}
+  .a-footer-brand p{color:var(--gray-mute); font-size:14px; margin-top:10px;}
+  .a-footer-nav{display:flex; gap:44px; flex-wrap:wrap;}
+  .a-footer-col a{display:block; font-size:14px; margin-bottom:10px; color:var(--gray-mute);}
+  .a-footer-col a:hover{color:var(--gold);}
+  .a-footer-bottom{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; padding-top:24px; border-top:1px solid var(--line); font-size:12px; color:var(--gray-mute); font-family:'JetBrains Mono',monospace;}
+
+  @media (max-width:1100px){
+    nav.a-nav{position:fixed; inset:0 0 0 auto; width:80%; height:100vh; background:var(--black-soft); flex-direction:column; align-items:flex-start; justify-content:center; padding:0 40px; gap:26px; transform:translateX(100%); transition:transform .4s var(--ease); border-left:1px solid var(--line); z-index:60;}
+    nav.a-nav.open{transform:translateX(0);}
+    nav.a-nav a{font-size:20px;}
+    .menu-toggle{display:flex; flex-direction:column; gap:5px; z-index:70; width:26px;}
+    .menu-toggle span{width:100%; height:1.5px; background:var(--cream); transition:transform .3s, opacity .3s;}
+    .header-right .back-link{display:none;}
+  }
+  @media (max-width:720px){
+    .wrap{padding:0 22px;}
+    header{padding:16px 22px;}
+    .section{padding:64px 0;}
+    .a-hero{padding:120px 0 60px;}
+  }
+</style>
+</head>
+<body>
+
+<header id="a-header">
+  <div class="a-brand">
+    <a href="#hero" class="logo-plate"><img src="../logo.png" alt="ROUGATECH"></a>
+    <span class="brand-name">ROUGATECH <span class="accent">Academy</span></span>
+  </div>
+  <nav class="a-nav" id="a-nav">
+    <a href="#hero">Home</a>
+    <a href="#courses">Courses</a>
+    <a href="#categories">Categories</a>
+    <a href="#about-academy">About</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+  <div class="header-right">
+    <a href="../index.html" class="back-link">Back to ROUGATECH</a>
+    <a href="#courses" class="btn btn-primary" style="padding:11px 20px; font-size:12px;">Start Learning</a>
+    <button class="menu-toggle" id="a-menu-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="a-hero" id="hero">
+    <div class="a-hero-bg" aria-hidden="true"><span></span><span></span></div>
+    <div class="wrap">
+      <div class="a-hero-grid">
+        <div>
+          <div class="eyebrow">ROUGATECH ACADEMY</div>
+          <h1>Learn. Build. <span class="accent">Transform.</span></h1>
+          <p class="a-hero-sub">Practical technology, AI and digital business education for entrepreneurs, creators and professionals across Africa.</p>
+          <div class="a-hero-ctas">
+            <a href="#courses" class="btn btn-primary">Explore Courses</a>
+            <a href="#why-academy" class="btn btn-outline">How It Works</a>
+          </div>
+        </div>
+        <div class="a-visual" aria-hidden="true">
+          <div class="a-visual-panel"></div>
+          <span class="a-chip">AI</span>
+          <span class="a-chip">Digital Business</span>
+          <span class="a-chip">Automation</span>
+          <span class="a-chip">Entrepreneurship</span>
+          <span class="a-chip">Technology</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COURSE CATALOG -->
+  <section class="section" id="courses">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">COURSES</div>
+        <h2>Explore our courses</h2>
+      </div>
+      <div class="filter-row reveal" id="filter-row"></div>
+      <div class="course-grid reveal" id="course-grid"></div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="section section-alt" id="categories">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">CATEGORIES</div>
+        <h2>Learn what matters.</h2>
+      </div>
+      <div class="category-grid reveal" id="category-grid"></div>
+    </div>
+  </section>
+
+  <!-- WHY ACADEMY -->
+  <section class="section" id="why-academy">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">WHY ROUGATECH ACADEMY</div>
+        <h2>Skills for the digital future.</h2>
+      </div>
+      <div class="why-grid reveal">
+        <div class="why-card">
+          <h3>Practical</h3>
+          <p>Learn skills you can actually use.</p>
+        </div>
+        <div class="why-card">
+          <h3>Business-focused</h3>
+          <p>Learn technology through real business use cases.</p>
+        </div>
+        <div class="why-card">
+          <h3>Built for Africa</h3>
+          <p>Learn solutions relevant to African markets.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT ACADEMY -->
+  <section class="section section-alt" id="about-academy">
+    <div class="wrap">
+      <div class="about-a-wrap reveal">
+        <div class="eyebrow">ABOUT</div>
+        <h2 style="margin-top:20px; font-size:clamp(26px,3.4vw,40px);">Why we created ROUGATECH Academy</h2>
+        <p>ROUGATECH Academy was created to make practical technology and digital business knowledge more accessible to the next generation of African entrepreneurs and professionals.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="a-final">
+    <div class="a-final-glow"></div>
+    <div class="wrap">
+      <h2>Your next skill could change your business.</h2>
+      <p class="sub">Start learning the technologies shaping Africa's digital future.</p>
+      <a href="#courses" class="btn btn-primary">Explore Courses</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="a-footer">
+  <div class="wrap">
+    <div class="a-footer-top">
+      <div class="a-footer-brand">
+        <span class="brand-name" style="font-size:16px;">ROUGATECH <span class="accent" style="color:var(--gold);">Academy</span></span>
+        <p>Learn. Build. Transform.</p>
+      </div>
+      <div class="a-footer-nav">
+        <div class="a-footer-col">
+          <a href="#hero">Home</a>
+          <a href="#courses">Courses</a>
+          <a href="#categories">Categories</a>
+          <a href="#about-academy">About</a>
+          <a href="../index.html#contact">Contact</a>
+        </div>
+        <div class="a-footer-col">
+          <a href="../index.html">Back to ROUGATECH</a>
+        </div>
+      </div>
+    </div>
+    <div class="a-footer-bottom">
+      <span>© 2026 ROUGATECH Academy. All rights reserved.</span>
+      <span>NIAMEY, NIGER</span>
+    </div>
+  </div>
+</footer>
+
+<!-- COURSE DATA — add a new course here and it renders automatically in
+     both the catalog grid and the category links above render it. -->
+<script>
+  var ACADEMY_COURSES = [
+    {
+      slug: "ai-for-entrepreneurs",
+      title: "AI for Entrepreneurs",
+      category: "AI",
+      desc: "Understand how to use AI tools strategically to grow and manage your business.",
+      level: "Beginner",
+      duration: "Self-paced",
+      status: "Coming Soon"
+    },
+    {
+      slug: "ai-agents-for-business",
+      title: "AI Agents for Business",
+      category: "AI",
+      desc: "Learn how AI agents work and how to apply them to real business operations.",
+      level: "Beginner–Intermediate",
+      duration: "Self-paced",
+      status: "Coming Soon"
+    },
+    {
+      slug: "build-your-first-digital-product",
+      title: "Build Your First Digital Product",
+      category: "Digital Business",
+      desc: "A practical introduction to turning an idea into a real digital product.",
+      level: "Beginner",
+      duration: "Self-paced",
+      status: "Coming Soon"
+    },
+    {
+      slug: "digital-marketing-fundamentals",
+      title: "Digital Marketing Fundamentals",
+      category: "Marketing",
+      desc: "Core digital marketing principles for reaching and growing an audience online.",
+      level: "Beginner",
+      duration: "Self-paced",
+      status: "Coming Soon"
+    },
+    {
+      slug: "content-creation-with-ai",
+      title: "Content Creation with AI",
+      category: "Content Creation",
+      desc: "Use AI tools to plan, produce and publish content more efficiently.",
+      level: "Beginner",
+      duration: "Self-paced",
+      status: "Coming Soon"
+    },
+    {
+      slug: "ecommerce-fundamentals",
+      title: "E-commerce Fundamentals",
+      category: "E-commerce",
+      desc: "The essentials of setting up and running an online store.",
+      level: "Beginner",
+      duration: "Self-paced",
+      status: "Coming Soon"
+    },
+    {
+      slug: "web-development-fundamentals",
+      title: "Web Development Fundamentals",
+      category: "Technology",
+      desc: "An introduction to building websites and web applications.",
+      level: "Beginner",
+      duration: "Self-paced",
+      status: "Coming Soon"
+    }
+  ];
+
+  var ACADEMY_CATEGORIES = [
+    { label: "AI & AI Agents", filter: "AI", desc: "Practical AI tools and AI agents for real business use." },
+    { label: "Digital Business", filter: "Digital Business", desc: "Turning ideas into real digital products and businesses." },
+    { label: "Technology", filter: "Technology", desc: "Foundations of building with modern technology." },
+    { label: "Digital Marketing", filter: "Marketing", desc: "Reaching and growing an audience online." },
+    { label: "Content Creation", filter: "Content Creation", desc: "Producing content efficiently, including with AI." },
+    { label: "E-commerce", filter: "E-commerce", desc: "Setting up and running an online store." }
+  ];
+
+  var FILTERS = ["All", "AI", "Technology", "Digital Business", "Marketing", "E-commerce", "Content Creation"];
+
+  (function renderAcademy(){
+    var filterRow = document.getElementById('filter-row');
+    var grid = document.getElementById('course-grid');
+    var catGrid = document.getElementById('category-grid');
+    if(!filterRow || !grid || !catGrid) return;
+
+    filterRow.innerHTML = FILTERS.map(function(f, i){
+      return '<button class="filter-pill' + (i === 0 ? ' active' : '') + '" data-filter="' + f + '">' + f + '</button>';
+    }).join('');
+
+    function courseCard(c){
+      var ctaHtml = c.status === 'Coming Soon'
+        ? '<span class="btn btn-outline course-cta" disabled>Coming Soon</span>'
+        : '<a class="btn btn-primary course-cta" href="courses/' + c.slug + '.html">View Course</a>';
+      return '' +
+        '<article class="course-card" data-category="' + c.category + '">' +
+          '<div class="course-top">' +
+            '<span class="course-category">' + c.category + '</span>' +
+            '<span class="course-status">' + c.status + '</span>' +
+          '</div>' +
+          '<h3>' + c.title + '</h3>' +
+          '<p class="course-desc">' + c.desc + '</p>' +
+          '<div class="course-meta"><span>' + c.level + '</span><span>' + c.duration + '</span></div>' +
+          ctaHtml +
+        '</article>';
+    }
+
+    function renderCourses(filter){
+      var list = filter === 'All' ? ACADEMY_COURSES : ACADEMY_COURSES.filter(function(c){ return c.category === filter; });
+      grid.innerHTML = list.map(courseCard).join('') || '<p style="color:var(--gray-mute);">No courses in this category yet.</p>';
+    }
+    renderCourses('All');
+
+    filterRow.addEventListener('click', function(e){
+      var btn = e.target.closest('.filter-pill');
+      if(!btn) return;
+      filterRow.querySelectorAll('.filter-pill').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      renderCourses(btn.dataset.filter);
+    });
+
+    catGrid.innerHTML = ACADEMY_CATEGORIES.map(function(cat){
+      return '' +
+        '<div class="category-card" data-filter="' + cat.filter + '">' +
+          '<h3>' + cat.label + '</h3>' +
+          '<p>' + cat.desc + '</p>' +
+        '</div>';
+    }).join('');
+
+    catGrid.addEventListener('click', function(e){
+      var card = e.target.closest('.category-card');
+      if(!card) return;
+      var filter = card.dataset.filter;
+      document.getElementById('courses').scrollIntoView({behavior:'smooth', block:'start'});
+      var target = filterRow.querySelector('[data-filter="' + filter + '"]');
+      if(target){
+        filterRow.querySelectorAll('.filter-pill').forEach(function(b){ b.classList.remove('active'); });
+        target.classList.add('active');
+        renderCourses(filter);
+      }
+    });
+  })();
+</script>
+
+<script>
+  var aHeader = document.getElementById('a-header');
+  function aOnScroll(){ aHeader.classList.toggle('scrolled', window.scrollY > 40); }
+  window.addEventListener('scroll', aOnScroll, {passive:true});
+  aOnScroll();
+
+  var aToggle = document.getElementById('a-menu-toggle');
+  var aNav = document.getElementById('a-nav');
+  aToggle.addEventListener('click', function(){
+    var open = aNav.classList.toggle('open');
+    aToggle.setAttribute('aria-expanded', open);
+  });
+  aNav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      aNav.classList.remove('open');
+      aToggle.setAttribute('aria-expanded', false);
+    });
+  });
+
+  var aIo = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('in'); });
+  }, {threshold:.05, rootMargin:"0px 0px -10% 0px"});
+  document.querySelectorAll('.reveal').forEach(function(el){ aIo.observe(el); });
+</script>
+
+</body>
+</html>

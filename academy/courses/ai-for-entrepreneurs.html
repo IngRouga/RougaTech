@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI for Entrepreneurs | ROUGATECH Academy</title>
+<meta name="description" content="Understand how to use AI tools strategically to grow and manage your business. A ROUGATECH Academy course.">
+<link rel="canonical" href="https://rougatech.com/academy/courses/ai-for-entrepreneurs">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="../../logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#08090A; --black-soft:#131110; --cream:#F7F7F4; --gray-mute:#a6a3a0;
+    --gold:#F5A623; --gold-deep:#C97F0E; --violet:#8B5CF6; --line: rgba(247,247,244,0.12); --ease: cubic-bezier(.16,.84,.32,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--black); color:var(--cream); font-family:'Plus Jakarta Sans',sans-serif; font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  h1,h2,h3{font-family:'Sora',sans-serif; font-weight:700; letter-spacing:-0.02em; line-height:1.1;}
+  .wrap{max-width:920px; margin:0 auto; padding:0 40px;}
+  .eyebrow{font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); display:flex; align-items:center; gap:10px;}
+  .eyebrow::before{content:''; width:22px; height:1px; background:linear-gradient(90deg,var(--gold),transparent);}
+  .btn{display:inline-flex; align-items:center; gap:10px; font-size:13px; font-weight:600; letter-spacing:.02em; text-transform:uppercase; padding:14px 24px; border-radius:100px;}
+  .btn-primary{background:var(--gold); color:#1a1200;}
+  .btn-outline{border:1px solid var(--line); color:var(--cream); background:transparent;}
+  .btn[disabled]{opacity:.5; pointer-events:none;}
+
+  header{padding:20px 40px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line);}
+  .a-brand{display:flex; align-items:center; gap:10px;}
+  .a-brand .logo-plate{background:var(--cream); border-radius:8px; padding:6px 10px; display:flex; align-items:center; line-height:0;}
+  .a-brand img{height:15px; width:auto;}
+  .a-brand .brand-name{font-family:'Sora',sans-serif; font-weight:700; font-size:15px;}
+  .a-brand .brand-name .accent{color:var(--gold);}
+  .back-link{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--gray-mute); border:1px solid var(--line); border-radius:100px; padding:9px 16px;}
+  .back-link:hover{color:var(--gold); border-color:var(--gold);}
+
+  main{padding:70px 0 100px;}
+  .course-hero h1{font-size:clamp(30px,5vw,50px); margin:18px 0 20px;}
+  .course-hero .lede{font-size:18px; color:var(--gray-mute); max-width:64ch;}
+  .meta-row{display:flex; flex-wrap:wrap; gap:14px; margin:30px 0 46px;}
+  .meta-chip{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; border:1px solid var(--line); border-radius:100px; padding:8px 16px; color:var(--gray-mute);}
+  .meta-chip.status{color:var(--gold); border-color:rgba(245,166,35,.4);}
+
+  section.block{padding:40px 0; border-top:1px solid var(--line);}
+  section.block h2{font-size:22px; margin-bottom:16px;}
+  section.block p{color:var(--gray-mute); font-size:16px; max-width:70ch;}
+  ul.learn-list{list-style:none; display:grid; gap:12px; margin-top:6px;}
+  ul.learn-list li{display:flex; gap:10px; color:var(--gray-mute); font-size:15px;}
+  ul.learn-list li::before{content:'—'; color:var(--gold); flex-shrink:0;}
+
+  .notice-card{border:1px solid var(--line); border-radius:16px; padding:26px 28px; background:var(--black-soft); margin-top:8px;}
+  .notice-card p{color:var(--gray-mute); font-size:15px;}
+
+  .cta-block{text-align:center; padding:70px 0 20px;}
+  .cta-block h2{font-size:clamp(24px,3.6vw,36px); margin-bottom:16px;}
+  .cta-block p{color:var(--gray-mute); margin-bottom:30px;}
+
+  footer{padding:40px; text-align:center; border-top:1px solid var(--line); font-size:12px; color:var(--gray-mute); font-family:'JetBrains Mono',monospace;}
+  footer a{color:var(--gold);}
+
+  @media (max-width:720px){
+    header{padding:16px 22px;}
+    .wrap{padding:0 22px;}
+    .back-link{font-size:10px; padding:8px 12px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="a-brand">
+    <a href="../index.html" class="logo-plate"><img src="../../logo.png" alt="ROUGATECH"></a>
+    <span class="brand-name">ROUGATECH <span class="accent">Academy</span></span>
+  </div>
+  <a href="../index.html" class="back-link">Back to Academy</a>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <div class="course-hero">
+      <div class="eyebrow">AI</div>
+      <h1>AI for Entrepreneurs</h1>
+      <p class="lede">Understand how to use AI tools strategically to grow and manage your business.</p>
+      <div class="meta-row">
+        <span class="meta-chip">Level: Beginner</span>
+        <span class="meta-chip">Duration: Self-paced</span>
+        <span class="meta-chip">Instructor: ROUGATECH Academy</span>
+        <span class="meta-chip status">Coming Soon</span>
+      </div>
+      <a href="#" class="btn btn-primary" disabled>Coming Soon</a>
+    </div>
+
+    <section class="block">
+      <h2>Description</h2>
+      <p>This course introduces practical ways entrepreneurs and business owners can use AI tools in day-to-day decisions and operations — without needing a technical background.</p>
+    </section>
+
+    <section class="block">
+      <h2>What you'll learn</h2>
+      <ul class="learn-list">
+        <li>How to identify where AI can realistically help your business</li>
+        <li>How to evaluate and choose the right AI tools for your needs</li>
+        <li>How to apply AI to everyday tasks such as communication, content and analysis</li>
+        <li>How to build simple, sustainable AI habits into your workflow</li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2>Course curriculum</h2>
+      <div class="notice-card">
+        <p>The full curriculum for this course is being finalized and will be published here once the course is ready to launch. This page shows the structure every ROUGATECH Academy course page will follow.</p>
+      </div>
+    </section>
+
+    <div class="cta-block">
+      <h2>Want to be notified when this course launches?</h2>
+      <p>Reach out and we'll let you know as soon as it's available.</p>
+      <a href="mailto:hello@rougatech.com?subject=AI%20for%20Entrepreneurs%20—%20notify%20me" class="btn btn-outline">Contact ROUGATECH Academy</a>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <a href="../index.html">← ROUGATECH Academy</a> · <a href="../../index.html">ROUGATECH</a>
+</footer>
+
+</body>
+</html>
