@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Digital Transformation for Africa</title>
+<title>ROUGATECH | Digital Transformation for Africa</title>
 <meta name="description" content="ROUGATECH accompagne les entreprises et institutions africaines dans leur transformation digitale grâce aux solutions web, plateformes digitales, IA et automatisation.">
 <link rel="canonical" href="https://rougatech.com/">
 <meta name="robots" content="index, follow">
@@ -176,28 +176,38 @@
   .industry-tag:nth-child(10n+10){background:#3A6B35;}
   .industry-note{margin-top:34px; font-size:14px; color:#6b6c72; max-width:60ch;}
 
-  /* work */
-  .work-list{display:flex; flex-direction:column;}
-  .work-row{display:grid; grid-template-columns:120px 1fr 1fr auto; gap:28px; align-items:center; padding:38px 0; border-top:1px solid var(--line-soft); cursor:pointer; color:inherit; transition:padding-left .35s var(--ease), background .35s var(--ease);}
-  .work-row:hover{padding-left:14px; background:rgba(47,92,255,.04);}
-  .work-row:last-child{border-bottom:1px solid var(--line-soft);}
-  .work-thumb{width:120px; height:80px; border-radius:10px; overflow:hidden; border:1px solid var(--line-soft); background:var(--gray); flex-shrink:0;}
-  .work-thumb img{width:100%; height:100%; object-fit:cover; display:block;}
-  .work-row.no-thumb .work-thumb{visibility:hidden;}
-  .work-name{font-family:'Sora',sans-serif; font-size:24px; font-weight:700;}
-  .work-sector{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--blue-deep); margin-top:6px; display:block;}
-  .work-meta{font-size:14px; color:#54555c;}
-  .work-meta b{color:#28292d; font-weight:600;}
-  .work-link{font-size:13px; font-weight:600; letter-spacing:.03em; text-transform:uppercase; display:flex; align-items:center; gap:8px; white-space:nowrap;}
-  .work-link .arrow{transition:transform .3s var(--ease);}
-  .work-row:hover .work-link .arrow{transform:translateX(6px);}
-
   /* products */
   .products-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:18px; overflow:hidden;}
   .product-card{background:var(--black); padding:42px 34px; display:flex; flex-direction:column; gap:14px;}
   .product-status{font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--cyan); border:1px solid rgba(127,227,255,.35); border-radius:100px; padding:5px 12px; width:fit-content;}
   .product-card h3{font-size:21px;}
   .product-card p{font-size:14px; color:var(--gray-mute);}
+
+  /* section subtitle (shared) */
+  .section-sub{font-size:17px; color:var(--gray-mute); margin-top:18px; max-width:60ch;}
+
+  /* selected work */
+  .work-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:28px;}
+  .work-card{background:var(--black-soft); border:1px solid var(--line); border-radius:18px; overflow:hidden; display:flex; flex-direction:column; transition:transform .4s var(--ease), border-color .4s var(--ease);}
+  .work-card:hover{transform:translateY(-6px); border-color:rgba(127,227,255,.35);}
+  .work-media{position:relative; aspect-ratio:4/3; overflow:hidden; background:var(--black);}
+  .work-media img{width:100%; height:100%; object-fit:cover; object-position:top center; transition:transform .6s var(--ease);}
+  .work-card:hover .work-media img{transform:scale(1.045);}
+  .work-body{padding:28px 26px 30px; display:flex; flex-direction:column; gap:10px; flex:1;}
+  .work-category{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--cyan);}
+  .work-card h3{font-size:21px;}
+  .work-card p{font-size:14px; color:var(--gray-mute); flex:1;}
+  .work-link{display:inline-flex; align-items:center; gap:8px; font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--cream); margin-top:10px; padding-top:16px; border-top:1px solid var(--line); transition:color .25s var(--ease);}
+  .work-link svg{width:13px; height:13px; transition:transform .25s var(--ease);}
+  .work-link:hover{color:var(--cyan);}
+  .work-card:hover .work-link svg{transform:translate(3px,-3px);}
+
+  /* trusted by */
+  .trusted-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
+  .trusted-chip{font-family:'Sora',sans-serif; font-weight:700; font-size:16px; letter-spacing:.02em; color:var(--gray-mute); border:1px solid var(--line); border-radius:12px; padding:26px 20px; display:flex; align-items:center; justify-content:center; text-align:center; transition:color .3s var(--ease), border-color .3s var(--ease);}
+  .trusted-chip:hover{color:var(--cream); border-color:rgba(127,227,255,.35);}
+  .section-alt .trusted-chip{border-color:var(--line-soft); color:#8a8b91;}
+  .section-alt .trusted-chip:hover{color:var(--black); border-color:var(--blue-deep);}
 
   /* how we work */
   .how-list{border-top:1px solid var(--line);}
@@ -261,28 +271,32 @@
     .timeline{grid-template-columns:repeat(2,1fr); row-gap:40px;}
     .timeline::before{display:none;}
     .products-grid{grid-template-columns:1fr;}
+    .work-grid{grid-template-columns:1fr; max-width:520px; margin:0 auto;}
+    .trusted-grid{grid-template-columns:repeat(3,1fr);}
     .why-grid{grid-template-columns:repeat(2,1fr); row-gap:30px;}
-    .work-row{grid-template-columns:1fr; gap:14px; text-align:left;}
-    .work-thumb{width:100%; height:160px;}
     .how-row{grid-template-columns:50px 1fr; row-gap:6px;}
     .how-row p{grid-column:1 / -1;}
     .about-wrap{grid-template-columns:1fr; gap:30px;}
     .contact-wrap{grid-template-columns:1fr; gap:50px;}
     .field-row{grid-template-columns:1fr;}
   }
-  @media (max-width:720px){
-    .wrap{padding:0 22px;}
+  @media (max-width:900px){
     nav.main-nav{position:fixed; inset:0 0 0 auto; width:80%; height:100vh; background:var(--black-soft); flex-direction:column; align-items:flex-start; justify-content:center; padding:0 40px; gap:26px; transform:translateX(100%); transition:transform .4s var(--ease); border-left:1px solid var(--line);}
     nav.main-nav.open{transform:translateX(0);}
     nav.main-nav a{font-size:20px;}
     .menu-toggle{display:flex; flex-direction:column; gap:5px; z-index:70; width:26px;}
     .menu-toggle span{width:100%; height:1.5px; background:var(--cream); transition:transform .3s, opacity .3s;}
     header .btn-header{display:none;}
+  }
+  @media (max-width:720px){
+    .wrap{padding:0 22px;}
     .hero{padding:130px 0 70px;}
     .section{padding:64px 0;}
     .mission-grid{grid-template-columns:1fr;}
     .timeline{grid-template-columns:1fr;}
     .products-grid{grid-template-columns:1fr;}
+    .work-grid{grid-template-columns:1fr; max-width:none;}
+    .trusted-grid{grid-template-columns:1fr;}
     .why-grid{grid-template-columns:1fr;}
     .how-row{grid-template-columns:1fr; gap:8px; padding:24px 0;}
     .how-row .num{order:-1;}
@@ -463,70 +477,97 @@
   </section>
 
   <!-- SELECTED WORK -->
-  <section class="section section-alt" id="work">
+  <section class="section" id="work">
     <div class="wrap">
       <div class="section-head reveal">
         <div class="eyebrow">05 / SELECTED WORK</div>
-        <h2><span class="fr">Nos réalisations.</span><span class="en">Selected work.</span></h2>
+        <h2><span class="fr">Des projets que nous avons construits.</span><span class="en">Projects we've built.</span></h2>
+        <p class="section-sub"><span class="fr">Des expériences digitales conçues pour des entreprises, institutions et entrepreneurs à travers l'Afrique.</span><span class="en">Digital experiences built for businesses, institutions and entrepreneurs across Africa.</span></p>
       </div>
-      <div class="work-list reveal">
-        <a class="work-row" href="https://bkogroup.pages.dev/" target="_blank" rel="noopener">
-          <div class="work-thumb"><img src="work-bko.webp" alt="BKO Group" loading="lazy" width="240" height="160"></div>
-          <div>
-            <div class="work-name">BKO Group</div>
-            <span class="work-sector"><span class="fr">Construction &amp; Énergie</span><span class="en">Construction &amp; Energy</span></span>
-          </div>
-          <p class="work-meta">
-            <span class="fr"><b>Solution :</b> plateforme corporate multi-activités.<br><b>Objectif :</b> unifier l'image d'un groupe actif au Maroc et au Mali.</span>
-            <span class="en"><b>Solution:</b> multi-business corporate platform.<br><b>Objective:</b> unify the image of a group active in Morocco and Mali.</span>
-          </p>
-          <div class="work-link"><span class="fr">Voir le projet</span><span class="en">View case study</span> <span class="arrow">→</span></div>
-        </a>
-        <a class="work-row no-thumb" href="https://m-a-global-corporation.pages.dev/" target="_blank" rel="noopener">
-          <div class="work-thumb"></div>
-          <div>
-            <div class="work-name">M.A Global Corporation</div>
-            <span class="work-sector"><span class="fr">Commerce &amp; Services</span><span class="en">Commerce &amp; Services</span></span>
-          </div>
-          <p class="work-meta">
-            <span class="fr"><b>Solution :</b> site one-page premium.<br><b>Objectif :</b> présenter clairement une activité multiservice à Niamey.</span>
-            <span class="en"><b>Solution:</b> premium one-page website.<br><b>Objective:</b> clearly present a multiservice business in Niamey.</span>
-          </p>
-          <div class="work-link"><span class="fr">Voir le projet</span><span class="en">View case study</span> <span class="arrow">→</span></div>
-        </a>
-        <a class="work-row" href="https://sarahengineering.pages.dev/" target="_blank" rel="noopener">
-          <div class="work-thumb"><img src="work-sarah.webp" alt="SARAH Engineering and BTP" loading="lazy" width="240" height="160"></div>
-          <div>
-            <div class="work-name">SARAH Engineering &amp; BTP</div>
-            <span class="work-sector"><span class="fr">Ingénierie &amp; Construction</span><span class="en">Engineering &amp; Construction</span></span>
-          </div>
-          <p class="work-meta">
-            <span class="fr"><b>Solution :</b> site institutionnel orienté expertise terrain.<br><b>Objectif :</b> renforcer l'autorité d'un acteur du BTP à Conakry.</span>
-            <span class="en"><b>Solution:</b> institutional website centered on field expertise.<br><b>Objective:</b> reinforce the authority of a construction firm in Conakry.</span>
-          </p>
-          <div class="work-link"><span class="fr">Voir le projet</span><span class="en">View case study</span> <span class="arrow">→</span></div>
-        </a>
-        <a class="work-row" href="https://coachmarina.pages.dev/" target="_blank" rel="noopener">
-          <div class="work-thumb"><img src="work-marina.webp" alt="Coach Marina Minoungou" loading="lazy" width="240" height="160"></div>
-          <div>
-            <div class="work-name">Coach Marina</div>
-            <span class="work-sector"><span class="fr">Coaching / Marque personnelle</span><span class="en">Coaching / Personal Brand</span></span>
-          </div>
-          <p class="work-meta">
-            <span class="fr"><b>Solution :</b> plateforme de marque personnelle.<br><b>Objectif :</b> valoriser une expertise en coaching familial et relationnel.</span>
-            <span class="en"><b>Solution:</b> personal brand platform.<br><b>Objective:</b> showcase an expertise in family and relationship coaching.</span>
-          </p>
-          <div class="work-link"><span class="fr">Voir le projet</span><span class="en">View case study</span> <span class="arrow">→</span></div>
-        </a>
-      </div>
+      <div class="work-grid reveal" id="work-grid"></div>
     </div>
   </section>
+
+  <!-- TRUSTED BY -->
+  <section class="section section-alt" id="trusted">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">06 / TRUSTED BY</div>
+        <h2><span class="fr">Ils nous ont fait confiance.</span><span class="en">They trusted us.</span></h2>
+        <p class="section-sub"><span class="fr">Des entreprises et institutions qui ont choisi ROUGATECH pour renforcer leur présence digitale.</span><span class="en">Businesses and institutions that chose ROUGATECH to strengthen their digital presence.</span></p>
+      </div>
+      <div class="trusted-grid reveal" id="trusted-grid"></div>
+    </div>
+  </section>
+
+  <!-- PROJECTS DATA — add a new project here and it renders automatically
+       in both the Selected Work grid and the Trusted By grid above. -->
+  <script>
+    var ROUGATECH_PROJECTS = [
+      {
+        name: "IPHEC Niger",
+        category: { fr: "Site institutionnel", en: "Institutional Website" },
+        desc: {
+          fr: "Une présence digitale institutionnelle moderne conçue pour présenter l'IPHEC Niger, ses programmes et sa mission éducative avec clarté et crédibilité.",
+          en: "Modern institutional digital presence designed to present IPHEC Niger, its programs and its educational mission with clarity and credibility."
+        },
+        url: "https://www.iphecniger.com",
+        image: "work-iphec.jpg"
+      },
+      {
+        name: "Coach Marina",
+        category: { fr: "Marque personnelle / Plateforme de coaching", en: "Personal Brand / Coaching Platform" },
+        desc: {
+          fr: "Une plateforme digitale premium conçue pour présenter les programmes de coaching, la communauté, les événements et les services de Coach Marina.",
+          en: "A premium digital platform designed to present Coach Marina's coaching programs, community, events and services."
+        },
+        url: "https://coachmarina.pages.dev/",
+        image: "work-coachmarina.jpg"
+      },
+      {
+        name: "KPS Consulting",
+        category: { fr: "Site corporate", en: "Corporate Website" },
+        desc: {
+          fr: "Une plateforme digitale professionnelle conçue pour KPS Consulting afin de présenter ses services de fiscalité, de conseil et de formation professionnelle.",
+          en: "A professional digital platform designed for KPS Consulting to present its fiscal, consulting and professional training services."
+        },
+        url: "https://kps-consulting.pages.dev/",
+        image: "work-kps.jpg"
+      }
+    ];
+
+    (function renderProjects(){
+      var grid = document.getElementById('work-grid');
+      var trusted = document.getElementById('trusted-grid');
+      if(!grid || !trusted) return;
+
+      grid.innerHTML = ROUGATECH_PROJECTS.map(function(p){
+        return '' +
+          '<article class="work-card">' +
+            '<div class="work-media"><img src="' + p.image + '" alt="' + p.name + '" loading="lazy"></div>' +
+            '<div class="work-body">' +
+              '<span class="work-category"><span class="fr">' + p.category.fr + '</span><span class="en">' + p.category.en + '</span></span>' +
+              '<h3>' + p.name + '</h3>' +
+              '<p><span class="fr">' + p.desc.fr + '</span><span class="en">' + p.desc.en + '</span></p>' +
+              '<a class="work-link" href="' + p.url + '" target="_blank" rel="noopener">' +
+                '<span class="fr">Voir le projet</span><span class="en">View Project</span>' +
+                '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>' +
+              '</a>' +
+            '</div>' +
+          '</article>';
+      }).join('');
+
+      trusted.innerHTML = ROUGATECH_PROJECTS.map(function(p){
+        return '<div class="trusted-chip">' + p.name.toUpperCase() + '</div>';
+      }).join('');
+    })();
+  </script>
 
   <!-- DIGITAL PRODUCTS -->
   <section class="section" id="products">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="eyebrow">06 / DIGITAL PRODUCTS</div>
+        <div class="eyebrow">07 / DIGITAL PRODUCTS</div>
         <h2><span class="fr">Nous concevons aussi nos propres produits.</span><span class="en">We also build our own products.</span></h2>
       </div>
       <div class="products-grid reveal">
@@ -553,7 +594,7 @@
   <section class="section section-alt" id="how-we-work">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="eyebrow">07 / HOW WE WORK</div>
+        <div class="eyebrow">08 / HOW WE WORK</div>
         <h2><span class="fr">De l'idée au produit digital.</span><span class="en">From idea to digital product.</span></h2>
       </div>
       <div class="how-list reveal">
@@ -571,7 +612,7 @@
   <section class="section" id="why">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="eyebrow">08 / WHY ROUGATECH</div>
+        <div class="eyebrow">09 / WHY ROUGATECH</div>
         <h2><span class="fr">Pensé pour l'Afrique. Conçu pour le monde.</span><span class="en">Built for Africa. Designed for the world.</span></h2>
       </div>
       <div class="why-grid reveal">
@@ -590,7 +631,7 @@
     <div class="wrap">
       <div class="about-wrap">
         <div class="reveal">
-          <div class="eyebrow">09 / ABOUT</div>
+          <div class="eyebrow">10 / ABOUT</div>
           <h2 style="margin-top:20px; font-size:clamp(28px,3.6vw,44px);"><span class="fr">Une technologie pour une Afrique plus connectée.</span><span class="en">Technology for a more connected Africa.</span></h2>
         </div>
         <div class="reveal">
@@ -607,7 +648,7 @@
   <section class="section" id="insights">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="eyebrow">10 / INSIGHTS</div>
+        <div class="eyebrow">11 / INSIGHTS</div>
         <h2><span class="fr">Perspectives sur la transformation digitale.</span><span class="en">Perspectives on digital transformation.</span></h2>
       </div>
       <div class="insights-note reveal">
