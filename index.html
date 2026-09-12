@@ -117,12 +117,16 @@
   .hero-sub{font-size:19px; color:var(--gray-mute); max-width:540px; margin-bottom:44px;}
   .hero-ctas{display:flex; gap:16px; flex-wrap:wrap; justify-content:center; margin-bottom:70px;}
 
-  .hero-video-frame{position:relative; max-width:920px; border-radius:18px; overflow:hidden; border:1px solid var(--line); background:var(--black-soft); opacity:0; transform:translateY(28px); animation:riseIn .9s var(--ease) .1s forwards;}
-  .hero-video-frame video{width:100%; height:auto; display:block; aspect-ratio:16/9; object-fit:cover;}
-  .hero-video-badge{position:absolute; top:18px; left:18px; display:flex; align-items:center; gap:8px; background:rgba(8,9,10,.55); backdrop-filter:blur(8px); border:1px solid var(--line); border-radius:100px; padding:8px 14px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--cyan);}
-  .hero-video-badge .dot{width:6px; height:6px; border-radius:50%; background:var(--cyan); box-shadow:0 0 8px var(--cyan);}
-  .hero-video-frame::after{content:''; position:absolute; inset:0; background:linear-gradient(180deg, transparent 60%, rgba(8,9,10,.55)); pointer-events:none;}
-  .hero-video-caption{position:absolute; left:20px; bottom:18px; font-size:13px; color:var(--gray); font-family:'JetBrains Mono',monospace; letter-spacing:.02em;}
+  /* dynamic aurora background */
+  .aurora-bg{position:fixed; inset:0; z-index:-1; overflow:hidden; pointer-events:none; background:var(--black);}
+  .aurora-bg span{position:absolute; border-radius:50%; filter:blur(110px); opacity:.32; will-change:transform;}
+  .aurora-bg span:nth-child(1){width:620px; height:620px; background:var(--blue); top:-15%; left:-12%; animation:auroraMove1 28s ease-in-out infinite;}
+  .aurora-bg span:nth-child(2){width:540px; height:540px; background:var(--cyan); top:25%; right:-16%; animation:auroraMove2 34s ease-in-out infinite;}
+  .aurora-bg span:nth-child(3){width:500px; height:500px; background:var(--blue-deep); bottom:-18%; left:22%; animation:auroraMove3 40s ease-in-out infinite;}
+  @keyframes auroraMove1{0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(90px,60px) scale(1.15);}}
+  @keyframes auroraMove2{0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(-80px,50px) scale(0.9);}}
+  @keyframes auroraMove3{0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(60px,-70px) scale(1.1);}}
+  @media (prefers-reduced-motion: reduce){.aurora-bg span{animation:none;}}
 
   .reveal{opacity:0; transform:translateY(28px); transition:opacity .5s var(--ease), transform .5s var(--ease);}
   .reveal.in{opacity:1; transform:translateY(0);}
@@ -265,7 +269,6 @@
     .about-wrap{grid-template-columns:1fr; gap:30px;}
     .contact-wrap{grid-template-columns:1fr; gap:50px;}
     .field-row{grid-template-columns:1fr;}
-    .hero-video-frame{max-width:100%;}
   }
   @media (max-width:720px){
     .wrap{padding:0 22px;}
@@ -276,7 +279,6 @@
     .menu-toggle span{width:100%; height:1.5px; background:var(--cream); transition:transform .3s, opacity .3s;}
     header .btn-header{display:none;}
     .hero{padding:130px 0 70px;}
-    .hero-video-frame{border-radius:14px;}
     .section{padding:64px 0;}
     .mission-grid{grid-template-columns:1fr;}
     .timeline{grid-template-columns:1fr;}
@@ -290,6 +292,8 @@
 </style>
 </head>
 <body data-lang="fr">
+
+<div class="aurora-bg" aria-hidden="true"><span></span><span></span><span></span></div>
 
 <div id="signal-line"><div class="fill"></div></div>
 
@@ -332,14 +336,6 @@
       <div class="hero-ctas">
         <a href="#solutions" class="btn btn-primary"><span class="fr">Explorer nos solutions</span><span class="en">Explore our solutions</span></a>
         <a href="#contact" class="btn btn-outline"><span class="fr">Démarrer un projet</span><span class="en">Start a project</span></a>
-      </div>
-
-      <div class="hero-video-frame">
-        <video autoplay muted loop playsinline preload="auto" poster="work-bko.webp">
-          <source src="hero-video.mp4" type="video/mp4">
-        </video>
-        <div class="hero-video-badge"><span class="dot"></span> <span class="fr">Écosystème digital</span><span class="en">Digital ecosystem</span></div>
-        <div class="hero-video-caption">ROUGATECH — <span class="fr">produits, IA &amp; plateformes</span><span class="en">products, AI &amp; platforms</span></div>
       </div>
     </div>
   </section>
