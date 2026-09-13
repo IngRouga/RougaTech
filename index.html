@@ -124,26 +124,28 @@
   .hero-sub{font-size:19px; color:var(--gray-mute); max-width:540px; margin-bottom:44px;}
   .hero-ctas{display:flex; gap:16px; flex-wrap:wrap; justify-content:flex-start; margin-bottom:0;}
 
-  /* hero business dashboard */
+  /* hero floating bubbles */
   .hero-visual{position:relative; height:420px;}
-  .dash-card{position:absolute; inset:4%; border:1px solid var(--line); border-radius:20px; background:linear-gradient(160deg, rgba(127,227,255,.09), rgba(47,92,255,.12)); overflow:hidden; padding:26px; display:flex; flex-direction:column; gap:16px;}
-  .dash-card::before{content:''; position:absolute; inset:0; background-image:linear-gradient(rgba(247,247,244,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(247,247,244,.05) 1px, transparent 1px); background-size:40px 40px; pointer-events:none;}
-  .dash-head{position:relative; z-index:1; display:flex; align-items:center; justify-content:space-between; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--gray-mute);}
-  .dash-stats{position:relative; z-index:1; display:grid; grid-template-columns:1fr 1fr; gap:14px;}
-  .dash-stat .label{font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--gray-mute);}
-  .dash-stat .value{font-family:'Sora',sans-serif; font-weight:700; font-size:clamp(18px,2.2vw,23px); color:var(--cream); margin-top:4px;}
-  .dash-stat .delta{font-family:'JetBrains Mono',monospace; font-size:11px; color:#4ADE80; margin-top:3px; display:flex; align-items:center; gap:4px;}
-  .dash-stat .delta svg{width:10px; height:10px;}
-  .dash-chart-wrap{position:relative; z-index:1; flex:1; min-height:70px;}
-  svg.dash-chart{width:100%; height:100%; display:block; overflow:visible;}
-  .dash-line-base{stroke-dasharray:340; stroke-dashoffset:340; animation:dashDrawIn 2.2s var(--ease) .3s forwards;}
-  .dash-line-flow{stroke-dasharray:6 16; stroke-dashoffset:0; opacity:.85; animation:dashFlow 3s linear infinite;}
-  .dash-endpoint circle{transform-origin:center; transform-box:fill-box;}
-  .dash-endpoint .ring{animation:dashPulse 2.6s ease-out infinite;}
-  .dash-note{position:relative; z-index:1; font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--gray-mute); opacity:.65; text-align:right;}
-  @keyframes dashDrawIn{to{stroke-dashoffset:0;}}
-  @keyframes dashFlow{to{stroke-dashoffset:-176;}}
-  @keyframes dashPulse{0%{transform:scale(1); opacity:.6;} 100%{transform:scale(3.2); opacity:0;}}
+  .hero-orb{position:absolute; top:50%; left:50%; width:130px; height:130px; margin:-65px 0 0 -65px; border-radius:50%; background:radial-gradient(circle at 35% 30%, rgba(127,227,255,.85), rgba(47,92,255,.45) 55%, transparent 76%);}
+  .hero-orb::before, .hero-orb::after{content:''; position:absolute; inset:0; border-radius:50%; border:1px solid rgba(127,227,255,.4); animation:pulseRing 3.4s ease-out infinite;}
+  .hero-orb::after{animation-delay:1.2s; border-color:rgba(47,92,255,.35);}
+  @keyframes pulseRing{0%{transform:scale(1); opacity:.7;} 100%{transform:scale(2.7); opacity:0;}}
+  .hero-bubble{position:absolute; display:inline-flex; align-items:center; font-family:'JetBrains Mono',monospace; font-size:13px; font-weight:500; letter-spacing:.01em; color:var(--cream); background:rgba(19,17,16,.74); border:1px solid var(--line); border-radius:100px; padding:12px 20px; white-space:nowrap; box-shadow:0 14px 30px -12px rgba(0,0,0,.55); backdrop-filter:blur(6px);}
+  .hero-bubble .dot{display:inline-block; width:7px; height:7px; border-radius:50%; margin-right:10px; flex-shrink:0;}
+  .hero-bubble.b1{top:4%; left:0%; animation:bubbleFloatA 6.6s ease-in-out infinite;}
+  .hero-bubble.b1 .dot{background:var(--cyan);}
+  .hero-bubble.b2{top:20%; right:2%; animation:bubbleFloatB 7.6s ease-in-out infinite; animation-delay:.5s;}
+  .hero-bubble.b2 .dot{background:var(--blue);}
+  .hero-bubble.b3{top:48%; left:-6%; animation:bubbleFloatC 7s ease-in-out infinite; animation-delay:1s;}
+  .hero-bubble.b3 .dot{background:var(--gold);}
+  .hero-bubble.b4{bottom:16%; right:8%; animation:bubbleFloatA 7.8s ease-in-out infinite; animation-delay:1.5s;}
+  .hero-bubble.b4 .dot{background:#4ADE80;}
+  .hero-bubble.b5{bottom:2%; left:14%; animation:bubbleFloatB 6.8s ease-in-out infinite; animation-delay:.8s;}
+  .hero-bubble.b5 .dot{background:var(--cyan);}
+  @keyframes bubbleFloatA{0%,100%{transform:translateY(0);} 50%{transform:translateY(-14px);}}
+  @keyframes bubbleFloatB{0%,100%{transform:translateY(0);} 50%{transform:translateY(12px);}}
+  @keyframes bubbleFloatC{0%,100%{transform:translateY(0);} 50%{transform:translateY(-9px);}}
+  @media (prefers-reduced-motion: reduce){.hero-orb::before,.hero-orb::after,.hero-bubble{animation:none;}}
 
   /* dynamic aurora background */
   .aurora-bg{position:fixed; inset:0; z-index:-1; overflow:hidden; pointer-events:none; background:var(--black);}
@@ -236,7 +238,9 @@
 
   /* products */
   .products-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:18px; overflow:hidden;}
+  .products-grid-single{grid-template-columns:1fr; max-width:460px; margin:0 auto;}
   .product-card{background:var(--black); padding:42px 34px; display:flex; flex-direction:column; gap:14px;}
+  .product-card .work-link{border-top:1px solid var(--line); padding-top:16px; margin-top:4px;}
   .product-status{font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--cyan); border:1px solid rgba(127,227,255,.35); border-radius:100px; padding:5px 12px; width:fit-content;}
   .product-card h3{font-size:21px;}
   .product-card p{font-size:14px; color:var(--gray-mute);}
@@ -370,13 +374,18 @@
     header .btn-header{display:none;}
   }
   @media (max-width:480px){
-    .dash-card{padding:18px; gap:12px;}
-    .dash-stat .value{font-size:17px;}
+    .hero-bubble{font-size:12px; padding:10px 16px;}
+    .hero-orb{width:100px; height:100px; margin:-50px 0 0 -50px;}
   }
   @media (max-width:720px){
     .wrap{padding:0 22px;}
     .hero{padding:130px 0 70px;}
     .section{padding:64px 0;}
+    .hero-bubble.b1{left:4%;}
+    .hero-bubble.b2{right:4%;}
+    .hero-bubble.b3{left:2%;}
+    .hero-bubble.b4{right:4%;}
+    .hero-bubble.b5{left:8%;}
     .mission-grid{grid-template-columns:1fr;}
     .timeline{grid-template-columns:1fr;}
     .products-grid{grid-template-columns:1fr;}
@@ -427,8 +436,8 @@
         <div class="hero-text">
           <div class="eyebrow">ROUGATECH — DIGITAL TRANSFORMATION FOR AFRICA</div>
           <h1>
-            <span class="fr">Transformez votre entreprise. <span class="accent">Vendez plus.</span></span>
-            <span class="en">Transform Your Business. <span class="accent">Sell More.</span></span>
+            <span class="fr">Transformez votre entreprise <span class="accent">Vendez plus</span></span>
+            <span class="en">Transform Your Business <span class="accent">Sell More</span></span>
           </h1>
           <p class="hero-sub">
             <span class="fr">Nous créons des sites web, des agents IA, des plateformes SaaS et des systèmes digitaux qui aident les entreprises à attirer des clients, automatiser leurs opérations et se développer.</span>
@@ -440,55 +449,12 @@
           </div>
         </div>
         <div class="hero-visual" aria-hidden="true">
-          <div class="dash-card">
-            <div class="dash-head">
-              <span><span class="fr">Tableau de bord business</span><span class="en">Business Dashboard</span></span>
-            </div>
-            <div class="dash-stats">
-              <div class="dash-stat">
-                <div class="label">Sales</div>
-                <div class="value">$42K</div>
-                <div class="delta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M4 17L10 11L14 15L20 7"/><path d="M14 7h6v6"/></svg> +24%</div>
-              </div>
-              <div class="dash-stat">
-                <div class="label">Leads</div>
-                <div class="value">1,248</div>
-                <div class="delta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M4 17L10 11L14 15L20 7"/><path d="M14 7h6v6"/></svg> +18%</div>
-              </div>
-              <div class="dash-stat">
-                <div class="label"><span class="fr">Conversion</span><span class="en">Conversion</span></div>
-                <div class="value">4.8%</div>
-                <div class="delta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M4 17L10 11L14 15L20 7"/><path d="M14 7h6v6"/></svg> +12%</div>
-              </div>
-              <div class="dash-stat">
-                <div class="label"><span class="fr">Croissance</span><span class="en">Growth</span></div>
-                <div class="value">+38%</div>
-                <div class="delta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M4 17L10 11L14 15L20 7"/><path d="M14 7h6v6"/></svg> <span class="fr">stable</span><span class="en">steady</span></div>
-              </div>
-            </div>
-            <div class="dash-chart-wrap">
-              <svg class="dash-chart" viewBox="0 0 300 110" preserveAspectRatio="none">
-                <defs>
-                  <linearGradient id="dashLineGrad" x1="0" y1="0" x2="1" y2="0">
-                    <stop offset="0%" stop-color="var(--blue)"/>
-                    <stop offset="100%" stop-color="var(--cyan)"/>
-                  </linearGradient>
-                  <linearGradient id="dashAreaGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="var(--cyan)" stop-opacity=".28"/>
-                    <stop offset="100%" stop-color="var(--cyan)" stop-opacity="0"/>
-                  </linearGradient>
-                </defs>
-                <path d="M0,95 C30,90 50,100 70,85 C90,70 100,90 120,65 C140,40 160,55 180,35 C200,15 220,30 240,10 L300,4 L300,110 L0,110 Z" fill="url(#dashAreaGrad)" stroke="none"/>
-                <path class="dash-line-base" d="M0,95 C30,90 50,100 70,85 C90,70 100,90 120,65 C140,40 160,55 180,35 C200,15 220,30 240,10 L300,4" fill="none" stroke="url(#dashLineGrad)" stroke-width="2.5" stroke-linecap="round"/>
-                <path class="dash-line-flow" d="M0,95 C30,90 50,100 70,85 C90,70 100,90 120,65 C140,40 160,55 180,35 C200,15 220,30 240,10 L300,4" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
-                <g class="dash-endpoint" transform="translate(300,4)">
-                  <circle class="ring" r="4" fill="var(--cyan)"/>
-                  <circle r="4" fill="var(--cream)"/>
-                </g>
-              </svg>
-            </div>
-            <div class="dash-note"><span class="fr">Données illustratives</span><span class="en">Illustrative data</span></div>
-          </div>
+          <div class="hero-orb"></div>
+          <div class="hero-bubble b1"><span class="dot"></span><span class="fr">Visibilité +</span><span class="en">Visibility +</span></div>
+          <div class="hero-bubble b2"><span class="dot"></span><span class="fr">Plus de vente</span><span class="en">More sales</span></div>
+          <div class="hero-bubble b3"><span class="dot"></span><span class="fr">Plus de client</span><span class="en">More customers</span></div>
+          <div class="hero-bubble b4"><span class="dot"></span><span class="fr">Client satisfait</span><span class="en">Happy customers</span></div>
+          <div class="hero-bubble b5"><span class="dot"></span><span class="fr">Grandir</span><span class="en">Grow</span></div>
         </div>
       </div>
     </div>
@@ -499,7 +465,7 @@
     <div class="wrap">
       <div class="section-head reveal">
         <div class="eyebrow">01 / THE SHIFT</div>
-        <h2><span class="fr">Votre entreprise est en train de changer.</span><span class="en">Your business is changing.</span></h2>
+        <h2><span class="fr">Votre entreprise est en train de changer</span><span class="en">Your business is changing</span></h2>
         <p class="section-sub">
           <span class="fr">Vos clients sont en ligne. Vos concurrents adoptent l'IA. Les processus manuels vous ralentissent. Une simple présence en ligne ne suffit plus.</span>
           <span class="en">Your customers are online. Your competitors are adopting AI. Manual processes are slowing you down. A basic online presence is no longer enough.</span>
@@ -531,7 +497,7 @@
     <div class="wrap">
       <div class="section-head reveal">
         <div class="eyebrow">02 / SOLUTIONS</div>
-        <h2><span class="fr">Tout ce dont votre entreprise a besoin pour grandir digitalement.</span><span class="en">Everything your business needs to grow digitally.</span></h2>
+        <h2><span class="fr">Tout ce dont votre entreprise a besoin pour grandir digitalement</span><span class="en">Everything your business needs to grow digitally</span></h2>
         <p class="section-sub"><span class="fr">De votre première présence digitale aux systèmes avancés propulsés par l'IA, nous construisons la technologie autour de vos objectifs business.</span><span class="en">From your first digital presence to advanced AI-powered systems, we build technology around your business goals.</span></p>
       </div>
       <div class="pillars-grid reveal">
@@ -633,7 +599,7 @@
     <div class="wrap">
       <div class="section-head reveal">
         <div class="eyebrow">03 / THE OUTCOME</div>
-        <h2><span class="fr">La technologie doit créer des résultats business.</span><span class="en">Technology should create business results.</span></h2>
+        <h2><span class="fr">La technologie doit créer des résultats business</span><span class="en">Technology should create business results</span></h2>
       </div>
       <div class="timeline reveal">
         <div class="tl-step"><div class="tl-dot">01</div><h3><span class="fr">Attirer</span><span class="en">Attract</span></h3><p><span class="fr">Être découvert en ligne.</span><span class="en">Get discovered online.</span></p></div>
@@ -650,7 +616,7 @@
     <div class="wrap">
       <div class="section-head reveal">
         <div class="eyebrow">04 / THE TRANSFORMATION</div>
-        <h2><span class="fr">Du manuel au digital.</span><span class="en">From manual to digital.</span></h2>
+        <h2><span class="fr">Du manuel au digital</span><span class="en">From manual to digital</span></h2>
       </div>
       <div class="ba-grid reveal">
         <div class="ba-card ba-before">
@@ -685,7 +651,7 @@
     <div class="wrap">
       <div class="section-head reveal">
         <div class="eyebrow">05 / WHO WE HELP</div>
-        <h2><span class="fr">Conçu pour les entreprises ambitieuses.</span><span class="en">Built for ambitious businesses.</span></h2>
+        <h2><span class="fr">Conçu pour les entreprises ambitieuses</span><span class="en">Built for ambitious businesses</span></h2>
       </div>
       <div class="industry-marquee reveal">
         <div class="industry-track">
@@ -726,9 +692,9 @@
   <section class="section" id="work">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="eyebrow">06 / SELECTED WORK</div>
-        <h2><span class="fr">Des projets que nous avons construits.</span><span class="en">Projects we've built.</span></h2>
-        <p class="section-sub"><span class="fr">Des expériences digitales conçues pour des entreprises, institutions et entrepreneurs à travers l'Afrique.</span><span class="en">Digital experiences built for businesses, institutions and entrepreneurs across Africa.</span></p>
+        <div class="eyebrow">06 / PORTFOLIO</div>
+        <h2><span class="fr">Notre portfolio de projets réalisés</span><span class="en">Our portfolio of completed projects</span></h2>
+        <p class="section-sub"><span class="fr">Des expériences digitales réelles, conçues et livrées pour des entreprises, institutions et entrepreneurs à travers l'Afrique.</span><span class="en">Real digital experiences, designed and delivered for businesses, institutions and entrepreneurs across Africa.</span></p>
       </div>
       <div class="work-grid reveal" id="work-grid"></div>
     </div>
@@ -739,7 +705,7 @@
     <div class="wrap">
       <div class="section-head reveal">
         <div class="eyebrow">07 / TRUSTED BY</div>
-        <h2><span class="fr">Ils nous ont fait confiance.</span><span class="en">They trusted us.</span></h2>
+        <h2><span class="fr">Ils nous ont fait confiance</span><span class="en">They trusted us</span></h2>
         <p class="section-sub"><span class="fr">Des entreprises et institutions qui ont choisi ROUGATECH pour renforcer leur présence digitale.</span><span class="en">Businesses and institutions that chose ROUGATECH to strengthen their digital presence.</span></p>
       </div>
       <div class="trusted-grid reveal" id="trusted-grid"></div>
@@ -814,23 +780,17 @@
     <div class="wrap">
       <div class="section-head reveal">
         <div class="eyebrow">08 / DIGITAL PRODUCTS</div>
-        <h2><span class="fr">Nous concevons aussi nos propres produits.</span><span class="en">We also build our own products.</span></h2>
+        <h2><span class="fr">Nous concevons aussi nos propres produits</span><span class="en">We also build our own products</span></h2>
       </div>
-      <div class="products-grid reveal">
+      <div class="products-grid products-grid-single reveal">
         <div class="product-card">
           <span class="product-status"><span class="fr">Produit en développement</span><span class="en">Product in development</span></span>
           <h3>ScolPay</h3>
           <p><span class="fr">Plateforme digitale de gestion scolaire — Éducation.</span><span class="en">Education / Digital school management platform.</span></p>
-        </div>
-        <div class="product-card">
-          <span class="product-status"><span class="fr">Produit en développement</span><span class="en">Product in development</span></span>
-          <h3>Rougatech Commerce</h3>
-          <p><span class="fr">Infrastructure e-commerce pour entreprises africaines.</span><span class="en">E-commerce infrastructure for African businesses.</span></p>
-        </div>
-        <div class="product-card">
-          <span class="product-status"><span class="fr">Produit en développement</span><span class="en">Product in development</span></span>
-          <h3>Rougatech AI</h3>
-          <p><span class="fr">IA &amp; automatisation pour les opérations métier.</span><span class="en">AI &amp; automation for business operations.</span></p>
+          <a href="https://www.scolpay.com" target="_blank" rel="noopener" class="work-link">
+            <span class="fr">Découvrir ScolPay</span><span class="en">Discover ScolPay</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
+          </a>
         </div>
       </div>
     </div>
@@ -854,7 +814,7 @@
     <div class="wrap">
       <div class="section-head reveal">
         <div class="eyebrow">10 / HOW WE WORK</div>
-        <h2><span class="fr">De l'idée au système business.</span><span class="en">From idea to business system.</span></h2>
+        <h2><span class="fr">De l'idée au système business</span><span class="en">From idea to business system</span></h2>
       </div>
       <div class="how-list reveal">
         <div class="how-row"><span class="num">01</span><h3><span class="fr">Comprendre</span><span class="en">Understand</span></h3><p><span class="fr">Comprendre l'organisation et ses objectifs.</span><span class="en">Understanding the organization and its goals.</span></p></div>
@@ -872,7 +832,7 @@
     <div class="wrap">
       <div class="section-head reveal">
         <div class="eyebrow">11 / WHY ROUGATECH</div>
-        <h2><span class="fr">Pourquoi les entreprises choisissent ROUGATECH.</span><span class="en">Why businesses choose ROUGATECH.</span></h2>
+        <h2><span class="fr">Pourquoi les entreprises choisissent ROUGATECH</span><span class="en">Why businesses choose ROUGATECH</span></h2>
       </div>
       <div class="why-grid reveal">
         <div class="why-card"><h3><span class="fr">L'entreprise d'abord</span><span class="en">Business First</span></h3><p><span class="fr">Nous partons de votre problème business, pas de la technologie.</span><span class="en">We start with your business problem, not the technology.</span></p></div>
@@ -889,7 +849,7 @@
       <div class="about-wrap">
         <div class="reveal">
           <div class="eyebrow">12 / ABOUT</div>
-          <h2 style="margin-top:20px; font-size:clamp(28px,3.6vw,44px);"><span class="fr">Une technologie pour une Afrique plus connectée.</span><span class="en">Technology for a more connected Africa.</span></h2>
+          <h2 style="margin-top:20px; font-size:clamp(28px,3.6vw,44px);"><span class="fr">Une technologie pour une Afrique plus connectée</span><span class="en">Technology for a more connected Africa</span></h2>
         </div>
         <div class="reveal">
           <p><span class="fr">ROUGATECH est une entreprise technologique africaine. Nous utilisons le logiciel, l'intelligence artificielle, les plateformes digitales et l'automatisation pour aider les organisations africaines à se transformer.</span>
@@ -910,7 +870,7 @@
         </div>
         <div class="founder-text reveal">
           <div class="eyebrow">13 / FOUNDER</div>
-          <h2 style="margin-top:14px; font-size:clamp(24px,3vw,34px);"><span class="fr">Construire la technologie avec une vision pour l'Afrique.</span><span class="en">Building technology with a vision for Africa.</span></h2>
+          <h2 style="margin-top:14px; font-size:clamp(24px,3vw,34px);"><span class="fr">Construire la technologie avec une vision pour l'Afrique</span><span class="en">Building technology with a vision for Africa</span></h2>
           <div class="founder-role" style="margin-top:18px;">Founder &amp; CEO — ROUGATECH</div>
           <h3 class="founder-name" style="font-size:clamp(22px,2.6vw,30px);">Amadou Rouga Achirou</h3>
           <p><span class="fr">Amadou Rouga Achirou est le fondateur de ROUGATECH, une entreprise technologique dédiée à la conception de produits digitaux, de solutions IA et de systèmes business pour les entreprises et institutions africaines.</span><span class="en">Amadou Rouga Achirou is the founder of ROUGATECH, a technology company focused on building digital products, AI solutions and business systems for African companies and organizations.</span></p>
@@ -926,7 +886,7 @@
     <div class="wrap">
       <div class="section-head reveal">
         <div class="eyebrow">14 / INSIGHTS</div>
-        <h2><span class="fr">Perspectives sur la transformation digitale.</span><span class="en">Perspectives on digital transformation.</span></h2>
+        <h2><span class="fr">Perspectives sur la transformation digitale</span><span class="en">Perspectives on digital transformation</span></h2>
       </div>
       <div class="insights-note reveal">
         <div class="eyebrow" style="justify-content:center;"><span class="fr">Bientôt disponible</span><span class="en">Coming soon</span></div>
@@ -940,7 +900,7 @@
   <section class="final-cta">
     <div class="final-glow"></div>
     <div class="wrap reveal">
-      <h2><span class="fr">Votre entreprise est prête pour sa prochaine étape.</span><span class="en">Your business is ready for its next stage.</span></h2>
+      <h2><span class="fr">Votre entreprise est prête pour sa prochaine étape</span><span class="en">Your business is ready for its next stage</span></h2>
       <p class="sub"><span class="fr">Construisons ensemble les systèmes digitaux qui vous aideront à attirer plus de clients, vendre plus et opérer plus intelligemment.</span><span class="en">Let's build the digital systems that help you attract more customers, sell more and operate smarter.</span></p>
       <div class="final-ctas">
         <a href="#contact" class="btn btn-primary"><span class="fr">Transformer mon entreprise</span><span class="en">Transform My Business</span></a>
@@ -955,7 +915,7 @@
       <div class="contact-wrap">
         <div class="contact-info reveal">
           <div class="eyebrow">Contact</div>
-          <h2 style="margin-top:20px;"><span class="fr">Transformons votre entreprise.</span><span class="en">Let's transform your business.</span></h2>
+          <h2 style="margin-top:20px;"><span class="fr">Transformons votre entreprise</span><span class="en">Let's transform your business</span></h2>
           <p><span class="fr">Dites-nous où en est votre entreprise aujourd'hui et où vous voulez qu'elle aille.</span><span class="en">Tell us where your business is today and where you want it to go.</span></p>
           <div class="contact-detail">
             ROUGATECH<br>NIAMEY, NIGER<br>HELLO@ROUGATECH.COM
