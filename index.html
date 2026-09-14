@@ -3,1043 +3,189 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ROUGATECH | Transform Your Business. Sell More.</title>
-<meta name="description" content="ROUGATECH builds websites, AI agents, SaaS platforms and digital solutions that help businesses attract customers, automate operations and grow.">
-<link rel="canonical" href="https://rougatech.com/">
+<title>ROUGATECH Blog | Digital Transformation in Africa</title>
+<meta name="description" content="ROUGATECH Blog — articles and analysis on AI agents, websites, e-commerce and digital transformation for businesses in Niger and Africa.">
+<link rel="canonical" href="https://rougatech.com/blog/">
 <meta name="robots" content="index, follow">
-<meta property="og:title" content="ROUGATECH | Transform Your Business. Sell More.">
-<meta property="og:description" content="ROUGATECH builds websites, AI agents, SaaS platforms and digital solutions that help businesses attract customers, automate operations and grow.">
+<meta property="og:title" content="ROUGATECH Blog | Digital Transformation in Africa">
+<meta property="og:description" content="ROUGATECH Blog — articles and analysis on AI agents, websites, e-commerce and digital transformation for businesses in Niger and Africa.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://rougatech.com/">
+<meta property="og:url" content="https://rougatech.com/blog/">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="ROUGATECH">
 <meta property="og:image" content="https://rougatech.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="ROUGATECH | Transform Your Business. Sell More.">
-<meta name="twitter:description" content="ROUGATECH builds websites, AI agents, SaaS platforms and digital solutions that help businesses attract customers, automate operations and grow.">
+<meta name="twitter:title" content="ROUGATECH Blog | Digital Transformation in Africa">
+<meta name="twitter:description" content="ROUGATECH Blog — articles and analysis on AI agents, websites, e-commerce and digital transformation for businesses in Niger and Africa.">
 <meta name="twitter:image" content="https://rougatech.com/og-image.png">
-<meta name="keywords" content="ROUGATECH, transform your business, digital transformation Africa, AI agents Africa, SaaS platforms Africa, business automation Africa, websites that sell, digital commerce Africa, technology company Niger, digital solutions Africa">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "ROUGATECH",
-  "url": "https://rougatech.com",
-  "logo": "https://rougatech.com/logo.png",
-  "description": "ROUGATECH builds websites, AI agents, SaaS platforms and digital solutions that help businesses in Niger and across Africa attract customers, automate operations and grow.",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Niamey",
-    "addressCountry": "NE"
-  },
-  "email": "hello@rougatech.com",
-  "founder": {
-    "@type": "Person",
-    "name": "Amadou Rouga Achirou",
-    "jobTitle": "Founder & CEO"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "ROUGATECH",
-  "url": "https://rougatech.com"
-}
-</script>
-<link rel="icon" href="logo.png">
+<link rel="icon" href="/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --black:#08090A;
-    --black-soft:#101114;
-    --cream:#F7F7F4;
-    --gray:#E9EAEC;
-    --gray-mute:#9a9ca3;
-    --blue:#2F5CFF;
-    --blue-deep:#1436B0;
-    --cyan:#7FE3FF;
-    --gold:#F5A623;
-    --line: rgba(247,247,244,0.12);
-    --line-soft: rgba(8,9,10,0.10);
-    --ease: cubic-bezier(.16,.84,.32,1);
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{background:var(--black); color:var(--cream); font-family:'Plus Jakarta Sans',sans-serif; font-size:16px; line-height:1.55; overflow-x:hidden; -webkit-font-smoothing:antialiased;}
-  ::selection{background:var(--blue); color:#fff;}
-  a{color:inherit; text-decoration:none;}
-  img{max-width:100%; display:block;}
-  button{font-family:inherit; cursor:pointer; border:none; background:none; color:inherit;}
-
-  /* bilingual toggle */
-  body[data-lang="fr"] .en{display:none;}
-  body[data-lang="en"] .fr{display:none;}
-
-  .eyebrow{font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--cyan); display:flex; align-items:center; gap:10px;}
-  .eyebrow::before{content:''; width:22px; height:1px; background:linear-gradient(90deg,var(--cyan),transparent);}
-  h1,h2,h3{font-family:'Sora',sans-serif; font-weight:700; letter-spacing:-0.02em; line-height:1.05;}
-  .wrap{max-width:1240px; margin:0 auto; padding:0 40px;}
-  :focus-visible{outline:2px solid var(--cyan); outline-offset:3px;}
-
-  #signal-line{position:fixed; left:0; top:0; width:2px; height:100vh; z-index:60; pointer-events:none; background:var(--line);}
-  #signal-line .fill{position:absolute; left:0; top:0; width:100%; height:0%; background:linear-gradient(180deg,var(--cyan),var(--blue)); box-shadow:0 0 12px rgba(127,227,255,.6); transition:height .05s linear;}
-
-  header{position:fixed; top:0; left:0; width:100%; z-index:50; padding:20px 40px; display:flex; align-items:center; justify-content:space-between; transition:background .4s var(--ease), backdrop-filter .4s var(--ease), border-color .4s var(--ease); border-bottom:1px solid transparent;}
-  header.scrolled{background:rgba(8,9,10,0.75); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--line);}
-  .brand{display:flex; align-items:center; gap:10px;}
-  .brand .logo-plate{background:var(--cream); border-radius:8px; padding:6px 10px; display:flex; align-items:center; line-height:0;}
-  .brand img{height:16px; width:auto;}
-  nav.main-nav{display:flex; align-items:center; gap:34px;}
-  nav.main-nav a{font-size:14px; color:var(--gray-mute); position:relative; padding:4px 0; transition:color .25s var(--ease);}
-  nav.main-nav a:hover{color:var(--cream);}
-  nav.main-nav a::after{content:''; position:absolute; left:0; bottom:0; width:0; height:1px; background:var(--cyan); transition:width .3s var(--ease);}
-  nav.main-nav a:hover::after{width:100%;}
-  .header-right{display:flex; align-items:center; gap:18px;}
-  .lang-switch{display:flex; gap:6px; font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--gray-mute);}
-  .lang-switch button{padding:2px 4px; opacity:.5; transition:opacity .2s, color .2s;}
-  .lang-switch button.active{opacity:1; color:var(--cyan);}
-
-  .btn{display:inline-flex; align-items:center; gap:10px; font-size:13px; font-weight:600; letter-spacing:.02em; text-transform:uppercase; padding:14px 24px; border-radius:100px; position:relative; overflow:hidden; isolation:isolate; transition:transform .3s var(--ease), box-shadow .3s var(--ease);}
-  .btn-primary{background:var(--cream); color:var(--black);}
-  .btn-primary:not([disabled]){animation:ctaPulse 3s ease-in-out infinite;}
-  .btn-primary span{position:relative; z-index:2;}
-  .btn-primary::before{content:''; position:absolute; inset:0; background:linear-gradient(120deg,var(--cyan),var(--blue)); transform:translateY(101%); transition:transform .35s var(--ease); z-index:0;}
-  .btn-primary:not([disabled])::after{content:''; position:absolute; top:0; left:-60%; width:35%; height:100%; background:linear-gradient(120deg, transparent, rgba(255,255,255,.65), transparent); transform:skewX(-20deg); z-index:1; pointer-events:none; animation:ctaShine 3.6s ease-in-out infinite;}
-  .btn-primary:hover::before{transform:translateY(0);}
-  .btn-primary:hover{color:#fff; transform:translateY(-2px); box-shadow:0 10px 28px -6px rgba(127,227,255,.5); animation-play-state:paused;}
-  .btn-outline{border:1px solid var(--line); color:var(--cream); background:transparent;}
-  .btn-outline:hover{border-color:var(--cyan); color:var(--cyan); transform:translateY(-2px);}
-  .btn-header{padding:11px 20px; font-size:12px;}
-  @keyframes ctaPulse{0%,100%{box-shadow:0 0 0 0 rgba(127,227,255,.4);} 50%{box-shadow:0 0 0 9px rgba(127,227,255,0);}}
-  @keyframes ctaShine{0%,45%{left:-60%;} 65%{left:120%;} 100%{left:120%;}}
-  .menu-toggle{display:none;}
-
-  section{position:relative;}
-  .hero{min-height:100vh; display:flex; flex-direction:column; justify-content:center; padding:130px 0 70px;}
-  .hero-grid{position:absolute; inset:0; background-image:linear-gradient(var(--line-soft) 1px, transparent 1px), linear-gradient(90deg, var(--line-soft) 1px, transparent 1px); background-size:80px 80px; mask-image:linear-gradient(180deg, rgba(0,0,0,.5), transparent 75%); opacity:.5;}
-  .hero-content{position:relative; z-index:2;}
-  .hero-layout{display:grid; grid-template-columns:1.05fr .95fr; gap:56px; align-items:center;}
-  .hero h1{font-size:clamp(38px,6.6vw,92px); margin:26px 0 30px; max-width:16ch;}
-  .hero h1 .accent{background:linear-gradient(100deg,var(--cyan),var(--blue) 60%); -webkit-background-clip:text; background-clip:text; color:transparent;}
-  .hero-sub{font-size:19px; color:var(--gray-mute); max-width:540px; margin-bottom:44px;}
-  .hero-ctas{display:flex; gap:16px; flex-wrap:wrap; justify-content:flex-start; margin-bottom:0;}
-
-  /* hero floating bubbles */
-  .hero-visual{position:relative; height:420px;}
-  .hero-orb{position:absolute; top:50%; left:50%; width:130px; height:130px; margin:-65px 0 0 -65px; border-radius:50%; background:radial-gradient(circle at 35% 30%, rgba(127,227,255,.85), rgba(47,92,255,.45) 55%, transparent 76%);}
-  .hero-orb::before, .hero-orb::after{content:''; position:absolute; inset:0; border-radius:50%; border:1px solid rgba(127,227,255,.4); animation:pulseRing 3.4s ease-out infinite;}
-  .hero-orb::after{animation-delay:1.2s; border-color:rgba(47,92,255,.35);}
-  @keyframes pulseRing{0%{transform:scale(1); opacity:.7;} 100%{transform:scale(2.7); opacity:0;}}
-  .hero-bubble{position:absolute; display:inline-flex; align-items:center; font-family:'JetBrains Mono',monospace; font-size:13px; font-weight:500; letter-spacing:.01em; color:var(--cream); background:rgba(19,17,16,.74); border:1px solid var(--line); border-radius:100px; padding:12px 20px; white-space:nowrap; box-shadow:0 14px 30px -12px rgba(0,0,0,.55); backdrop-filter:blur(6px);}
-  .hero-bubble .dot{display:inline-block; width:7px; height:7px; border-radius:50%; margin-right:10px; flex-shrink:0;}
-  .hero-bubble.b1{top:4%; left:0%; animation:bubbleFloatA 6.6s ease-in-out infinite;}
-  .hero-bubble.b1 .dot{background:var(--cyan);}
-  .hero-bubble.b2{top:20%; right:2%; animation:bubbleFloatB 7.6s ease-in-out infinite; animation-delay:.5s;}
-  .hero-bubble.b2 .dot{background:var(--blue);}
-  .hero-bubble.b3{top:48%; left:-6%; animation:bubbleFloatC 7s ease-in-out infinite; animation-delay:1s;}
-  .hero-bubble.b3 .dot{background:var(--gold);}
-  .hero-bubble.b4{bottom:16%; right:8%; animation:bubbleFloatA 7.8s ease-in-out infinite; animation-delay:1.5s;}
-  .hero-bubble.b4 .dot{background:#4ADE80;}
-  .hero-bubble.b5{bottom:2%; left:14%; animation:bubbleFloatB 6.8s ease-in-out infinite; animation-delay:.8s;}
-  .hero-bubble.b5 .dot{background:var(--cyan);}
-  @keyframes bubbleFloatA{0%,100%{transform:translateY(0);} 50%{transform:translateY(-14px);}}
-  @keyframes bubbleFloatB{0%,100%{transform:translateY(0);} 50%{transform:translateY(12px);}}
-  @keyframes bubbleFloatC{0%,100%{transform:translateY(0);} 50%{transform:translateY(-9px);}}
-  @media (prefers-reduced-motion: reduce){.hero-orb::before,.hero-orb::after,.hero-bubble{animation:none;}}
-
-  /* dynamic aurora background */
-  .aurora-bg{position:fixed; inset:0; z-index:-1; overflow:hidden; pointer-events:none; background:var(--black);}
-  .aurora-bg span{position:absolute; border-radius:50%; filter:blur(110px); opacity:.32; will-change:transform;}
-  .aurora-bg span:nth-child(1){width:620px; height:620px; background:var(--blue); top:-15%; left:-12%; animation:auroraMove1 28s ease-in-out infinite;}
-  .aurora-bg span:nth-child(2){width:540px; height:540px; background:var(--cyan); top:25%; right:-16%; animation:auroraMove2 34s ease-in-out infinite;}
-  .aurora-bg span:nth-child(3){width:500px; height:500px; background:var(--blue-deep); bottom:-18%; left:22%; animation:auroraMove3 40s ease-in-out infinite;}
-  @keyframes auroraMove1{0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(90px,60px) scale(1.15);}}
-  @keyframes auroraMove2{0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(-80px,50px) scale(0.9);}}
-  @keyframes auroraMove3{0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(60px,-70px) scale(1.1);}}
-  @media (prefers-reduced-motion: reduce){.aurora-bg span{animation:none;}}
-
-  .reveal{opacity:0; transform:translateY(28px); transition:opacity .5s var(--ease), transform .5s var(--ease);}
-  .reveal.in{opacity:1; transform:translateY(0);}
-
-  .section{padding:100px 0;}
-  .section-head{max-width:760px; margin-bottom:70px;}
-  .section-head h2{font-size:clamp(28px,4vw,50px); margin-top:22px;}
-  .section-alt{background:var(--cream); color:var(--black);}
-  .section-alt .eyebrow{color:var(--blue-deep);}
-  .section-alt .eyebrow::before{background:linear-gradient(90deg,var(--blue-deep),transparent);}
-
-  /* mission points */
-  .mission-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:18px; overflow:hidden;}
-  .mission-card{background:var(--black); padding:38px 30px; position:relative;}
-  .mission-card::before{content:'—'; color:#ff6b6b; font-family:'JetBrains Mono',monospace; display:block; margin-bottom:14px; opacity:.7;}
-  .mission-card h3{font-size:19px; margin-bottom:10px;}
-  .mission-card p{font-size:14px; color:var(--gray-mute);}
-  .problem-transition{margin-top:34px; text-align:center; font-family:'Sora',sans-serif; font-weight:600; font-size:clamp(18px,2.4vw,24px); color:var(--cream);}
-
-  /* pillars */
-  .pillars-grid{display:grid; grid-template-columns:1fr; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:18px; overflow:hidden;}
-  .pillar-card{background:var(--black); padding:44px; transition:background .35s var(--ease); display:grid; grid-template-columns:1.1fr .9fr; gap:36px; align-items:start;}
-  .pillar-card:hover{background:var(--black-soft);}
-  .pillar-card .num{font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--cyan); margin-bottom:16px; display:block;}
-  .pillar-card h3{font-size:26px; margin-bottom:14px;}
-  .pillar-card .desc{color:var(--gray-mute); font-size:15px; margin-bottom:20px; max-width:52ch;}
-  .pillar-card .message{font-family:'Sora',sans-serif; font-weight:600; font-size:16px; color:var(--cream); border-left:2px solid var(--cyan); padding-left:16px; margin-bottom:22px; max-width:44ch;}
-  .pillar-tags{display:flex; flex-wrap:wrap; gap:8px; align-content:flex-start; margin-bottom:22px;}
-  .pillar-tags span{font-size:12px; padding:6px 12px; border:1px solid var(--line); border-radius:100px; color:var(--gray-mute); font-family:'JetBrains Mono',monospace;}
-  .pillar-card .solution-cta{font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--cyan); display:inline-flex; align-items:center; gap:8px; border-bottom:1px solid transparent; transition:border-color .25s var(--ease); margin-right:26px;}
-  .pillar-card .solution-cta:hover{border-color:var(--cyan);}
-  .pillar-card .solution-cta svg{width:14px; height:14px; transition:transform .25s var(--ease);}
-  .pillar-card .solution-cta:hover svg{transform:translate(3px,-3px);}
-  .pillar-card .solution-cta-secondary{color:var(--gray-mute); margin-right:0;}
-  .pillar-card .solution-cta-secondary:hover{color:var(--cream); border-color:var(--gray-mute);}
-
-  /* transformation timeline */
-  .timeline{display:grid; grid-template-columns:repeat(5,1fr); gap:24px; position:relative;}
-  .timeline::before{content:''; position:absolute; top:19px; left:5%; right:5%; height:1px; background:var(--line); z-index:0;}
-  .tl-step{position:relative; z-index:1;}
-  .tl-dot{width:38px; height:38px; border-radius:50%; border:1px solid var(--cyan); display:flex; align-items:center; justify-content:center; font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--cyan); background:var(--black); margin-bottom:22px;}
-  .tl-step h3{font-size:18px; margin-bottom:8px;}
-  .tl-step p{font-size:14px; color:var(--gray-mute);}
-
-  /* before / after */
-  .ba-grid{display:grid; grid-template-columns:1fr 60px 1fr; align-items:stretch;}
-  .ba-card{border:1px solid var(--line); border-radius:18px; padding:38px;}
-  .ba-before{background:var(--black);}
-  .ba-after{background:linear-gradient(160deg, rgba(127,227,255,.08), rgba(47,92,255,.10)); border-color:rgba(127,227,255,.28);}
-  .ba-label{font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.1em; text-transform:uppercase; margin-bottom:24px;}
-  .ba-before .ba-label{color:var(--gray-mute);}
-  .ba-after .ba-label{color:var(--cyan);}
-  .ba-card ul{list-style:none; display:grid; gap:16px;}
-  .ba-card li{display:flex; align-items:center; gap:12px; font-size:15px; color:var(--gray-mute);}
-  .ba-after li{color:var(--cream);}
-  .ba-card li svg{width:16px; height:16px; flex-shrink:0;}
-  .ba-before li svg{color:#ff6b6b;}
-  .ba-after li svg{color:#4ADE80;}
-  .ba-arrow{display:flex; align-items:center; justify-content:center; color:var(--gray-mute);}
-  .ba-arrow svg{width:26px; height:26px;}
-
-  /* industries */
-  .industry-marquee{overflow:hidden; width:100%; -webkit-mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);}
-  .industry-track{display:flex; width:max-content; gap:12px; animation:industryScroll 32s linear infinite;}
-  .industry-track:hover{animation-play-state:paused;}
-  .industry-grid{display:flex; flex-wrap:nowrap; gap:12px; flex-shrink:0;}
-  @keyframes industryScroll{from{transform:translateX(-50%);} to{transform:translateX(0);}}
-  @media (prefers-reduced-motion: reduce){.industry-track{animation:none;}}
-  .industry-tag{font-size:14px; padding:14px 22px; border-radius:100px; color:#fff; font-weight:600; white-space:nowrap;}
-  .industry-tag:nth-child(10n+1){background:#2F5CFF;}
-  .industry-tag:nth-child(10n+2){background:#0EA5A5;}
-  .industry-tag:nth-child(10n+3){background:#E0663B;}
-  .industry-tag:nth-child(10n+4){background:#8B5CF6;}
-  .industry-tag:nth-child(10n+5){background:#D6455D;}
-  .industry-tag:nth-child(10n+6){background:#2E9E5B;}
-  .industry-tag:nth-child(10n+7){background:#C98A1E;}
-  .industry-tag:nth-child(10n+8){background:#1F7A8C;}
-  .industry-tag:nth-child(10n+9){background:#7B4B94;}
-  .industry-tag:nth-child(10n+10){background:#3A6B35;}
-  .industry-note{margin-top:34px; font-size:14px; color:#6b6c72; max-width:60ch;}
-
-  /* products */
-  .products-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:18px; overflow:hidden;}
-  .products-grid-single{grid-template-columns:1fr; max-width:460px; margin:0 auto;}
-  .product-card{background:var(--black); padding:42px 34px; display:flex; flex-direction:column; gap:14px;}
-  .product-card .work-link{border-top:1px solid var(--line); padding-top:16px; margin-top:4px;}
-  .product-status{font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--cyan); border:1px solid rgba(127,227,255,.35); border-radius:100px; padding:5px 12px; width:fit-content;}
-  .product-card h3{font-size:21px;}
-  .product-card p{font-size:14px; color:var(--gray-mute);}
-
-  /* section subtitle (shared) */
-  .section-sub{font-size:17px; color:var(--gray-mute); margin-top:18px; max-width:60ch;}
-
-  /* selected work */
-  .work-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:28px;}
-  .work-card{background:var(--black-soft); border:1px solid var(--line); border-radius:18px; overflow:hidden; display:flex; flex-direction:column; transition:transform .4s var(--ease), border-color .4s var(--ease);}
-  .work-card:hover{transform:translateY(-6px); border-color:rgba(127,227,255,.35);}
-  .work-media{position:relative; aspect-ratio:4/3; overflow:hidden; background:var(--black);}
-  .work-media img{width:100%; height:100%; object-fit:cover; object-position:top center; transition:transform .6s var(--ease);}
-  .work-card:hover .work-media img{transform:scale(1.045);}
-  .work-body{padding:28px 26px 30px; display:flex; flex-direction:column; gap:10px; flex:1;}
-  .work-category{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--cyan);}
-  .work-card h3{font-size:21px;}
-  .work-card p{font-size:14px; color:var(--gray-mute); flex:1;}
-  .work-link{display:inline-flex; align-items:center; gap:8px; font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--cream); margin-top:10px; padding-top:16px; border-top:1px solid var(--line); transition:color .25s var(--ease);}
-  .work-link svg{width:13px; height:13px; transition:transform .25s var(--ease);}
-  .work-link:hover{color:var(--cyan);}
-  .work-card:hover .work-link svg{transform:translate(3px,-3px);}
-  .work-link-row{display:flex; gap:22px; flex-wrap:wrap; margin-top:10px; padding-top:16px; border-top:1px solid var(--line);}
-  .work-link-row .work-link{margin-top:0; padding-top:0; border-top:none;}
-
-  /* trusted by */
-  .trusted-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
-  .trusted-chip{font-family:'Sora',sans-serif; font-weight:700; font-size:16px; letter-spacing:.02em; color:var(--gray-mute); border:1px solid var(--line); border-radius:12px; padding:26px 20px; display:flex; align-items:center; justify-content:center; text-align:center; transition:color .3s var(--ease), border-color .3s var(--ease);}
-  .trusted-chip:hover{color:var(--cream); border-color:rgba(127,227,255,.35);}
-  .section-alt .trusted-chip{border-color:var(--line-soft); color:#8a8b91;}
-  .section-alt .trusted-chip:hover{color:var(--black); border-color:var(--blue-deep);}
-
-  /* academy teaser */
-  .academy-card{border:1px solid var(--line); border-radius:24px; padding:56px; background:linear-gradient(135deg, rgba(245,166,35,.10), rgba(127,227,255,.05));}
-  .academy-card .tagline{font-family:'JetBrains Mono',monospace; font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:var(--gold); margin-top:12px;}
-  .academy-card h2{margin-top:6px;}
-  .academy-card p{color:var(--gray-mute); font-size:16px; max-width:56ch; margin-top:18px;}
-  .academy-card .btn{margin-top:30px;}
-  @media (max-width:720px){.academy-card{padding:36px 26px;}}
-
-  /* founder */
-  .founder-wrap{display:grid; grid-template-columns:1fr 320px; gap:60px; align-items:center;}
-  .founder-photo{border-radius:20px; overflow:hidden; border:1px solid var(--line); aspect-ratio:5/6; order:2;}
-  .founder-text{order:1;}
-  .founder-photo img{width:100%; height:100%; object-fit:cover; display:block;}
-  .founder-role{font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--cyan); margin-top:8px;}
-  .founder-name{font-size:28px; margin-top:16px;}
-  .founder-wrap .founder-text p{color:var(--gray-mute); font-size:16px; max-width:58ch; margin-top:16px;}
-  @media (max-width:900px){.founder-wrap{grid-template-columns:1fr; gap:34px;} .founder-photo{max-width:300px; order:0;} .founder-text{order:0;}}
-
-  /* how we work */
-  .how-list{border-top:1px solid var(--line);}
-  .how-row{display:grid; grid-template-columns:70px 200px 1fr; gap:30px; padding:30px 0; border-bottom:1px solid var(--line); align-items:center;}
-  .how-row .num{font-family:'JetBrains Mono',monospace; font-size:15px; color:var(--gray-mute);}
-  .how-row h3{font-size:20px;}
-  .how-row p{color:var(--gray-mute); font-size:15px; max-width:52ch;}
-
-  /* why */
-  .why-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:24px;}
-  .why-card{border-top:2px solid var(--blue); padding-top:20px;}
-  .why-card h3{font-size:16px; margin-bottom:8px;}
-  .why-card p{font-size:13px; color:#54555c;}
-
-  /* about */
-  .about-wrap{display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start;}
-  .about-wrap p{font-size:18px; color:var(--gray-mute); margin-bottom:20px; max-width:52ch;}
-
-  /* insights */
-  .insights-note{border:1px solid var(--line-soft); border-radius:16px; padding:44px; text-align:center;}
-  .insights-note p{color:#6b6c72; font-size:15px; max-width:56ch; margin:12px auto 0;}
-
-  /* final cta */
-  .final-cta{background:var(--black); padding:170px 0; text-align:center; position:relative; overflow:hidden;}
-  .final-glow{position:absolute; left:50%; top:0; transform:translate(-50%,-40%); width:900px; height:600px; background:radial-gradient(circle, rgba(47,92,255,.28), transparent 65%); pointer-events:none;}
-  .final-cta h2{font-size:clamp(34px,5.6vw,68px); position:relative; z-index:1;}
-  .final-cta .sub{margin:26px auto 44px; max-width:520px; color:var(--gray-mute); font-size:18px; position:relative; z-index:1;}
-  .final-ctas{display:flex; gap:16px; justify-content:center; flex-wrap:wrap; position:relative; z-index:1;}
-
-  /* contact */
-  .contact-wrap{display:grid; grid-template-columns:.85fr 1.15fr; gap:80px;}
-  .contact-info h2{font-size:clamp(28px,3.6vw,42px); margin-bottom:22px;}
-  .contact-info p{color:var(--gray-mute); font-size:16px; max-width:40ch; margin-bottom:34px;}
-  .contact-detail{font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--gray-mute); line-height:2;}
-  form{display:flex; flex-direction:column; gap:18px;}
-  .field-row{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
-  .field{display:flex; flex-direction:column; gap:8px;}
-  .field label{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--gray-mute);}
-  .field input, .field select, .field textarea{background:transparent; border:none; border-bottom:1px solid var(--line); color:var(--cream); font-family:'Plus Jakarta Sans',sans-serif; font-size:16px; padding:12px 2px; transition:border-color .3s var(--ease);}
-  .field select{appearance:none; -webkit-appearance:none;}
-  .field select option{background:var(--black-soft); color:var(--cream);}
-  .field input:focus, .field select:focus, .field textarea:focus{border-color:var(--cyan); outline:none;}
-  .field textarea{resize:vertical; min-height:90px;}
-  form .btn-primary{align-self:flex-start; margin-top:12px;}
-  .form-note{font-size:12px; color:var(--gray-mute); margin-top:-4px;}
-
-  footer{padding:70px 0 40px; border-top:1px solid var(--line);}
-  .footer-top{display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:40px; margin-bottom:60px;}
-  .footer-brand{max-width:340px;}
-  .footer-brand .brand{margin-bottom:14px;}
-  .footer-brand p{color:var(--gray-mute); font-size:14px;}
-  .footer-nav{display:flex; gap:50px; flex-wrap:wrap;}
-  .footer-col h5{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--gray-mute); margin-bottom:16px;}
-  .footer-col a{display:block; font-size:14px; margin-bottom:10px; color:var(--gray);}
-  .footer-col a:hover{color:var(--cyan);}
-  .footer-bottom{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; padding-top:26px; border-top:1px solid var(--line); font-size:12px; color:var(--gray-mute); font-family:'JetBrains Mono',monospace;}
-
-  /* AI welcome widget */
-  .ai-widget{position:fixed; right:26px; bottom:26px; z-index:80;}
-  .ai-fab{width:60px; height:60px; border-radius:50%; background:linear-gradient(135deg,var(--blue),var(--cyan)); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; position:relative; box-shadow:0 16px 34px -10px rgba(47,92,255,.55); animation:ctaPulse 3s ease-in-out infinite;}
-  .ai-fab svg{width:24px; height:24px; color:#08090A; transition:opacity .2s var(--ease), transform .2s var(--ease);}
-  .ai-fab .icon-close{position:absolute; opacity:0; transform:scale(.6) rotate(-45deg);}
-  .ai-widget.open .ai-fab .icon-chat{opacity:0; transform:scale(.6) rotate(45deg);}
-  .ai-widget.open .ai-fab .icon-close{opacity:1; transform:scale(1) rotate(0);}
-  .ai-fab .ai-ping{position:absolute; top:-2px; right:-2px; width:14px; height:14px; border-radius:50%; background:#4ADE80; border:2px solid var(--black);}
-  .ai-panel{position:absolute; bottom:76px; right:0; width:328px; max-width:calc(100vw - 40px); background:var(--black-soft); border:1px solid var(--line); border-radius:20px; padding:22px; box-shadow:0 34px 70px -20px rgba(0,0,0,.65); opacity:0; visibility:hidden; transform:translateY(18px) scale(.96); transform-origin:bottom right; transition:opacity .35s var(--ease), transform .35s var(--ease), visibility .35s;}
-  .ai-widget.open .ai-panel{opacity:1; visibility:visible; transform:translateY(0) scale(1);}
-  .ai-panel-head{display:flex; align-items:center; gap:11px; margin-bottom:16px;}
-  .ai-avatar{width:38px; height:38px; border-radius:50%; background:linear-gradient(135deg,var(--blue),var(--cyan)); display:flex; align-items:center; justify-content:center; flex-shrink:0;}
-  .ai-avatar svg{width:18px; height:18px; color:#08090A;}
-  .ai-panel-head .ai-id{flex:1;}
-  .ai-panel-head .ai-name{font-family:'Sora',sans-serif; font-weight:700; font-size:14px;}
-  .ai-panel-head .ai-status{font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.06em; text-transform:uppercase; color:#4ADE80; display:flex; align-items:center; gap:6px; margin-top:3px;}
-  .ai-panel-head .ai-status::before{content:''; width:6px; height:6px; border-radius:50%; background:#4ADE80;}
-  .ai-msg{font-size:14px; line-height:1.55; color:var(--cream); background:rgba(127,227,255,.06); border:1px solid var(--line); border-radius:14px 14px 14px 4px; padding:14px 16px; margin-bottom:16px;}
-  .ai-actions{display:flex; flex-direction:column; gap:8px; margin-bottom:14px;}
-  .ai-action{display:flex; align-items:center; justify-content:space-between; gap:10px; font-size:13px; font-family:'Plus Jakarta Sans',sans-serif; font-weight:500; padding:12px 14px; border:1px solid var(--line); border-radius:12px; color:var(--cream); transition:border-color .25s var(--ease), color .25s var(--ease), background .25s var(--ease);}
-  .ai-action:hover{border-color:var(--cyan); color:var(--cyan); background:rgba(127,227,255,.05);}
-  .ai-action svg{width:14px; height:14px; flex-shrink:0; transition:transform .25s var(--ease);}
-  .ai-action:hover svg{transform:translate(2px,-2px);}
-  .ai-note{font-size:11px; color:var(--gray-mute); text-align:center; line-height:1.4;}
-  @media (max-width:480px){.ai-widget{right:16px; bottom:16px;} .ai-panel{right:-8px;}}
-  @media (prefers-reduced-motion: reduce){.ai-fab{animation:none;}}
-
-  @media (max-width:980px){
-    .hero-layout{grid-template-columns:1fr;}
-    .hero-visual{height:340px; order:-1; margin-bottom:30px;}
-    .hero-ctas{justify-content:flex-start;}
-    .pillar-card{grid-template-columns:1fr; gap:20px;}
-    .ba-grid{grid-template-columns:1fr;}
-    .ba-arrow{transform:rotate(90deg); padding:16px 0;}
-    .mission-grid{grid-template-columns:repeat(2,1fr);}
-    .timeline{grid-template-columns:repeat(2,1fr); row-gap:40px;}
-    .timeline::before{display:none;}
-    .products-grid{grid-template-columns:1fr;}
-    .work-grid{grid-template-columns:1fr; max-width:520px; margin:0 auto;}
-    .trusted-grid{grid-template-columns:repeat(3,1fr);}
-    .why-grid{grid-template-columns:repeat(2,1fr); row-gap:30px;}
-    .how-row{grid-template-columns:50px 1fr; row-gap:6px;}
-    .how-row p{grid-column:1 / -1;}
-    .about-wrap{grid-template-columns:1fr; gap:30px;}
-    .contact-wrap{grid-template-columns:1fr; gap:50px;}
-    .field-row{grid-template-columns:1fr;}
-  }
-  @media (max-width:900px){
-    nav.main-nav{position:fixed; inset:0 0 0 auto; width:80%; height:100vh; background:var(--black-soft); flex-direction:column; align-items:flex-start; justify-content:center; padding:0 40px; gap:26px; transform:translateX(100%); transition:transform .4s var(--ease); border-left:1px solid var(--line);}
-    nav.main-nav.open{transform:translateX(0);}
-    nav.main-nav a{font-size:20px;}
-    .menu-toggle{display:flex; flex-direction:column; gap:5px; z-index:70; width:26px;}
-    .menu-toggle span{width:100%; height:1.5px; background:var(--cream); transition:transform .3s, opacity .3s;}
-    header .btn-header{display:none;}
-  }
-  @media (max-width:480px){
-    .hero-bubble{font-size:12px; padding:10px 16px;}
-    .hero-orb{width:100px; height:100px; margin:-50px 0 0 -50px;}
-  }
-  @media (max-width:720px){
-    .wrap{padding:0 22px;}
-    .hero{padding:130px 0 70px;}
-    .section{padding:64px 0;}
-    .hero-bubble.b1{left:4%;}
-    .hero-bubble.b2{right:4%;}
-    .hero-bubble.b3{left:2%;}
-    .hero-bubble.b4{right:4%;}
-    .hero-bubble.b5{left:8%;}
-    .mission-grid{grid-template-columns:1fr;}
-    .timeline{grid-template-columns:1fr;}
-    .products-grid{grid-template-columns:1fr;}
-    .work-grid{grid-template-columns:1fr; max-width:none;}
-    .trusted-grid{grid-template-columns:1fr;}
-    .why-grid{grid-template-columns:1fr;}
-    .how-row{grid-template-columns:1fr; gap:8px; padding:24px 0;}
-    .how-row .num{order:-1;}
-    #signal-line{display:none;}
-  }
-  @media (prefers-reduced-motion: reduce){*{animation-duration:.001s !important; transition-duration:.001s !important;} html{scroll-behavior:auto;}}
-</style>
+<link rel="stylesheet" href="/assets/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://rougatech.com/"},
+    {"@type":"ListItem","position":2,"name":"Blog","item":"https://rougatech.com/blog/"}
+  ]
+}
+</script>
 </head>
 <body data-lang="fr">
 
-<div class="aurora-bg" aria-hidden="true"><span></span><span></span><span></span></div>
-
-<div id="signal-line"><div class="fill"></div></div>
-
 <header id="site-header">
   <div class="brand">
-    <a href="#hero" class="logo-plate"><img src="logo.png" alt="ROUGATECH"></a>
+    <a href="/" class="logo-plate"><img src="/logo.png" alt="ROUGATECH"></a>
   </div>
   <nav class="main-nav" id="main-nav">
-    <a href="#solutions"><span class="fr">Solutions</span><span class="en">Solutions</span></a>
-    <a href="#industries"><span class="fr">Industries</span><span class="en">Industries</span></a>
-    <a href="#work"><span class="fr">Projets</span><span class="en">Projects</span></a>
-    <a href="#about"><span class="fr">À propos</span><span class="en">About</span></a>
-    <a href="academy/index.html">Academy</a>
+    <a href="/solutions/"><span class="fr">Solutions</span><span class="en">Solutions</span></a>
+    <a href="/industries/"><span class="fr">Industries</span><span class="en">Industries</span></a>
+    <a href="/projects/"><span class="fr">Projets</span><span class="en">Projects</span></a>
+    <a href="/about/"><span class="fr">À propos</span><span class="en">About</span></a>
+    <a href="/academy/">Academy</a>
     <a href="/blog/"><span class="fr">Blog</span><span class="en">Blog</span></a>
-    <a href="#contact"><span class="fr">Contact</span><span class="en">Contact</span></a>
+    <a href="/contact/"><span class="fr">Contact</span><span class="en">Contact</span></a>
   </nav>
   <div class="header-right">
     <div class="lang-switch">
-      <button data-lang-btn="fr" class="active">FR</button><span>|</span><button data-lang-btn="en">EN</button>
+      <button data-lang-btn="fr" class="active">FR</button>
+      <span>|</span>
+      <button data-lang-btn="en">EN</button>
     </div>
-    <a href="#contact" class="btn btn-primary btn-header"><span class="fr">Démarrer un projet</span><span class="en">Start a project</span></a>
+    <a href="/contact/" class="btn btn-primary btn-header"><span class="fr">Démarrer un projet</span><span class="en">Start a project</span></a>
     <button class="menu-toggle" id="menu-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 
 <main>
-
-  <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="hero-grid"></div>
-    <div class="wrap hero-content">
-      <div class="hero-layout">
-        <div class="hero-text">
-          <div class="eyebrow">ROUGATECH — DIGITAL TRANSFORMATION FOR AFRICA</div>
-          <h1>
-            <span class="fr">Transformez votre entreprise <span class="accent">Vendez plus</span></span>
-            <span class="en">Transform Your Business <span class="accent">Sell More</span></span>
-          </h1>
-          <p class="hero-sub">
-            <span class="fr">Nous créons des sites web, des agents IA, des plateformes SaaS et des systèmes digitaux qui aident les entreprises à attirer des clients, automatiser leurs opérations et se développer.</span>
-            <span class="en">We build websites, AI agents, SaaS platforms and digital systems that help businesses attract customers, automate operations and grow.</span>
-          </p>
-          <div class="hero-ctas">
-            <a href="#contact" class="btn btn-primary"><span class="fr">Transformer mon entreprise</span><span class="en">Transform My Business</span></a>
-            <a href="#solutions" class="btn btn-outline"><span class="fr">Explorer nos solutions</span><span class="en">Explore Our Solutions</span></a>
-          </div>
-        </div>
-        <div class="hero-visual" aria-hidden="true">
-          <div class="hero-orb"></div>
-          <div class="hero-bubble b1"><span class="dot"></span><span class="fr">Visibilité +</span><span class="en">Visibility +</span></div>
-          <div class="hero-bubble b2"><span class="dot"></span><span class="fr">Plus de vente</span><span class="en">More sales</span></div>
-          <div class="hero-bubble b3"><span class="dot"></span><span class="fr">Plus de client</span><span class="en">More customers</span></div>
-          <div class="hero-bubble b4"><span class="dot"></span><span class="fr">Client satisfait</span><span class="en">Happy customers</span></div>
-          <div class="hero-bubble b5"><span class="dot"></span><span class="fr">Grandir</span><span class="en">Grow</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROBLEM -->
-  <section class="section" id="mission">
+  <section class="page-hero">
+    <div class="page-hero-bg" aria-hidden="true"></div>
     <div class="wrap">
-      <div class="section-head reveal">
-        <div class="eyebrow">01 / THE SHIFT</div>
-        <h2><span class="fr">Votre entreprise est en train de changer</span><span class="en">Your business is changing</span></h2>
-        <p class="section-sub">
-          <span class="fr">Vos clients sont en ligne. Vos concurrents adoptent l'IA. Les processus manuels vous ralentissent. Une simple présence en ligne ne suffit plus.</span>
-          <span class="en">Your customers are online. Your competitors are adopting AI. Manual processes are slowing you down. A basic online presence is no longer enough.</span>
-        </p>
-      </div>
-      <div class="mission-grid reveal">
-        <div class="mission-card">
-          <h3><span class="fr">Pas assez de prospects</span><span class="en">Not enough leads</span></h3>
-        </div>
-        <div class="mission-card">
-          <h3><span class="fr">Processus manuels</span><span class="en">Manual processes</span></h3>
-        </div>
-        <div class="mission-card">
-          <h3><span class="fr">Réponse client lente</span><span class="en">Slow customer response</span></h3>
-        </div>
-        <div class="mission-card">
-          <h3><span class="fr">Faible conversion en ligne</span><span class="en">Low online conversion</span></h3>
-        </div>
-      </div>
-      <p class="problem-transition reveal">
-        <span class="fr">ROUGATECH transforme ces problèmes en systèmes digitaux.</span>
-        <span class="en">ROUGATECH turns these problems into digital systems.</span>
-      </p>
+      <div class="breadcrumbs"><a href="/"><span class="fr">Accueil</span><span class="en">Home</span></a><span class="sep">/</span><span class="current"><span class="fr">Blog</span><span class="en">Blog</span></span></div>
+      <div class="eyebrow"><span class="fr">BLOG</span><span class="en">BLOG</span></div>
+      <h1><span class="fr">Perspectives sur la transformation digitale</span><span class="en">Perspectives on digital transformation</span></h1>
+      <p class="lede"><span class="fr">Analyses et articles sur la transformation digitale, l'intelligence artificielle et l'automatisation pour les entreprises en Afrique. De nouveaux sujets sont publiés régulièrement.</span><span class="en">Analysis and articles on digital transformation, artificial intelligence and automation for businesses in Africa. New topics are published regularly.</span></p>
     </div>
   </section>
-
-  <!-- SOLUTIONS -->
-  <section class="section" id="solutions">
+  <section class="section">
     <div class="wrap">
-      <div class="section-head reveal">
-        <div class="eyebrow">02 / SOLUTIONS</div>
-        <h2><span class="fr">Tout ce dont votre entreprise a besoin pour grandir digitalement</span><span class="en">Everything your business needs to grow digitally</span></h2>
-        <p class="section-sub"><span class="fr">De votre première présence digitale aux systèmes avancés propulsés par l'IA, nous construisons la technologie autour de vos objectifs business.</span><span class="en">From your first digital presence to advanced AI-powered systems, we build technology around your business goals.</span></p>
-      </div>
-      <div class="pillars-grid reveal">
-        <div class="pillar-card">
-          <div>
-            <span class="num">01</span>
-            <h3><span class="fr">Des sites web qui vendent.</span><span class="en">Websites that sell.</span></h3>
-            <p class="desc"><span class="fr">Nous ne créons pas que de beaux sites. Nous construisons des expériences digitales conçues pour transformer les visiteurs en prospects et en clients.</span><span class="en">We don't just build beautiful websites. We build digital experiences designed to turn visitors into leads and customers.</span></p>
-            <p class="message"><span class="fr">Votre site ne doit pas seulement représenter votre entreprise. Il doit travailler pour elle.</span><span class="en">Your website should not just represent your business. It should work for your business.</span></p>
-            <a href="#contact" class="solution-cta"><span class="fr">Construire mon site</span><span class="en">Build My Website</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-            <a href="/solutions/websites/" class="solution-cta solution-cta-secondary"><span class="fr">En savoir plus</span><span class="en">Learn more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-          </div>
-          <div class="pillar-tags">
-            <span><span class="fr">Sites corporate</span><span class="en">Corporate websites</span></span>
-            <span>E-commerce</span>
-            <span><span class="fr">Pages d'atterrissage</span><span class="en">Landing pages</span></span>
-            <span><span class="fr">Pages de vente</span><span class="en">Sales pages</span></span>
-            <span><span class="fr">Sites institutionnels</span><span class="en">Institutional websites</span></span>
-            <span>WhatsApp commerce</span>
-            <span><span class="fr">Optimisation de la conversion</span><span class="en">Conversion optimization</span></span>
-            <span><span class="fr">Sites prêts pour le SEO</span><span class="en">SEO-ready websites</span></span>
-          </div>
+      <div class="block-grid cols-3 reveal">
+
+        <div class="block-card">
+          <span class="case-chip" style="margin-bottom:14px; display:inline-block;"><span class="fr">Bientôt</span><span class="en">Coming soon</span></span>
+          <h3 style="font-size:16px;"><span class="fr">Comment créer un agent IA pour une entreprise au Niger ?</span><span class="en">How to build an AI agent for a business in Niger?</span></h3>
         </div>
-        <div class="pillar-card">
-          <div>
-            <span class="num">02</span>
-            <h3><span class="fr">Des agents IA qui travaillent 24/7.</span><span class="en">AI agents that work 24/7.</span></h3>
-            <p class="desc"><span class="fr">Offrez à votre entreprise un employé digital propulsé par l'IA, capable de répondre aux clients, qualifier les prospects, informer et automatiser les conversations répétitives.</span><span class="en">Give your business an AI-powered digital employee that can answer customers, qualify leads, provide information and automate repetitive conversations.</span></p>
-            <p class="message"><span class="fr">Vos clients n'ont plus besoin d'attendre demain pour une réponse.</span><span class="en">Your customers don't have to wait until tomorrow for an answer.</span></p>
-            <a href="#contact" class="solution-cta"><span class="fr">Créer un agent IA</span><span class="en">Build an AI Agent</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-            <a href="/solutions/ai-agents/" class="solution-cta solution-cta-secondary"><span class="fr">En savoir plus</span><span class="en">Learn more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-          </div>
-          <div class="pillar-tags">
-            <span><span class="fr">Service client IA</span><span class="en">AI Customer Service</span></span>
-            <span><span class="fr">Agent commercial IA</span><span class="en">AI Sales Agent</span></span>
-            <span><span class="fr">Réceptionniste IA</span><span class="en">AI Receptionist</span></span>
-            <span><span class="fr">Assistant business IA</span><span class="en">AI Business Assistant</span></span>
-            <span><span class="fr">Qualification de prospects</span><span class="en">Lead Qualification</span></span>
-            <span><span class="fr">Assistant de rendez-vous</span><span class="en">Appointment Assistant</span></span>
-          </div>
+
+        <div class="block-card">
+          <span class="case-chip" style="margin-bottom:14px; display:inline-block;"><span class="fr">Bientôt</span><span class="en">Coming soon</span></span>
+          <h3 style="font-size:16px;"><span class="fr">Combien coûte un agent IA pour une entreprise ?</span><span class="en">How much does an AI agent for a business cost?</span></h3>
         </div>
-        <div class="pillar-card">
-          <div>
-            <span class="num">03</span>
-            <h3><span class="fr">Transformez vos processus en logiciel.</span><span class="en">Turn your business process into software.</span></h3>
-            <p class="desc"><span class="fr">Nous concevons et construisons des plateformes SaaS et des systèmes digitaux sur mesure qui remplacent les processus manuels par une technologie évolutive.</span><span class="en">We design and build SaaS platforms and custom digital systems that replace manual processes with scalable technology.</span></p>
-            <p class="message"><span class="fr">Si votre entreprise fonctionne avec des tableurs, WhatsApp et des tâches manuelles répétitives, nous pouvons transformer ce processus en logiciel.</span><span class="en">If your business runs on spreadsheets, WhatsApp and repetitive manual tasks, we can help turn the process into software.</span></p>
-            <a href="#contact" class="solution-cta"><span class="fr">Construire ma plateforme</span><span class="en">Build My Platform</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-            <a href="/solutions/saas/" class="solution-cta solution-cta-secondary"><span class="fr">En savoir plus</span><span class="en">Learn more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-          </div>
-          <div class="pillar-tags">
-            <span><span class="fr">Systèmes de gestion</span><span class="en">Management systems</span></span>
-            <span>CRM</span>
-            <span><span class="fr">Plateformes scolaires</span><span class="en">School platforms</span></span>
-            <span><span class="fr">Plateformes e-commerce</span><span class="en">E-commerce platforms</span></span>
-            <span><span class="fr">Systèmes de réservation</span><span class="en">Booking systems</span></span>
-            <span><span class="fr">Plateformes de transport</span><span class="en">Transport platforms</span></span>
-            <span>Dashboards</span>
-            <span><span class="fr">Gestion d'entreprise</span><span class="en">Business management systems</span></span>
-          </div>
+
+        <div class="block-card">
+          <span class="case-chip" style="margin-bottom:14px; display:inline-block;"><span class="fr">Bientôt</span><span class="en">Coming soon</span></span>
+          <h3 style="font-size:16px;"><span class="fr">Agent IA WhatsApp : comment automatiser son service client ?</span><span class="en">WhatsApp AI agent: how to automate customer service?</span></h3>
         </div>
-        <div class="pillar-card">
-          <div>
-            <span class="num">04</span>
-            <h3><span class="fr">Automatisez ce qui vous ralentit.</span><span class="en">Automate what slows you down.</span></h3>
-            <p class="desc"><span class="fr">Connectez vos outils et automatisez les flux de travail répétitifs pour que votre équipe se concentre sur les tâches à plus forte valeur ajoutée.</span><span class="en">Connect your tools and automate repetitive workflows so your team can focus on higher-value work.</span></p>
-            <a href="#contact" class="solution-cta"><span class="fr">Automatiser mon entreprise</span><span class="en">Automate My Business</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-            <a href="/solutions/automation/" class="solution-cta solution-cta-secondary"><span class="fr">En savoir plus</span><span class="en">Learn more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-          </div>
-          <div class="pillar-tags">
-            <span><span class="fr">Automatisation des prospects</span><span class="en">Lead automation</span></span>
-            <span><span class="fr">Suivi client</span><span class="en">Customer follow-up</span></span>
-            <span><span class="fr">Traitement des commandes</span><span class="en">Order processing</span></span>
-            <span>Notifications</span>
-            <span><span class="fr">Collecte de données</span><span class="en">Data collection</span></span>
-            <span><span class="fr">Flux internes</span><span class="en">Internal workflows</span></span>
-          </div>
+
+        <a href="/blog/comment-une-pme-africaine-peut-utiliser-ia-pour-vendre-plus/" class="block-card published">
+          <span class="article-date" style="margin-bottom:14px; display:inline-block;">14 <span class="fr">sept.</span><span class="en">Sep</span> 2026</span>
+          <h3 style="font-size:16px;"><span class="fr">Comment une PME africaine peut utiliser l'IA pour vendre plus ?</span><span class="en">How can an African SME use AI to sell more?</span></h3>
+          <p style="font-size:13px; color:var(--gray-mute); margin-top:8px;"><span class="fr">5 min de lecture</span><span class="en">5 min read</span></p>
+          <span class="arrow-link"><span class="fr">Lire l'article</span><span class="en">Read article</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </a>
+
+        <div class="block-card">
+          <span class="case-chip" style="margin-bottom:14px; display:inline-block;"><span class="fr">Bientôt</span><span class="en">Coming soon</span></span>
+          <h3 style="font-size:16px;"><span class="fr">Comment vendre plus grâce à son site web ?</span><span class="en">How to sell more through your website?</span></h3>
         </div>
-        <div class="pillar-card">
-          <div>
-            <span class="num">05</span>
-            <h3><span class="fr">Construisez une entreprise capable de vendre en ligne.</span><span class="en">Build a business that can sell online.</span></h3>
-            <p class="desc"><span class="fr">Créez des systèmes de commerce digital qui facilitent la découverte de vos produits, la commande et l'achat pour vos clients.</span><span class="en">Create digital commerce systems that make it easier for customers to discover products, order and buy.</span></p>
-            <a href="#contact" class="solution-cta"><span class="fr">Vendre en ligne</span><span class="en">Start Selling Online</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-            <a href="/solutions/ecommerce/" class="solution-cta solution-cta-secondary"><span class="fr">En savoir plus</span><span class="en">Learn more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-          </div>
-          <div class="pillar-tags">
-            <span><span class="fr">Catalogue en ligne</span><span class="en">Online catalog</span></span>
-            <span>E-commerce</span>
-            <span><span class="fr">Commandes WhatsApp</span><span class="en">WhatsApp orders</span></span>
-            <span><span class="fr">Panier d'achat</span><span class="en">Shopping cart</span></span>
-            <span><span class="fr">Gestion produits</span><span class="en">Product management</span></span>
-            <span>Inventaire</span>
-            <span><span class="fr">Commandes clients</span><span class="en">Customer orders</span></span>
-            <span><span class="fr">Vitrine digitale</span><span class="en">Digital storefront</span></span>
-          </div>
+
+        <div class="block-card">
+          <span class="case-chip" style="margin-bottom:14px; display:inline-block;"><span class="fr">Bientôt</span><span class="en">Coming soon</span></span>
+          <h3 style="font-size:16px;"><span class="fr">Pourquoi les entreprises africaines doivent digitaliser leurs ventes</span><span class="en">Why African businesses need to digitize their sales</span></h3>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- OUTCOME JOURNEY -->
-  <section class="section section-alt" id="transformation">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div class="eyebrow">03 / THE OUTCOME</div>
-        <h2><span class="fr">La technologie doit créer des résultats business</span><span class="en">Technology should create business results</span></h2>
-      </div>
-      <div class="timeline reveal">
-        <div class="tl-step"><div class="tl-dot">01</div><h3><span class="fr">Attirer</span><span class="en">Attract</span></h3><p><span class="fr">Être découvert en ligne.</span><span class="en">Get discovered online.</span></p></div>
-        <div class="tl-step"><div class="tl-dot">02</div><h3><span class="fr">Engager</span><span class="en">Engage</span></h3><p><span class="fr">Donner aux clients une information instantanée.</span><span class="en">Give customers instant information.</span></p></div>
-        <div class="tl-step"><div class="tl-dot">03</div><h3><span class="fr">Convertir</span><span class="en">Convert</span></h3><p><span class="fr">Transformer les visiteurs en prospects et en clients.</span><span class="en">Turn visitors into leads and buyers.</span></p></div>
-        <div class="tl-step"><div class="tl-dot">04</div><h3><span class="fr">Automatiser</span><span class="en">Automate</span></h3><p><span class="fr">Réduire le travail manuel répétitif.</span><span class="en">Reduce repetitive manual work.</span></p></div>
-        <div class="tl-step"><div class="tl-dot">05</div><h3><span class="fr">Grandir</span><span class="en">Grow</span></h3><p><span class="fr">Construire des systèmes qui évoluent avec votre entreprise.</span><span class="en">Build systems that scale with your business.</span></p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BEFORE / AFTER -->
-  <section class="section" id="before-after">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div class="eyebrow">04 / THE TRANSFORMATION</div>
-        <h2><span class="fr">Du manuel au digital</span><span class="en">From manual to digital</span></h2>
-      </div>
-      <div class="ba-grid reveal">
-        <div class="ba-card ba-before">
-          <div class="ba-label"><span class="fr">Avant</span><span class="en">Before</span></div>
-          <ul>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg><span><span class="fr">Facebook uniquement</span><span class="en">Facebook only</span></span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg><span><span class="fr">Conversations WhatsApp</span><span class="en">WhatsApp conversations</span></span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg><span><span class="fr">Suivi manuel</span><span class="en">Manual follow-up</span></span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg><span><span class="fr">Tableurs Excel</span><span class="en">Spreadsheets</span></span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg><span><span class="fr">Aucun catalogue en ligne</span><span class="en">No online catalog</span></span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg><span><span class="fr">Réponses lentes</span><span class="en">Slow responses</span></span></li>
-          </ul>
+        <div class="block-card">
+          <span class="case-chip" style="margin-bottom:14px; display:inline-block;"><span class="fr">Bientôt</span><span class="en">Coming soon</span></span>
+          <h3 style="font-size:16px;"><span class="fr">Site web ou WhatsApp : comment les combiner pour vendre ?</span><span class="en">Website or WhatsApp: how to combine them to sell?</span></h3>
         </div>
-        <div class="ba-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-        <div class="ba-card ba-after">
-          <div class="ba-label"><span class="fr">Après</span><span class="en">After</span></div>
-          <ul>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg><span><span class="fr">Site web professionnel</span><span class="en">Professional website</span></span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg><span><span class="fr">Assistant IA</span><span class="en">AI assistant</span></span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg><span><span class="fr">Suivi automatisé</span><span class="en">Automated follow-up</span></span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg><span><span class="fr">Tableau de bord digital</span><span class="en">Digital dashboard</span></span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg><span><span class="fr">Commerce en ligne</span><span class="en">Online commerce</span></span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg><span><span class="fr">Support client 24/7</span><span class="en">24/7 customer support</span></span></li>
-          </ul>
+
+        <div class="block-card">
+          <span class="case-chip" style="margin-bottom:14px; display:inline-block;"><span class="fr">Bientôt</span><span class="en">Coming soon</span></span>
+          <h3 style="font-size:16px;"><span class="fr">Comment créer une boutique en ligne au Niger ?</span><span class="en">How to create an online store in Niger?</span></h3>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- INDUSTRIES -->
-  <section class="section" id="industries">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div class="eyebrow">05 / WHO WE HELP</div>
-        <h2><span class="fr">Conçu pour les entreprises ambitieuses</span><span class="en">Built for ambitious businesses</span></h2>
-      </div>
-      <div class="industry-marquee reveal">
-        <div class="industry-track">
-          <div class="industry-grid">
-            <span class="industry-tag"><span class="fr">Entreprises &amp; Corporates</span><span class="en">Business &amp; Corporates</span></span>
-            <a href="/industries/education/" class="industry-tag"><span class="fr">Éducation</span><span class="en">Education</span></a>
-            <span class="industry-tag"><span class="fr">Services financiers</span><span class="en">Financial Services</span></span>
-            <a href="/industries/retail/" class="industry-tag"><span class="fr">Commerce &amp; Distribution</span><span class="en">Retail &amp; Commerce</span></a>
-            <a href="/industries/transport/" class="industry-tag"><span class="fr">Transport &amp; Logistique</span><span class="en">Transport &amp; Logistics</span></a>
-            <a href="/industries/construction/" class="industry-tag"><span class="fr">Construction &amp; Ingénierie</span><span class="en">Construction &amp; Engineering</span></a>
-            <span class="industry-tag"><span class="fr">Hôtellerie</span><span class="en">Hospitality</span></span>
-            <a href="/industries/professional-services/" class="industry-tag"><span class="fr">Services professionnels</span><span class="en">Professional Services</span></a>
-            <span class="industry-tag"><span class="fr">ONG &amp; Organisations de développement</span><span class="en">NGOs &amp; Development Organizations</span></span>
-            <span class="industry-tag"><span class="fr">Institutions</span><span class="en">Institutions</span></span>
-          </div>
-          <div class="industry-grid" aria-hidden="true">
-            <span class="industry-tag"><span class="fr">Entreprises &amp; Corporates</span><span class="en">Business &amp; Corporates</span></span>
-            <a href="/industries/education/" class="industry-tag"><span class="fr">Éducation</span><span class="en">Education</span></a>
-            <span class="industry-tag"><span class="fr">Services financiers</span><span class="en">Financial Services</span></span>
-            <a href="/industries/retail/" class="industry-tag"><span class="fr">Commerce &amp; Distribution</span><span class="en">Retail &amp; Commerce</span></a>
-            <a href="/industries/transport/" class="industry-tag"><span class="fr">Transport &amp; Logistique</span><span class="en">Transport &amp; Logistics</span></a>
-            <a href="/industries/construction/" class="industry-tag"><span class="fr">Construction &amp; Ingénierie</span><span class="en">Construction &amp; Engineering</span></a>
-            <span class="industry-tag"><span class="fr">Hôtellerie</span><span class="en">Hospitality</span></span>
-            <a href="/industries/professional-services/" class="industry-tag"><span class="fr">Services professionnels</span><span class="en">Professional Services</span></a>
-            <span class="industry-tag"><span class="fr">ONG &amp; Organisations de développement</span><span class="en">NGOs &amp; Development Organizations</span></span>
-            <span class="industry-tag"><span class="fr">Institutions</span><span class="en">Institutions</span></span>
-          </div>
+        <div class="block-card">
+          <span class="case-chip" style="margin-bottom:14px; display:inline-block;"><span class="fr">Bientôt</span><span class="en">Coming soon</span></span>
+          <h3 style="font-size:16px;"><span class="fr">Comment vendre sur Internet au Niger ?</span><span class="en">How to sell online in Niger?</span></h3>
         </div>
-      </div>
-      <p class="industry-note reveal">
-        <span class="fr">Ces secteurs représentent les domaines que ROUGATECH est en mesure d'accompagner, en s'adaptant aux réalités et contraintes de chaque organisation.</span>
-        <span class="en">These sectors reflect the domains ROUGATECH is equipped to support, adapting to the realities and constraints of each organization.</span>
-      </p>
-    </div>
-  </section>
 
-  <!-- SELECTED WORK -->
-  <section class="section" id="work">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div class="eyebrow">06 / PORTFOLIO</div>
-        <h2><span class="fr">Notre portfolio de projets réalisés</span><span class="en">Our portfolio of completed projects</span></h2>
-        <p class="section-sub"><span class="fr">Des expériences digitales réelles, conçues et livrées pour des entreprises, institutions et entrepreneurs à travers l'Afrique.</span><span class="en">Real digital experiences, designed and delivered for businesses, institutions and entrepreneurs across Africa.</span></p>
-      </div>
-      <div class="work-grid reveal" id="work-grid"></div>
-    </div>
-  </section>
-
-  <!-- TRUSTED BY -->
-  <section class="section section-alt" id="trusted">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div class="eyebrow">07 / TRUSTED BY</div>
-        <h2><span class="fr">Ils nous ont fait confiance</span><span class="en">They trusted us</span></h2>
-        <p class="section-sub"><span class="fr">Des entreprises et institutions qui ont choisi ROUGATECH pour renforcer leur présence digitale.</span><span class="en">Businesses and institutions that chose ROUGATECH to strengthen their digital presence.</span></p>
-      </div>
-      <div class="trusted-grid reveal" id="trusted-grid"></div>
-    </div>
-  </section>
-
-  <!-- PROJECTS DATA — add a new project here and it renders automatically
-       in both the Selected Work grid and the Trusted By grid above. -->
-  <script>
-    var ROUGATECH_PROJECTS = [
-      {
-        name: "IPHEC Niger",
-        slug: "iphec-niger",
-        category: { fr: "Site institutionnel", en: "Institutional Website" },
-        desc: {
-          fr: "Une présence digitale institutionnelle moderne conçue pour présenter l'IPHEC Niger, ses programmes et sa mission éducative avec clarté et crédibilité.",
-          en: "Modern institutional digital presence designed to present IPHEC Niger, its programs and its educational mission with clarity and credibility."
-        },
-        url: "https://www.iphecniger.com",
-        image: "work-iphec.jpg"
-      },
-      {
-        name: "Coach Marina",
-        slug: "coach-marina",
-        category: { fr: "Marque personnelle / Plateforme de coaching", en: "Personal Brand / Coaching Platform" },
-        desc: {
-          fr: "Une plateforme digitale premium conçue pour présenter les programmes de coaching, la communauté, les événements et les services de Coach Marina.",
-          en: "A premium digital platform designed to present Coach Marina's coaching programs, community, events and services."
-        },
-        url: "https://coachmarina.pages.dev/",
-        image: "work-marina.jpg"
-      },
-      {
-        name: "KPS Consulting",
-        slug: "kps-consulting",
-        category: { fr: "Site corporate", en: "Corporate Website" },
-        desc: {
-          fr: "Une plateforme digitale professionnelle conçue pour KPS Consulting afin de présenter ses services de fiscalité, de conseil et de formation professionnelle.",
-          en: "A professional digital platform designed for KPS Consulting to present its fiscal, consulting and professional training services."
-        },
-        url: "https://kps-consulting.pages.dev/",
-        image: "work-kps.jpg"
-      }
-    ];
-
-    (function renderProjects(){
-      var grid = document.getElementById('work-grid');
-      var trusted = document.getElementById('trusted-grid');
-      if(!grid || !trusted) return;
-
-      grid.innerHTML = ROUGATECH_PROJECTS.map(function(p){
-        return '' +
-          '<article class="work-card">' +
-            '<div class="work-media"><img src="' + p.image + '" alt="' + p.name + ' — ' + p.category.fr + '" loading="lazy"></div>' +
-            '<div class="work-body">' +
-              '<span class="work-category"><span class="fr">' + p.category.fr + '</span><span class="en">' + p.category.en + '</span></span>' +
-              '<h3>' + p.name + '</h3>' +
-              '<p><span class="fr">' + p.desc.fr + '</span><span class="en">' + p.desc.en + '</span></p>' +
-              '<div class="work-link-row">' +
-                '<a class="work-link" href="/projects/' + p.slug + '/">' +
-                  '<span class="fr">Étude de cas</span><span class="en">Case study</span>' +
-                  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>' +
-                '</a>' +
-                '<a class="work-link" href="' + p.url + '" target="_blank" rel="noopener">' +
-                  '<span class="fr">Voir le site</span><span class="en">Visit site</span>' +
-                  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>' +
-                '</a>' +
-              '</div>' +
-            '</div>' +
-          '</article>';
-      }).join('');
-
-      trusted.innerHTML = ROUGATECH_PROJECTS.map(function(p){
-        return '<div class="trusted-chip">' + p.name.toUpperCase() + '</div>';
-      }).join('');
-    })();
-  </script>
-
-  <!-- DIGITAL PRODUCTS -->
-  <section class="section" id="products">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div class="eyebrow">08 / DIGITAL PRODUCTS</div>
-        <h2><span class="fr">Nous concevons aussi nos propres produits</span><span class="en">We also build our own products</span></h2>
-      </div>
-      <div class="products-grid products-grid-single reveal">
-        <div class="product-card">
-          <span class="product-status"><span class="fr">Produit en développement</span><span class="en">Product in development</span></span>
-          <h3>ScolPay</h3>
-          <p><span class="fr">Plateforme digitale de gestion scolaire — Éducation.</span><span class="en">Education / Digital school management platform.</span></p>
-          <a href="https://www.scolpay.com" target="_blank" rel="noopener" class="work-link">
-            <span class="fr">Découvrir ScolPay</span><span class="en">Discover ScolPay</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
-          </a>
+        <div class="block-card">
+          <span class="case-chip" style="margin-bottom:14px; display:inline-block;"><span class="fr">Bientôt</span><span class="en">Coming soon</span></span>
+          <h3 style="font-size:16px;"><span class="fr">Comment transformer un processus d'entreprise en SaaS ?</span><span class="en">How to turn a business process into SaaS?</span></h3>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ACADEMY TEASER -->
-  <section class="section" id="academy">
-    <div class="wrap">
-      <div class="academy-card reveal">
-        <div class="eyebrow">09 / ACADEMY</div>
-        <h2>ROUGATECH Academy</h2>
-        <div class="tagline">Learn. Build. Transform.</div>
-        <p><span class="fr">Une éducation technologique et digitale pratique, pensée pour les entrepreneurs, créateurs et professionnels.</span><span class="en">Practical technology and digital business education for entrepreneurs, creators and professionals.</span></p>
-        <a href="academy/index.html" class="btn btn-primary"><span class="fr">Visiter l'Academy</span><span class="en">Visit Academy</span></a>
+  <section class="cta-band">
+    <div class="wrap-narrow">
+      <h2><span class="fr">Une question en attendant ?</span><span class="en">A question in the meantime?</span></h2>
+      <p><span class="fr">Écrivez-nous directement — nous répondons personnellement à chaque message.</span><span class="en">Write to us directly — we personally reply to every message.</span></p>
+      <div class="hero-ctas">
+        <a href="/contact/" class="btn btn-primary"><span><span class="fr">Démarrer mon projet</span><span class="en">Start my project</span></span></a>
+        <a href="/projects/" class="btn btn-outline"><span><span class="fr">Voir nos projets</span><span class="en">See our projects</span></span></a>
       </div>
     </div>
   </section>
 
-  <!-- HOW WE WORK -->
-  <section class="section section-alt" id="how-we-work">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div class="eyebrow">10 / HOW WE WORK</div>
-        <h2><span class="fr">De l'idée au système business</span><span class="en">From idea to business system</span></h2>
+<div class="ai-widget" id="ai-widget">
+  <div class="ai-panel" role="dialog" aria-label="ROUGATECH welcome assistant">
+    <div class="ai-panel-head">
+      <div class="ai-avatar" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
       </div>
-      <div class="how-list reveal">
-        <div class="how-row"><span class="num">01</span><h3><span class="fr">Comprendre</span><span class="en">Understand</span></h3><p><span class="fr">Comprendre l'organisation et ses objectifs.</span><span class="en">Understanding the organization and its goals.</span></p></div>
-        <div class="how-row"><span class="num">02</span><h3><span class="fr">Stratégie</span><span class="en">Strategy</span></h3><p><span class="fr">Nous identifions les opportunités digitales.</span><span class="en">We identify the digital opportunities.</span></p></div>
-        <div class="how-row"><span class="num">03</span><h3><span class="fr">Concevoir</span><span class="en">Design</span></h3><p><span class="fr">Créer une expérience claire et moderne.</span><span class="en">Creating a clear, modern experience.</span></p></div>
-        <div class="how-row"><span class="num">04</span><h3><span class="fr">Construire</span><span class="en">Build</span></h3><p><span class="fr">Développer la solution.</span><span class="en">Developing the solution.</span></p></div>
-        <div class="how-row"><span class="num">05</span><h3><span class="fr">Lancer</span><span class="en">Launch</span></h3><p><span class="fr">Déployer et accompagner.</span><span class="en">Deploying and supporting.</span></p></div>
-        <div class="how-row"><span class="num">06</span><h3><span class="fr">Faire évoluer</span><span class="en">Evolve</span></h3><p><span class="fr">Faire évoluer la solution dans le temps.</span><span class="en">Evolving the solution over time.</span></p></div>
+      <div class="ai-id">
+        <div class="ai-name">Assistant ROUGATECH</div>
+        <div class="ai-status"><span class="fr">Réponse instantanée</span><span class="en">Instant answers</span></div>
       </div>
     </div>
-  </section>
-
-  <!-- WHY -->
-  <section class="section" id="why">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div class="eyebrow">11 / WHY ROUGATECH</div>
-        <h2><span class="fr">Pourquoi les entreprises choisissent ROUGATECH</span><span class="en">Why businesses choose ROUGATECH</span></h2>
-      </div>
-      <div class="why-grid reveal">
-        <div class="why-card"><h3><span class="fr">L'entreprise d'abord</span><span class="en">Business First</span></h3><p><span class="fr">Nous partons de votre problème business, pas de la technologie.</span><span class="en">We start with your business problem, not the technology.</span></p></div>
-        <div class="why-card"><h3><span class="fr">Conçu pour grandir</span><span class="en">Built for Growth</span></h3><p><span class="fr">Nous construisons des systèmes capables d'évoluer avec votre entreprise.</span><span class="en">We build systems that can evolve as your business grows.</span></p></div>
-        <div class="why-card"><h3><span class="fr">Propulsé par l'IA</span><span class="en">AI-Powered</span></h3><p><span class="fr">Nous utilisons l'IA moderne pour rendre les entreprises plus rapides et plus intelligentes.</span><span class="en">We use modern AI to make businesses faster and smarter.</span></p></div>
-        <div class="why-card"><h3><span class="fr">Technologie pratique</span><span class="en">Practical Technology</span></h3><p><span class="fr">Nous nous concentrons sur une technologie qui crée une vraie valeur business.</span><span class="en">We focus on technology that creates real business value.</span></p></div>
-      </div>
+    <div class="ai-msg"><span class="fr">Bonjour ! Bienvenue chez ROUGATECH. Dites-nous ce que vous voulez transformer dans votre entreprise.</span><span class="en">Hi there! Welcome to ROUGATECH. Tell us what you'd like to transform in your business.</span></div>
+    <div class="ai-actions">
+      <a href="/contact/" class="ai-action">
+        <span><span class="fr">Démarrer un projet</span><span class="en">Start a project</span></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
+      </a>
+      <a href="/solutions/" class="ai-action">
+        <span><span class="fr">Voir nos solutions</span><span class="en">Explore our solutions</span></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
+      </a>
+      <a href="mailto:hello@rougatech.com" class="ai-action">
+        <span><span class="fr">Nous écrire</span><span class="en">Email us</span></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
+      </a>
     </div>
-  </section>
+    <p class="ai-note"><span class="fr">Message de bienvenue automatique — pas un chat en direct.</span><span class="en">Automated welcome message — not a live chat.</span></p>
+  </div>
+  <button class="ai-fab" id="ai-fab" aria-label="ROUGATECH assistant" aria-expanded="false">
+    <svg class="icon-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+    <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    <span class="ai-ping" aria-hidden="true"></span>
+  </button>
+</div>
 
-  <!-- ABOUT -->
-  <section class="section section-alt" id="about">
-    <div class="wrap">
-      <div class="about-wrap">
-        <div class="reveal">
-          <div class="eyebrow">12 / ABOUT</div>
-          <h2 style="margin-top:20px; font-size:clamp(28px,3.6vw,44px);"><span class="fr">Une technologie pour une Afrique plus connectée</span><span class="en">Technology for a more connected Africa</span></h2>
-        </div>
-        <div class="reveal">
-          <p><span class="fr">ROUGATECH est une entreprise technologique africaine. Nous utilisons le logiciel, l'intelligence artificielle, les plateformes digitales et l'automatisation pour aider les organisations africaines à se transformer.</span>
-          <span class="en">ROUGATECH is an African technology company. We use software, AI, digital platforms and automation to help African organizations transform.</span></p>
-          <p><span class="fr">Basée à Niamey, Niger, nous concevons des solutions pensées pour les réalités locales et construites pour des standards internationaux.</span>
-          <span class="en">Based in Niamey, Niger, we design solutions built for local realities and international standards.</span></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOUNDER -->
-  <section class="section" id="founder">
-    <div class="wrap">
-      <div class="founder-wrap">
-        <div class="founder-photo reveal">
-          <img src="founder.jpg" alt="Amadou Rouga Achirou" loading="lazy">
-        </div>
-        <div class="founder-text reveal">
-          <div class="eyebrow">13 / FOUNDER</div>
-          <h2 style="margin-top:14px; font-size:clamp(24px,3vw,34px);"><span class="fr">Construire la technologie avec une vision pour l'Afrique</span><span class="en">Building technology with a vision for Africa</span></h2>
-          <div class="founder-role" style="margin-top:18px;">Founder &amp; CEO — ROUGATECH</div>
-          <h3 class="founder-name" style="font-size:clamp(22px,2.6vw,30px);">Amadou Rouga Achirou</h3>
-          <p><span class="fr">Amadou Rouga Achirou est le fondateur de ROUGATECH, une entreprise technologique dédiée à la conception de produits digitaux, de solutions IA et de systèmes business pour les entreprises et institutions africaines.</span><span class="en">Amadou Rouga Achirou is the founder of ROUGATECH, a technology company focused on building digital products, AI solutions and business systems for African companies and organizations.</span></p>
-          <p style="color:var(--cream); font-size:17px; margin-top:16px; max-width:46ch;"><span class="fr">La technologie doit aider les entreprises africaines à mieux fonctionner, vendre davantage et construire l'avenir.</span><span class="en">Technology should help African businesses operate better, sell more and build for the future.</span></p>
-          <a href="#hero" class="btn btn-outline" style="margin-top:24px;"><span class="fr">Découvrir ROUGATECH</span><span class="en">Discover ROUGATECH</span></a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BLOG -->
-  <section class="section" id="insights">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div class="eyebrow">14 / BLOG</div>
-        <h2><span class="fr">Perspectives sur la transformation digitale</span><span class="en">Perspectives on digital transformation</span></h2>
-      </div>
-      <div class="insights-note reveal">
-        <div class="eyebrow" style="justify-content:center;"><span class="fr">Bientôt disponible</span><span class="en">Coming soon</span></div>
-        <p><span class="fr">Nous préparons des articles et analyses sur la transformation digitale en Afrique, la technologie et l'automatisation.</span>
-        <span class="en">We are preparing articles and analysis on digital transformation in Africa, technology, and automation.</span></p>
-        <a href="/blog/" class="btn btn-outline" style="margin-top:22px;"><span><span class="fr">Voir le blog</span><span class="en">Visit the blog</span></span></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FINAL CTA -->
-  <section class="final-cta">
-    <div class="final-glow"></div>
-    <div class="wrap reveal">
-      <h2><span class="fr">Votre entreprise est prête pour sa prochaine étape</span><span class="en">Your business is ready for its next stage</span></h2>
-      <p class="sub"><span class="fr">Construisons ensemble les systèmes digitaux qui vous aideront à attirer plus de clients, vendre plus et opérer plus intelligemment.</span><span class="en">Let's build the digital systems that help you attract more customers, sell more and operate smarter.</span></p>
-      <div class="final-ctas">
-        <a href="#contact" class="btn btn-primary"><span class="fr">Transformer mon entreprise</span><span class="en">Transform My Business</span></a>
-        <a href="#contact" class="btn btn-outline"><span class="fr">Parler à ROUGATECH</span><span class="en">Talk to ROUGATECH</span></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="section" id="contact">
-    <div class="wrap">
-      <div class="contact-wrap">
-        <div class="contact-info reveal">
-          <div class="eyebrow">Contact</div>
-          <h2 style="margin-top:20px;"><span class="fr">Transformons votre entreprise</span><span class="en">Let's transform your business</span></h2>
-          <p><span class="fr">Dites-nous où en est votre entreprise aujourd'hui et où vous voulez qu'elle aille.</span><span class="en">Tell us where your business is today and where you want it to go.</span></p>
-          <div class="contact-detail">
-            ROUGATECH<br>NIAMEY, NIGER<br>HELLO@ROUGATECH.COM
-          </div>
-        </div>
-        <form class="reveal" id="contact-form">
-          <div class="field-row">
-            <div class="field">
-              <label for="f-name"><span class="fr">Nom</span><span class="en">Name</span></label>
-              <input id="f-name" type="text" required>
-            </div>
-            <div class="field">
-              <label for="f-company"><span class="fr">Entreprise</span><span class="en">Company</span></label>
-              <input id="f-company" type="text">
-            </div>
-          </div>
-          <div class="field-row">
-            <div class="field">
-              <label for="f-email">Email</label>
-              <input id="f-email" type="email" required>
-            </div>
-            <div class="field">
-              <label for="f-phone"><span class="fr">Téléphone</span><span class="en">Phone</span></label>
-              <input id="f-phone" type="tel">
-            </div>
-          </div>
-          <div class="field">
-            <label for="f-type"><span class="fr">Type d'entreprise</span><span class="en">Business type</span></label>
-            <select id="f-type">
-              <option value="website"><span class="fr">Site web</span></option>
-              <option value="ecommerce">E-commerce</option>
-              <option value="ai"><span class="fr">IA &amp; Automatisation</span></option>
-              <option value="platform"><span class="fr">Plateforme digitale</span></option>
-              <option value="transformation"><span class="fr">Transformation digitale</span></option>
-              <option value="other"><span class="fr">Autre</span></option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="f-improve"><span class="fr">Que voulez-vous améliorer&nbsp;?</span><span class="en">What do you want to improve?</span></label>
-            <input id="f-improve" type="text" placeholder="Leads, sales, automation, website...">
-          </div>
-          <div class="field">
-            <label for="f-msg"><span class="fr">Message</span><span class="en">Message</span></label>
-            <textarea id="f-msg" rows="3"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary"><span class="fr">Démarrer ma transformation</span><span class="en">Start My Transformation</span></button>
-          <p class="form-note"><span class="fr">Ce formulaire ouvre votre messagerie email — une intégration backend pourra être connectée ultérieurement.</span><span class="en">This form opens your email client — a backend integration can be connected later.</span></p>
-        </form>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer>
+<footer class="site-footer">
   <div class="wrap">
     <div class="footer-top">
       <div class="footer-brand">
-        <div class="brand"><span class="logo-plate"><img src="logo.png" alt="ROUGATECH"></span></div>
+        <div class="brand"><span class="logo-plate"><img src="/logo.png" alt="ROUGATECH"></span></div>
         <p><span class="fr">TRANSFORMEZ VOTRE ENTREPRISE. VENDEZ PLUS.</span><span class="en">TRANSFORM YOUR BUSINESS. SELL MORE.</span></p>
       </div>
       <div class="footer-nav">
-        <div class="footer-col">
-          <h5>Menu</h5>
-          <a href="#solutions"><span class="fr">Solutions</span><span class="en">Solutions</span></a>
-          <a href="#industries">Industries</a>
-          <a href="#work"><span class="fr">Projets</span><span class="en">Projects</span></a>
-          <a href="academy/index.html">Academy</a>
-          <a href="#about"><span class="fr">À propos</span><span class="en">About</span></a>
-          <a href="#contact">Contact</a>
-        </div>
         <div class="footer-col">
           <h5><span class="fr">Solutions</span><span class="en">Solutions</span></h5>
           <a href="/solutions/websites/"><span class="fr">Sites web</span><span class="en">Websites</span></a>
@@ -1049,10 +195,11 @@
           <a href="/solutions/ecommerce/"><span class="fr">Commerce digital</span><span class="en">Digital Commerce</span></a>
         </div>
         <div class="footer-col">
-          <h5><span class="fr">Explorer</span><span class="en">Explore</span></h5>
-          <a href="/industries/">Industries</a>
-          <a href="/projects/"><span class="fr">Portfolio</span><span class="en">Portfolio</span></a>
+          <h5><span class="fr">Entreprise</span><span class="en">Company</span></h5>
+          <a href="/industries/"><span class="fr">Industries</span><span class="en">Industries</span></a>
+          <a href="/projects/"><span class="fr">Projets</span><span class="en">Projects</span></a>
           <a href="/about/"><span class="fr">À propos</span><span class="en">About</span></a>
+          <a href="/academy/">Academy</a>
           <a href="/blog/">Blog</a>
         </div>
         <div class="footer-col">
@@ -1068,148 +215,6 @@
     </div>
   </div>
 </footer>
-
-<!-- AI WELCOME WIDGET -->
-<div class="ai-widget" id="ai-widget">
-  <div class="ai-panel" role="dialog" aria-label="ROUGATECH welcome assistant">
-    <div class="ai-panel-head">
-      <div class="ai-avatar" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-      </div>
-      <div class="ai-id">
-        <div class="ai-name">Assistant ROUGATECH</div>
-        <div class="ai-status"><span class="fr">Réponse instantanée</span><span class="en">Instant answers</span></div>
-      </div>
-    </div>
-    <div class="ai-msg">
-      <span class="fr">Bonjour ! Bienvenue chez ROUGATECH. Dites-nous ce que vous voulez transformer dans votre entreprise.</span>
-      <span class="en">Hi there! Welcome to ROUGATECH. Tell us what you'd like to transform in your business.</span>
-    </div>
-    <div class="ai-actions">
-      <a href="#contact" class="ai-action" id="ai-action-contact">
-        <span><span class="fr">Démarrer un projet</span><span class="en">Start a project</span></span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
-      </a>
-      <a href="#solutions" class="ai-action" id="ai-action-solutions">
-        <span><span class="fr">Voir nos solutions</span><span class="en">Explore our solutions</span></span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
-      </a>
-      <a href="mailto:hello@rougatech.com" class="ai-action">
-        <span><span class="fr">Nous écrire</span><span class="en">Email us</span></span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
-      </a>
-    </div>
-    <p class="ai-note">
-      <span class="fr">Message de bienvenue automatique — pas un chat en direct.</span>
-      <span class="en">Automated welcome message — not a live chat.</span>
-    </p>
-  </div>
-  <button class="ai-fab" id="ai-fab" aria-label="ROUGATECH assistant" aria-expanded="false">
-    <svg class="icon-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-    <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
-    <span class="ai-ping" aria-hidden="true"></span>
-  </button>
-</div>
-
-<script>
-  const header = document.getElementById('site-header');
-  const fill = document.querySelector('#signal-line .fill');
-  function onScroll(){
-    const y = window.scrollY;
-    header.classList.toggle('scrolled', y > 40);
-    const max = document.documentElement.scrollHeight - window.innerHeight;
-    const pct = max > 0 ? (y / max) * 100 : 0;
-    if(fill) fill.style.height = pct + '%';
-  }
-  window.addEventListener('scroll', onScroll, {passive:true});
-  onScroll();
-
-  const toggle = document.getElementById('menu-toggle');
-  const nav = document.getElementById('main-nav');
-  toggle.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', open);
-  });
-  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    nav.classList.remove('open');
-    toggle.setAttribute('aria-expanded', false);
-  }));
-
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
-  }, {threshold:.05, rootMargin:"0px 0px -10% 0px"});
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-  document.querySelectorAll('.btn-primary').forEach(btn => {
-    btn.addEventListener('mousemove', (e) => {
-      const r = btn.getBoundingClientRect();
-      const x = e.clientX - r.left - r.width/2;
-      const y = e.clientY - r.top - r.height/2;
-      btn.style.transform = `translate(${x*0.12}px, ${y*0.28}px)`;
-    });
-    btn.addEventListener('mouseleave', () => { btn.style.transform = 'translate(0,0)'; });
-  });
-
-  // language switch
-  const langButtons = document.querySelectorAll('[data-lang-btn]');
-  function setLang(lang){
-    document.body.setAttribute('data-lang', lang);
-    document.documentElement.setAttribute('lang', lang);
-    langButtons.forEach(b => b.classList.toggle('active', b.dataset.langBtn === lang));
-    try{ localStorage.setItem('rougatech-lang', lang); }catch(e){}
-  }
-  langButtons.forEach(b => b.addEventListener('click', () => setLang(b.dataset.langBtn)));
-  try{
-    const saved = localStorage.getItem('rougatech-lang');
-    if(saved) setLang(saved);
-  }catch(e){}
-
-  // contact form -> mailto (no fake backend)
-  const form = document.getElementById('contact-form');
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const name = document.getElementById('f-name').value;
-    const company = document.getElementById('f-company').value;
-    const email = document.getElementById('f-email').value;
-    const phone = document.getElementById('f-phone').value;
-    const type = document.getElementById('f-type').value;
-    const improve = document.getElementById('f-improve').value;
-    const msg = document.getElementById('f-msg').value;
-    const subject = encodeURIComponent('Transformation digitale — ' + (company || name));
-    const body = encodeURIComponent(
-      `Nom: ${name}\nEntreprise: ${company}\nEmail: ${email}\nTéléphone: ${phone}\nType d'entreprise: ${type}\nÀ améliorer: ${improve}\n\nMessage:\n${msg}`
-    );
-    window.location.href = `mailto:hello@rougatech.com?subject=${subject}&body=${body}`;
-  });
-
-  // AI welcome widget
-  (function(){
-    const widget = document.getElementById('ai-widget');
-    const fab = document.getElementById('ai-fab');
-    if(!widget || !fab) return;
-    function openWidget(){
-      widget.classList.add('open');
-      fab.setAttribute('aria-expanded','true');
-    }
-    function closeWidget(){
-      widget.classList.remove('open');
-      fab.setAttribute('aria-expanded','false');
-      try{ sessionStorage.setItem('rougatech-ai-dismissed','1'); }catch(e){}
-    }
-    fab.addEventListener('click', () => {
-      widget.classList.contains('open') ? closeWidget() : openWidget();
-    });
-    document.addEventListener('click', (e) => {
-      if(widget.classList.contains('open') && !widget.contains(e.target)) closeWidget();
-    });
-    widget.querySelectorAll('.ai-action').forEach(a => a.addEventListener('click', closeWidget));
-    let alreadyDismissed = false;
-    try{ alreadyDismissed = sessionStorage.getItem('rougatech-ai-dismissed') === '1'; }catch(e){}
-    if(!alreadyDismissed){
-      setTimeout(openWidget, 3500);
-    }
-  })();
-</script>
-
+<script src="/assets/pages.js"></script>
 </body>
 </html>
