@@ -72,4 +72,28 @@
     try{ alreadyDismissed = sessionStorage.getItem('rougatech-ai-dismissed') === '1'; }catch(e){}
     if(!alreadyDismissed){ setTimeout(openWidget, 3500); }
   }
+
+  // article share — copy link button
+  var copyBtn = document.querySelector('[data-copy-link]');
+  if(copyBtn){
+    copyBtn.addEventListener('click', function(){
+      var url = window.location.href;
+      function done(){
+        var original = copyBtn.innerHTML;
+        copyBtn.setAttribute('aria-label', 'Link copied');
+        copyBtn.classList.add('copied');
+        setTimeout(function(){ copyBtn.classList.remove('copied'); }, 1800);
+      }
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(url).then(done).catch(function(){});
+      } else {
+        try{
+          var tmp = document.createElement('textarea');
+          tmp.value = url; document.body.appendChild(tmp); tmp.select();
+          document.execCommand('copy'); document.body.removeChild(tmp);
+          done();
+        }catch(e){}
+      }
+    });
+  }
 })();

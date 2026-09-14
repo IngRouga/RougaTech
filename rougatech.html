@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ROUGATECH | Digital Transformation for Africa</title>
+<meta name="description" content="ROUGATECH accompagne les entreprises et institutions africaines dans leur transformation digitale grâce aux solutions web, plateformes digitales, IA et automatisation.">
+<link rel="canonical" href="https://rougatech.com/">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="ROUGATECH | Digital Transformation for Africa">
+<meta property="og:description" content="Digital products, AI solutions and digital experiences for African businesses and institutions.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rougatech.com/">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="ROUGATECH">
+<meta property="og:image" content="https://rougatech.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ROUGATECH | Digital Transformation for Africa">
+<meta name="twitter:description" content="Digital products, AI solutions and digital experiences for African businesses and institutions.">
+<meta name="twitter:image" content="https://rougatech.com/og-image.png">
+<meta name="keywords" content="ROUGATECH, digital transformation Africa, digital transformation Niger, technology company Africa, AI solutions Africa, software development Africa, digital solutions Africa, web development Niger, AI agents Africa, business automation Africa">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "ROUGATECH",
+  "url": "https://rougatech.com",
+  "logo": "https://rougatech.com/logo.png",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Niamey",
+    "addressCountry": "NE"
+  },
+  "email": "hello@rougatech.com"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "ROUGATECH",
+  "url": "https://rougatech.com"
+}
+</script>
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#08090A;
+    --black-soft:#101114;
+    --cream:#F7F7F4;
+    --gray:#E9EAEC;
+    --gray-mute:#9a9ca3;
+    --blue:#2F5CFF;
+    --blue-deep:#1436B0;
+    --cyan:#7FE3FF;
+    --line: rgba(247,247,244,0.12);
+    --line-soft: rgba(8,9,10,0.10);
+    --ease: cubic-bezier(.16,.84,.32,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--black); color:var(--cream); font-family:'Plus Jakarta Sans',sans-serif; font-size:16px; line-height:1.55; overflow-x:hidden; -webkit-font-smoothing:antialiased;}
+  ::selection{background:var(--blue); color:#fff;}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  button{font-family:inherit; cursor:pointer; border:none; background:none; color:inherit;}
+
+  /* bilingual toggle */
+  body[data-lang="fr"] .en{display:none;}
+  body[data-lang="en"] .fr{display:none;}
+
+  .eyebrow{font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--cyan); display:flex; align-items:center; gap:10px;}
+  .eyebrow::before{content:''; width:22px; height:1px; background:linear-gradient(90deg,var(--cyan),transparent);}
+  h1,h2,h3{font-family:'Sora',sans-serif; font-weight:700; letter-spacing:-0.02em; line-height:1.05;}
+  .wrap{max-width:1240px; margin:0 auto; padding:0 40px;}
+  :focus-visible{outline:2px solid var(--cyan); outline-offset:3px;}
+
+  #signal-line{position:fixed; left:0; top:0; width:2px; height:100vh; z-index:60; pointer-events:none; background:var(--line);}
+  #signal-line .fill{position:absolute; left:0; top:0; width:100%; height:0%; background:linear-gradient(180deg,var(--cyan),var(--blue)); box-shadow:0 0 12px rgba(127,227,255,.6); transition:height .05s linear;}
+
+  header{position:fixed; top:0; left:0; width:100%; z-index:50; padding:20px 40px; display:flex; align-items:center; justify-content:space-between; transition:background .4s var(--ease), backdrop-filter .4s var(--ease), border-color .4s var(--ease); border-bottom:1px solid transparent;}
+  header.scrolled{background:rgba(8,9,10,0.75); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--line);}
+  .brand{display:flex; align-items:center; gap:10px;}
+  .brand .logo-plate{background:var(--cream); border-radius:8px; padding:6px 10px; display:flex; align-items:center; line-height:0;}
+  .brand img{height:16px; width:auto;}
+  nav.main-nav{display:flex; align-items:center; gap:34px;}
+  nav.main-nav a{font-size:14px; color:var(--gray-mute); position:relative; padding:4px 0; transition:color .25s var(--ease);}
+  nav.main-nav a:hover{color:var(--cream);}
+  nav.main-nav a::after{content:''; position:absolute; left:0; bottom:0; width:0; height:1px; background:var(--cyan); transition:width .3s var(--ease);}
+  nav.main-nav a:hover::after{width:100%;}
+  .header-right{display:flex; align-items:center; gap:18px;}
+  .lang-switch{display:flex; gap:6px; font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--gray-mute);}
+  .lang-switch button{padding:2px 4px; opacity:.5; transition:opacity .2s, color .2s;}
+  .lang-switch button.active{opacity:1; color:var(--cyan);}
+
+  .btn{display:inline-flex; align-items:center; gap:10px; font-size:13px; font-weight:600; letter-spacing:.02em; text-transform:uppercase; padding:14px 24px; border-radius:100px; position:relative; overflow:hidden; isolation:isolate;}
+  .btn-primary{background:var(--cream); color:var(--black);}
+  .btn-primary::before{content:''; position:absolute; inset:0; background:linear-gradient(120deg,var(--cyan),var(--blue)); transform:translateY(101%); transition:transform .35s var(--ease); z-index:-1;}
+  .btn-primary:hover::before{transform:translateY(0);}
+  .btn-primary:hover{color:#fff;}
+  .btn-outline{border:1px solid var(--line); color:var(--cream); background:transparent;}
+  .btn-outline:hover{border-color:var(--cyan); color:var(--cyan);}
+  .btn-header{padding:11px 20px; font-size:12px;}
+  .menu-toggle{display:none;}
+
+  section{position:relative;}
+  .hero{min-height:100vh; display:flex; flex-direction:column; justify-content:center; padding:130px 0 70px;}
+  .hero-grid{position:absolute; inset:0; background-image:linear-gradient(var(--line-soft) 1px, transparent 1px), linear-gradient(90deg, var(--line-soft) 1px, transparent 1px); background-size:80px 80px; mask-image:linear-gradient(180deg, rgba(0,0,0,.5), transparent 75%); opacity:.5;}
+  .hero-content{position:relative; z-index:2;}
+  .hero h1{font-size:clamp(38px,6.6vw,92px); margin:26px 0 30px; max-width:16ch;}
+  .hero h1 .accent{background:linear-gradient(100deg,var(--cyan),var(--blue) 60%); -webkit-background-clip:text; background-clip:text; color:transparent;}
+  .hero-sub{font-size:19px; color:var(--gray-mute); max-width:540px; margin-bottom:44px;}
+  .hero-ctas{display:flex; gap:16px; flex-wrap:wrap; justify-content:center; margin-bottom:70px;}
+
+  .hero-video-frame{position:relative; max-width:920px; border-radius:18px; overflow:hidden; border:1px solid var(--line); background:var(--black-soft); opacity:0; transform:translateY(28px); animation:riseIn .9s var(--ease) .1s forwards;}
+  .hero-video-frame video{width:100%; height:auto; display:block; aspect-ratio:16/9; object-fit:cover;}
+  .hero-video-badge{position:absolute; top:18px; left:18px; display:flex; align-items:center; gap:8px; background:rgba(8,9,10,.55); backdrop-filter:blur(8px); border:1px solid var(--line); border-radius:100px; padding:8px 14px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--cyan);}
+  .hero-video-badge .dot{width:6px; height:6px; border-radius:50%; background:var(--cyan); box-shadow:0 0 8px var(--cyan);}
+  .hero-video-frame::after{content:''; position:absolute; inset:0; background:linear-gradient(180deg, transparent 60%, rgba(8,9,10,.55)); pointer-events:none;}
+  .hero-video-caption{position:absolute; left:20px; bottom:18px; font-size:13px; color:var(--gray); font-family:'JetBrains Mono',monospace; letter-spacing:.02em;}
+
+  .reveal{opacity:0; transform:translateY(28px); transition:opacity .8s var(--ease), transform .8s var(--ease);}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  .section{padding:100px 0;}
+  .section-head{max-width:760px; margin-bottom:70px;}
+  .section-head h2{font-size:clamp(28px,4vw,50px); margin-top:22px;}
+  .section-alt{background:var(--cream); color:var(--black);}
+  .section-alt .eyebrow{color:var(--blue-deep);}
+  .section-alt .eyebrow::before{background:linear-gradient(90deg,var(--blue-deep),transparent);}
+
+  /* mission points */
+  .mission-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:18px; overflow:hidden;}
+  .mission-card{background:var(--black); padding:38px 30px;}
+  .mission-card h3{font-size:19px; margin-bottom:10px;}
+  .mission-card p{font-size:14px; color:var(--gray-mute);}
+
+  /* pillars */
+  .pillars-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:18px; overflow:hidden;}
+  .pillar-card{background:var(--black); padding:46px 42px; transition:background .35s var(--ease);}
+  .pillar-card:hover{background:var(--black-soft);}
+  .pillar-card .num{font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--cyan); margin-bottom:20px; display:block;}
+  .pillar-card h3{font-size:23px; margin-bottom:14px;}
+  .pillar-tags{display:flex; flex-wrap:wrap; gap:8px;}
+  .pillar-tags span{font-size:12px; padding:6px 12px; border:1px solid var(--line); border-radius:100px; color:var(--gray-mute); font-family:'JetBrains Mono',monospace;}
+
+  /* transformation timeline */
+  .timeline{display:grid; grid-template-columns:repeat(4,1fr); gap:24px; position:relative;}
+  .timeline::before{content:''; position:absolute; top:19px; left:5%; right:5%; height:1px; background:var(--line); z-index:0;}
+  .tl-step{position:relative; z-index:1;}
+  .tl-dot{width:38px; height:38px; border-radius:50%; border:1px solid var(--cyan); display:flex; align-items:center; justify-content:center; font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--cyan); background:var(--black); margin-bottom:22px;}
+  .tl-step h3{font-size:18px; margin-bottom:8px;}
+  .tl-step p{font-size:14px; color:var(--gray-mute);}
+
+  /* industries */
+  .industry-grid{display:flex; flex-wrap:wrap; gap:12px;}
+  .industry-tag{font-size:14px; padding:14px 22px; border-radius:100px; color:#fff; font-weight:600;}
+  .industry-tag:nth-child(10n+1){background:#2F5CFF;}
+  .industry-tag:nth-child(10n+2){background:#0EA5A5;}
+  .industry-tag:nth-child(10n+3){background:#E0663B;}
+  .industry-tag:nth-child(10n+4){background:#8B5CF6;}
+  .industry-tag:nth-child(10n+5){background:#D6455D;}
+  .industry-tag:nth-child(10n+6){background:#2E9E5B;}
+  .industry-tag:nth-child(10n+7){background:#C98A1E;}
+  .industry-tag:nth-child(10n+8){background:#1F7A8C;}
+  .industry-tag:nth-child(10n+9){background:#7B4B94;}
+  .industry-tag:nth-child(10n+10){background:#3A6B35;}
+  .industry-note{margin-top:34px; font-size:14px; color:#6b6c72; max-width:60ch;}
+
+  /* work */
+  .work-list{display:flex; flex-direction:column;}
+  .work-row{display:grid; grid-template-columns:120px 1fr 1fr auto; gap:28px; align-items:center; padding:38px 0; border-top:1px solid var(--line-soft); cursor:pointer; color:inherit; transition:padding-left .35s var(--ease), background .35s var(--ease);}
+  .work-row:hover{padding-left:14px; background:rgba(47,92,255,.04);}
+  .work-row:last-child{border-bottom:1px solid var(--line-soft);}
+  .work-thumb{width:120px; height:80px; border-radius:10px; overflow:hidden; border:1px solid var(--line-soft); background:var(--gray); flex-shrink:0;}
+  .work-thumb img{width:100%; height:100%; object-fit:cover; display:block;}
+  .work-row.no-thumb .work-thumb{visibility:hidden;}
+  .work-name{font-family:'Sora',sans-serif; font-size:24px; font-weight:700;}
+  .work-sector{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--blue-deep); margin-top:6px; display:block;}
+  .work-meta{font-size:14px; color:#54555c;}
+  .work-meta b{color:#28292d; font-weight:600;}
+  .work-link{font-size:13px; font-weight:600; letter-spacing:.03em; text-transform:uppercase; display:flex; align-items:center; gap:8px; white-space:nowrap;}
+  .work-link .arrow{transition:transform .3s var(--ease);}
+  .work-row:hover .work-link .arrow{transform:translateX(6px);}
+
+  /* products */
+  .products-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:18px; overflow:hidden;}
+  .product-card{background:var(--black); padding:42px 34px; display:flex; flex-direction:column; gap:14px;}
+  .product-status{font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--cyan); border:1px solid rgba(127,227,255,.35); border-radius:100px; padding:5px 12px; width:fit-content;}
+  .product-card h3{font-size:21px;}
+  .product-card p{font-size:14px; color:var(--gray-mute);}
+
+  /* how we work */
+  .how-list{border-top:1px solid var(--line);}
+  .how-row{display:grid; grid-template-columns:70px 200px 1fr; gap:30px; padding:30px 0; border-bottom:1px solid var(--line); align-items:center;}
+  .how-row .num{font-family:'JetBrains Mono',monospace; font-size:15px; color:var(--gray-mute);}
+  .how-row h3{font-size:20px;}
+  .how-row p{color:var(--gray-mute); font-size:15px; max-width:52ch;}
+
+  /* why */
+  .why-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:24px;}
+  .why-card{border-top:2px solid var(--blue); padding-top:20px;}
+  .why-card h3{font-size:16px; margin-bottom:8px;}
+  .why-card p{font-size:13px; color:#54555c;}
+
+  /* about */
+  .about-wrap{display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start;}
+  .about-wrap p{font-size:18px; color:var(--gray-mute); margin-bottom:20px; max-width:52ch;}
+
+  /* insights */
+  .insights-note{border:1px solid var(--line-soft); border-radius:16px; padding:44px; text-align:center;}
+  .insights-note p{color:#6b6c72; font-size:15px; max-width:56ch; margin:12px auto 0;}
+
+  /* final cta */
+  .final-cta{background:var(--black); padding:170px 0; text-align:center; position:relative; overflow:hidden;}
+  .final-glow{position:absolute; left:50%; top:0; transform:translate(-50%,-40%); width:900px; height:600px; background:radial-gradient(circle, rgba(47,92,255,.28), transparent 65%); pointer-events:none;}
+  .final-cta h2{font-size:clamp(34px,5.6vw,68px); position:relative; z-index:1;}
+  .final-cta .sub{margin:26px auto 44px; max-width:520px; color:var(--gray-mute); font-size:18px; position:relative; z-index:1;}
+  .final-ctas{display:flex; gap:16px; justify-content:center; flex-wrap:wrap; position:relative; z-index:1;}
+
+  /* contact */
+  .contact-wrap{display:grid; grid-template-columns:.85fr 1.15fr; gap:80px;}
+  .contact-info h2{font-size:clamp(28px,3.6vw,42px); margin-bottom:22px;}
+  .contact-info p{color:var(--gray-mute); font-size:16px; max-width:40ch; margin-bottom:34px;}
+  .contact-detail{font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--gray-mute); line-height:2;}
+  form{display:flex; flex-direction:column; gap:18px;}
+  .field-row{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+  .field{display:flex; flex-direction:column; gap:8px;}
+  .field label{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--gray-mute);}
+  .field input, .field select, .field textarea{background:transparent; border:none; border-bottom:1px solid var(--line); color:var(--cream); font-family:'Plus Jakarta Sans',sans-serif; font-size:16px; padding:12px 2px; transition:border-color .3s var(--ease);}
+  .field select{appearance:none; -webkit-appearance:none;}
+  .field select option{background:var(--black-soft); color:var(--cream);}
+  .field input:focus, .field select:focus, .field textarea:focus{border-color:var(--cyan); outline:none;}
+  .field textarea{resize:vertical; min-height:90px;}
+  form .btn-primary{align-self:flex-start; margin-top:12px;}
+  .form-note{font-size:12px; color:var(--gray-mute); margin-top:-4px;}
+
+  footer{padding:70px 0 40px; border-top:1px solid var(--line);}
+  .footer-top{display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:40px; margin-bottom:60px;}
+  .footer-brand{max-width:340px;}
+  .footer-brand .brand{margin-bottom:14px;}
+  .footer-brand p{color:var(--gray-mute); font-size:14px;}
+  .footer-nav{display:flex; gap:50px; flex-wrap:wrap;}
+  .footer-col h5{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--gray-mute); margin-bottom:16px;}
+  .footer-col a{display:block; font-size:14px; margin-bottom:10px; color:var(--gray);}
+  .footer-col a:hover{color:var(--cyan);}
+  .footer-bottom{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; padding-top:26px; border-top:1px solid var(--line); font-size:12px; color:var(--gray-mute); font-family:'JetBrains Mono',monospace;}
+
+  @media (max-width:980px){
+    .pillars-grid{grid-template-columns:1fr;}
+    .mission-grid{grid-template-columns:repeat(2,1fr);}
+    .timeline{grid-template-columns:repeat(2,1fr); row-gap:40px;}
+    .timeline::before{display:none;}
+    .products-grid{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:repeat(2,1fr); row-gap:30px;}
+    .work-row{grid-template-columns:1fr; gap:14px; text-align:left;}
+    .work-thumb{width:100%; height:160px;}
+    .how-row{grid-template-columns:50px 1fr; row-gap:6px;}
+    .how-row p{grid-column:1 / -1;}
+    .about-wrap{grid-template-columns:1fr; gap:30px;}
+    .contact-wrap{grid-template-columns:1fr; gap:50px;}
+    .field-row{grid-template-columns:1fr;}
+    .hero-video-frame{max-width:100%;}
+  }
+  @media (max-width:720px){
+    .wrap{padding:0 22px;}
+    nav.main-nav{position:fixed; inset:0 0 0 auto; width:80%; height:100vh; background:var(--black-soft); flex-direction:column; align-items:flex-start; justify-content:center; padding:0 40px; gap:26px; transform:translateX(100%); transition:transform .4s var(--ease); border-left:1px solid var(--line);}
+    nav.main-nav.open{transform:translateX(0);}
+    nav.main-nav a{font-size:20px;}
+    .menu-toggle{display:flex; flex-direction:column; gap:5px; z-index:70; width:26px;}
+    .menu-toggle span{width:100%; height:1.5px; background:var(--cream); transition:transform .3s, opacity .3s;}
+    header .btn-header{display:none;}
+    .hero{padding:130px 0 70px;}
+    .hero-video-frame{border-radius:14px;}
+    .section{padding:64px 0;}
+    .mission-grid{grid-template-columns:1fr;}
+    .timeline{grid-template-columns:1fr;}
+    .products-grid{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:1fr;}
+    .how-row{grid-template-columns:1fr; gap:8px; padding:24px 0;}
+    .how-row .num{order:-1;}
+    #signal-line{display:none;}
+  }
+  @media (prefers-reduced-motion: reduce){*{animation-duration:.001s !important; transition-duration:.001s !important;} html{scroll-behavior:auto;}}
+</style>
+</head>
+<body data-lang="fr">
+
+<div id="signal-line"><div class="fill"></div></div>
+
+<header id="site-header">
+  <div class="brand">
+    <a href="#hero" class="logo-plate"><img src="logo.png" alt="ROUGATECH"></a>
+  </div>
+  <nav class="main-nav" id="main-nav">
+    <a href="#solutions"><span class="fr">Solutions</span><span class="en">Solutions</span></a>
+    <a href="#industries"><span class="fr">Industries</span><span class="en">Industries</span></a>
+    <a href="#work"><span class="fr">Réalisations</span><span class="en">Work</span></a>
+    <a href="#about"><span class="fr">À propos</span><span class="en">About</span></a>
+    <a href="#insights"><span class="fr">Insights</span><span class="en">Insights</span></a>
+    <a href="#contact"><span class="fr">Contact</span><span class="en">Contact</span></a>
+  </nav>
+  <div class="header-right">
+    <div class="lang-switch">
+      <button data-lang-btn="fr" class="active">FR</button><span>|</span><button data-lang-btn="en">EN</button>
+    </div>
+    <a href="#contact" class="btn btn-primary btn-header"><span class="fr">Démarrer un projet</span><span class="en">Start a project</span></a>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-grid"></div>
+    <div class="wrap hero-content">
+      <div class="eyebrow">ROUGATECH — DIGITAL TRANSFORMATION FOR AFRICA</div>
+      <h1>
+        <span class="fr">Construire l'avenir <span class="accent">digital de l'Afrique.</span></span>
+        <span class="en">Building Africa's <span class="accent">Digital Future.</span></span>
+      </h1>
+      <p class="hero-sub">
+        <span class="fr">Nous concevons des produits digitaux, des solutions IA et des expériences numériques qui aident les entreprises et institutions africaines à communiquer, vendre, automatiser et se développer.</span>
+        <span class="en">We build digital products, AI solutions and digital experiences that help African businesses and institutions operate, connect and grow.</span>
+      </p>
+      <div class="hero-ctas">
+        <a href="#solutions" class="btn btn-primary"><span class="fr">Explorer nos solutions</span><span class="en">Explore our solutions</span></a>
+        <a href="#contact" class="btn btn-outline"><span class="fr">Démarrer un projet</span><span class="en">Start a project</span></a>
+      </div>
+
+      <div class="hero-video-frame">
+        <video autoplay muted loop playsinline preload="auto" poster="work-bko.jpg">
+          <source src="hero-video.mp4" type="video/mp4">
+        </video>
+        <div class="hero-video-badge"><span class="dot"></span> <span class="fr">Écosystème digital</span><span class="en">Digital ecosystem</span></div>
+        <div class="hero-video-caption">ROUGATECH — <span class="fr">produits, IA &amp; plateformes</span><span class="en">products, AI &amp; platforms</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION / PROBLEM -->
+  <section class="section" id="mission">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">01 / THE MISSION</div>
+        <h2><span class="fr">La transformation digitale doit créer une vraie valeur business.</span><span class="en">Digital transformation should create real business value.</span></h2>
+      </div>
+      <div class="mission-grid reveal">
+        <div class="mission-card">
+          <h3><span class="fr">Créer la confiance</span><span class="en">Build trust</span></h3>
+          <p><span class="fr">Une présence digitale qui inspire crédibilité et sérieux.</span><span class="en">A digital presence that inspires credibility and confidence.</span></p>
+        </div>
+        <div class="mission-card">
+          <h3><span class="fr">Atteindre ses clients</span><span class="en">Reach customers</span></h3>
+          <p><span class="fr">Être visible et accessible là où se trouvent vos publics.</span><span class="en">Being visible and accessible where your audiences already are.</span></p>
+        </div>
+        <div class="mission-card">
+          <h3><span class="fr">Automatiser ses opérations</span><span class="en">Automate operations</span></h3>
+          <p><span class="fr">Réduire les frictions grâce à la technologie et l'IA.</span><span class="en">Reducing friction through technology and AI.</span></p>
+        </div>
+        <div class="mission-card">
+          <h3><span class="fr">Créer de nouvelles expériences</span><span class="en">Create new experiences</span></h3>
+          <p><span class="fr">Concevoir des produits digitaux pensés pour l'usage réel.</span><span class="en">Designing digital products built for real-world use.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE BUILD -->
+  <section class="section" id="solutions">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">02 / WHAT WE BUILD</div>
+        <h2><span class="fr">Ce que nous construisons.</span><span class="en">What we build.</span></h2>
+      </div>
+      <div class="pillars-grid reveal">
+        <div class="pillar-card">
+          <span class="num">01</span>
+          <h3><span class="fr">Présence digitale</span><span class="en">Digital presence</span></h3>
+          <div class="pillar-tags">
+            <span><span class="fr">Sites corporate</span><span class="en">Corporate websites</span></span>
+            <span><span class="fr">Sites institutionnels</span><span class="en">Institutional websites</span></span>
+            <span><span class="fr">Plateformes web</span><span class="en">Web platforms</span></span>
+            <span><span class="fr">Expériences digitales</span><span class="en">Digital experiences</span></span>
+          </div>
+        </div>
+        <div class="pillar-card">
+          <span class="num">02</span>
+          <h3><span class="fr">Commerce digital</span><span class="en">Digital commerce</span></h3>
+          <div class="pillar-tags">
+            <span>E-commerce</span>
+            <span><span class="fr">Boutiques en ligne</span><span class="en">Online stores</span></span>
+            <span>WhatsApp commerce</span>
+            <span><span class="fr">Commande digitale</span><span class="en">Digital ordering</span></span>
+          </div>
+        </div>
+        <div class="pillar-card">
+          <span class="num">03</span>
+          <h3><span class="fr">IA &amp; Automatisation</span><span class="en">AI &amp; Automation</span></h3>
+          <div class="pillar-tags">
+            <span>AI agents</span>
+            <span><span class="fr">Support client</span><span class="en">Customer support</span></span>
+            <span><span class="fr">Automatisation des ventes</span><span class="en">Sales automation</span></span>
+            <span><span class="fr">Assistants métier</span><span class="en">Business assistants</span></span>
+          </div>
+        </div>
+        <div class="pillar-card">
+          <span class="num">04</span>
+          <h3><span class="fr">Plateformes digitales</span><span class="en">Digital platforms</span></h3>
+          <div class="pillar-tags">
+            <span>SaaS</span>
+            <span><span class="fr">Systèmes de réservation</span><span class="en">Booking systems</span></span>
+            <span><span class="fr">Plateformes éducatives</span><span class="en">Education platforms</span></span>
+            <span><span class="fr">Gestion d'entreprise</span><span class="en">Business management</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRANSFORMATION TIMELINE -->
+  <section class="section section-alt" id="transformation">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">03 / THE PATH</div>
+        <h2><span class="fr">De la présence digitale à la transformation digitale.</span><span class="en">From digital presence to digital transformation.</span></h2>
+      </div>
+      <div class="timeline reveal">
+        <div class="tl-step"><div class="tl-dot">01</div><h3><span class="fr">Présence</span><span class="en">Presence</span></h3><p><span class="fr">Être visible et crédible en ligne.</span><span class="en">Being visible and credible online.</span></p></div>
+        <div class="tl-step"><div class="tl-dot">02</div><h3><span class="fr">Engagement</span><span class="en">Engagement</span></h3><p><span class="fr">Convertir les visiteurs en opportunités.</span><span class="en">Converting visitors into opportunities.</span></p></div>
+        <div class="tl-step"><div class="tl-dot">03</div><h3><span class="fr">Automatisation</span><span class="en">Automation</span></h3><p><span class="fr">Réduire le travail manuel grâce à la technologie.</span><span class="en">Reducing manual work through technology.</span></p></div>
+        <div class="tl-step"><div class="tl-dot">04</div><h3><span class="fr">Croissance</span><span class="en">Growth</span></h3><p><span class="fr">Faire évoluer la solution avec l'organisation.</span><span class="en">Evolving the solution with the organization.</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES -->
+  <section class="section" id="industries">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">04 / INDUSTRIES</div>
+        <h2><span class="fr">Une technologie pensée pour votre secteur.</span><span class="en">Technology built around your industry.</span></h2>
+      </div>
+      <div class="industry-grid reveal">
+        <span class="industry-tag"><span class="fr">Entreprises &amp; Corporates</span><span class="en">Business &amp; Corporates</span></span>
+        <span class="industry-tag"><span class="fr">Éducation</span><span class="en">Education</span></span>
+        <span class="industry-tag"><span class="fr">Services financiers</span><span class="en">Financial Services</span></span>
+        <span class="industry-tag"><span class="fr">Commerce &amp; Distribution</span><span class="en">Retail &amp; Commerce</span></span>
+        <span class="industry-tag"><span class="fr">Transport &amp; Logistique</span><span class="en">Transport &amp; Logistics</span></span>
+        <span class="industry-tag"><span class="fr">Construction &amp; Ingénierie</span><span class="en">Construction &amp; Engineering</span></span>
+        <span class="industry-tag"><span class="fr">Hôtellerie</span><span class="en">Hospitality</span></span>
+        <span class="industry-tag"><span class="fr">Santé</span><span class="en">Healthcare</span></span>
+        <span class="industry-tag"><span class="fr">ONG &amp; Organisations de développement</span><span class="en">NGOs &amp; Development Organizations</span></span>
+        <span class="industry-tag"><span class="fr">Institutions publiques</span><span class="en">Public Institutions</span></span>
+      </div>
+      <p class="industry-note reveal">
+        <span class="fr">Ces secteurs représentent les domaines que ROUGATECH est en mesure d'accompagner, en s'adaptant aux réalités et contraintes de chaque organisation.</span>
+        <span class="en">These sectors reflect the domains ROUGATECH is equipped to support, adapting to the realities and constraints of each organization.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- SELECTED WORK -->
+  <section class="section section-alt" id="work">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">05 / SELECTED WORK</div>
+        <h2><span class="fr">Nos réalisations.</span><span class="en">Selected work.</span></h2>
+      </div>
+      <div class="work-list reveal">
+        <a class="work-row" href="https://bkogroup.pages.dev/" target="_blank" rel="noopener">
+          <div class="work-thumb"><img src="work-bko.jpg" alt="BKO Group" loading="lazy"></div>
+          <div>
+            <div class="work-name">BKO Group</div>
+            <span class="work-sector"><span class="fr">Construction &amp; Énergie</span><span class="en">Construction &amp; Energy</span></span>
+          </div>
+          <p class="work-meta">
+            <span class="fr"><b>Solution :</b> plateforme corporate multi-activités.<br><b>Objectif :</b> unifier l'image d'un groupe actif au Maroc et au Mali.</span>
+            <span class="en"><b>Solution:</b> multi-business corporate platform.<br><b>Objective:</b> unify the image of a group active in Morocco and Mali.</span>
+          </p>
+          <div class="work-link"><span class="fr">Voir le projet</span><span class="en">View case study</span> <span class="arrow">→</span></div>
+        </a>
+        <a class="work-row no-thumb" href="https://m-a-global-corporation.pages.dev/" target="_blank" rel="noopener">
+          <div class="work-thumb"></div>
+          <div>
+            <div class="work-name">M.A Global Corporation</div>
+            <span class="work-sector"><span class="fr">Commerce &amp; Services</span><span class="en">Commerce &amp; Services</span></span>
+          </div>
+          <p class="work-meta">
+            <span class="fr"><b>Solution :</b> site one-page premium.<br><b>Objectif :</b> présenter clairement une activité multiservice à Niamey.</span>
+            <span class="en"><b>Solution:</b> premium one-page website.<br><b>Objective:</b> clearly present a multiservice business in Niamey.</span>
+          </p>
+          <div class="work-link"><span class="fr">Voir le projet</span><span class="en">View case study</span> <span class="arrow">→</span></div>
+        </a>
+        <a class="work-row" href="https://sarahengineering.pages.dev/" target="_blank" rel="noopener">
+          <div class="work-thumb"><img src="work-sarah.jpg" alt="SARAH Engineering and BTP" loading="lazy"></div>
+          <div>
+            <div class="work-name">SARAH Engineering &amp; BTP</div>
+            <span class="work-sector"><span class="fr">Ingénierie &amp; Construction</span><span class="en">Engineering &amp; Construction</span></span>
+          </div>
+          <p class="work-meta">
+            <span class="fr"><b>Solution :</b> site institutionnel orienté expertise terrain.<br><b>Objectif :</b> renforcer l'autorité d'un acteur du BTP à Conakry.</span>
+            <span class="en"><b>Solution:</b> institutional website centered on field expertise.<br><b>Objective:</b> reinforce the authority of a construction firm in Conakry.</span>
+          </p>
+          <div class="work-link"><span class="fr">Voir le projet</span><span class="en">View case study</span> <span class="arrow">→</span></div>
+        </a>
+        <a class="work-row" href="https://coachmarina.pages.dev/" target="_blank" rel="noopener">
+          <div class="work-thumb"><img src="work-marina.jpg" alt="Coach Marina Minoungou" loading="lazy"></div>
+          <div>
+            <div class="work-name">Coach Marina</div>
+            <span class="work-sector"><span class="fr">Coaching / Marque personnelle</span><span class="en">Coaching / Personal Brand</span></span>
+          </div>
+          <p class="work-meta">
+            <span class="fr"><b>Solution :</b> plateforme de marque personnelle.<br><b>Objectif :</b> valoriser une expertise en coaching familial et relationnel.</span>
+            <span class="en"><b>Solution:</b> personal brand platform.<br><b>Objective:</b> showcase an expertise in family and relationship coaching.</span>
+          </p>
+          <div class="work-link"><span class="fr">Voir le projet</span><span class="en">View case study</span> <span class="arrow">→</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIGITAL PRODUCTS -->
+  <section class="section" id="products">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">06 / DIGITAL PRODUCTS</div>
+        <h2><span class="fr">Nous concevons aussi nos propres produits.</span><span class="en">We also build our own products.</span></h2>
+      </div>
+      <div class="products-grid reveal">
+        <div class="product-card">
+          <span class="product-status"><span class="fr">Produit en développement</span><span class="en">Product in development</span></span>
+          <h3>ScolPay</h3>
+          <p><span class="fr">Plateforme digitale de gestion scolaire — Éducation.</span><span class="en">Education / Digital school management platform.</span></p>
+        </div>
+        <div class="product-card">
+          <span class="product-status"><span class="fr">Produit en développement</span><span class="en">Product in development</span></span>
+          <h3>Rougatech Commerce</h3>
+          <p><span class="fr">Infrastructure e-commerce pour entreprises africaines.</span><span class="en">E-commerce infrastructure for African businesses.</span></p>
+        </div>
+        <div class="product-card">
+          <span class="product-status"><span class="fr">Produit en développement</span><span class="en">Product in development</span></span>
+          <h3>Rougatech AI</h3>
+          <p><span class="fr">IA &amp; automatisation pour les opérations métier.</span><span class="en">AI &amp; automation for business operations.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW WE WORK -->
+  <section class="section section-alt" id="how-we-work">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">07 / HOW WE WORK</div>
+        <h2><span class="fr">De l'idée au produit digital.</span><span class="en">From idea to digital product.</span></h2>
+      </div>
+      <div class="how-list reveal">
+        <div class="how-row"><span class="num">01</span><h3><span class="fr">Comprendre</span><span class="en">Understand</span></h3><p><span class="fr">Comprendre l'organisation et ses objectifs.</span><span class="en">Understanding the organization and its goals.</span></p></div>
+        <div class="how-row"><span class="num">02</span><h3><span class="fr">Définir</span><span class="en">Strategize</span></h3><p><span class="fr">Définir la meilleure solution digitale.</span><span class="en">Defining the right digital solution.</span></p></div>
+        <div class="how-row"><span class="num">03</span><h3><span class="fr">Concevoir</span><span class="en">Design</span></h3><p><span class="fr">Créer une expérience claire et moderne.</span><span class="en">Creating a clear, modern experience.</span></p></div>
+        <div class="how-row"><span class="num">04</span><h3><span class="fr">Construire</span><span class="en">Build</span></h3><p><span class="fr">Développer la solution.</span><span class="en">Developing the solution.</span></p></div>
+        <div class="how-row"><span class="num">05</span><h3><span class="fr">Lancer</span><span class="en">Launch</span></h3><p><span class="fr">Déployer et accompagner.</span><span class="en">Deploying and supporting.</span></p></div>
+        <div class="how-row"><span class="num">06</span><h3><span class="fr">Faire évoluer</span><span class="en">Evolve</span></h3><p><span class="fr">Faire évoluer la solution dans le temps.</span><span class="en">Evolving the solution over time.</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="section" id="why">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">08 / WHY ROUGATECH</div>
+        <h2><span class="fr">Pensé pour l'Afrique. Conçu pour le monde.</span><span class="en">Built for Africa. Designed for the world.</span></h2>
+      </div>
+      <div class="why-grid reveal">
+        <div class="why-card"><h3><span class="fr">Business first</span><span class="en">Business-first thinking</span></h3><p><span class="fr">Chaque solution part d'un objectif business clair.</span><span class="en">Every solution starts from a clear business objective.</span></p></div>
+        <div class="why-card"><h3><span class="fr">Une technologie avec un but</span><span class="en">Technology with purpose</span></h3><p><span class="fr">Aucune fonctionnalité ajoutée sans raison.</span><span class="en">No feature added without a reason.</span></p></div>
+        <div class="why-card"><h3><span class="fr">Expériences modernes</span><span class="en">Modern user experiences</span></h3><p><span class="fr">Mobile-first et pensées pour l'utilisateur final.</span><span class="en">Mobile-first and built for the end user.</span></p></div>
+        <div class="why-card"><h3><span class="fr">Architecture évolutive</span><span class="en">Scalable architecture</span></h3><p><span class="fr">Des fondations prêtes à grandir avec vous.</span><span class="en">Foundations ready to grow with you.</span></p></div>
+        <div class="why-card"><h3><span class="fr">Compréhension du marché africain</span><span class="en">African market understanding</span></h3><p><span class="fr">Des solutions adaptées aux réalités locales.</span><span class="en">Solutions adapted to local realities.</span></p></div>
+        <div class="why-card"><h3><span class="fr">Partenariat long terme</span><span class="en">Long-term partnership</span></h3><p><span class="fr">Nous accompagnons la solution après son lancement.</span><span class="en">We support the solution beyond launch.</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section section-alt" id="about">
+    <div class="wrap">
+      <div class="about-wrap">
+        <div class="reveal">
+          <div class="eyebrow">09 / ABOUT</div>
+          <h2 style="margin-top:20px; font-size:clamp(28px,3.6vw,44px);"><span class="fr">Une technologie pour une Afrique plus connectée.</span><span class="en">Technology for a more connected Africa.</span></h2>
+        </div>
+        <div class="reveal">
+          <p><span class="fr">ROUGATECH est une entreprise technologique africaine. Nous utilisons le logiciel, l'intelligence artificielle, les plateformes digitales et l'automatisation pour aider les organisations africaines à se transformer.</span>
+          <span class="en">ROUGATECH is an African technology company. We use software, AI, digital platforms and automation to help African organizations transform.</span></p>
+          <p><span class="fr">Basée à Niamey, Niger, nous concevons des solutions pensées pour les réalités locales et construites pour des standards internationaux.</span>
+          <span class="en">Based in Niamey, Niger, we design solutions built for local realities and international standards.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSIGHTS -->
+  <section class="section" id="insights">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">10 / INSIGHTS</div>
+        <h2><span class="fr">Perspectives sur la transformation digitale.</span><span class="en">Perspectives on digital transformation.</span></h2>
+      </div>
+      <div class="insights-note reveal">
+        <div class="eyebrow" style="justify-content:center;"><span class="fr">Bientôt disponible</span><span class="en">Coming soon</span></div>
+        <p><span class="fr">Nous préparons des articles et analyses sur la transformation digitale en Afrique, la technologie et l'automatisation.</span>
+        <span class="en">We are preparing articles and analysis on digital transformation in Africa, technology, and automation.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="final-glow"></div>
+    <div class="wrap reveal">
+      <h2><span class="fr">Prêt à construire ce qui vient ensuite ?</span><span class="en">Ready to build what comes next?</span></h2>
+      <p class="sub"><span class="fr">Parlez-nous de votre projet. Nous vous aiderons à le transformer en expérience digitale.</span><span class="en">Tell us what you're building. We'll help you turn it into a digital experience.</span></p>
+      <div class="final-ctas">
+        <a href="#contact" class="btn btn-primary"><span class="fr">Démarrer un projet</span><span class="en">Start a project</span></a>
+        <a href="#contact" class="btn btn-outline"><span class="fr">Contacter ROUGATECH</span><span class="en">Contact ROUGATECH</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="wrap">
+      <div class="contact-wrap">
+        <div class="contact-info reveal">
+          <div class="eyebrow">Contact</div>
+          <h2 style="margin-top:20px;"><span class="fr">Démarrons votre projet.</span><span class="en">Let's start your project.</span></h2>
+          <p><span class="fr">Décrivez-nous votre organisation et votre besoin — nous revenons vers vous rapidement.</span><span class="en">Tell us about your organization and your need — we'll get back to you shortly.</span></p>
+          <div class="contact-detail">
+            ROUGATECH<br>NIAMEY, NIGER<br>HELLO@ROUGATECH.COM
+          </div>
+        </div>
+        <form class="reveal" id="contact-form">
+          <div class="field-row">
+            <div class="field">
+              <label for="f-name"><span class="fr">Nom</span><span class="en">Name</span></label>
+              <input id="f-name" type="text" required>
+            </div>
+            <div class="field">
+              <label for="f-company"><span class="fr">Entreprise</span><span class="en">Company</span></label>
+              <input id="f-company" type="text">
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="f-email">Email</label>
+              <input id="f-email" type="email" required>
+            </div>
+            <div class="field">
+              <label for="f-phone"><span class="fr">Téléphone</span><span class="en">Phone</span></label>
+              <input id="f-phone" type="tel">
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-type"><span class="fr">Type de projet</span><span class="en">Project type</span></label>
+            <select id="f-type">
+              <option value="website"><span class="fr">Site web</span></option>
+              <option value="ecommerce">E-commerce</option>
+              <option value="ai"><span class="fr">IA &amp; Automatisation</span></option>
+              <option value="platform"><span class="fr">Plateforme digitale</span></option>
+              <option value="transformation"><span class="fr">Transformation digitale</span></option>
+              <option value="other"><span class="fr">Autre</span></option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-msg"><span class="fr">Message</span><span class="en">Message</span></label>
+            <textarea id="f-msg" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary"><span class="fr">Envoyer</span><span class="en">Send</span></button>
+          <p class="form-note"><span class="fr">Ce formulaire ouvre votre messagerie email — une intégration backend pourra être connectée ultérieurement.</span><span class="en">This form opens your email client — a backend integration can be connected later.</span></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="brand"><span class="logo-plate"><img src="logo.png" alt="ROUGATECH"></span></div>
+        <p><span class="fr">TRANSFORMATION DIGITALE POUR L'AFRIQUE</span><span class="en">DIGITAL TRANSFORMATION FOR AFRICA</span></p>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-col">
+          <h5>Menu</h5>
+          <a href="#solutions"><span class="fr">Solutions</span><span class="en">Solutions</span></a>
+          <a href="#industries">Industries</a>
+          <a href="#work"><span class="fr">Réalisations</span><span class="en">Work</span></a>
+          <a href="#about"><span class="fr">À propos</span><span class="en">About</span></a>
+          <a href="#insights">Insights</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5><span class="fr">Contact</span><span class="en">Contact</span></h5>
+          <span style="display:block; font-size:14px; color:var(--gray); margin-bottom:10px;">Niamey, Niger</span>
+          <a href="mailto:hello@rougatech.com">hello@rougatech.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 ROUGATECH. <span class="fr">Tous droits réservés.</span><span class="en">All rights reserved.</span></span>
+      <span><span class="fr">TRANSFORMATION DIGITALE POUR L'AFRIQUE</span><span class="en">DIGITAL TRANSFORMATION FOR AFRICA</span></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const header = document.getElementById('site-header');
+  const fill = document.querySelector('#signal-line .fill');
+  function onScroll(){
+    const y = window.scrollY;
+    header.classList.toggle('scrolled', y > 40);
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = max > 0 ? (y / max) * 100 : 0;
+    if(fill) fill.style.height = pct + '%';
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  const toggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('main-nav');
+  toggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    nav.classList.remove('open');
+    toggle.setAttribute('aria-expanded', false);
+  }));
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
+  }, {threshold:.15});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  document.querySelectorAll('.btn-primary').forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      const r = btn.getBoundingClientRect();
+      const x = e.clientX - r.left - r.width/2;
+      const y = e.clientY - r.top - r.height/2;
+      btn.style.transform = `translate(${x*0.12}px, ${y*0.28}px)`;
+    });
+    btn.addEventListener('mouseleave', () => { btn.style.transform = 'translate(0,0)'; });
+  });
+
+  // language switch
+  const langButtons = document.querySelectorAll('[data-lang-btn]');
+  function setLang(lang){
+    document.body.setAttribute('data-lang', lang);
+    document.documentElement.setAttribute('lang', lang);
+    langButtons.forEach(b => b.classList.toggle('active', b.dataset.langBtn === lang));
+    try{ localStorage.setItem('rougatech-lang', lang); }catch(e){}
+  }
+  langButtons.forEach(b => b.addEventListener('click', () => setLang(b.dataset.langBtn)));
+  try{
+    const saved = localStorage.getItem('rougatech-lang');
+    if(saved) setLang(saved);
+  }catch(e){}
+
+  // contact form -> mailto (no fake backend)
+  const form = document.getElementById('contact-form');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('f-name').value;
+    const company = document.getElementById('f-company').value;
+    const email = document.getElementById('f-email').value;
+    const phone = document.getElementById('f-phone').value;
+    const type = document.getElementById('f-type').value;
+    const msg = document.getElementById('f-msg').value;
+    const subject = encodeURIComponent('Nouveau projet — ' + (company || name));
+    const body = encodeURIComponent(
+      `Nom: ${name}\nEntreprise: ${company}\nEmail: ${email}\nTéléphone: ${phone}\nType de projet: ${type}\n\nMessage:\n${msg}`
+    );
+    window.location.href = `mailto:hello@rougatech.com?subject=${subject}&body=${body}`;
+  });
+</script>
+
+</body>
+</html>
