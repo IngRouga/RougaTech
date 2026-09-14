@@ -100,6 +100,24 @@
   nav.main-nav a:hover{color:var(--cream);}
   nav.main-nav a::after{content:''; position:absolute; left:0; bottom:0; width:0; height:1px; background:var(--cyan); transition:width .3s var(--ease);}
   nav.main-nav a:hover::after{width:100%;}
+
+  /* mega-menu (desktop only) */
+  .nav-item{position:relative;}
+  .mega-panel{position:absolute; top:100%; left:50%; transform:translateX(-50%) translateY(10px); margin-top:18px; background:var(--black-soft); border:1px solid var(--line); border-radius:16px; padding:14px; display:grid; grid-template-columns:1fr 1fr; gap:2px; min-width:520px; opacity:0; visibility:hidden; transition:opacity .25s var(--ease), transform .25s var(--ease), visibility .25s; box-shadow:0 30px 60px -20px rgba(0,0,0,.6); z-index:120;}
+  .nav-item:hover .mega-panel, .nav-item:focus-within .mega-panel{opacity:1; visibility:visible; transform:translateX(-50%) translateY(0);}
+  .mega-item{display:flex; align-items:flex-start; gap:12px; padding:12px; border-radius:10px; transition:background .2s var(--ease);}
+  .mega-item:hover{background:rgba(127,227,255,.06);}
+  .mega-icon{width:34px; height:34px; border-radius:9px; background:rgba(127,227,255,.08); border:1px solid var(--line); display:flex; align-items:center; justify-content:center; flex-shrink:0; color:var(--cyan);}
+  .mega-icon svg{width:16px; height:16px;}
+  .mega-text strong{display:block; font-family:'Sora',sans-serif; font-size:13.5px; font-weight:600; color:var(--cream); margin-bottom:3px;}
+  .mega-desc{display:block; font-size:12px; color:var(--gray-mute); line-height:1.4;}
+  @media (max-width:900px){ .mega-panel{display:none !important;} }
+
+  /* trust badges (footer) */
+  .trust-row{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px;}
+  .trust-badge{display:inline-flex; align-items:center; gap:7px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.04em; color:var(--gray-mute); border:1px solid var(--line); border-radius:100px; padding:7px 13px;}
+  .trust-badge svg{width:13px; height:13px; flex-shrink:0; color:var(--cyan);}
+
   .header-right{display:flex; align-items:center; gap:18px;}
   .lang-switch{display:flex; gap:6px; font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--gray-mute);}
   .lang-switch button{padding:2px 4px; opacity:.5; transition:opacity .2s, color .2s;}
@@ -447,8 +465,56 @@
     <a href="#hero" class="logo-plate"><img src="logo.png" alt="ROUGATECH"></a>
   </div>
   <nav class="main-nav" id="main-nav">
-    <a href="#solutions"><span class="fr">Solutions</span><span class="en">Solutions</span></a>
-    <a href="#industries"><span class="fr">Industries</span><span class="en">Industries</span></a>
+    <div class="nav-item">
+      <a href="#solutions"><span class="fr">Solutions</span><span class="en">Solutions</span></a>
+      <div class="mega-panel">
+        <a class="mega-item" href="/solutions/websites/">
+          <span class="mega-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
+          <span class="mega-text"><strong><span class="fr">Sites web</span><span class="en">Websites</span></strong><span class="mega-desc"><span class="fr">Sites vitrines et boutiques en ligne qui convertissent.</span><span class="en">Showcase sites and online stores built to convert.</span></span></span>
+        </a>
+        <a class="mega-item" href="/solutions/ai-agents/">
+          <span class="mega-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg></span>
+          <span class="mega-text"><strong><span class="fr">Agents IA</span><span class="en">AI Agents</span></strong><span class="mega-desc"><span class="fr">Un agent IA qui répond à vos clients 24/7.</span><span class="en">An AI agent that responds to your customers 24/7.</span></span></span>
+        </a>
+        <a class="mega-item" href="/solutions/saas/">
+          <span class="mega-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span>
+          <span class="mega-text"><strong><span class="fr">SaaS</span><span class="en">SaaS</span></strong><span class="mega-desc"><span class="fr">Plateformes sur mesure pour vos processus métier.</span><span class="en">Custom platforms for your business processes.</span></span></span>
+        </a>
+        <a class="mega-item" href="/solutions/automation/">
+          <span class="mega-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+          <span class="mega-text"><strong><span class="fr">Automatisation</span><span class="en">Automation</span></strong><span class="mega-desc"><span class="fr">Connectez vos outils, automatisez les tâches.</span><span class="en">Connect your tools, automate the busywork.</span></span></span>
+        </a>
+        <a class="mega-item" href="/solutions/ecommerce/">
+          <span class="mega-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span>
+          <span class="mega-text"><strong><span class="fr">Commerce digital</span><span class="en">Digital Commerce</span></strong><span class="mega-desc"><span class="fr">Vendez en ligne avec une expérience fluide.</span><span class="en">Sell online with a seamless experience.</span></span></span>
+        </a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="#industries"><span class="fr">Industries</span><span class="en">Industries</span></a>
+      <div class="mega-panel">
+        <a class="mega-item" href="/industries/education/">
+          <span class="mega-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+          <span class="mega-text"><strong><span class="fr">Éducation</span><span class="en">Education</span></strong><span class="mega-desc"><span class="fr">Sites et outils pour écoles et centres de formation.</span><span class="en">Sites and tools for schools and training centers.</span></span></span>
+        </a>
+        <a class="mega-item" href="/industries/transport/">
+          <span class="mega-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span>
+          <span class="mega-text"><strong><span class="fr">Transport</span><span class="en">Transport</span></strong><span class="mega-desc"><span class="fr">Solutions digitales pour le transport et la logistique.</span><span class="en">Digital solutions for transport and logistics.</span></span></span>
+        </a>
+        <a class="mega-item" href="/industries/retail/">
+          <span class="mega-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span>
+          <span class="mega-text"><strong><span class="fr">Commerce de détail</span><span class="en">Retail</span></strong><span class="mega-desc"><span class="fr">Boutiques en ligne et outils de vente au détail.</span><span class="en">Online stores and retail sales tools.</span></span></span>
+        </a>
+        <a class="mega-item" href="/industries/construction/">
+          <span class="mega-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
+          <span class="mega-text"><strong><span class="fr">Construction</span><span class="en">Construction</span></strong><span class="mega-desc"><span class="fr">Présence digitale pour entreprises du BTP.</span><span class="en">Digital presence for construction companies.</span></span></span>
+        </a>
+        <a class="mega-item" href="/industries/professional-services/">
+          <span class="mega-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
+          <span class="mega-text"><strong><span class="fr">Services professionnels</span><span class="en">Professional Services</span></strong><span class="mega-desc"><span class="fr">Sites et systèmes pour cabinets et consultants.</span><span class="en">Sites and systems for firms and consultants.</span></span></span>
+        </a>
+      </div>
+    </div>
     <a href="#work"><span class="fr">Projets</span><span class="en">Projects</span></a>
     <a href="#about"><span class="fr">À propos</span><span class="en">About</span></a>
     <a href="academy/index.html">Academy</a>
@@ -1029,6 +1095,10 @@
       <div class="footer-brand">
         <div class="brand"><span class="logo-plate"><img src="logo.png" alt="ROUGATECH"></span></div>
         <p><span class="fr">TRANSFORMEZ VOTRE ENTREPRISE. VENDEZ PLUS.</span><span class="en">TRANSFORM YOUR BUSINESS. SELL MORE.</span></p>
+        <div class="trust-row">
+          <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span class="fr">Connexion sécurisée (HTTPS)</span><span class="en">Secure Connection (HTTPS)</span></span>
+          <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg><span class="fr">Hébergé sur Cloudflare</span><span class="en">Hosted on Cloudflare</span></span>
+        </div>
       </div>
       <div class="footer-nav">
         <div class="footer-col">
