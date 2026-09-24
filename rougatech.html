@@ -130,7 +130,7 @@
   .hero{min-height:100vh; display:flex; flex-direction:column; justify-content:center; padding:150px 0 70px;}
   .hero-grid{position:absolute; inset:0; background-image:linear-gradient(var(--line-soft) 1px, transparent 1px), linear-gradient(90deg, var(--line-soft) 1px, transparent 1px); background-size:80px 80px; mask-image:linear-gradient(180deg, rgba(0,0,0,.5), transparent 75%); opacity:.5;}
   .hero-content{position:relative; z-index:2;}
-  .hero-layout{display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;}
+  .hero-layout{display:grid; grid-template-columns:1.05fr .95fr; gap:56px; align-items:center;}
   .hero-text{opacity:0; animation:heroFadeUp .7s var(--ease) forwards;}
   .hero-text .eyebrow{animation-delay:0s;}
   .hero h1{font-size:clamp(38px,5.6vw,74px); margin:26px 0 26px; max-width:15ch;}
@@ -141,15 +141,28 @@
   .hero-founder-line strong{color:var(--cream); font-family:'Plus Jakarta Sans',sans-serif; font-weight:600;}
   @keyframes heroFadeUp{from{opacity:0; transform:translateY(18px);} to{opacity:1; transform:translateY(0);}}
 
-  /* hero founder photo */
-  .hero-photo-wrap{position:relative; opacity:0; animation:heroFadeUp .8s var(--ease) .15s forwards;}
-  .hero-photo-glow{position:absolute; inset:-50px; background:radial-gradient(circle at 55% 35%, rgba(127,227,255,.28), transparent 65%); filter:blur(30px); z-index:0; pointer-events:none;}
-  .hero-photo-card{position:relative; z-index:1; border-radius:26px; overflow:hidden; border:1px solid var(--line); aspect-ratio:4/5; box-shadow:0 50px 100px -30px rgba(0,0,0,.65);}
-  .hero-photo-card img{width:100%; height:100%; object-fit:cover; object-position:top center; display:block;}
-  .hero-photo-chip{position:absolute; z-index:2; left:-16px; bottom:-16px; background:var(--black-soft); border:1px solid var(--line); border-radius:16px; padding:15px 19px; box-shadow:0 24px 48px -16px rgba(0,0,0,.65); max-width:240px;}
-  .hero-photo-chip .name{font-family:'Sora',sans-serif; font-weight:700; font-size:13.5px;}
-  .hero-photo-chip .role{font-family:'JetBrains Mono',monospace; font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--cyan); margin-top:4px;}
-  @media (prefers-reduced-motion: reduce){.hero-text,.hero-photo-wrap{animation:none; opacity:1;}}
+  /* hero floating bubbles */
+  .hero-visual{position:relative; height:420px; opacity:0; animation:heroFadeUp .8s var(--ease) .15s forwards;}
+  .hero-orb{position:absolute; top:50%; left:50%; width:130px; height:130px; margin:-65px 0 0 -65px; border-radius:50%; background:radial-gradient(circle at 35% 30%, rgba(127,227,255,.85), rgba(47,92,255,.45) 55%, transparent 76%);}
+  .hero-orb::before, .hero-orb::after{content:''; position:absolute; inset:0; border-radius:50%; border:1px solid rgba(127,227,255,.4); animation:pulseRing 3.4s ease-out infinite;}
+  .hero-orb::after{animation-delay:1.2s; border-color:rgba(47,92,255,.35);}
+  @keyframes pulseRing{0%{transform:scale(1); opacity:.7;} 100%{transform:scale(2.7); opacity:0;}}
+  .hero-bubble{position:absolute; display:inline-flex; align-items:center; font-family:'JetBrains Mono',monospace; font-size:13px; font-weight:500; letter-spacing:.01em; color:var(--cream); background:rgba(19,17,16,.74); border:1px solid var(--line); border-radius:100px; padding:12px 20px; white-space:nowrap; box-shadow:0 14px 30px -12px rgba(0,0,0,.55); backdrop-filter:blur(6px);}
+  .hero-bubble .dot{display:inline-block; width:7px; height:7px; border-radius:50%; margin-right:10px; flex-shrink:0;}
+  .hero-bubble.b1{top:4%; left:0%; animation:bubbleFloatA 6.6s ease-in-out infinite;}
+  .hero-bubble.b1 .dot{background:var(--cyan);}
+  .hero-bubble.b2{top:20%; right:2%; animation:bubbleFloatB 7.6s ease-in-out infinite; animation-delay:.5s;}
+  .hero-bubble.b2 .dot{background:var(--blue);}
+  .hero-bubble.b3{top:48%; left:-6%; animation:bubbleFloatC 7s ease-in-out infinite; animation-delay:1s;}
+  .hero-bubble.b3 .dot{background:var(--gold);}
+  .hero-bubble.b4{bottom:16%; right:8%; animation:bubbleFloatA 7.8s ease-in-out infinite; animation-delay:1.5s;}
+  .hero-bubble.b4 .dot{background:#4ADE80;}
+  .hero-bubble.b5{bottom:2%; left:14%; animation:bubbleFloatB 6.8s ease-in-out infinite; animation-delay:.8s;}
+  .hero-bubble.b5 .dot{background:var(--cyan);}
+  @keyframes bubbleFloatA{0%,100%{transform:translateY(0);} 50%{transform:translateY(-14px);}}
+  @keyframes bubbleFloatB{0%,100%{transform:translateY(0);} 50%{transform:translateY(12px);}}
+  @keyframes bubbleFloatC{0%,100%{transform:translateY(0);} 50%{transform:translateY(-9px);}}
+  @media (prefers-reduced-motion: reduce){.hero-text,.hero-visual{animation:none; opacity:1;} .hero-orb::before,.hero-orb::after,.hero-bubble{animation:none;}}
 
   /* dynamic aurora background */
   .aurora-bg{position:fixed; inset:0; z-index:-1; overflow:hidden; pointer-events:none; background:var(--black);}
@@ -350,7 +363,7 @@
 
   @media (max-width:980px){
     .hero-layout{grid-template-columns:1fr;}
-    .hero-photo-wrap{order:-1; margin-bottom:34px; max-width:340px; margin-left:auto; margin-right:auto;}
+    .hero-visual{height:340px; order:-1; margin-bottom:30px;}
     .hero-ctas{justify-content:flex-start;}
     .rouga-wrap{grid-template-columns:1fr;}
   }
@@ -367,6 +380,15 @@
     .hero{padding:130px 0 70px;}
     .section{padding:64px 0;}
     #signal-line{display:none;}
+    .hero-bubble.b1{left:4%;}
+    .hero-bubble.b2{right:4%;}
+    .hero-bubble.b3{left:2%;}
+    .hero-bubble.b4{right:4%;}
+    .hero-bubble.b5{left:8%;}
+  }
+  @media (max-width:480px){
+    .hero-bubble{font-size:12px; padding:10px 16px;}
+    .hero-orb{width:100px; height:100px; margin:-50px 0 0 -50px;}
   }
   @media (prefers-reduced-motion: reduce){*{animation-duration:.001s !important; transition-duration:.001s !important;} html{scroll-behavior:auto;}}
 </style>
@@ -421,15 +443,13 @@
             <span><strong>Amadou Rouga Achirou</strong> — Founder &amp; CEO, ROUGATECH</span>
           </div>
         </div>
-        <div class="hero-photo-wrap">
-          <div class="hero-photo-glow" aria-hidden="true"></div>
-          <div class="hero-photo-card">
-            <img src="founder.jpg" alt="Amadou Rouga Achirou, Founder &amp; CEO of ROUGATECH">
-          </div>
-          <div class="hero-photo-chip">
-            <div class="name">Amadou Rouga Achirou</div>
-            <div class="role">Founder &amp; CEO — ROUGATECH</div>
-          </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-orb"></div>
+          <div class="hero-bubble b1"><span class="dot"></span><span class="fr">Visibilité +</span><span class="en">Visibility +</span></div>
+          <div class="hero-bubble b2"><span class="dot"></span><span class="fr">Plus de vente</span><span class="en">More sales</span></div>
+          <div class="hero-bubble b3"><span class="dot"></span><span class="fr">Plus de client</span><span class="en">More customers</span></div>
+          <div class="hero-bubble b4"><span class="dot"></span><span class="fr">Client satisfait</span><span class="en">Happy customers</span></div>
+          <div class="hero-bubble b5"><span class="dot"></span><span class="fr">Grandir</span><span class="en">Grow</span></div>
         </div>
       </div>
     </div>
@@ -765,10 +785,6 @@
       <div class="footer-brand">
         <div class="brand"><span class="logo-plate"><img src="logo.png" alt="ROUGATECH"></span></div>
         <p><span class="fr">TRANSFORMEZ VOTRE ENTREPRISE. VENDEZ PLUS.</span><span class="en">TRANSFORM YOUR BUSINESS. SELL MORE.</span></p>
-        <div class="trust-row">
-          <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span class="fr">Connexion sécurisée (HTTPS)</span><span class="en">Secure Connection (HTTPS)</span></span>
-          <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg><span class="fr">Hébergé sur Cloudflare</span><span class="en">Hosted on Cloudflare</span></span>
-        </div>
       </div>
       <div class="footer-nav">
         <div class="footer-links">
