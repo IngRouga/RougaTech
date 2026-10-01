@@ -258,6 +258,10 @@
   .svc-spine-item::before{content:''; position:absolute; left:-34px; top:2px; width:11px; height:11px; border-radius:50%; background:var(--black); border:2px solid var(--cyan);}
   .svc-spine-item h3{font-size:15.5px; font-family:'JetBrains Mono',monospace; text-transform:uppercase; letter-spacing:.05em; margin-bottom:8px;}
   .svc-spine-item p{color:var(--gray-mute); font-size:14px; line-height:1.55; margin-bottom:10px;}
+  .svc-spine-item .cap-link{display:inline-flex; align-items:center; gap:6px; font-size:12px; font-family:'JetBrains Mono',monospace; text-transform:uppercase; letter-spacing:.05em; color:var(--cream); transition:color .25s var(--ease);}
+  .svc-spine-item .cap-link:hover{color:var(--cyan);}
+  .svc-spine-item .cap-link svg{width:12px; height:12px; flex-shrink:0; transition:transform .25s var(--ease);}
+  .svc-spine-item .cap-link:hover svg{transform:translate(2px,-2px);}
   @media (prefers-reduced-motion: reduce){.svc-line-flow{animation:none; opacity:.55;} .svc-core::before,.svc-core::after{animation:none;}}
 
   /* 03 — growth flow */
