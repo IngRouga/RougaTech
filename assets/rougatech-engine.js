@@ -256,6 +256,32 @@
       var connectors = new THREE.LineSegments(connGeo, connMat);
       group.add(connectors);
 
+      // ascending particles — a steady stream rising up through the core. Not a literal
+      // chart (never that again): just a continuous upward current reading as momentum,
+      // progress, a system that is actively growing rather than a static ambient scene.
+      var ascendCount = tier === 'light' ? 26 : 46;
+      var ascendRadius = 1.25;
+      var ascendTop = 2.9, ascendBottom = -2.9;
+      var ascendPositions = new Float32Array(ascendCount * 3);
+      var ascendSpeeds = new Float32Array(ascendCount);
+      function respawnAscend(i, atBottom){
+        var ang = Math.random() * Math.PI * 2;
+        var rad = Math.random() * ascendRadius;
+        ascendPositions[i*3]   = Math.cos(ang) * rad;
+        ascendPositions[i*3+1] = atBottom ? ascendBottom : (ascendBottom + Math.random() * (ascendTop - ascendBottom));
+        ascendPositions[i*3+2] = Math.sin(ang) * rad;
+      }
+      for(var ai = 0; ai < ascendCount; ai++){
+        respawnAscend(ai, false);
+        ascendSpeeds[ai] = 0.14 + Math.random() * 0.24;
+      }
+      var ascendGeo = new THREE.BufferGeometry();
+      var ascendAttr = new THREE.BufferAttribute(ascendPositions, 3);
+      ascendGeo.setAttribute('position', ascendAttr);
+      var ascendMat = new THREE.PointsMaterial({ color: 0xcdf5ff, size: 0.042, transparent: true, opacity: 0.8, sizeAttenuation: true, blending: THREE.AdditiveBlending, depthWrite: false });
+      var ascendPoints = new THREE.Points(ascendGeo, ascendMat);
+      group.add(ascendPoints);
+
       function resize(){
         var w = visual.clientWidth, h = visual.clientHeight;
         if(w === 0 || h === 0) return;
@@ -306,7 +332,8 @@
       function animate(){
         requestAnimationFrame(animate);
         if(!running) return;
-        var t = clock.getElapsedTime();
+        var dt = Math.min(clock.getDelta(), 0.1);
+        var t = clock.elapsedTime;
 
         group.rotation.y = t * 0.065;
         core.rotation.x = t * 0.1;
@@ -325,15 +352,28 @@
         camera.position.y = curCamY;
         camera.lookAt(0, 0, 0);
 
+        // a slow, continuous "breathing" growth cycle — independent of scroll — so the
+        // system reads as alive and evolving, not a static decoration
+        var breathe = 1 + Math.sin(t * 0.26) * 0.035;
+
+        // ascending particles — a steady upward current through the core
+        for(var ai2 = 0; ai2 < ascendCount; ai2++){
+          var yi = ai2 * 3 + 1;
+          ascendPositions[yi] += ascendSpeeds[ai2] * dt;
+          if(ascendPositions[yi] > ascendTop) respawnAscend(ai2, true);
+        }
+        ascendAttr.needsUpdate = true;
+
         var p = scrollProgress;
-        var expand = 1 + p * 0.85;
+        var expand = (1 + p * 0.85) * breathe;
         fg.points.scale.setScalar(expand);
         bg.points.scale.setScalar(1 + p * 1.3);
         lines.scale.setScalar(expand);
         connectors.scale.setScalar(1 + p * 0.5);
-        rings.forEach(function(ring, i){ ring.scale.setScalar(1 + p * (0.5 + i * 0.35)); });
-        core.scale.setScalar(1 + p * 0.18);
-        glow.scale.setScalar(3.6 * (1 + p * 0.3));
+        rings.forEach(function(ring, i){ ring.scale.setScalar((1 + p * (0.5 + i * 0.35)) * (1 + Math.sin(t * 0.22 + i * 1.7) * 0.025)); });
+        core.scale.setScalar((1 + p * 0.18) * breathe);
+        coreInner.scale.setScalar(breathe);
+        glow.scale.setScalar(3.6 * (1 + p * 0.3) * breathe);
 
         fg.mat.opacity = 0.9 * (1 - p * 0.65);
         bg.mat.opacity = 0.32 * (1 - p * 0.8);
@@ -342,6 +382,7 @@
         coreMat.opacity = 0.6 * (1 - p * 0.45);
         coreInnerMat.opacity = 0.35 * (1 - p * 0.45);
         glowMat.opacity = 0.55 * (1 - p * 0.5);
+        ascendMat.opacity = 0.8 * (1 - p * 0.7);
 
         renderer.render(scene, camera);
       }
