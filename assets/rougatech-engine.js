@@ -396,7 +396,11 @@
     initCursor();
     initSmoothScroll();
     initWorkTilt();
-    initHero3D();
+    // initHero3D() intentionally not called: Amadou preferred the original
+    // floating-orb/bubble hero visual (Visibilité+/Plus de vente/Plus de
+    // client/Grandir) over the WebGL digital core. The core code is left in
+    // place (easy to re-enable later) but the hero now always shows the CSS
+    // fallback, which is the real, permanent design again, not a fallback.
   }
 
   if(document.readyState === 'loading'){

@@ -205,6 +205,16 @@
   .reveal{opacity:0; transform:translateY(28px); transition:opacity .5s var(--ease), transform .5s var(--ease);}
   .reveal.in{opacity:1; transform:translateY(0);}
 
+  /* slim stats strip — real numbers only, no chart/dashboard mockup */
+  .stats-strip{padding:44px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .stats-row{display:flex; align-items:center; justify-content:center; gap:64px;}
+  .stat-item{text-align:center;}
+  .stat-num{font-family:'Sora',sans-serif; font-weight:700; font-size:clamp(34px,4.4vw,52px); line-height:1; color:var(--cream); letter-spacing:-.01em;}
+  .stat-num .stat-plus{color:var(--cyan);}
+  .stat-label{margin-top:10px; font-family:'JetBrains Mono',monospace; font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--gray-mute);}
+  .stat-divider{width:1px; height:46px; background:var(--line);}
+  @media (max-width:560px){.stats-row{gap:36px;} .stat-divider{height:38px;}}
+
   .section{padding:110px 0;}
   .section-head{max-width:760px; margin-bottom:60px;}
   .section-head h2{font-size:clamp(28px,4vw,48px); margin-top:22px;}
@@ -580,6 +590,23 @@
           <div class="hero-bubble b3"><span class="dot"></span><span class="fr">Plus de client</span><span class="en">More customers</span></div>
           <div class="hero-bubble b4"><span class="dot"></span><span class="fr">Client satisfait</span><span class="en">Happy customers</span></div>
           <div class="hero-bubble b5"><span class="dot"></span><span class="fr">Grandir</span><span class="en">Grow</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS STRIP — slim proof band, no dashboard/chart mockup, just the real numbers -->
+  <section class="stats-strip">
+    <div class="wrap">
+      <div class="stats-row reveal">
+        <div class="stat-item">
+          <div class="stat-num">10<span class="stat-plus">+</span></div>
+          <div class="stat-label"><span class="fr">Projets réalisés</span><span class="en">Completed projects</span></div>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item">
+          <div class="stat-num">90<span class="stat-plus">%</span></div>
+          <div class="stat-label"><span class="fr">Clients satisfaits</span><span class="en">Satisfied clients</span></div>
         </div>
       </div>
     </div>
