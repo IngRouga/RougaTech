@@ -90,11 +90,28 @@
   #signal-line{position:fixed; left:0; top:0; width:2px; height:100vh; z-index:60; pointer-events:none; background:var(--line);}
   #signal-line .fill{position:absolute; left:0; top:0; width:100%; height:0%; background:linear-gradient(180deg,var(--cyan),var(--blue)); box-shadow:0 0 12px rgba(127,227,255,.6); transition:height .05s linear;}
 
-  header{position:fixed; top:0; left:0; width:100%; z-index:50; padding:20px 40px; display:flex; align-items:center; justify-content:space-between; transition:background .4s var(--ease), backdrop-filter .4s var(--ease), border-color .4s var(--ease); border-bottom:1px solid transparent;}
-  header.scrolled{background:rgba(8,9,10,0.75); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--line);}
+  header{position:fixed; top:0; left:0; width:100%; z-index:50; padding:20px 40px; display:flex; align-items:center; justify-content:space-between; transition:background .4s var(--ease), backdrop-filter .4s var(--ease), border-color .4s var(--ease), padding .4s var(--ease); border-bottom:1px solid transparent;}
+  header.scrolled{background:rgba(8,9,10,0.75); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--line); padding:13px 40px;}
   .brand{display:flex; align-items:center; gap:10px;}
-  .brand .logo-plate{background:var(--cream); border-radius:8px; padding:6px 10px; display:flex; align-items:center; line-height:0;}
-  .brand img{height:16px; width:auto;}
+  .brand .logo-plate{background:var(--cream); border-radius:8px; padding:6px 10px; display:flex; align-items:center; line-height:0; transition:padding .4s var(--ease);}
+  .brand img{height:16px; width:auto; transition:height .4s var(--ease);}
+  header.scrolled .brand .logo-plate{padding:5px 9px;}
+  header.scrolled .brand img{height:14px;}
+
+  /* custom cursor (desktop, fine pointer only) */
+  .cursor-dot,.cursor-ring{position:fixed; top:0; left:0; pointer-events:none; z-index:999; border-radius:50%; transform:translate(-50%,-50%); opacity:0;}
+  .cursor-dot{width:6px; height:6px; background:var(--cyan); transition:opacity .25s var(--ease), background .2s var(--ease);}
+  .cursor-ring{width:38px; height:38px; border:1px solid rgba(127,227,255,.45); display:flex; align-items:center; justify-content:center; transition:width .28s var(--ease), height .28s var(--ease), border-color .28s var(--ease), opacity .25s var(--ease), background .28s var(--ease);}
+  .cursor-ring::after{content:attr(data-cursor-label); font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--black); opacity:0; transition:opacity .2s var(--ease);}
+  html.cursor-ready.cursor-moved .cursor-dot,html.cursor-ready.cursor-moved .cursor-ring{opacity:1;}
+  html.cursor-ready.cursor-hide .cursor-dot,html.cursor-ready.cursor-hide .cursor-ring{opacity:0;}
+  .cursor-ring.is-hover{width:52px; height:52px; border-color:var(--cyan); background:rgba(127,227,255,.08);}
+  .cursor-ring.is-label{width:74px; height:74px; background:var(--cyan); border-color:var(--cyan);}
+  .cursor-ring.is-label::after{opacity:1;}
+  .cursor-ring.is-label ~ .cursor-dot,.cursor-ring.is-label{opacity:1;}
+  html.cursor-ready.cursor-active{cursor:none;}
+  html.cursor-ready.cursor-active a,html.cursor-ready.cursor-active button{cursor:none;}
+  @media (hover:none),(pointer:coarse){.cursor-dot,.cursor-ring{display:none !important;}}
   nav.main-nav{display:flex; align-items:center; gap:34px;}
   nav.main-nav a{font-size:14px; color:var(--gray-mute); position:relative; padding:4px 0; transition:color .25s var(--ease);}
   nav.main-nav a:hover{color:var(--cream);}
@@ -141,8 +158,11 @@
   .hero-founder-line strong{color:var(--cream); font-family:'Plus Jakarta Sans',sans-serif; font-weight:600;}
   @keyframes heroFadeUp{from{opacity:0; transform:translateY(18px);} to{opacity:1; transform:translateY(0);}}
 
-  /* hero floating bubbles */
+  /* hero 3D digital core (WebGL) + floating-bubble fallback */
   .hero-visual{position:relative; height:420px; opacity:0; animation:heroFadeUp .8s var(--ease) .15s forwards;}
+  .hero-canvas{position:absolute; inset:-15% -10%; width:120%; height:130%; display:block; opacity:0; transition:opacity .9s var(--ease);}
+  .hero-visual.webgl-active .hero-canvas{opacity:1;}
+  .hero-visual.webgl-active .hero-orb,.hero-visual.webgl-active .hero-bubble{opacity:0; pointer-events:none; transition:opacity .6s var(--ease);}
   .hero-orb{position:absolute; top:50%; left:50%; width:130px; height:130px; margin:-65px 0 0 -65px; border-radius:50%; background:radial-gradient(circle at 35% 30%, rgba(127,227,255,.85), rgba(47,92,255,.45) 55%, transparent 76%);}
   .hero-orb::before, .hero-orb::after{content:''; position:absolute; inset:0; border-radius:50%; border:1px solid rgba(127,227,255,.4); animation:pulseRing 3.4s ease-out infinite;}
   .hero-orb::after{animation-delay:1.2s; border-color:rgba(47,92,255,.35);}
@@ -200,6 +220,45 @@
   .cap-card .cap-link:hover svg{transform:translate(2px,-2px);}
   @media (max-width:980px){.cap-grid{grid-template-columns:repeat(2,1fr);}}
   @media (max-width:520px){.cap-grid{grid-template-columns:repeat(2,1fr); gap:1px;} .cap-card{padding:28px 20px;}}
+
+  /* 02 — services as a connected digital system */
+  .svc-system{display:grid; grid-template-columns:1fr 1fr; gap:54px; align-items:center;}
+  .svc-diagram{position:relative; aspect-ratio:1/1; max-width:600px; margin:0 auto; width:100%;}
+  .svc-diagram svg{position:absolute; inset:0; width:100%; height:100%; overflow:visible;}
+  .svc-line{fill:none; stroke:var(--line); stroke-width:1.3; transition:stroke .35s var(--ease), stroke-width .35s var(--ease);}
+  .svc-line-flow{fill:none; stroke:var(--cyan); stroke-width:1.6; stroke-dasharray:6 10; opacity:0; transition:opacity .35s var(--ease); animation:svcFlow 1.6s linear infinite;}
+  @keyframes svcFlow{to{stroke-dashoffset:-32;}}
+  .svc-node{position:absolute; margin-left:-70px; margin-top:-70px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:6px; padding:12px; border-radius:50%; width:140px; height:140px; background:var(--black-soft); border:1px solid var(--line); transition:transform .4s var(--ease), border-color .35s var(--ease), background .35s var(--ease), box-shadow .4s var(--ease);}
+  .svc-node:hover,.svc-node:focus-visible,.svc-node.is-active{transform:scale(1.08); border-color:rgba(127,227,255,.5); background:var(--black); box-shadow:0 20px 46px -16px rgba(127,227,255,.3);}
+  .svc-node .svc-icon{width:22px; height:22px; color:var(--cyan); flex-shrink:0;}
+  .svc-node .svc-icon svg{width:100%; height:100%;}
+  .svc-node .svc-label{font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:.03em; text-transform:uppercase; color:var(--cream); line-height:1.3; max-width:104px;}
+  .svc-core{position:absolute; left:50%; top:50%; width:124px; height:124px; margin:-62px 0 0 -62px; border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; background:radial-gradient(circle at 35% 30%, rgba(127,227,255,.22), rgba(47,92,255,.14) 60%, transparent 85%); border:1px solid rgba(127,227,255,.4); z-index:2;}
+  .svc-core::before,.svc-core::after{content:''; position:absolute; inset:0; border-radius:50%; border:1px solid rgba(127,227,255,.3); animation:pulseRing 3.6s ease-out infinite;}
+  .svc-core::after{animation-delay:1.3s; border-color:rgba(47,92,255,.3);}
+  .svc-core-label{font-family:'Sora',sans-serif; font-weight:700; font-size:13px; letter-spacing:.02em; position:relative; z-index:1;}
+  .svc-core-sub{font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:.08em; text-transform:uppercase; color:var(--cyan); margin-top:3px; position:relative; z-index:1;}
+  .svc-detail{border:1px solid var(--line); border-radius:20px; padding:36px; background:var(--black-soft); min-height:260px; display:flex; flex-direction:column; justify-content:center; transition:border-color .4s var(--ease);}
+  .svc-detail.is-switching{opacity:.4;}
+  .svc-detail .svc-detail-num{font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--gray-mute); margin-bottom:14px; display:block;}
+  .svc-detail h3{font-size:22px; margin-bottom:14px;}
+  .svc-detail p{color:var(--gray-mute); font-size:15px; line-height:1.6; margin-bottom:22px;}
+  .svc-detail .cap-link{display:inline-flex; align-items:center; gap:6px; font-size:12px; font-family:'JetBrains Mono',monospace; text-transform:uppercase; letter-spacing:.05em; color:var(--cream); transition:color .25s var(--ease);}
+  .svc-detail .cap-link:hover{color:var(--cyan);}
+  .svc-detail .cap-link svg{width:12px; height:12px; transition:transform .25s var(--ease);}
+  .svc-detail .cap-link:hover svg{transform:translate(2px,-2px);}
+  @media (max-width:980px){
+    .svc-system{grid-template-columns:1fr; gap:0;}
+    .svc-diagram{display:none;}
+    .svc-spine{display:flex !important;}
+  }
+  .svc-spine{display:none; flex-direction:column; gap:0; position:relative; margin:30px 0 10px; padding-left:28px; border-left:1px solid var(--line);}
+  .svc-spine-item{position:relative; padding:0 0 30px 22px;}
+  .svc-spine-item:last-child{padding-bottom:0;}
+  .svc-spine-item::before{content:''; position:absolute; left:-34px; top:2px; width:11px; height:11px; border-radius:50%; background:var(--black); border:2px solid var(--cyan);}
+  .svc-spine-item h3{font-size:15.5px; font-family:'JetBrains Mono',monospace; text-transform:uppercase; letter-spacing:.05em; margin-bottom:8px;}
+  .svc-spine-item p{color:var(--gray-mute); font-size:14px; line-height:1.55; margin-bottom:10px;}
+  @media (prefers-reduced-motion: reduce){.svc-line-flow{animation:none; opacity:.55;} .svc-core::before,.svc-core::after{animation:none;}}
 
   /* 03 — growth flow */
   .growth-flow{max-width:880px; margin:0 auto;}
@@ -287,6 +346,38 @@
   .rouga-note{font-size:11px; color:var(--gray-mute); margin-top:16px; text-align:center; position:relative; z-index:1;}
   @media (max-width:900px){.rouga-wrap{grid-template-columns:1fr; gap:36px;}}
   @media (prefers-reduced-motion: reduce){.rouga-bubble,.rouga-diagnosis{opacity:1; transform:none;}}
+
+  /* 06 — ROUGA AI node flow */
+  .rouga-flow{position:relative; z-index:1; display:flex; flex-direction:column; gap:0;}
+  .rouga-flow-node{display:flex; align-items:center; gap:16px; padding:16px 0; opacity:.35; transition:opacity .5s var(--ease);}
+  .rouga-flow-node.is-active{opacity:1;}
+  .rouga-flow-dot{flex-shrink:0; width:38px; height:38px; border-radius:50%; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--gray-mute); transition:border-color .4s var(--ease), color .4s var(--ease), background .4s var(--ease), box-shadow .4s var(--ease);}
+  .rouga-flow-node.is-active .rouga-flow-dot{border-color:var(--cyan); color:var(--cyan); background:rgba(127,227,255,.08); box-shadow:0 0 0 5px rgba(127,227,255,.08);}
+  .rouga-flow-body{display:flex; flex-direction:column; gap:3px;}
+  .rouga-flow-body .k{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--gray-mute); transition:color .4s var(--ease);}
+  .rouga-flow-node.is-active .rouga-flow-body .k{color:var(--cyan);}
+  .rouga-flow-body .v{font-size:14.5px; color:var(--cream);}
+  .rouga-flow-connector{width:1px; height:22px; background:var(--line); margin-left:19px; position:relative; overflow:hidden;}
+  .rouga-flow-connector::after{content:''; position:absolute; left:0; top:-100%; width:100%; height:100%; background:linear-gradient(var(--cyan),transparent); opacity:0; transition:opacity .4s var(--ease);}
+  .rouga-flow-node.is-active + .rouga-flow-connector::after{opacity:1; animation:rougaFlowTravel 1.4s ease-in-out infinite;}
+  @keyframes rougaFlowTravel{0%{top:-100%;} 100%{top:100%;}}
+  @media (prefers-reduced-motion: reduce){.rouga-flow-node{opacity:1;} .rouga-flow-node.is-active + .rouga-flow-connector::after{animation:none; opacity:.6;}}
+
+  /* 05 — selected work: floating browser-window showcase */
+  .work-win{perspective:1400px;}
+  .work-win-inner{transform-style:preserve-3d; transition:transform .25s var(--ease);}
+  .work-chrome{display:flex; align-items:center; gap:6px; padding:12px 14px; background:var(--black); border-bottom:1px solid var(--line);}
+  .work-chrome span{width:8px; height:8px; border-radius:50%; background:var(--line);}
+  .work-media{transform:translateZ(0);}
+  @media (prefers-reduced-motion: reduce){.work-win-inner{transition:none;}}
+
+  /* 07 — founder glass depth frame */
+  .founder-photo-frame{position:relative;}
+  .founder-photo-frame::before{content:''; position:absolute; inset:-18px; border:1px solid rgba(127,227,255,.22); border-radius:28px; pointer-events:none;}
+  .founder-photo-frame .corner{position:absolute; width:22px; height:22px; border-color:var(--cyan); opacity:.75; pointer-events:none;}
+  .founder-photo-frame .corner.tl{top:-18px; left:-18px; border-top:2px solid; border-left:2px solid; border-top-left-radius:10px;}
+  .founder-photo-frame .corner.br{bottom:-18px; right:-18px; border-bottom:2px solid; border-right:2px solid; border-bottom-right-radius:10px;}
+  .founder-photo-glow{position:absolute; inset:-40px; background:radial-gradient(circle at 60% 30%, rgba(127,227,255,.18), transparent 65%); filter:blur(26px); z-index:-1; pointer-events:none;}
 
   /* 07 — founder */
   .founder-wrap{display:grid; grid-template-columns:1fr 320px; gap:60px; align-items:center;}
@@ -395,6 +486,9 @@
 </head>
 <body data-lang="fr">
 
+<div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+<div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+
 <div class="aurora-bg" aria-hidden="true"><span></span><span></span><span></span></div>
 
 <div id="signal-line"><div class="fill"></div></div>
@@ -443,8 +537,9 @@
             <span><strong>Amadou Rouga Achirou</strong> — Founder &amp; CEO, ROUGATECH</span>
           </div>
         </div>
-        <div class="hero-visual" aria-hidden="true">
-          <div class="hero-orb"></div>
+        <div class="hero-visual" id="hero-visual" aria-hidden="true">
+          <canvas class="hero-canvas" id="hero-canvas"></canvas>
+          <div class="hero-orb" id="hero-orb"></div>
           <div class="hero-bubble b1"><span class="dot"></span><span class="fr">Visibilité +</span><span class="en">Visibility +</span></div>
           <div class="hero-bubble b2"><span class="dot"></span><span class="fr">Plus de vente</span><span class="en">More sales</span></div>
           <div class="hero-bubble b3"><span class="dot"></span><span class="fr">Plus de client</span><span class="en">More customers</span></div>
@@ -463,52 +558,111 @@
         <h2><span class="fr">Ce que fait ROUGATECH</span><span class="en">What ROUGATECH Does</span></h2>
         <p class="section-sub"><span class="fr">Nous construisons les systèmes digitaux qui font fonctionner les entreprises modernes.</span><span class="en">We build the digital systems behind modern businesses.</span></p>
       </div>
-      <div class="cap-grid" id="cap-grid">
-        <div class="cap-card">
-          <span class="cap-num">01</span>
-          <span class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
-          <h3><span class="fr">Sites web</span><span class="en">Websites</span></h3>
-          <p><span class="fr">Des sites web professionnels conçus autour de vos objectifs business.</span><span class="en">Professional websites designed around business objectives.</span></p>
-          <a class="cap-link" href="/solutions/websites/"><span class="fr">En savoir plus</span><span class="en">Learn more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      <div class="svc-system">
+        <div class="svc-diagram reveal" id="svc-diagram">
+          <svg viewBox="0 0 100 100" aria-hidden="true"><g id="svc-lines"></g></svg>
+          <div class="svc-core" aria-hidden="true">
+            <span class="svc-core-label">ROUGATECH</span>
+            <span class="svc-core-sub">CORE</span>
+          </div>
+          <!-- nodes injected by JS -->
         </div>
-        <div class="cap-card">
-          <span class="cap-num">02</span>
-          <span class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg></span>
-          <h3><span class="fr">Agents IA</span><span class="en">AI Agents</span></h3>
-          <p><span class="fr">Service client, vente et assistants business propulsés par l'IA.</span><span class="en">AI-powered customer service, sales and business assistants.</span></p>
-          <a class="cap-link" href="/solutions/ai-agents/"><span class="fr">En savoir plus</span><span class="en">Learn more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        <div class="svc-detail reveal" id="svc-detail">
+          <span class="svc-detail-num">00 / CORE</span>
+          <h3><span class="fr">ROUGATECH — le système central</span><span class="en">ROUGATECH — the central system</span></h3>
+          <p><span class="fr">Tout est connecté. Survolez un nœud pour découvrir comment chaque capacité s'intègre au système business de votre entreprise.</span><span class="en">Everything is connected. Hover a node to see how each capability fits into your business system.</span></p>
         </div>
-        <div class="cap-card">
-          <span class="cap-num">03</span>
-          <span class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span>
-          <h3><span class="fr">Plateformes SaaS</span><span class="en">SaaS Platforms</span></h3>
-          <p><span class="fr">Des plateformes digitales sur mesure qui structurent vos opérations.</span><span class="en">Custom digital platforms that structure business operations.</span></p>
-          <a class="cap-link" href="/solutions/saas/"><span class="fr">En savoir plus</span><span class="en">Learn more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-        </div>
-        <div class="cap-card">
-          <span class="cap-num">04</span>
-          <span class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
-          <h3><span class="fr">Automatisation</span><span class="en">Automation</span></h3>
-          <p><span class="fr">Des flux automatisés qui réduisent le travail répétitif.</span><span class="en">Automated workflows that reduce repetitive work.</span></p>
-          <a class="cap-link" href="/solutions/automation/"><span class="fr">En savoir plus</span><span class="en">Learn more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-        </div>
-        <div class="cap-card">
-          <span class="cap-num">05</span>
-          <span class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span>
-          <h3><span class="fr">Commerce digital</span><span class="en">Digital Commerce</span></h3>
-          <p><span class="fr">Catalogues digitaux, e-commerce et systèmes de commande structurés.</span><span class="en">Digital catalogs, e-commerce and structured ordering systems.</span></p>
-          <a class="cap-link" href="/solutions/ecommerce/"><span class="fr">En savoir plus</span><span class="en">Learn more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-        </div>
-        <div class="cap-card">
-          <span class="cap-num">06</span>
-          <span class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51 15.42 17.49M15.41 6.51 8.59 10.49"/></svg></span>
-          <h3><span class="fr">Transformation digitale</span><span class="en">Digital Transformation</span></h3>
-          <p><span class="fr">Des systèmes digitaux connectés, construits autour de votre fonctionnement réel.</span><span class="en">Connected digital systems built around the way a business operates.</span></p>
-          <a class="cap-link" href="/solutions/"><span class="fr">Voir toutes les solutions</span><span class="en">View all solutions</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-        </div>
+        <div class="svc-spine" id="svc-spine"><!-- mobile fallback injected by JS --></div>
       </div>
     </div>
   </section>
+
+  <!-- SERVICE NODES DATA — drives the connected-system diagram above -->
+  <script>
+    var SERVICE_NODES = [
+      { num:"01", angle:270, icon:'<rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>', title:{fr:"Sites web",en:"Websites"}, desc:{fr:"Des sites web professionnels conçus autour de vos objectifs business.",en:"Professional websites designed around business objectives."}, href:"/solutions/websites/", cta:{fr:"En savoir plus",en:"Learn more"} },
+      { num:"02", angle:330, icon:'<rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/>', title:{fr:"Agents IA",en:"AI Agents"}, desc:{fr:"Service client, vente et assistants business propulsés par l'IA.",en:"AI-powered customer service, sales and business assistants."}, href:"/solutions/ai-agents/", cta:{fr:"En savoir plus",en:"Learn more"} },
+      { num:"03", angle:30, icon:'<path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>', title:{fr:"Plateformes SaaS",en:"SaaS Platforms"}, desc:{fr:"Des plateformes digitales sur mesure qui structurent vos opérations.",en:"Custom digital platforms that structure business operations."}, href:"/solutions/saas/", cta:{fr:"En savoir plus",en:"Learn more"} },
+      { num:"04", angle:90, icon:'<path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/>', title:{fr:"Automatisation",en:"Automation"}, desc:{fr:"Des flux automatisés qui réduisent le travail répétitif.",en:"Automated workflows that reduce repetitive work."}, href:"/solutions/automation/", cta:{fr:"En savoir plus",en:"Learn more"} },
+      { num:"05", angle:150, icon:'<circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>', title:{fr:"Commerce digital",en:"Digital Commerce"}, desc:{fr:"Catalogues digitaux, e-commerce et systèmes de commande structurés.",en:"Digital catalogs, e-commerce and structured ordering systems."}, href:"/solutions/ecommerce/", cta:{fr:"En savoir plus",en:"Learn more"} },
+      { num:"06", angle:210, icon:'<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51 15.42 17.49M15.41 6.51 8.59 10.49"/>', title:{fr:"Transformation digitale",en:"Digital Transformation"}, desc:{fr:"Des systèmes digitaux connectés, construits autour de votre fonctionnement réel.",en:"Connected digital systems built around the way a business operates."}, href:"/solutions/", cta:{fr:"Voir toutes les solutions",en:"View all solutions"} }
+    ];
+
+    (function renderServiceSystem(){
+      var diagram = document.getElementById('svc-diagram');
+      var linesG = document.getElementById('svc-lines');
+      var detail = document.getElementById('svc-detail');
+      var spine = document.getElementById('svc-spine');
+      if(!diagram || !spine) return;
+      var R = 38; // radius in viewBox units (0-100 scale), diagram is a square
+      var defaultDetail = detail.innerHTML;
+
+      function setDetail(n){
+        detail.classList.add('is-switching');
+        setTimeout(function(){
+          if(n){
+            detail.innerHTML =
+              '<span class="svc-detail-num">' + n.num + ' / ' + n.title.fr.toUpperCase() + '</span>' +
+              '<h3><span class="fr">' + n.title.fr + '</span><span class="en">' + n.title.en + '</span></h3>' +
+              '<p><span class="fr">' + n.desc.fr + '</span><span class="en">' + n.desc.en + '</span></p>' +
+              '<a class="cap-link" href="' + n.href + '"><span class="fr">' + n.cta.fr + '</span><span class="en">' + n.cta.en + '</span>' +
+              '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>';
+          } else {
+            detail.innerHTML = defaultDetail;
+          }
+          document.body.getAttribute('data-lang'); // no-op, keeps lang spans working via existing CSS rule
+          detail.classList.remove('is-switching');
+        }, 120);
+      }
+
+      SERVICE_NODES.forEach(function(n, i){
+        var rad = n.angle * Math.PI / 180;
+        var cx = 50 + R * Math.cos(rad);
+        var cy = 50 + R * Math.sin(rad);
+
+        var line = document.createElementNS('http://www.w3.org/2000/svg','line');
+        line.setAttribute('class','svc-line');
+        line.setAttribute('x1','50'); line.setAttribute('y1','50');
+        line.setAttribute('x2', cx); line.setAttribute('y2', cy);
+        linesG.appendChild(line);
+
+        var flow = document.createElementNS('http://www.w3.org/2000/svg','line');
+        flow.setAttribute('class','svc-line-flow');
+        flow.setAttribute('id','svc-flow-'+i);
+        flow.setAttribute('x1','50'); flow.setAttribute('y1','50');
+        flow.setAttribute('x2', cx); flow.setAttribute('y2', cy);
+        linesG.appendChild(flow);
+
+        var node = document.createElement('button');
+        node.type = 'button';
+        node.className = 'svc-node';
+        node.style.left = cx + '%';
+        node.style.top = cy + '%';
+        node.setAttribute('aria-label', n.title.fr + ' / ' + n.title.en);
+        node.innerHTML =
+          '<span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">' + n.icon + '</svg></span>' +
+          '<span class="svc-label"><span class="fr">' + n.title.fr + '</span><span class="en">' + n.title.en + '</span></span>';
+        var flowEl = flow;
+        function activate(){ flowEl.style.opacity = '1'; node.classList.add('is-active'); setDetail(n); }
+        function deactivate(){ flowEl.style.opacity = '0'; node.classList.remove('is-active'); setDetail(null); }
+        node.addEventListener('mouseenter', activate);
+        node.addEventListener('mouseleave', deactivate);
+        node.addEventListener('focus', activate);
+        node.addEventListener('blur', deactivate);
+        node.addEventListener('click', function(e){ e.preventDefault(); window.location.href = n.href; });
+        diagram.appendChild(node);
+
+        var spineItem = document.createElement('div');
+        spineItem.className = 'svc-spine-item';
+        spineItem.innerHTML =
+          '<h3>' + n.num + ' — <span class="fr">' + n.title.fr + '</span><span class="en">' + n.title.en + '</span></h3>' +
+          '<p><span class="fr">' + n.desc.fr + '</span><span class="en">' + n.desc.en + '</span></p>' +
+          '<a class="cap-link" href="' + n.href + '"><span class="fr">' + n.cta.fr + '</span><span class="en">' + n.cta.en + '</span>' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>';
+        spine.appendChild(spineItem);
+      });
+    })();
+  </script>
 
   <!-- 03 — THE BUSINESS GROWTH SYSTEM -->
   <section class="section section-alt-none" id="growth" style="background:var(--black-soft);">
@@ -649,8 +803,11 @@
       if(!grid) return;
       grid.innerHTML = ROUGATECH_PROJECTS.map(function(p){
         return '' +
-          '<article class="work-card">' +
+          '<article class="work-card work-win">' +
+            '<div class="work-win-inner">' +
+            '<div class="work-chrome" aria-hidden="true"><span></span><span></span><span></span></div>' +
             '<div class="work-media"><img src="' + p.image + '" alt="' + p.name + ' — ' + p.category.fr + '" loading="lazy"></div>' +
+            '</div>' +
             '<div class="work-body">' +
               '<span class="work-category"><span class="fr">' + p.category.fr + '</span><span class="en">' + p.category.en + '</span></span>' +
               '<h3>' + p.name + '</h3>' +
@@ -690,15 +847,31 @@
               <div class="status"><span class="fr">Aperçu illustratif</span><span class="en">Illustrative preview</span></div>
             </div>
           </div>
-          <div class="rouga-chat" id="rouga-chat">
-            <div class="rouga-bubble ai"><span class="fr">Que fait votre entreprise&nbsp;?</span><span class="en">What does your business do?</span></div>
-            <div class="rouga-bubble user"><span class="fr">Nous avons une boutique de vêtements et recevons la plupart de nos commandes via WhatsApp.</span><span class="en">We run a clothing store and receive most orders through WhatsApp.</span></div>
-            <div class="rouga-bubble ai"><span class="fr">Combien de demandes recevez-vous chaque jour&nbsp;?</span><span class="en">How many inquiries do you receive each day?</span></div>
-          </div>
-          <div class="rouga-diagnosis" id="rouga-diagnosis">
-            <div class="dlabel"><span class="fr">Diagnostic business</span><span class="en">Business Diagnosis</span></div>
-            <div class="rouga-diagnosis-row"><span class="k"><span class="fr">Opportunité principale</span><span class="en">Main opportunity</span></span><span class="v"><span class="fr">Commerce digital</span><span class="en">Digital Commerce</span></span></div>
-            <div class="rouga-diagnosis-row"><span class="k"><span class="fr">Opportunité secondaire</span><span class="en">Secondary opportunity</span></span><span class="v"><span class="fr">Service client IA</span><span class="en">AI Customer Service</span></span></div>
+          <div class="rouga-flow" id="rouga-flow">
+            <div class="rouga-flow-node" data-flow-node="1">
+              <span class="rouga-flow-dot">01</span>
+              <span class="rouga-flow-body"><span class="k"><span class="fr">Entreprise</span><span class="en">Business</span></span><span class="v"><span class="fr">Boutique de vêtements — commandes via WhatsApp</span><span class="en">Clothing store — orders via WhatsApp</span></span></span>
+            </div>
+            <div class="rouga-flow-connector"></div>
+            <div class="rouga-flow-node" data-flow-node="2">
+              <span class="rouga-flow-dot">02</span>
+              <span class="rouga-flow-body"><span class="k"><span class="fr">Découverte</span><span class="en">Discovery</span></span><span class="v"><span class="fr">Combien de demandes par jour&nbsp;?</span><span class="en">How many inquiries per day?</span></span></span>
+            </div>
+            <div class="rouga-flow-connector"></div>
+            <div class="rouga-flow-node" data-flow-node="3">
+              <span class="rouga-flow-dot">03</span>
+              <span class="rouga-flow-body"><span class="k"><span class="fr">Analyse</span><span class="en">Analysis</span></span><span class="v"><span class="fr">Traitement manuel des commandes qui freine la croissance</span><span class="en">Manual order handling is slowing growth</span></span></span>
+            </div>
+            <div class="rouga-flow-connector"></div>
+            <div class="rouga-flow-node" data-flow-node="4">
+              <span class="rouga-flow-dot">04</span>
+              <span class="rouga-flow-body"><span class="k"><span class="fr">Diagnostic</span><span class="en">Diagnosis</span></span><span class="v"><span class="fr">Opportunité principale : Commerce digital</span><span class="en">Main opportunity: Digital Commerce</span></span></span>
+            </div>
+            <div class="rouga-flow-connector"></div>
+            <div class="rouga-flow-node" data-flow-node="5">
+              <span class="rouga-flow-dot">05</span>
+              <span class="rouga-flow-body"><span class="k"><span class="fr">Solution ROUGATECH</span><span class="en">ROUGATECH Solution</span></span><span class="v"><span class="fr">Commerce digital + Service client IA</span><span class="en">Digital Commerce + AI Customer Service</span></span></span>
+            </div>
           </div>
           <p class="rouga-note"><span class="fr">Aperçu illustratif — ROUGA AI est en cours de développement.</span><span class="en">Illustrative preview — ROUGA AI is in development.</span></p>
         </div>
@@ -710,7 +883,10 @@
   <section class="section" id="founder" style="background:var(--black-soft);">
     <div class="wrap">
       <div class="founder-wrap">
-        <div class="founder-photo reveal">
+        <div class="founder-photo reveal founder-photo-frame">
+          <div class="founder-photo-glow" aria-hidden="true"></div>
+          <span class="corner tl" aria-hidden="true"></span>
+          <span class="corner br" aria-hidden="true"></span>
           <img src="founder.jpg" alt="Amadou Rouga Achirou" loading="lazy">
         </div>
         <div class="founder-text reveal">
@@ -935,23 +1111,21 @@
     window.location.href = `mailto:hello@rougatech.com?subject=${subject}&body=${body}`;
   });
 
-  // ROUGA AI chat preview animation (illustrative only, plays once on scroll into view)
+  // ROUGA AI node-flow animation (illustrative only, plays once on scroll into view)
   (function(){
-    const chatBox = document.getElementById('rouga-chat');
-    const diagnosis = document.getElementById('rouga-diagnosis');
-    if(!chatBox) return;
-    const bubbles = chatBox.querySelectorAll('.rouga-bubble');
+    const flow = document.getElementById('rouga-flow');
+    if(!flow) return;
+    const nodes = flow.querySelectorAll('.rouga-flow-node');
     let played = false;
     function play(){
       if(played) return;
       played = true;
-      bubbles.forEach((b, i) => { setTimeout(() => b.classList.add('show'), i * 550); });
-      if(diagnosis) setTimeout(() => diagnosis.classList.add('show'), bubbles.length * 550 + 250);
+      nodes.forEach((n, i) => { setTimeout(() => n.classList.add('is-active'), i * 500); });
     }
     const rio = new IntersectionObserver((entries) => {
       entries.forEach(e => { if(e.isIntersecting) play(); });
     }, {threshold:.4});
-    rio.observe(chatBox);
+    rio.observe(flow);
   })();
 
   // AI welcome widget
@@ -980,6 +1154,34 @@
     if(!alreadyDismissed){
       setTimeout(openWidget, 3500);
     }
+  })();
+</script>
+
+<!-- GSAP + ScrollTrigger + Lenis (vendored locally, no build step) — classic scripts, loaded after first paint -->
+<script>
+  (function(){
+    function loadScript(src){
+      return new Promise(function(resolve){
+        var s = document.createElement('script');
+        s.src = src; s.defer = true;
+        s.onload = resolve; s.onerror = resolve;
+        document.body.appendChild(s);
+      });
+    }
+    function boot(){
+      Promise.all([
+        loadScript('assets/vendor/gsap.min.js'),
+        loadScript('assets/vendor/ScrollTrigger.min.js'),
+        loadScript('assets/vendor/lenis.min.js')
+      ]).then(function(){
+        var m = document.createElement('script');
+        m.type = 'module';
+        m.src = 'assets/rougatech-engine.js';
+        document.body.appendChild(m);
+      });
+    }
+    if('requestIdleCallback' in window){ requestIdleCallback(boot, {timeout:1200}); }
+    else { setTimeout(boot, 200); }
   })();
 </script>
 
