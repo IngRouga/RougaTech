@@ -118,6 +118,15 @@
   .hero h1{font:400 clamp(44px,12vw,138px)/.86 var(--f-display); text-transform:uppercase; letter-spacing:.005em; margin-top:22px;}
   .hero h1 span{display:block;}
   .hero .serif{margin-top:20px;}
+  .marquee{position:relative; margin-top:28px; overflow:hidden; -webkit-mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent); mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);}
+  .marquee-label{font:700 10.5px/1 var(--f-body); letter-spacing:.22em; text-transform:uppercase; color:var(--faint); margin:0 0 12px 8%;}
+  .marquee-track{display:flex; gap:10px; width:max-content; animation:marq 40s linear infinite;}
+  .marquee:hover .marquee-track{animation-play-state:paused;}
+  .marquee button{flex:0 0 auto; width:104px; height:136px; padding:0; border:1px solid var(--line-soft); border-radius:14px; overflow:hidden; background:#000; cursor:zoom-in;}
+  .marquee img{width:100%; height:100%; object-fit:cover;}
+  @keyframes marq{to{transform:translateX(calc(-50% - 5px));}}
+  @media (min-width:900px){ .marquee button{width:120px; height:156px;} }
+  @media (prefers-reduced-motion:reduce){ .marquee-track{animation:none;} .marquee{overflow-x:auto;} }
   .hero-meta{display:flex; flex-wrap:wrap; gap:14px 30px; margin-top:28px;}
   .hero-meta div{padding-left:14px; border-left:2px solid var(--gold);}
   .hero-meta small{display:block; font:700 10.5px/1.3 var(--f-body); letter-spacing:.2em; text-transform:uppercase; color:var(--faint);}
@@ -348,6 +357,10 @@
       <h1><span>E&#8209;Commerce</span><span class="gold-text">Premium Pro</span></h1>
       <p class="serif">Acheter en toute sécurité en Chine, et vendre efficacement en ligne.</p>
       <p class="lead">La peur de l'arnaque et des ventes qui ne décollent pas vous freinent&nbsp;? Cette formation vous donne une méthode claire, de l'achat sur Alibaba jusqu'au client qui paie.</p>
+      <div class="marquee" aria-label="Commandes reçues par nos apprenants">
+        <p class="marquee-label">Les commandes de nos apprenants</p>
+        <div class="marquee-track"><button type="button" data-full="preuves/colis-3.jpg"><img src="preuves/colis-3.jpg" alt="Colis d'un apprenant" loading="lazy"></button><button type="button" data-full="preuves/whatsapp-commande.jpg"><img src="preuves/whatsapp-commande.jpg" alt="Commande reçue par un apprenant" loading="lazy"></button><button type="button" data-full="preuves/colis-5.jpg"><img src="preuves/colis-5.jpg" alt="Colis d'un apprenant" loading="lazy"></button><button type="button" data-full="preuves/colis-2.jpg"><img src="preuves/colis-2.jpg" alt="Palette de marchandise d'un apprenant" loading="lazy"></button><button type="button" data-full="preuves/whatsapp-mahamadou.jpg"><img src="preuves/whatsapp-mahamadou.jpg" alt="Colis récupéré par un apprenant" loading="lazy"></button><button type="button" data-full="preuves/colis-4.jpg"><img src="preuves/colis-4.jpg" alt="Machine commandée par un apprenant" loading="lazy"></button><button type="button" data-full="preuves/whatsapp-nana.jpg"><img src="preuves/whatsapp-nana.jpg" alt="Colis d'une apprenante" loading="lazy"></button><button type="button" data-full="preuves/colis-1.jpg"><img src="preuves/colis-1.jpg" alt="Colis reçus par un apprenant" loading="lazy"></button><button type="button" data-full="preuves/whatsapp-ma-commande.jpg"><img src="preuves/whatsapp-ma-commande.jpg" alt="Commande d'une apprenante" loading="lazy"></button><button type="button" tabindex="-1" aria-hidden="true" data-full="preuves/colis-3.jpg"><img src="preuves/colis-3.jpg" alt="" loading="lazy"></button><button type="button" tabindex="-1" aria-hidden="true" data-full="preuves/whatsapp-commande.jpg"><img src="preuves/whatsapp-commande.jpg" alt="" loading="lazy"></button><button type="button" tabindex="-1" aria-hidden="true" data-full="preuves/colis-5.jpg"><img src="preuves/colis-5.jpg" alt="" loading="lazy"></button><button type="button" tabindex="-1" aria-hidden="true" data-full="preuves/colis-2.jpg"><img src="preuves/colis-2.jpg" alt="" loading="lazy"></button><button type="button" tabindex="-1" aria-hidden="true" data-full="preuves/whatsapp-mahamadou.jpg"><img src="preuves/whatsapp-mahamadou.jpg" alt="" loading="lazy"></button><button type="button" tabindex="-1" aria-hidden="true" data-full="preuves/colis-4.jpg"><img src="preuves/colis-4.jpg" alt="" loading="lazy"></button><button type="button" tabindex="-1" aria-hidden="true" data-full="preuves/whatsapp-nana.jpg"><img src="preuves/whatsapp-nana.jpg" alt="" loading="lazy"></button><button type="button" tabindex="-1" aria-hidden="true" data-full="preuves/colis-1.jpg"><img src="preuves/colis-1.jpg" alt="" loading="lazy"></button><button type="button" tabindex="-1" aria-hidden="true" data-full="preuves/whatsapp-ma-commande.jpg"><img src="preuves/whatsapp-ma-commande.jpg" alt="" loading="lazy"></button></div>
+      </div>
       <div class="hero-meta">
         <div><small>Déjà formés</small><strong>+96 entrepreneurs en Afrique</strong></div>
         <div><small>Programme</small><strong>3 modules pratiques</strong></div>
@@ -777,6 +790,14 @@ var PROOFS = [
     }).join('');
     document.getElementById('temoignages').hidden = false;
   }
+
+  // Galerie défilante du hero : agrandissement au clic
+  (function(){
+    var mq = document.querySelector('.marquee-track'), lb = document.getElementById('lightbox');
+    if(!mq || !lb) return; var lbi = lb.querySelector('img');
+    mq.addEventListener('click', function(e){ var b = e.target.closest('button'); if(!b) return; lbi.src = b.dataset.full; lbi.alt = (b.querySelector('img').alt || 'Commande d\'un apprenant'); lb.classList.add('open'); });
+    lb.addEventListener('click', function(){ lb.classList.remove('open'); });
+  })();
 
   // Galerie de preuves + agrandissement
   if(PROOFS.length){
