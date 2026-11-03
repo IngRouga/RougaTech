@@ -497,6 +497,24 @@
   #contact-form .form-note a{color:#4ADE80; font-weight:600;}
   @media (max-width:720px){.form-card{padding:28px 20px 24px; border-radius:20px;} #contact-form .ptype-row label > span{padding:13px 6px; font-size:13px;}}
   @media (prefers-reduced-motion: reduce){.btn-send,.btn-send svg{transition:none;} .btn-send.is-loading svg{animation:none;}}
+  /* ===== testimonial ===== */
+  .testi-card{margin:0; display:grid; grid-template-columns:minmax(260px,.8fr) 1.4fr; border-radius:24px; overflow:hidden; background:linear-gradient(160deg, rgba(22,27,40,.9), rgba(12,14,20,.95)); border:1px solid rgba(127,227,255,.18); box-shadow:0 30px 80px -40px rgba(47,92,255,.5);}
+  .testi-photo{position:relative; min-height:100%; background:#d9dee4;}
+  .testi-photo img{width:100%; height:100%; object-fit:cover; object-position:50% 12%; display:block;}
+  .testi-client{position:absolute; left:16px; bottom:16px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.12em; padding:7px 12px; border-radius:100px; background:rgba(8,9,10,.8); color:var(--cyan); border:1px solid rgba(127,227,255,.35); backdrop-filter:blur(6px);}
+  .testi-body{padding:48px 52px; display:flex; flex-direction:column; gap:18px;}
+  .testi-mark{width:46px; height:34px; color:var(--cyan); opacity:.85;}
+  .testi-body blockquote{margin:0; display:flex; flex-direction:column; gap:14px;}
+  .testi-body blockquote p{font-size:17px; line-height:1.65; color:#d8dae0;}
+  .testi-body blockquote p:first-child{font-family:'Sora',sans-serif; font-size:20px; line-height:1.5; color:var(--cream);}
+  .testi-body blockquote a{color:var(--cyan); border-bottom:1px solid rgba(127,227,255,.35);}
+  .testi-body blockquote em{font-style:normal; color:var(--cream); font-weight:600;}
+  .testi-body figcaption{display:flex; flex-direction:column; gap:4px; padding-top:18px; border-top:1px solid var(--line);}
+  .testi-body figcaption strong{font-family:'Sora',sans-serif; font-size:19px;}
+  .testi-body figcaption span{color:var(--gray-mute); font-size:14px;}
+  .testi-link{display:inline-flex; align-items:center; gap:8px; font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--cyan);}
+  .testi-link svg{width:12px; height:12px;}
+  @media (max-width:900px){.testi-card{grid-template-columns:1fr;} .testi-photo{height:380px;} .testi-body{padding:30px 24px;} .testi-body blockquote p:first-child{font-size:18px;} .testi-body blockquote p{font-size:16px;}}
 </style>
 <script type="application/ld+json">
 {
@@ -754,6 +772,31 @@
       <div class="work-cta reveal"><a href="#contact" class="btn btn-primary"><span class="fr" lang="fr">Je veux un site comme ça</span><span class="en" lang="en">I want a site like this</span></a></div>
     </div>
   </section>
+  <!-- TÉMOIGNAGE -->
+  <section class="section testi-section" id="temoignages">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow"><span class="fr" lang="fr">TÉMOIGNAGE</span><span class="en" lang="en">TESTIMONIAL</span></div>
+        <h2><span class="fr" lang="fr">Ce que disent nos clients</span><span class="en" lang="en">What our clients say</span></h2>
+      </div>
+      <figure class="testi-card reveal">
+        <div class="testi-photo">
+          <img src="temoignage-ipstg.jpg" alt="DG Maïga, fondateur d'IPSTG-LEADER" loading="lazy" width="800" height="1000">
+          <span class="testi-client">IPSTG-LEADER</span>
+        </div>
+        <div class="testi-body">
+          <svg class="testi-mark" viewBox="0 0 48 36" aria-hidden="true"><path fill="currentColor" d="M0 36V22.6C0 9.9 6.6 2.4 19.7 0l2.1 5.1C14.6 7 11 11.2 10.7 17.4H20V36H0zm28 0V22.6C28 9.9 34.6 2.4 47.7 0l2.1 5.1C42.6 7 39 11.2 38.7 17.4H48V36H28z"/></svg>
+          <blockquote><p><span class="fr" lang="fr">Nous tenons à exprimer toute notre satisfaction suite à la réalisation de notre site web officiel <a href="https://www.ipstgleader.com" target="_blank" rel="noopener">www.ipstgleader.com</a> par M. Amadou Rouga. Professionnalisme, écoute, réactivité et sens du détail.</span><span class="en" lang="en">We would like to express our full satisfaction with the creation of our official website <a href="https://www.ipstgleader.com" target="_blank" rel="noopener">www.ipstgleader.com</a> by Mr Amadou Rouga. Professionalism, attentiveness, responsiveness and an eye for detail.</span></p><p><span class="fr" lang="fr">M. Rouga n'a pas simplement créé un site web, il a su traduire l'âme et la vision de notre école de prestige, IPSTG-LEADER : <em>Former les Leaders de Demain</em>. Le résultat dépasse nos attentes : un site moderne, rapide, élégant et parfaitement à l'image de l'excellence que nous prônons.</span><span class="en" lang="en">Mr Rouga did not simply build a website: he captured the soul and vision of our prestigious school, IPSTG-LEADER: <em>Training the Leaders of Tomorrow</em>. The result exceeds our expectations: a modern, fast, elegant website that perfectly reflects the excellence we stand for.</span></p><p><span class="fr" lang="fr">Nous recommandons vivement M. Amadou Rouga à toute entreprise ou institution qui recherche un travail de qualité supérieure.</span><span class="en" lang="en">We highly recommend Mr Amadou Rouga to any company or institution looking for top-quality work.</span></p></blockquote>
+          <figcaption>
+            <strong>DG Maïga</strong>
+            <span><span class="fr" lang="fr">Fondateur — IPSTG-LEADER, École de Prestige</span><span class="en" lang="en">Founder — IPSTG-LEADER, School of Excellence</span></span>
+          </figcaption>
+          <a class="cap-link testi-link" href="https://www.ipstgleader.com" target="_blank" rel="noopener"><span class="fr" lang="fr">Voir le site réalisé</span><span class="en" lang="en">See the website</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </figure>
+    </div>
+  </section>
+
   <!-- 02 — SERVICES -->
   <section class="section" id="solutions">
     <div class="wrap">
