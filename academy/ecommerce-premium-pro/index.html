@@ -155,7 +155,7 @@
   .chips span{font-size:12px; font-weight:700; padding:5px 10px; border-radius:999px; background:rgba(255,255,255,.05); border:1px solid var(--line);}
 
   /* bonus */
-  .bonus-box{margin-top:40px; border-radius:26px; padding:34px 22px; text-align:center; background:radial-gradient(120% 90% at 50% 0%,rgba(245,166,35,.25),transparent 60%),linear-gradient(180deg,#1E1810,#120F0C); border:1px solid rgba(245,166,35,.4); overflow:hidden; position:relative;}
+  .bonus-box{margin-top:0; border-radius:26px; padding:34px 22px; text-align:center; background:radial-gradient(120% 90% at 50% 0%,rgba(245,166,35,.25),transparent 60%),linear-gradient(180deg,#1E1810,#120F0C); border:1px solid rgba(245,166,35,.4); overflow:hidden; position:relative;}
   .bonus-big{font-family:'Sora',sans-serif; font-weight:800; font-size:clamp(64px,20vw,120px); line-height:.9; background:linear-gradient(180deg,#FFE2A6,#F5A623); -webkit-background-clip:text; background-clip:text; color:transparent;}
   .bonus-title{font-family:'Sora',sans-serif; font-weight:800; font-size:clamp(22px,5.6vw,32px); margin-top:6px;}
   .gifts{display:grid; grid-template-columns:repeat(5,1fr); gap:8px; max-width:520px; margin:26px auto 0;}
@@ -163,6 +163,46 @@
   .gift b{position:absolute; top:4px; right:6px; font-family:'JetBrains Mono',monospace; font-size:9.5px; color:var(--gold);}
   .bonus-box p{color:var(--mute); max-width:52ch; margin:22px auto 0; font-size:15px;}
 
+  .badges{display:flex; gap:8px; justify-content:center; flex-wrap:wrap;}
+  .badges span{font-size:13px; font-weight:700; padding:7px 12px; border-radius:999px; background:rgba(255,255,255,.05); border:1px solid var(--line);}
+  .story{display:grid; gap:12px; margin-top:36px; max-width:820px; margin-left:auto; margin-right:auto;}
+  .st{display:flex; gap:14px; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px;}
+  .st-n{flex:0 0 34px; height:34px; border-radius:50%; display:grid; place-items:center; background:var(--gold); color:#1a1204; font-weight:800; font-family:'Sora',sans-serif;}
+  .st b{font-size:17px;} .st p{color:var(--mute); margin-top:4px; font-size:15.5px;} .st strong{color:var(--cream);}
+  .vs{display:grid; gap:12px; margin-top:34px; align-items:center;}
+  @media (min-width:760px){ .vs{grid-template-columns:1fr auto 1fr;} }
+  .vs-card{border-radius:20px; padding:22px; border:1px solid var(--line); display:flex; flex-direction:column; gap:8px;}
+  .vs-card.local{background:rgba(255,90,78,.07); border-color:rgba(255,90,78,.3);}
+  .vs-card.china{background:rgba(37,211,102,.07); border-color:rgba(37,211,102,.35);}
+  .vs-l{font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--mute);}
+  .vs-p{font-family:'Sora',sans-serif; font-weight:800; font-size:clamp(30px,8vw,40px); letter-spacing:-.02em;}
+  .vs-p small{font-size:.42em; color:var(--mute);}
+  .local .vs-p{color:#FF8A80;} .china .vs-p{color:#5BEA92;}
+  .vs-bar{height:10px; border-radius:99px; background:rgba(255,255,255,.06); overflow:hidden;}
+  .vs-bar i{display:block; height:100%; border-radius:99px;}
+  .local .vs-bar i{background:#FF5A4E;} .china .vs-bar i{background:#25D366;}
+  .vs-mid{justify-self:center; font-family:'Sora',sans-serif; font-weight:800; color:var(--gold); width:46px; height:46px; border-radius:50%; display:grid; place-items:center; border:1px solid rgba(245,166,35,.4); background:var(--bg);}
+  .gap-box{margin:18px auto 0; max-width:560px; text-align:center; border-radius:22px; padding:22px; background:linear-gradient(180deg,rgba(245,166,35,.18),rgba(245,166,35,.04)); border:1px solid rgba(245,166,35,.45);}
+  .gap-box span{font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold);}
+  .gap-box b{display:block; font-family:'Sora',sans-serif; font-size:clamp(36px,10vw,54px); font-weight:800; color:var(--gold-2); letter-spacing:-.03em; margin-top:4px;}
+  .gap-box small{color:var(--mute); font-size:14px;}
+  .journey{display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-top:36px;}
+  @media (min-width:900px){ .journey{grid-template-columns:repeat(4,1fr); gap:14px;} }
+  .journey figure{background:var(--card); border:1px solid var(--line); border-radius:16px; overflow:hidden; display:flex; flex-direction:column;}
+  .journey img,.journey video{width:100%; aspect-ratio:3/4; object-fit:cover; display:block; background:#000;}
+  .journey figcaption{padding:10px 12px 12px; font-size:13px; color:var(--mute);}
+  .journey figcaption b{display:block; color:var(--gold); font-size:13.5px;}
+  .result{margin-top:22px; background:var(--card); border:1px solid rgba(37,211,102,.3); border-radius:18px; padding:18px 20px; text-align:center;}
+  .result .checks{display:flex; flex-wrap:wrap; gap:8px 16px; justify-content:center; margin-top:10px; font-weight:600;}
+  .lesson{max-width:760px; margin:26px auto 0; text-align:center;}
+  .lesson p{margin-top:12px; color:var(--mute); font-size:16px;} .lesson p strong{color:var(--cream); font-size:18px;} .lesson p b{color:var(--cream);}
+  .lesson .disc{font-size:13px; font-style:italic;}
+  .bonus-list{display:grid; gap:10px; margin-top:26px; text-align:left;}
+  @media (min-width:760px){ .bonus-list{grid-template-columns:repeat(2,1fr);} }
+  .bn{display:flex; gap:12px; align-items:center; background:rgba(0,0,0,.28); border:1px solid rgba(245,166,35,.25); border-radius:14px; padding:14px;}
+  .bn-ic{flex:0 0 42px; height:42px; border-radius:12px; display:grid; place-items:center; background:rgba(245,166,35,.12); font-size:20px;}
+  .bn b{font-family:'JetBrains Mono',monospace; font-size:11.5px; letter-spacing:.12em; color:var(--gold);}
+  .bn p{margin:2px 0 0 !important; color:var(--cream) !important; font-weight:600; font-size:15px !important; max-width:none !important;}
   /* testimonials */
   .tgrid{display:grid; gap:16px; margin-top:40px;}
   @media (min-width:760px){ .tgrid{grid-template-columns:repeat(2,1fr);} }
@@ -361,18 +401,69 @@
   </div>
 </section>
 
+<!-- 4b · ÉTUDE DE CAS -->
+<section id="etude-de-cas">
+  <div class="wrap">
+    <div class="rv center">
+      <div class="badges"><span>📍 Cas réel — Niamey</span><span>🚢 Expédition maritime incluse</span></div>
+      <div class="kicker" style="margin-top:18px;">Étude de cas réelle</div>
+      <h2 class="h2">Une machine achetée en Chine <em>et livrée à Niamey</em></h2>
+    </div>
+
+    <div class="story rv">
+      <div class="st"><span class="st-n">1</span><div><b>Le contexte</b><p>Une machine d'impression grand format était disponible à Niamey pour environ <strong>2 500 000 FCFA</strong>.</p></div></div>
+      <div class="st"><span class="st-n">2</span><div><b>La démarche</b><p>Au lieu de l'acheter localement à ce prix, nous avons recherché et comparé des sources d'approvisionnement en Chine.</p></div></div>
+      <div class="st"><span class="st-n">3</span><div><b>L'achat</b><p>La machine a été achetée pour <strong>1 450 000 FCFA, expédition maritime incluse</strong>.</p></div></div>
+    </div>
+
+    <div class="vs rv">
+      <div class="vs-card local"><span class="vs-l">Achat local</span><span class="vs-p">2 500 000 <small>FCFA</small></span><span class="vs-bar"><i style="width:100%"></i></span></div>
+      <div class="vs-mid" aria-hidden="true">VS</div>
+      <div class="vs-card china"><span class="vs-l">Achat + expédition maritime</span><span class="vs-p">1 450 000 <small>FCFA</small></span><span class="vs-bar"><i style="width:58%"></i></span></div>
+    </div>
+    <div class="gap-box rv"><span>Écart réalisé</span><b>1 050 000 FCFA</b><small>d'économie sur cet achat</small></div>
+
+    <div class="journey rv">
+      <figure><img src="cas-reel/caisse-entrepot-chine.jpg" alt="La machine emballée dans sa caisse en bois, dans l'entrepôt en Chine" loading="lazy"><figcaption><b>1 · En Chine</b>Caisse prête dans l'entrepôt</figcaption></figure>
+      <figure><img src="cas-reel/chargement-camion.jpg" alt="La caisse chargée dans un camion pour l'expédition" loading="lazy"><figcaption><b>2 · Expédition</b>Chargement pour la voie maritime</figcaption></figure>
+      <figure><img src="cas-reel/etiquette-niamey.jpg" alt="Étiquette d'expédition de la machine à destination de Niamey" loading="lazy"><figcaption><b>3 · Destination</b>Niger / Niamey</figcaption></figure>
+      <figure class="vid"><video src="cas-reel/machine-en-marche.mp4" poster="cas-reel/machine-poster.jpg" muted loop playsinline autoplay preload="metadata" aria-label="La machine en train d'imprimer à Niamey"></video><figcaption><b>4 · À Niamey</b>Installée et en pleine impression</figcaption></figure>
+    </div>
+
+    <div class="result rv">
+      <b>Le résultat aujourd'hui</b>
+      <div class="checks"><span>✅ Arrivée à Niamey</span><span>✅ Installée</span><span>✅ Opérationnelle</span><span>✅ Fonctionne correctement</span></div>
+    </div>
+
+    <div class="lesson rv">
+      <p><strong>Voici un exemple réel de ce qui est possible lorsque l'on sait rechercher et comparer ses sources d'approvisionnement.</strong></p>
+      <p>L'objectif de la formation n'est pas simplement de « trouver moins cher ». C'est d'apprendre à <b>rechercher, comparer, acheter et faire acheminer</b> des produits ou des équipements depuis la Chine, de manière structurée.</p>
+      <p class="disc">Chaque achat est différent : les prix, les frais d'expédition et l'économie possible varient selon le produit, le fournisseur et le moment. Ce cas n'est pas une garantie de résultat identique.</p>
+    </div>
+    <div class="center rv" style="margin-top:28px;"><a class="btn btn-wa" data-wa href="#">🚀 JE VEUX APPRENDRE CETTE MÉTHODE</a></div>
+  </div>
+</section>
+
 <!-- 5 · BONUS -->
-<section>
-  <div class="wrap narrow">
+<section class="alt">
+  <div class="wrap">
     <div class="bonus-box rv">
       <div class="kicker">En plus de la formation</div>
       <div class="bonus-big" style="margin-top:14px;">10</div>
-      <div class="bonus-title">🎁 BONUS OFFERTS</div>
-      <div class="gifts" aria-hidden="true">
-        <div class="gift">🎁<b>01</b></div><div class="gift">🎁<b>02</b></div><div class="gift">🎁<b>03</b></div><div class="gift">🎁<b>04</b></div><div class="gift">🎁<b>05</b></div>
-        <div class="gift">🎁<b>06</b></div><div class="gift">🎁<b>07</b></div><div class="gift">🎁<b>08</b></div><div class="gift">🎁<b>09</b></div><div class="gift">🎁<b>10</b></div>
+      <div class="bonus-title">🎁 BONUS EXCLUSIFS OFFERTS</div>
+      <p style="margin-top:12px;">Des accélérateurs pour aller plus vite et mettre toutes les chances de votre côté.</p>
+      <div class="bonus-list">
+        <div class="bn"><span class="bn-ic" aria-hidden="true">🏭</span><div><b>BONUS #1</b><p>Liste des fournisseurs fiables vérifiés par Alibaba</p></div></div>
+        <div class="bn"><span class="bn-ic" aria-hidden="true">🏆</span><div><b>BONUS #2</b><p>Liste des produits gagnants en Afrique</p></div></div>
+        <div class="bn"><span class="bn-ic" aria-hidden="true">👥</span><div><b>BONUS #3</b><p>Accès à une communauté privée</p></div></div>
+        <div class="bn"><span class="bn-ic" aria-hidden="true">🤝</span><div><b>BONUS #4</b><p>Accompagnement 6 mois jusqu'à votre succès</p></div></div>
+        <div class="bn"><span class="bn-ic" aria-hidden="true">🛒</span><div><b>BONUS #5</b><p>Assistance personnalisée pour effectuer votre première commande</p></div></div>
+        <div class="bn"><span class="bn-ic" aria-hidden="true">✍️</span><div><b>BONUS #6</b><p>Correction de vos exercices pratiques sur Alibaba</p></div></div>
+        <div class="bn"><span class="bn-ic" aria-hidden="true">♾️</span><div><b>BONUS #7</b><p>Mise à jour de la formation à vie</p></div></div>
+        <div class="bn"><span class="bn-ic" aria-hidden="true">🚢</span><div><b>BONUS #8</b><p>Liste des transitaires fiables en fonction de votre pays</p></div></div>
+        <div class="bn"><span class="bn-ic" aria-hidden="true">🎓</span><div><b>BONUS #9</b><p>Une attestation délivrée à la fin de la formation</p></div></div>
+        <div class="bn"><span class="bn-ic" aria-hidden="true">📈</span><div><b>BONUS #10</b><p>Stratégie étape par étape pour réaliser votre premier million</p></div></div>
       </div>
-      <p>Les 3 modules, plus 10 bonus inclus sans supplément. Le détail complet des bonus vous est présenté sur WhatsApp au moment de votre inscription.</p>
     </div>
   </div>
 </section>
@@ -423,7 +514,11 @@
     <div class="recap rv">
       <div>3 modules pratiques : Acheter · Promouvoir · Vendre</div>
       <div>Une formation orientée action, pas de théorie inutile</div>
-      <div>10 bonus offerts</div>
+      <div>10 bonus exclusifs offerts</div>
+      <div>Accompagnement de 6 mois et assistance pour votre première commande</div>
+      <div>Accès à une communauté privée</div>
+      <div>Mises à jour de la formation à vie</div>
+      <div>Une attestation à la fin de la formation</div>
       <div>Une méthode structurée, de l'achat en Chine jusqu'à la vente</div>
     </div>
   </div>
@@ -470,6 +565,7 @@
       <details><summary>Facebook et TikTok sont-ils abordés ?</summary><p>Oui. Le module 2 couvre Facebook, WhatsApp et TikTok pour attirer des prospects, présenter vos produits et vendre.</p></details>
       <details><summary>Combien coûte la formation ?</summary><p>Le prix normal est de 30 000 FCFA. Avec l'offre spéciale en cours, elle est à 17 500 FCFA, soit 12 500 FCFA d'économie.</p></details>
       <details><summary>Jusqu'à quand l'offre à 17 500 FCFA est-elle disponible ?</summary><p>Jusqu'à 00H00 (heure du Niger), comme indiqué par le compte à rebours. Une fois le délai passé, l'offre se termine.</p></details>
+      <details><summary>Suis-je accompagné après la formation ?</summary><p>Oui. Les bonus incluent un accompagnement de 6 mois, une assistance personnalisée pour votre première commande, la correction de vos exercices pratiques sur Alibaba et l'accès à une communauté privée.</p></details>
       <details><summary>Comment s'inscrire ?</summary><p>Cliquez sur l'un des boutons WhatsApp de la page : un message est déjà préparé. Notre équipe vous répond et vous explique comment finaliser votre inscription, le mode de paiement et l'accès à la formation.</p></details>
     </div>
   </div>
