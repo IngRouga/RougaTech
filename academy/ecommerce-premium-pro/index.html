@@ -218,6 +218,24 @@
   .ali{display:flex; gap:14px; margin-top:22px; padding:16px; border-radius:16px; background:linear-gradient(90deg,rgba(255,106,0,.12),rgba(255,106,0,.03)); border:1px solid rgba(255,140,40,.35);}
   .ali-ic{flex:0 0 44px; height:44px; border-radius:12px; display:grid; place-items:center; background:#FF6A00; font-size:20px;}
   .ali b{font-size:16px;} .ali p{color:var(--mute); font-size:14px; margin-top:3px;}
+  .ways{display:grid; gap:14px; margin-top:40px;}
+  @media (min-width:960px){ .ways{grid-template-columns:repeat(3,1fr);} }
+  .way{position:relative; background:linear-gradient(180deg,#1A1610,#121010); border:1px solid var(--line); border-radius:22px; padding:24px 22px; transition:transform .3s var(--ease), border-color .3s;}
+  .way:hover{transform:translateY(-4px); border-color:rgba(245,166,35,.4);}
+  .way-n{position:absolute; top:16px; right:18px; font-family:'Sora',sans-serif; font-weight:800; font-size:44px; line-height:1; color:rgba(245,166,35,.16);}
+  .way-ic{width:52px; height:52px; border-radius:15px; display:grid; place-items:center; font-size:24px; background:rgba(245,166,35,.12); border:1px solid rgba(245,166,35,.3);}
+  .way h3{font-size:20px; margin-top:16px;}
+  .way p{color:var(--mute); font-size:15px; margin-top:8px;}
+  .mini-flow{display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin-top:14px;}
+  .mini-flow span{font-size:12px; font-weight:700; padding:6px 10px; border-radius:9px; background:rgba(255,255,255,.05); border:1px solid var(--line);}
+  .mini-flow span.me{background:var(--gold); color:#1a1204; border-color:var(--gold);}
+  .mini-flow b{color:var(--gold);}
+  .monet{margin:22px auto 0; max-width:860px; text-align:center; border-radius:22px; padding:26px 22px; background:radial-gradient(100% 90% at 50% 0%,rgba(245,166,35,.16),transparent 70%),var(--card); border:1px solid rgba(245,166,35,.35);}
+  .monet-t{font-family:'Sora',sans-serif; font-weight:800; font-size:clamp(20px,5vw,26px);}
+  .monet p{color:var(--mute); margin-top:10px; font-size:15.5px;}
+  .monet-tags{display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-top:16px;}
+  .monet-tags span{font-weight:700; font-size:14px; padding:8px 14px; border-radius:999px; background:rgba(245,166,35,.1); border:1px solid rgba(245,166,35,.35); color:var(--gold-2);}
+  .monet .disc{font-size:13px; font-style:italic; margin-top:16px;}
   /* testimonials */
   .tgrid{display:grid; gap:16px; margin-top:40px;}
   @media (min-width:760px){ .tgrid{grid-template-columns:repeat(2,1fr);} }
@@ -481,6 +499,42 @@
         <div class="flow coach-flow"><span>Trouver</span><b>→</b><span>Vérifier</span><b>→</b><span>Acheter</span><b>→</b><span>Importer</span><b>→</b><span>Promouvoir</span><b>→</b><span>Vendre</span></div>
         <div class="ali"><span class="ali-ic" aria-hidden="true">🛒</span><div><b>Statut entreprise sur Alibaba</b><p>Obtenu après plus de 10 000 $US d'achats réalisés sur la plateforme : une preuve d'expérience pratique d'achat sur Alibaba (il ne s'agit pas d'une certification).</p></div></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4d · 3 FAÇONS -->
+<section id="trois-facons">
+  <div class="wrap">
+    <div class="rv center">
+      <div class="kicker">Une compétence, plusieurs façons de gagner</div>
+      <h2 class="h2">Et si vous pouviez utiliser cette compétence <em>de 3 manières&nbsp;?</em></h2>
+      <p class="lead">Importer depuis la Chine, ce n'est pas seulement pour votre propre activité. C'est aussi une compétence que vous pouvez proposer à d'autres.</p>
+    </div>
+    <div class="ways">
+      <article class="way rv">
+        <span class="way-n">1</span><div class="way-ic" aria-hidden="true">🛒</div>
+        <h3>Acheter pour votre propre activité</h3>
+        <p>Vous avez vos produits ou votre business&nbsp;? Apprenez à trouver des fournisseurs et à commander en Chine pour approvisionner votre activité.</p>
+      </article>
+      <article class="way rv">
+        <span class="way-n">2</span><div class="way-ic" aria-hidden="true">📦</div>
+        <h3>Acheter pour revendre</h3>
+        <p>Repérez des produits intéressants, importez-les, puis revendez-les à vos propres clients.</p>
+        <div class="mini-flow"><span>Vous achetez</span><b>→</b><span>Vous importez</span><b>→</b><span>Vous revendez</span></div>
+      </article>
+      <article class="way rv">
+        <span class="way-n">3</span><div class="way-ic" aria-hidden="true">🤝</div>
+        <h3>Commander pour d'autres et facturer une commission</h3>
+        <p>Des commerçants ou des entreprises veulent acheter en Chine sans savoir comment faire&nbsp;? Accompagnez-les dans leurs commandes et facturez une commission ou des frais de service, selon votre modèle.</p>
+        <div class="mini-flow"><span>Acheteur</span><b>↔</b><span class="me">Vous</span><b>↔</b><span>Fournisseur</span></div>
+      </article>
+    </div>
+    <div class="monet rv">
+      <div class="monet-t">💡 Une compétence que vous pouvez monétiser</div>
+      <p>L'objectif n'est pas seulement de savoir acheter sur Alibaba. C'est de savoir utiliser cette compétence pour créer différentes opportunités commerciales.</p>
+      <div class="monet-tags"><span>Votre propre business</span><span>Vos propres ventes</span><span>Un service d'approvisionnement pour d'autres</span></div>
+      <p class="disc">Important : les revenus ou commissions ne sont pas garantis. Ils dépendent de votre capacité à trouver des clients, négocier, gérer les commandes et développer votre activité.</p>
     </div>
   </div>
 </section>
