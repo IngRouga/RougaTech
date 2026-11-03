@@ -327,6 +327,25 @@
   .b4 p{font:400 clamp(22px,3.4vw,26px)/1.1 var(--f-display); text-transform:uppercase; margin-top:12px;}
   .outcome{max-width:900px; margin:0 auto; text-align:center;}
   .outcome .serif{font-size:clamp(24px,3.6vw,36px); color:var(--text);}
+  .stats{display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .stats div{padding:26px 8px; text-align:center;}
+  .stats div + div{border-left:1px solid var(--line-soft);}
+  .stats b{display:block; font:400 clamp(34px,9vw,76px)/1 var(--f-display);}
+  .stats small{display:block; font-size:clamp(12px,1.6vw,14.5px); line-height:1.35; color:var(--muted); margin-top:10px;}
+  .stats2{display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:18px;}
+  .stats2 div{padding:10px 16px; border-radius:999px; border:1px solid var(--line-soft); display:flex; align-items:baseline; gap:8px;}
+  .stats2 b{font:400 20px/1 var(--f-display); color:var(--gold-hi);}
+  .stats2 small{font-size:12.5px; color:var(--muted);}
+  .shots{display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-top:34px;}
+  @media (min-width:900px){ .shots{grid-template-columns:repeat(4,1fr); gap:16px;} }
+  .shots button{position:relative; padding:0; border:1px solid var(--line-soft); border-radius:16px; overflow:hidden; background:#000; cursor:zoom-in;}
+  .shots img{width:100%; aspect-ratio:3/4; object-fit:cover; object-position:top; transition:transform .5s var(--ease);}
+  .shots button:hover img{transform:scale(1.03);}
+  .shots span{position:absolute; left:8px; bottom:8px; font:700 10px/1 var(--f-body); letter-spacing:.16em; text-transform:uppercase; padding:7px 10px; border-radius:999px; background:rgba(12,10,20,.85); color:var(--gold-hi);}
+  .disc{font-size:13px; color:var(--faint); font-style:italic; max-width:70ch; margin-left:auto; margin-right:auto;}
+  .lightbox{position:fixed; inset:0; z-index:90; background:rgba(6,5,10,.95); display:none; align-items:center; justify-content:center; padding:20px; cursor:zoom-out;}
+  .lightbox.open{display:flex;}
+  .lightbox img{max-width:100%; max-height:100%; border-radius:12px;}
 </style>
 </head>
 <body>
@@ -352,9 +371,9 @@
       <p class="serif">Maîtrisez la création de contenus ultra-réalistes avec l'IA.</p>
       <p class="lead">Apprenez à utiliser l'intelligence artificielle pour créer des vidéos professionnelles, réalistes et engageantes pour votre marque, votre entreprise ou vos réseaux sociaux.</p>
       <div class="hero-meta">
+        <div><small>Résultat du formateur</small><strong>15,3 K abonnés TikTok</strong></div>
         <div><small>Programme</small><strong>7 modules</strong></div>
-        <div><small>Bonus VIP</small><strong>Accompagnement personnalisé</strong></div>
-        <div><small>Accès</small><strong>À vie</strong></div>
+                <div><small>Accès</small><strong>À vie</strong></div>
       </div>
     </div>
 
@@ -391,6 +410,34 @@
       <div class="m7"><span class="big gold-text">7</span><div><small>Veille</small><h3>AI Updates</h3><p>Découvrir les nouveaux outils et techniques IA au fur et à mesure de leur évolution.</p></div></div>
     </div>
     <div class="center rv" style="margin-top:44px;"><a class="btn btn--gold" data-wa href="#"><span class="wa-ic" aria-hidden="true"></span>Je veux suivre ce programme</a></div>
+  </div>
+</section>
+
+<!-- RÉSULTATS RÉELS -->
+<section id="resultats">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <p class="eyebrow">Résultats réels</p>
+      <h2 class="display display--md">La méthode appliquée<br><span class="gold-text">à mon propre business</span></h2>
+      <p class="lead">Avant de l'enseigner, je l'utilise tous les jours&nbsp;: des vidéos IA, <strong>sans montrer mon visage</strong>, pour attirer une audience qualifiée et vendre.</p>
+    </div>
+    <div class="stats rv">
+      <div><b class="gold-text">15,3 K</b><small>abonnés TikTok qualifiés dans ma niche</small></div>
+      <div><b class="gold-text">+401</b><small>membres dans mon groupe privé</small></div>
+      <div><b class="gold-text">+300&nbsp;%</b><small>de ventes grâce aux vidéos IA</small></div>
+    </div>
+    <div class="stats2 rv">
+      <div><b>155,9 K</b><small>vues sur une seule vidéo</small></div>
+      <div><b>116,9 K</b><small>vues sur une autre</small></div>
+      <div><b>39,8 K</b><small>j'aime sur le compte</small></div>
+    </div>
+    <div class="shots rv">
+      <button type="button" data-full="preuves/tiktok-profil.jpg"><img src="preuves/tiktok-profil.jpg" alt="Profil TikTok : 15,3 K abonnés et 39,8 K j'aime" loading="lazy"><span>Profil TikTok</span></button>
+      <button type="button" data-full="preuves/tiktok-video-155k.jpg"><img src="preuves/tiktok-video-155k.jpg" alt="Vidéo TikTok à 155,9 K vues et 711 commentaires" loading="lazy"><span>155,9 K vues</span></button>
+      <button type="button" data-full="preuves/tiktok-video-116k.jpg"><img src="preuves/tiktok-video-116k.jpg" alt="Vidéo TikTok à 116,9 K vues" loading="lazy"><span>116,9 K vues</span></button>
+      <button type="button" data-full="preuves/groupe-whatsapp-401.jpg"><img src="preuves/groupe-whatsapp-401.jpg" alt="Groupe privé de 401 membres" loading="lazy"><span>Groupe de 401 membres</span></button>
+    </div>
+    <p class="disc center rv" style="margin-top:22px;">Résultats personnels du formateur, présentés à titre d'exemple. Ils ne constituent pas une garantie&nbsp;: vos résultats dépendront de votre niche, de votre régularité et de votre travail.</p>
   </div>
 </section>
 
@@ -433,6 +480,7 @@
         <h2 class="display display--md">Qui va<br><span class="gold-text">vous former&nbsp;?</span></h2>
         <p class="coach-role">Amadou Rouga · fondateur de ROUGATECH</p>
         <p>Amadou Rouga intervient sur l'intelligence artificielle à la télévision depuis 2023 et partage, à travers ROUGATECH Academy, une approche <b>pratique</b> de l'IA : des outils et des méthodes que vous pouvez appliquer tout de suite à votre activité.</p>
+        <p>Il applique lui-même cette méthode&nbsp;: <b>15,3 K abonnés TikTok</b> dans sa niche, <b>+401 membres</b> dans son groupe privé et des ventes en hausse de <b>300 %</b> grâce aux vidéos IA, sans montrer son visage.</p>
         <p>Avec VIP AI Video Training, son objectif est de vous rendre autonome dans la création de vidéos IA, de l'idée à la publication.</p>
         <div class="chain"><span>Niche</span><i>/</i><span>Marque</span><i>/</i><span>Voix</span><i>/</i><span>Prompt</span><i>/</i><span>Montage</span><i>/</i><span>Publication</span></div>
       </div>
@@ -501,6 +549,7 @@
       <details><summary>Quels types de contenus vais-je apprendre à créer&nbsp;?</summary><p>Des images et des vidéos ultra-réalistes générées par l'IA, avec une voix IA naturelle, montées en vidéos professionnelles prêtes à publier sur vos réseaux sociaux.</p></details>
       <details><summary>Le clonage de voix, c'est quoi exactement&nbsp;?</summary><p>Le module Voice Cloning &amp; Voice Cover vous apprend à créer et utiliser une voix IA naturelle pour vos contenus, par exemple à partir de votre propre voix.</p></details>
       <details><summary>Les outils d'IA changent vite. La formation sera-t-elle dépassée&nbsp;?</summary><p>Non&nbsp;: le module AI Updates et les mises à jour gratuites à vie vous permettent de suivre les nouveaux outils et techniques au fur et à mesure.</p></details>
+      <details><summary>Dois-je montrer mon visage&nbsp;?</summary><p>Non. La méthode permet de créer des vidéos avec l'IA sans apparaître à l'écran&nbsp;: c'est exactement ce que fait le formateur sur son propre compte TikTok.</p></details>
       <details><summary>Suis-je accompagné&nbsp;?</summary><p>Oui. Un accompagnement personnalisé fait partie des bonus VIP.</p></details>
       <details><summary>Combien coûte la formation&nbsp;?</summary><p>Le prix normal est de 50 000 FCFA. Avec l'offre en cours (−50 %), elle est à 24 999 FCFA.</p></details>
       <details><summary>Jusqu'à quand l'offre est-elle disponible&nbsp;?</summary><p>Jusqu'à 00H00 (heure du Niger), comme indiqué par le compte à rebours. Une fois le délai passé, l'offre se termine.</p></details>
@@ -533,6 +582,8 @@
   <div class="wrap">© 2026 Rougatech Academy · <a href="/academy/">Toutes les formations</a> · <a href="/">rougatech.com</a></div>
 </footer>
 
+<div class="lightbox" id="lightbox" role="dialog" aria-label="Capture agrandie"><img alt=""></div>
+
 <div class="sticky" id="sticky">
   <div class="sp promo-only"><s>50 000</s><b class="gold-text">24 999 F</b><small data-cd="compact">--:--:--</small></div>
   <a class="btn btn--gold" data-wa href="#"><span class="wa-ic" aria-hidden="true"></span><span class="promo-only">S'inscrire sur WhatsApp</span><span class="ended-only" style="display:none;">Nous écrire</span></a>
@@ -561,6 +612,9 @@ var OFFER_DEADLINE = '2026-11-04T00:00:00+01:00';
   }
   setLinks(MSG_PROMO); tick();
   if(!ended){ var iv=setInterval(function(){ tick(); if(ended) clearInterval(iv); },1000); }
+  (function(){ var sh=document.querySelector('.shots'), lb=document.getElementById('lightbox'); if(!sh||!lb) return; var im=lb.querySelector('img');
+    sh.addEventListener('click',function(e){ var b=e.target.closest('button'); if(!b) return; im.src=b.dataset.full; im.alt=b.querySelector('img').alt; lb.classList.add('open'); });
+    lb.addEventListener('click',function(){ lb.classList.remove('open'); }); document.addEventListener('keydown',function(e){ if(e.key==='Escape') lb.classList.remove('open'); }); })();
   var rv=document.querySelectorAll('.rv');
   if('IntersectionObserver' in window){ var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); },{rootMargin:'0px 0px -8% 0px'}); rv.forEach(function(el){ io.observe(el); }); } else { rv.forEach(function(el){ el.classList.add('in'); }); }
   var sticky=document.getElementById('sticky'), hero=document.getElementById('offer-hero');
