@@ -203,6 +203,21 @@
   .bn-ic{flex:0 0 42px; height:42px; border-radius:12px; display:grid; place-items:center; background:rgba(245,166,35,.12); font-size:20px;}
   .bn b{font-family:'JetBrains Mono',monospace; font-size:11.5px; letter-spacing:.12em; color:var(--gold);}
   .bn p{margin:2px 0 0 !important; color:var(--cream) !important; font-weight:600; font-size:15px !important; max-width:none !important;}
+  .coach{display:grid; gap:28px; margin-top:40px; align-items:center;}
+  @media (min-width:900px){ .coach{grid-template-columns:380px 1fr; gap:56px;} }
+  .coach-photo{max-width:340px; margin:0 auto; width:100%;}
+  .coach-photo img{width:100%; aspect-ratio:1; object-fit:cover; border-radius:50%; box-shadow:0 30px 80px -24px rgba(245,166,35,.45), 0 0 0 6px rgba(245,166,35,.12);}
+  .coach-text h3{font-size:clamp(28px,6vw,38px);}
+  .coach-role{font-family:'JetBrains Mono',monospace; font-size:12.5px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); margin-top:8px;}
+  .creds{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin:22px 0;}
+  .creds div{background:var(--card); border:1px solid rgba(245,166,35,.28); border-radius:14px; padding:14px 10px; text-align:center;}
+  .creds span{font-size:20px;} .creds b{display:block; font-family:'Sora',sans-serif; font-size:clamp(17px,4.6vw,22px); color:var(--gold-2); margin-top:4px;}
+  .creds small{display:block; font-size:12px; color:var(--mute); line-height:1.3; margin-top:2px;}
+  .coach-text > p{color:var(--mute); margin-top:12px; font-size:16px;} .coach-text > p b{color:var(--cream);}
+  .coach-flow{margin-top:14px;} .coach-flow span{font-size:11px; padding:6px 9px;}
+  .ali{display:flex; gap:14px; margin-top:22px; padding:16px; border-radius:16px; background:linear-gradient(90deg,rgba(255,106,0,.12),rgba(255,106,0,.03)); border:1px solid rgba(255,140,40,.35);}
+  .ali-ic{flex:0 0 44px; height:44px; border-radius:12px; display:grid; place-items:center; background:#FF6A00; font-size:20px;}
+  .ali b{font-size:16px;} .ali p{color:var(--mute); font-size:14px; margin-top:3px;}
   /* testimonials */
   .tgrid{display:grid; gap:16px; margin-top:40px;}
   @media (min-width:760px){ .tgrid{grid-template-columns:repeat(2,1fr);} }
@@ -441,6 +456,32 @@
       <p class="disc">Chaque achat est différent : les prix, les frais d'expédition et l'économie possible varient selon le produit, le fournisseur et le moment. Ce cas n'est pas une garantie de résultat identique.</p>
     </div>
     <div class="center rv" style="margin-top:28px;"><a class="btn btn-wa" data-wa href="#">🚀 JE VEUX APPRENDRE CETTE MÉTHODE</a></div>
+  </div>
+</section>
+
+<!-- 4c · FORMATEUR -->
+<section class="alt" id="formateur">
+  <div class="wrap">
+    <div class="rv center">
+      <div class="kicker">Votre formateur</div>
+      <h2 class="h2">Qui va <em>vous former ?</em></h2>
+    </div>
+    <div class="coach">
+      <div class="coach-photo rv"><img src="/founder-amadou.jpg" alt="Amadou Rouga, formateur E-Commerce Premium Pro" loading="lazy"></div>
+      <div class="coach-text rv">
+        <h3>Amadou Rouga</h3>
+        <div class="coach-role">Entrepreneur digital &amp; formateur en e-commerce</div>
+        <div class="creds">
+          <div><span>🏆</span><b>+3 ans</b><small>d'expérience</small></div>
+          <div><span>🌍</span><b>+96</b><small>entrepreneurs formés en Afrique</small></div>
+          <div><span>🛒</span><b>+10 000 $US</b><small>d'achats réalisés sur Alibaba</small></div>
+        </div>
+        <p>Amadou Rouga partage une approche fondée sur l'<b>expérience pratique</b> : recherche de fournisseurs, achat en Chine, importation et développement des ventes grâce aux outils du digital.</p>
+        <p>Avec E-Commerce Premium Pro, son objectif est de vous transmettre une méthode simple et concrète pour comprendre tout le processus :</p>
+        <div class="flow coach-flow"><span>Trouver</span><b>→</b><span>Vérifier</span><b>→</b><span>Acheter</span><b>→</b><span>Importer</span><b>→</b><span>Promouvoir</span><b>→</b><span>Vendre</span></div>
+        <div class="ali"><span class="ali-ic" aria-hidden="true">🛒</span><div><b>Statut entreprise sur Alibaba</b><p>Obtenu après plus de 10 000 $US d'achats réalisés sur la plateforme : une preuve d'expérience pratique d'achat sur Alibaba (il ne s'agit pas d'une certification).</p></div></div>
+      </div>
+    </div>
   </div>
 </section>
 
