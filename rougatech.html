@@ -430,6 +430,18 @@
   .hero-wa{display:inline-flex; align-items:center; gap:8px; font-size:14px; color:var(--gray-mute); margin:-14px 0 26px; transition:color .25s var(--ease);}
   .hero-wa:hover{color:#4ADE80;}
   .hero-wa .wa-ico{width:16px; height:16px; color:#25D366;}
+  .stat-num .count{display:inline-block; min-width:2ch; text-align:right; font-variant-numeric:tabular-nums;}
+  .stat-num.counted .stat-plus{animation:statPop .5s var(--ease);}
+  @keyframes statPop{0%{transform:scale(.6); opacity:.3;} 60%{transform:scale(1.25);} 100%{transform:scale(1); opacity:1;}}
+  .stat-num .stat-plus{display:inline-block;}
+  @media (min-width:981px){
+    .work-wide{grid-column:1/-1; display:grid; grid-template-columns:1.25fr 1fr; align-items:stretch;}
+    .work-wide .work-win-inner{border-right:1px solid var(--line);}
+    .work-wide .work-body{justify-content:center; padding:40px 44px;}
+    .work-wide h3{font-size:30px;}
+    .work-wide .work-body p{flex:none; font-size:15.5px;}
+    .work-wide .work-link-row{margin-top:10px;}
+  }
 </style>
 </head>
 <body data-lang="fr">
@@ -505,12 +517,12 @@
     <div class="wrap">
       <div class="stats-row reveal">
         <div class="stat-item">
-          <div class="stat-num">10<span class="stat-plus">+</span></div>
+          <div class="stat-num"><span class="count" data-count="10">10</span><span class="stat-plus">+</span></div>
           <div class="stat-label"><span class="fr" lang="fr">Projets réalisés</span><span class="en" lang="en">Completed projects</span></div>
         </div>
         <div class="stat-divider" aria-hidden="true"></div>
         <div class="stat-item">
-          <div class="stat-num">90<span class="stat-plus">%</span></div>
+          <div class="stat-num"><span class="count" data-count="90">90</span><span class="stat-plus">%</span></div>
           <div class="stat-label"><span class="fr" lang="fr">Clients satisfaits</span><span class="en" lang="en">Satisfied clients</span></div>
         </div>
       </div>
@@ -588,6 +600,20 @@
         <article class="work-card work-win">
           <div class="work-win-inner">
             <div class="work-chrome" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div class="work-media"><span class="work-badge"><span class="fr" lang="fr">En développement</span><span class="en" lang="en">In development</span></span><img src="work-hgc.jpg" alt="Hope Giver Conference Center — Site institutionnel" loading="lazy" width="1200" height="900"></div>
+          </div>
+          <div class="work-body">
+            <span class="work-category"><span class="fr" lang="fr">Site institutionnel</span><span class="en" lang="en">Institutional website</span></span>
+            <h3>Hope Giver Conference Center</h3>
+            <p><span class="fr" lang="fr">Site officiel du centre de conférences, de formation et de résidence porté par le Coach Simon Ouedraogo à Koubri, près de Ouagadougou.</span><span class="en" lang="en">Official website of the conference, training and residence centre led by Coach Simon Ouedraogo in Koubri, near Ouagadougou.</span></p>
+            <div class="work-link-row">
+              <a class="work-link" href="https://www.hgccso.com" target="_blank" rel="noopener"><span class="fr" lang="fr">Voir le site</span><span class="en" lang="en">Visit site</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+            </div>
+          </div>
+        </article>
+        <article class="work-card work-win">
+          <div class="work-win-inner">
+            <div class="work-chrome" aria-hidden="true"><span></span><span></span><span></span></div>
             <div class="work-media"><span class="work-badge"><span class="fr" lang="fr">SaaS</span><span class="en" lang="en">SaaS</span></span><img src="work-digitalcampus.jpg" alt="Digital Campus — Plateforme SaaS" loading="lazy" width="1200" height="900"></div>
           </div>
           <div class="work-body">
@@ -599,17 +625,17 @@
             </div>
           </div>
         </article>
-        <article class="work-card work-win">
+        <article class="work-card work-win work-wide">
           <div class="work-win-inner">
             <div class="work-chrome" aria-hidden="true"><span></span><span></span><span></span></div>
-            <div class="work-media"><span class="work-badge"><span class="fr" lang="fr">En développement</span><span class="en" lang="en">In development</span></span><img src="work-hgc.jpg" alt="Hope Giver Conference Center — Site institutionnel" loading="lazy" width="1200" height="900"></div>
+            <div class="work-media"><span class="work-badge">SaaS</span><img src="work-scolpay.jpg" alt="ScolPay — Plateforme SaaS de gestion scolaire" loading="lazy" width="1200" height="900"></div>
           </div>
           <div class="work-body">
-            <span class="work-category"><span class="fr" lang="fr">Site institutionnel</span><span class="en" lang="en">Institutional website</span></span>
-            <h3>Hope Giver Conference Center</h3>
-            <p><span class="fr" lang="fr">Site officiel du centre de conférences, de formation et de résidence porté par le Coach Simon Ouedraogo à Koubri, près de Ouagadougou.</span><span class="en" lang="en">Official website of the conference, training and residence centre led by Coach Simon Ouedraogo in Koubri, near Ouagadougou.</span></p>
+            <span class="work-category"><span class="fr" lang="fr">Plateforme SaaS · Gestion scolaire</span><span class="en" lang="en">SaaS platform · School management</span></span>
+            <h3>ScolPay</h3>
+            <p><span class="fr" lang="fr">Logiciel en ligne pour les écoles privées : élèves, classes, frais de scolarité, paiements, reçus et rapports financiers, avec un espace pour le directeur et un pour le caissier.</span><span class="en" lang="en">Online software for private schools: students, classes, tuition fees, payments, receipts and financial reports, with separate access for the director and the cashier.</span></p>
             <div class="work-link-row">
-              <a class="work-link" href="https://www.hgccso.com" target="_blank" rel="noopener"><span class="fr" lang="fr">Voir le site</span><span class="en" lang="en">Visit site</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+              <a class="work-link" href="https://www.scolpay.com" target="_blank" rel="noopener"><span class="fr" lang="fr">Voir le site</span><span class="en" lang="en">Visit site</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
             </div>
           </div>
         </article>
@@ -979,6 +1005,29 @@
       showFormStatus('L\'envoi a échoué. Écrivez-nous directement à hello@rougatech.com.', 'Sending failed. Please email us directly at hello@rougatech.com.', false);
     }finally{ btn.disabled = false; }
   });
+
+  // Animated counters (stats strip)
+  (function(){
+    const nums = document.querySelectorAll('.count[data-count]');
+    if(!nums.length) return;
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+    nums.forEach(n => { n.textContent = '0'; });
+    function run(el){
+      const target = parseInt(el.dataset.count, 10), dur = 1800, t0 = performance.now();
+      function tick(now){
+        const p = Math.min((now - t0) / dur, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(target * eased);
+        if(p < 1) requestAnimationFrame(tick);
+        else { el.textContent = target; el.parentElement.classList.add('counted'); }
+      }
+      requestAnimationFrame(tick);
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting){ run(e.target); io.unobserve(e.target); } });
+    }, {threshold:.6});
+    nums.forEach(n => io.observe(n));
+  })();
 
   // AI welcome widget
   (function(){
