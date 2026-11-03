@@ -459,6 +459,44 @@
     .work-wide .work-body p{flex:none; font-size:15.5px;}
     .work-wide .work-link-row{margin-top:10px;}
   }
+  /* ===== contact form card ===== */
+  .form-card{position:relative; border-radius:24px; padding:40px 38px 34px; background:linear-gradient(160deg, rgba(22,27,40,.92), rgba(12,14,20,.96)); isolation:isolate; box-shadow:0 30px 80px -30px rgba(47,92,255,.45), 0 0 0 1px rgba(127,227,255,.08);}
+  .form-card::before{content:''; position:absolute; inset:0; border-radius:inherit; padding:1px; background:linear-gradient(140deg, rgba(127,227,255,.75), rgba(47,92,255,.35) 40%, rgba(247,247,244,.06) 70%, rgba(127,227,255,.45)); -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite:xor; mask-composite:exclude; pointer-events:none;}
+  .form-card-glow{position:absolute; z-index:-1; inset:-60px -40px auto auto; width:320px; height:320px; border-radius:50%; background:radial-gradient(circle, rgba(127,227,255,.22), transparent 65%); filter:blur(10px); pointer-events:none;}
+  .form-card-head{margin-bottom:28px;}
+  .form-kicker{display:inline-flex; align-items:center; gap:9px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--cyan); padding:7px 12px; border-radius:100px; background:rgba(127,227,255,.08); border:1px solid rgba(127,227,255,.22);}
+  .form-card-head h3{font-size:clamp(24px,2.6vw,30px); margin-top:16px;}
+  .form-card-head p{color:var(--gray-mute); font-size:15px; margin-top:10px;}
+  #contact-form{gap:20px;}
+  #contact-form .field label{color:#c9cbd1;}
+  #contact-form .req{color:var(--cyan); font-style:normal;}
+  .input-wrap{position:relative; display:flex; align-items:center;}
+  .input-wrap svg{position:absolute; left:15px; width:18px; height:18px; color:#6b6e78; pointer-events:none; transition:color .25s var(--ease);}
+  #contact-form .field input, #contact-form .field textarea{width:100%; background:rgba(247,247,244,.04); border:1px solid rgba(247,247,244,.12); border-radius:12px; padding:15px 16px; font-size:15.5px; color:var(--cream); transition:border-color .25s var(--ease), box-shadow .25s var(--ease), background .25s var(--ease);}
+  #contact-form .input-wrap input{padding-left:46px;}
+  #contact-form .field input::placeholder, #contact-form .field textarea::placeholder{color:#5f626b;}
+  #contact-form .field input:hover, #contact-form .field textarea:hover{border-color:rgba(247,247,244,.22);}
+  #contact-form .field input:focus, #contact-form .field textarea:focus{outline:none; border-color:var(--cyan); background:rgba(127,227,255,.05); box-shadow:0 0 0 4px rgba(127,227,255,.14);}
+  .input-wrap:focus-within svg{color:var(--cyan);}
+  #contact-form .field textarea{min-height:120px; resize:vertical; line-height:1.5;}
+  #contact-form .ptype-row{display:grid; grid-template-columns:repeat(3,1fr); gap:10px;}
+  #contact-form .ptype-row label > span{display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; padding:16px 10px; border-radius:14px; background:rgba(247,247,244,.03); border:1px solid rgba(247,247,244,.12); font-size:14px; text-align:center; height:100%;}
+  #contact-form .ptype-row label > span svg{width:22px; height:22px;}
+  #contact-form .ptype-row label:hover > span{border-color:rgba(247,247,244,.25); color:var(--cream);}
+  #contact-form .ptype-row input:checked + span{border-color:var(--cyan); color:var(--cream); background:linear-gradient(160deg, rgba(127,227,255,.16), rgba(47,92,255,.12)); box-shadow:0 0 0 1px rgba(127,227,255,.35), 0 10px 26px -12px rgba(127,227,255,.55);}
+  #contact-form .ptype-row input:checked + span svg{color:var(--cyan);}
+  .btn-send{display:flex; align-items:center; justify-content:center; gap:12px; width:100%; margin-top:6px; padding:18px 26px; border-radius:14px; font-family:'Sora',sans-serif; font-size:16px; font-weight:700; letter-spacing:.01em; color:#fff; background:linear-gradient(110deg, #33c9f0, var(--blue) 55%, #5b3bff); background-size:160% 100%; box-shadow:0 14px 36px -12px rgba(47,92,255,.8), inset 0 1px 0 rgba(255,255,255,.25); transition:transform .25s var(--ease), box-shadow .25s var(--ease), background-position .5s var(--ease);}
+  .btn-send svg{width:20px; height:20px; transition:transform .25s var(--ease);}
+  .btn-send:hover{transform:translateY(-2px); background-position:100% 0; box-shadow:0 20px 44px -12px rgba(47,92,255,.95), inset 0 1px 0 rgba(255,255,255,.3);}
+  .btn-send:hover svg{transform:translateX(4px);}
+  .btn-send:active{transform:translateY(0);}
+  .btn-send:disabled{opacity:.75; cursor:wait;}
+  .btn-send.is-loading svg{animation:sendPulse .8s ease-in-out infinite alternate;}
+  @keyframes sendPulse{to{transform:translateX(6px); opacity:.4;}}
+  #contact-form .form-note{text-align:center; font-size:13.5px; margin-top:2px;}
+  #contact-form .form-note a{color:#4ADE80; font-weight:600;}
+  @media (max-width:720px){.form-card{padding:28px 20px 24px; border-radius:20px;} #contact-form .ptype-row label > span{padding:13px 6px; font-size:13px;}}
+  @media (prefers-reduced-motion: reduce){.btn-send,.btn-send svg{transition:none;} .btn-send.is-loading svg{animation:none;}}
 </style>
 <script type="application/ld+json">
 {
@@ -872,42 +910,50 @@
             ROUGATECH<br>AFRIQUE · INTERNATIONAL<br>HELLO@ROUGATECH.COM<br>WHATSAPP : +227 91 34 09 05
           </div>
         </div>
-        <form class="reveal" id="contact-form">
-          <div class="field-row">
-            <div class="field">
-              <label for="f-name"><span class="fr" lang="fr">Nom</span><span class="en" lang="en">Name</span></label>
-              <input id="f-name" type="text" required>
-            </div>
-            <div class="field">
-              <label for="f-company"><span class="fr" lang="fr">Entreprise / organisation</span><span class="en" lang="en">Company / organization</span></label>
-              <input id="f-company" type="text">
-            </div>
+        <div class="form-card reveal">
+          <div class="form-card-glow" aria-hidden="true"></div>
+          <div class="form-card-head">
+            <span class="form-kicker"><span class="hl-dot" aria-hidden="true"></span><span class="fr" lang="fr">Demande de devis</span><span class="en" lang="en">Quote request</span></span>
+            <h3><span class="fr" lang="fr">Parlez-nous de votre projet</span><span class="en" lang="en">Tell us about your project</span></h3>
+            <p><span class="fr" lang="fr">Remplissez ce formulaire en une minute. Votre demande nous arrive directement.</span><span class="en" lang="en">Fill in this form in one minute. Your request comes straight to us.</span></p>
           </div>
-          <div class="field-row">
+          <form id="contact-form">
+            <div class="field-row">
+              <div class="field">
+                <label for="f-name"><span class="fr" lang="fr">Nom</span><span class="en" lang="en">Name</span> <i class="req" aria-hidden="true">*</i></label>
+                <div class="input-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><input id="f-name" type="text" required placeholder="Votre nom" data-ph-fr="Votre nom" data-ph-en="Your name"></div>
+              </div>
+              <div class="field">
+                <label for="f-company"><span class="fr" lang="fr">Entreprise / organisation</span><span class="en" lang="en">Company / organization</span></label>
+                <div class="input-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M10 21v-4h4v4"/></svg><input id="f-company" type="text" placeholder="Nom de votre structure" data-ph-fr="Nom de votre structure" data-ph-en="Your organization"></div>
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="f-email"><span class="fr" lang="fr">Email</span><span class="en" lang="en">Email</span> <i class="req" aria-hidden="true">*</i></label>
+                <div class="input-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><input id="f-email" type="email" required placeholder="vous@exemple.com" data-ph-fr="vous@exemple.com" data-ph-en="you@example.com"></div>
+              </div>
+              <div class="field">
+                <label for="f-whatsapp"><span class="fr" lang="fr">WhatsApp</span><span class="en" lang="en">WhatsApp</span></label>
+                <div class="input-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><input id="f-whatsapp" type="tel" placeholder="+227 …" data-ph-fr="+227 …" data-ph-en="+227 …"></div>
+              </div>
+            </div>
+            <fieldset class="field ptype">
+              <legend><span class="fr" lang="fr">Type de projet</span><span class="en" lang="en">Project type</span></legend>
+              <div class="ptype-row">
+                <label><input type="radio" name="ptype" value="Site web" checked><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 8h18M8 21h8M12 18v3"/></svg><span class="fr" lang="fr">Site web</span><span class="en" lang="en">Website</span></span></label>
+                <label><input type="radio" name="ptype" value="Plateforme SaaS"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg><span class="fr" lang="fr">Plateforme SaaS</span><span class="en" lang="en">SaaS platform</span></span></label>
+                <label><input type="radio" name="ptype" value="Autre"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg><span class="fr" lang="fr">Autre</span><span class="en" lang="en">Other</span></span></label>
+              </div>
+            </fieldset>
             <div class="field">
-              <label for="f-email">Email</label>
-              <input id="f-email" type="email" required>
+              <label for="f-help"><span class="fr" lang="fr">Décrivez votre projet</span><span class="en" lang="en">Describe your project</span></label>
+              <textarea id="f-help" rows="4" placeholder="Ex. : un site pour mon école avec les inscriptions en ligne…" data-ph-fr="Ex. : un site pour mon école avec les inscriptions en ligne…" data-ph-en="E.g. a website for my school with online enrolment…"></textarea>
             </div>
-            <div class="field">
-              <label for="f-whatsapp">WhatsApp</label>
-              <input id="f-whatsapp" type="tel">
-            </div>
-          </div>
-          <fieldset class="field ptype">
-            <legend><span class="fr" lang="fr">Type de projet</span><span class="en" lang="en">Project type</span></legend>
-            <div class="ptype-row">
-              <label><input type="radio" name="ptype" value="Site web" checked><span><span class="fr" lang="fr">Site web</span><span class="en" lang="en">Website</span></span></label>
-              <label><input type="radio" name="ptype" value="Plateforme SaaS"><span><span class="fr" lang="fr">Plateforme SaaS</span><span class="en" lang="en">SaaS platform</span></span></label>
-              <label><input type="radio" name="ptype" value="Autre"><span><span class="fr" lang="fr">Autre</span><span class="en" lang="en">Other</span></span></label>
-            </div>
-          </fieldset>
-          <div class="field">
-            <label for="f-help"><span class="fr" lang="fr">Décrivez votre projet</span><span class="en" lang="en">Describe your project</span></label>
-            <textarea id="f-help" rows="3"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary"><span class="fr" lang="fr">Envoyer ma demande sur WhatsApp</span><span class="en" lang="en">Send my request via WhatsApp</span></button>
-          <p class="form-note" id="form-status" role="status" aria-live="polite"><span class="fr" lang="fr">Ou écrivez-nous directement à hello@rougatech.com.</span><span class="en" lang="en">Or email us directly at hello@rougatech.com.</span></p>
-        </form>
+            <button type="submit" class="btn-send"><span class="fr" lang="fr">Envoyer ma demande</span><span class="en" lang="en">Send my request</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            <p class="form-note" id="form-status" role="status" aria-live="polite"><span class="fr" lang="fr">Vous préférez WhatsApp ?</span><span class="en" lang="en">Prefer WhatsApp?</span> <a href="https://wa.me/22791340905?text=Bonjour%20ROUGATECH%2C%20j%27ai%20un%20projet%20de%20site%20web%20/%20plateforme." target="_blank" rel="noopener">+227 91 34 09 05</a></p>
+          </form>
+        </div>
       </div>
     </div>
   </section>
@@ -1060,6 +1106,7 @@
   function setLang(lang){
     document.body.setAttribute('data-lang', lang);
     document.documentElement.setAttribute('lang', lang);
+    document.querySelectorAll('[data-ph-fr]').forEach(el => { el.placeholder = lang === 'en' ? el.dataset.phEn : el.dataset.phFr; });
     langButtons.forEach(b => b.classList.toggle('active', b.dataset.langBtn === lang));
     try{ localStorage.setItem('rougatech-lang', lang); }catch(e){}
   }
@@ -1096,7 +1143,7 @@
       window.location.href = 'https://wa.me/22791340905?text=' + encodeURIComponent(waText);
       return;
     }
-    const btn = form.querySelector('button[type="submit"]');
+    const btn = form.querySelector('button[type="submit"]'); btn.classList.add('is-loading');
     btn.disabled = true;
     showFormStatus('Envoi en cours…', 'Sending…', true);
     try{
@@ -1112,7 +1159,7 @@
       } else { throw new Error(data.message || 'error'); }
     }catch(err){
       showFormStatus('L\'envoi a échoué. Écrivez-nous directement à hello@rougatech.com.', 'Sending failed. Please email us directly at hello@rougatech.com.', false);
-    }finally{ btn.disabled = false; }
+    }finally{ btn.disabled = false; btn.classList.remove('is-loading'); }
   });
 
   // Animated counters (stats strip)
