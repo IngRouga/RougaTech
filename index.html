@@ -246,7 +246,7 @@
 
   /* 07 — founder glass depth frame */
   .founder-photo-frame{position:relative;}
-  .founder-photo-frame::before{content:''; position:absolute; inset:-18px; border:1px solid rgba(127,227,255,.22); border-radius:28px; pointer-events:none;}
+  .founder-photo-frame::before{display:none;}
   .founder-photo-frame .corner{position:absolute; width:22px; height:22px; border-color:var(--cyan); opacity:.75; pointer-events:none;}
   .founder-photo-frame .corner.tl{top:-18px; left:-18px; border-top:2px solid; border-left:2px solid; border-top-left-radius:10px;}
   .founder-photo-frame .corner.br{bottom:-18px; right:-18px; border-bottom:2px solid; border-right:2px solid; border-bottom-right-radius:10px;}
@@ -254,7 +254,7 @@
 
   /* 07 — founder */
   .founder-wrap{display:grid; grid-template-columns:1fr 320px; gap:60px; align-items:center;}
-  .founder-photo{border-radius:20px; overflow:hidden; border:1px solid var(--line); aspect-ratio:5/6; order:2;}
+  .founder-photo{border-radius:50%; overflow:hidden; aspect-ratio:1/1; order:2; box-shadow:0 20px 60px rgba(3,20,60,.45);}
   .founder-text{order:1;}
   .founder-photo img{width:100%; height:100%; object-fit:cover; display:block;}
   .founder-role{font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--cyan); margin-top:8px;}
@@ -730,8 +730,6 @@
       <div class="founder-wrap">
         <div class="founder-photo reveal founder-photo-frame">
           <div class="founder-photo-glow" aria-hidden="true"></div>
-          <span class="corner tl" aria-hidden="true"></span>
-          <span class="corner br" aria-hidden="true"></span>
           <img src="founder.jpg" alt="Amadou Rouga Achirou" loading="lazy">
         </div>
         <div class="founder-text reveal">
