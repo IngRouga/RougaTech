@@ -354,7 +354,16 @@
      both the catalog grid and the category links above render it. -->
 <script>
   var ACADEMY_COURSES = [
-    /* Les formations publiées seront ajoutées ici. */
+    {
+      slug: "ecommerce-premium-pro",
+      url: "/academy/ecommerce-premium-pro/",
+      title: "E-Commerce Premium Pro",
+      category: "E-commerce",
+      desc: "Acheter en toute sécurité en Chine et vendre efficacement en ligne : Alibaba, Facebook, WhatsApp, TikTok et techniques de vente. +96 entrepreneurs déjà formés.",
+      level: "Débutants bienvenus",
+      duration: "3 modules + 10 bonus",
+      status: "Disponible"
+    }
   ];
 
   var ACADEMY_CATEGORIES = [
@@ -388,7 +397,7 @@
     function courseCard(c){
       var ctaHtml = c.status === 'Coming Soon'
         ? '<span class="btn btn-outline course-cta" disabled>Coming Soon</span>'
-        : '<a class="btn btn-primary course-cta" href="courses/' + c.slug + '.html">View Course</a>';
+        : '<a class="btn btn-primary course-cta" href="' + (c.url || ('courses/' + c.slug + '.html')) + '">Voir la formation</a>';
       return '' +
         '<article class="course-card" data-category="' + c.category + '">' +
           '<div class="course-top">' +
