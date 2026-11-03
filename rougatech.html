@@ -242,9 +242,6 @@
   @media (max-width:720px){.work-grid{grid-template-columns:1fr; max-width:none;}}
 
 
-  /* 05 — work cards: scroll-linked shadow → clear (JS sets --clear 0→1) */
-  .work-card{position:relative; --clear:1; box-shadow:0 34px 80px -28px rgba(0,0,0,calc(.75 * var(--clear))), 0 0 0 1px rgba(127,227,255,calc(.06 * var(--clear)));}
-  .work-card::after{content:''; position:absolute; inset:0; border-radius:inherit; pointer-events:none; z-index:5; background:linear-gradient(180deg, rgba(6,8,12,.55) 0%, rgba(6,8,12,.92) 100%); opacity:calc(1 - var(--clear));}
   /* 05 — selected work: floating browser-window showcase */
   .work-win{perspective:1400px;}
   .work-win-inner{transform-style:preserve-3d; transition:transform .25s var(--ease);}
@@ -1093,27 +1090,5 @@
   })();
 </script>
 
-<script>
-/* Travaux réalisés : chaque carte sort de l'ombre au fil du défilement */
-(function(){
-  var cards=[].slice.call(document.querySelectorAll('#work .work-card'));
-  if(!cards.length || (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) return;
-  var ticking=false;
-  function update(){
-    ticking=false;
-    var vh=window.innerHeight||document.documentElement.clientHeight;
-    cards.forEach(function(c){
-      var top=c.getBoundingClientRect().top;
-      var p=(vh - top)/(vh*0.55);           /* 0 = card at bottom edge, 1 = card at ~45% of screen */
-      p=Math.max(0,Math.min(1,p));
-      c.style.setProperty('--clear', p.toFixed(3));
-    });
-  }
-  function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(update); } }
-  window.addEventListener('scroll',onScroll,{passive:true});
-  window.addEventListener('resize',onScroll);
-  update();
-})();
-</script>
 </body>
 </html>
