@@ -354,69 +354,7 @@
      both the catalog grid and the category links above render it. -->
 <script>
   var ACADEMY_COURSES = [
-    {
-      slug: "ai-for-entrepreneurs",
-      title: "AI for Entrepreneurs",
-      category: "AI",
-      desc: "Understand how to use AI tools strategically to grow and manage your business.",
-      level: "Beginner",
-      duration: "Self-paced",
-      status: "Coming Soon"
-    },
-    {
-      slug: "ai-agents-for-business",
-      title: "AI Agents for Business",
-      category: "AI",
-      desc: "Learn how AI agents work and how to apply them to real business operations.",
-      level: "Beginner–Intermediate",
-      duration: "Self-paced",
-      status: "Coming Soon"
-    },
-    {
-      slug: "build-your-first-digital-product",
-      title: "Build Your First Digital Product",
-      category: "Digital Business",
-      desc: "A practical introduction to turning an idea into a real digital product.",
-      level: "Beginner",
-      duration: "Self-paced",
-      status: "Coming Soon"
-    },
-    {
-      slug: "digital-marketing-fundamentals",
-      title: "Digital Marketing",
-      category: "Marketing",
-      desc: "Core digital marketing principles for reaching and growing an audience online.",
-      level: "Beginner",
-      duration: "Self-paced",
-      status: "Coming Soon"
-    },
-    {
-      slug: "content-creation-with-ai",
-      title: "Content Creation with AI",
-      category: "Content Creation",
-      desc: "Use AI tools to plan, produce and publish content more efficiently.",
-      level: "Beginner",
-      duration: "Self-paced",
-      status: "Coming Soon"
-    },
-    {
-      slug: "ecommerce-fundamentals",
-      title: "E-commerce",
-      category: "E-commerce",
-      desc: "The essentials of setting up and running an online store.",
-      level: "Beginner",
-      duration: "Self-paced",
-      status: "Coming Soon"
-    },
-    {
-      slug: "web-development-fundamentals",
-      title: "Web &amp; Technology",
-      category: "Technology",
-      desc: "An introduction to building websites and web applications.",
-      level: "Beginner",
-      duration: "Self-paced",
-      status: "Coming Soon"
-    }
+    /* Les formations publiées seront ajoutées ici. */
   ];
 
   var ACADEMY_CATEGORIES = [
@@ -435,6 +373,13 @@
     var grid = document.getElementById('course-grid');
     var catGrid = document.getElementById('category-grid');
     if(!filterRow || !grid || !catGrid) return;
+
+    // Aucune formation publiée : on masque le catalogue, les catégories et les boutons qui y mènent.
+    if(!ACADEMY_COURSES.length){
+      ['courses','categories'].forEach(function(id){ var el=document.getElementById(id); if(el) el.style.display='none'; });
+      document.querySelectorAll('a[href="#courses"], a[href="#categories"]').forEach(function(a){ a.style.display='none'; });
+      return;
+    }
 
     filterRow.innerHTML = FILTERS.map(function(f, i){
       return '<button class="filter-pill' + (i === 0 ? ' active' : '') + '" data-filter="' + f + '">' + f + '</button>';
