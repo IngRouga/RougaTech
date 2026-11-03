@@ -346,6 +346,20 @@
   .lightbox{position:fixed; inset:0; z-index:90; background:rgba(6,5,10,.95); display:none; align-items:center; justify-content:center; padding:20px; cursor:zoom-out;}
   .lightbox.open{display:flex;}
   .lightbox img{max-width:100%; max-height:100%; border-radius:12px;}
+  .vgrid{display:grid; grid-template-columns:repeat(2,1fr); gap:12px;}
+  @media (min-width:960px){ .vgrid{grid-template-columns:2.2fr 1fr 1fr 1fr; gap:16px; align-items:start;} }
+  .vcard.wide{grid-column:1 / -1;}
+  @media (min-width:960px){ .vcard.wide{grid-column:auto;} }
+  .vcard{margin:0;}
+  .vwrap{position:relative; border-radius:18px; overflow:hidden; border:1px solid var(--line); background:#000; box-shadow:0 24px 60px -30px rgba(157,123,255,.5);}
+  .vwrap video{width:100%; aspect-ratio:9/16; object-fit:cover; display:block;}
+  .vcard.wide .vwrap video{aspect-ratio:13/10;}
+  .vsound{position:absolute; right:10px; bottom:10px; font:700 10px/1 var(--f-body); letter-spacing:.16em; text-transform:uppercase; padding:9px 12px; border-radius:999px; border:1px solid var(--line); background:rgba(12,10,20,.82); color:var(--gold-hi); cursor:pointer;}
+  .vsound.on{background:var(--gold-btn); color:#fff; border-color:transparent;}
+  .vcard figcaption{padding:12px 4px 0; font-size:13.5px; color:var(--muted); line-height:1.45;}
+  .vcard figcaption .num{display:block; margin-bottom:5px; font-size:13px;}
+  .langs{display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-top:28px;}
+  .langs span{font:700 10.5px/1 var(--f-body); letter-spacing:.18em; text-transform:uppercase; padding:10px 14px; border-radius:999px; border:1px solid var(--line); color:var(--gold-hi);}
 </style>
 </head>
 <body>
@@ -368,7 +382,7 @@
     <div class="rv">
       <p class="eyebrow">Rougatech Academy · Formation IA</p>
       <h1><span>VIP AI Video</span><span class="gold-text">Training</span></h1>
-      <p class="serif">Maîtrisez la création de contenus ultra-réalistes avec l'IA.</p>
+      <p class="serif">Maîtrisez la création de contenus ultra-réalistes avec l'IA, n'importe quelle vidéo, dans n'importe quelle langue.</p>
       <p class="lead">Apprenez à utiliser l'intelligence artificielle pour créer des vidéos professionnelles, réalistes et engageantes pour votre marque, votre entreprise ou vos réseaux sociaux.</p>
       <div class="hero-meta">
         <div><small>Résultat du formateur</small><strong>15,3 K abonnés TikTok</strong></div>
@@ -410,6 +424,26 @@
       <div class="m7"><span class="big gold-text">7</span><div><small>Veille</small><h3>AI Updates</h3><p>Découvrir les nouveaux outils et techniques IA au fur et à mesure de leur évolution.</p></div></div>
     </div>
     <div class="center rv" style="margin-top:44px;"><a class="btn btn--gold" data-wa href="#"><span class="wa-ic" aria-hidden="true"></span>Je veux suivre ce programme</a></div>
+  </div>
+</section>
+
+<!-- RÉALISATIONS VIDÉO -->
+<section class="alt" id="realisations">
+  <div class="grain" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <p class="eyebrow">Exemples réels</p>
+      <h2 class="display display--md">N'importe quelle vidéo<br><span class="gold-text">dans n'importe quelle langue</span></h2>
+      <p class="lead">Scène de cinéma, avatar présentateur, contenu viral pour TikTok ou spot pour une entreprise&nbsp;: avec cette formation, vous apprenez à créer <strong>le type de vidéo que vous voulez, dans la langue que vous voulez</strong>. Voici des vidéos réalisées avec l'IA.</p>
+    </div>
+    <div class="vgrid rv">
+      <figure class="vcard wide"><div class="vwrap"><video src="videos/cinema-premiere-classe.mp4" poster="videos/cinema-premiere-classe.jpg" muted loop playsinline preload="none" aria-label="Une scène réaliste en première classe, entièrement générée par l'IA"></video><button type="button" class="vsound" aria-label="Activer le son">Son</button></div><figcaption><span class="num">Scène cinéma</span>Une scène réaliste en première classe, entièrement générée par l'IA</figcaption></figure>
+      <figure class="vcard "><div class="vwrap"><video src="videos/avatar-tiktok-1.mp4" poster="videos/avatar-tiktok-1.jpg" muted loop playsinline preload="none" aria-label="Vidéo TikTok présentée par un avatar IA, sans montrer son visage"></video><button type="button" class="vsound" aria-label="Activer le son">Son</button></div><figcaption><span class="num">Avatar présentateur</span>Vidéo TikTok présentée par un avatar IA, sans montrer son visage</figcaption></figure>
+      <figure class="vcard "><div class="vwrap"><video src="videos/avatar-tiktok-2.mp4" poster="videos/avatar-tiktok-2.jpg" muted loop playsinline preload="none" aria-label="Vidéo produit pour TikTok, voix et visuels IA"></video><button type="button" class="vsound" aria-label="Activer le son">Son</button></div><figcaption><span class="num">Contenu viral</span>Vidéo produit pour TikTok, voix et visuels IA</figcaption></figure>
+      <figure class="vcard "><div class="vwrap"><video src="videos/spot-entreprise-kps.mp4" poster="videos/spot-entreprise-kps.jpg" muted loop playsinline preload="none" aria-label="Vidéo de communication pour une entreprise, en français"></video><button type="button" class="vsound" aria-label="Activer le son">Son</button></div><figcaption><span class="num">Spot entreprise</span>Vidéo de communication pour une entreprise, en français</figcaption></figure>
+    </div>
+    <div class="langs rv"><span>Français</span><span>Anglais</span><span>Et d'autres langues selon votre audience</span></div>
+    <div class="center rv" style="margin-top:36px;"><a class="btn btn--gold" data-wa href="#"><span class="wa-ic" aria-hidden="true"></span>Je veux créer mes vidéos IA</a></div>
   </div>
 </section>
 
@@ -515,6 +549,7 @@
     <div class="pricing">
       <ul class="recap rv">
         <li>7 modules, de la niche à la publication</li>
+        <li>Tous types de vidéos, dans la langue de votre choix</li>
         <li>Voix IA, prompts, images et vidéos ultra-réalistes</li>
         <li>Accompagnement personnalisé</li>
         <li>Accès à la formation et mises à jour gratuites à vie</li>
@@ -615,6 +650,23 @@ var OFFER_DEADLINE = '2026-11-04T00:00:00+01:00';
   (function(){ var sh=document.querySelector('.shots'), lb=document.getElementById('lightbox'); if(!sh||!lb) return; var im=lb.querySelector('img');
     sh.addEventListener('click',function(e){ var b=e.target.closest('button'); if(!b) return; im.src=b.dataset.full; im.alt=b.querySelector('img').alt; lb.classList.add('open'); });
     lb.addEventListener('click',function(){ lb.classList.remove('open'); }); document.addEventListener('keydown',function(e){ if(e.key==='Escape') lb.classList.remove('open'); }); })();
+  // Vidéos d'exemple : lecture auto (muette) quand visibles, bouton son
+  (function(){
+    var vids=[].slice.call(document.querySelectorAll('.vcard video'));
+    if(!vids.length) return;
+    var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if('IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(es){ es.forEach(function(e){ var v=e.target; if(e.isIntersecting){ if(!reduce || !v.muted){ var p=v.play(); if(p&&p.catch) p.catch(function(){}); } } else { v.pause(); } }); },{threshold:.35});
+      vids.forEach(function(v){ io.observe(v); });
+    }
+    document.querySelectorAll('.vsound').forEach(function(b){
+      b.addEventListener('click',function(){
+        var v=b.parentNode.querySelector('video'), on=v.muted;
+        vids.forEach(function(o){ o.muted=true; }); document.querySelectorAll('.vsound').forEach(function(x){ x.classList.remove('on'); x.textContent='Son'; });
+        if(on){ v.muted=false; v.currentTime=0; var p=v.play(); if(p&&p.catch) p.catch(function(){}); b.classList.add('on'); b.textContent='Couper'; }
+      });
+    });
+  })();
   var rv=document.querySelectorAll('.rv');
   if('IntersectionObserver' in window){ var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); },{rootMargin:'0px 0px -8% 0px'}); rv.forEach(function(el){ io.observe(el); }); } else { rv.forEach(function(el){ el.classList.add('in'); }); }
   var sticky=document.getElementById('sticky'), hero=document.getElementById('offer-hero');
