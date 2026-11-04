@@ -527,8 +527,7 @@
   .logo-cream{background:#faf6f0;}
   .logo-dark{background:#120d1c;}
   .logo-full{background:#3d0a6b;}
-  .logo-tile:not(a){cursor:default;}
-  .logo-tile:hover{transform:translateY(-3px); border-color:rgba(127,227,255,.5); box-shadow:0 12px 30px -14px rgba(127,227,255,.6);}
+  .logo-tile{cursor:default;}
   @keyframes logoScroll{from{transform:translateX(0);} to{transform:translateX(-50%);}}
   @media (max-width:720px){.logo-tile{height:62px;} .logo-set{gap:14px; padding-right:14px;} .logo-track{animation-duration:34s;}}
   @media (prefers-reduced-motion: reduce){.logo-track{animation:none; flex-wrap:wrap; justify-content:center; width:auto;} .logo-set[aria-hidden="true"]{display:none;} .logo-set{flex-wrap:wrap; justify-content:center;}}
@@ -670,24 +669,24 @@
       <div class="logo-marquee reveal" aria-label="Clients">
         <div class="logo-track">
           <div class="logo-set">
-            <a class="logo-tile logo-dark" href="https://www.gcap11.com" target="_blank" rel="noopener" title="GCAP11"><img src="assets/clients/gcap11.png" alt="GCAP11" loading="lazy"></a>
-            <a class="logo-tile logo-light" href="https://www.ipstgleader.com" target="_blank" rel="noopener" title="IPSTG-LEADER"><img src="assets/clients/ipstg-leader.png" alt="IPSTG-LEADER" loading="lazy"></a>
+            <span class="logo-tile logo-dark" title="GCAP11"><img src="assets/clients/gcap11.png" alt="GCAP11" loading="lazy"></span>
+            <span class="logo-tile logo-light" title="IPSTG-LEADER"><img src="assets/clients/ipstg-leader.png" alt="IPSTG-LEADER" loading="lazy"></span>
             <span class="logo-tile logo-light" title="ESCOM — École Supérieure de Communication et de Management"><img src="assets/clients/escom.png" alt="ESCOM — École Supérieure de Communication et de Management" loading="lazy"></span>
-            <a class="logo-tile logo-cream" href="https://www.coachmarinabf.com" target="_blank" rel="noopener" title="Coach Marina Minoungou"><img src="assets/clients/coach-marina.png" alt="Coach Marina Minoungou" loading="lazy"></a>
-            <a class="logo-tile logo-light" href="https://www.iphecniger.com" target="_blank" rel="noopener" title="IPHEC — Institut Privé des Hautes Études Commerciales"><img src="assets/clients/iphec.png" alt="IPHEC — Institut Privé des Hautes Études Commerciales" loading="lazy"></a>
+            <span class="logo-tile logo-cream" title="Coach Marina Minoungou"><img src="assets/clients/coach-marina.png" alt="Coach Marina Minoungou" loading="lazy"></span>
+            <span class="logo-tile logo-light" title="IPHEC — Institut Privé des Hautes Études Commerciales"><img src="assets/clients/iphec.png" alt="IPHEC — Institut Privé des Hautes Études Commerciales" loading="lazy"></span>
             <span class="logo-tile logo-full" title="KPS — Kolea Prestations de Services"><img src="assets/clients/kps.png" alt="KPS — Kolea Prestations de Services" loading="lazy"></span>
             <span class="logo-tile logo-light" title="American English Language Program — American Corner Niamey"><img src="assets/clients/aelp.png" alt="American English Language Program — American Corner Niamey" loading="lazy"></span>
-            <a class="logo-tile logo-dark" href="https://www.hgccso.com" target="_blank" rel="noopener" title="Hope Giver Conference Center"><img src="assets/clients/hgc.png" alt="Hope Giver Conference Center" loading="lazy"></a>
+            <span class="logo-tile logo-dark" title="Hope Giver Conference Center"><img src="assets/clients/hgc.png" alt="Hope Giver Conference Center" loading="lazy"></span>
           </div>
           <div class="logo-set" aria-hidden="true">
-            <a class="logo-tile logo-dark" href="https://www.gcap11.com" target="_blank" rel="noopener" title="GCAP11" aria-hidden="true" tabindex="-1"><img src="assets/clients/gcap11.png" alt="" loading="lazy"></a>
-            <a class="logo-tile logo-light" href="https://www.ipstgleader.com" target="_blank" rel="noopener" title="IPSTG-LEADER" aria-hidden="true" tabindex="-1"><img src="assets/clients/ipstg-leader.png" alt="" loading="lazy"></a>
+            <span class="logo-tile logo-dark" title="GCAP11"><img src="assets/clients/gcap11.png" alt="" loading="lazy"></span>
+            <span class="logo-tile logo-light" title="IPSTG-LEADER"><img src="assets/clients/ipstg-leader.png" alt="" loading="lazy"></span>
             <span class="logo-tile logo-light" title="ESCOM — École Supérieure de Communication et de Management"><img src="assets/clients/escom.png" alt="" loading="lazy"></span>
-            <a class="logo-tile logo-cream" href="https://www.coachmarinabf.com" target="_blank" rel="noopener" title="Coach Marina Minoungou" aria-hidden="true" tabindex="-1"><img src="assets/clients/coach-marina.png" alt="" loading="lazy"></a>
-            <a class="logo-tile logo-light" href="https://www.iphecniger.com" target="_blank" rel="noopener" title="IPHEC — Institut Privé des Hautes Études Commerciales" aria-hidden="true" tabindex="-1"><img src="assets/clients/iphec.png" alt="" loading="lazy"></a>
+            <span class="logo-tile logo-cream" title="Coach Marina Minoungou"><img src="assets/clients/coach-marina.png" alt="" loading="lazy"></span>
+            <span class="logo-tile logo-light" title="IPHEC — Institut Privé des Hautes Études Commerciales"><img src="assets/clients/iphec.png" alt="" loading="lazy"></span>
             <span class="logo-tile logo-full" title="KPS — Kolea Prestations de Services"><img src="assets/clients/kps.png" alt="" loading="lazy"></span>
             <span class="logo-tile logo-light" title="American English Language Program — American Corner Niamey"><img src="assets/clients/aelp.png" alt="" loading="lazy"></span>
-            <a class="logo-tile logo-dark" href="https://www.hgccso.com" target="_blank" rel="noopener" title="Hope Giver Conference Center" aria-hidden="true" tabindex="-1"><img src="assets/clients/hgc.png" alt="" loading="lazy"></a>
+            <span class="logo-tile logo-dark" title="Hope Giver Conference Center"><img src="assets/clients/hgc.png" alt="" loading="lazy"></span>
           </div>
         </div>
       </div>
