@@ -96,6 +96,7 @@
   header{position:fixed; top:0; left:0; width:100%; z-index:50; padding:20px 40px; display:flex; align-items:center; justify-content:space-between; transition:background .4s var(--ease), backdrop-filter .4s var(--ease), border-color .4s var(--ease), padding .4s var(--ease); border-bottom:1px solid transparent; background:linear-gradient(180deg, rgba(8,9,10,.4), transparent);}
   header.scrolled{background:rgba(8,9,10,0.75); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--line); padding:13px 40px;}
   body.nav-open{overflow:hidden;}
+  body.nav-open .ai-widget{opacity:0; visibility:hidden; pointer-events:none;}
   .brand{display:flex; align-items:center; gap:10px;}
   .brand .logo-plate{background:var(--cream); border-radius:8px; padding:6px 10px; display:flex; align-items:center; line-height:0; transition:padding .4s var(--ease);}
   .brand img{height:16px; width:auto; transition:height .4s var(--ease);}
@@ -117,6 +118,7 @@
   html.cursor-ready.cursor-active a,html.cursor-ready.cursor-active button{cursor:none;}
   @media (hover:none),(pointer:coarse){.cursor-dot,.cursor-ring{display:none !important;}}
   nav.main-nav{display:flex; align-items:center; gap:34px;}
+  nav.main-nav a.nav-contact{display:none;}
   nav.main-nav a{font-size:14px; color:var(--gray-mute); position:relative; padding:4px 0; transition:color .25s var(--ease);}
   nav.main-nav a:hover{color:var(--cream);}
   nav.main-nav a::after{content:''; position:absolute; left:0; bottom:0; width:0; height:1px; background:var(--cyan); transition:width .3s var(--ease);}
@@ -127,7 +129,8 @@
   .trust-badge{display:inline-flex; align-items:center; gap:7px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.04em; color:var(--gray-mute); border:1px solid var(--line); border-radius:100px; padding:7px 13px;}
   .trust-badge svg{width:13px; height:13px; flex-shrink:0; color:var(--cyan);}
 
-  .header-right{display:flex; align-items:center; gap:18px;}
+  .header-right{display:flex; align-items:center; gap:18px; position:relative; z-index:71;}
+  .brand{position:relative; z-index:71;}
   .lang-switch{display:flex; gap:6px; font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--gray-mute);}
   .lang-switch button{padding:2px 4px; opacity:.5; transition:opacity .2s, color .2s;}
   .lang-switch button.active{opacity:1; color:var(--cyan);}
@@ -359,7 +362,7 @@
     .hero-ctas{justify-content:flex-start;}
   }
   @media (max-width:900px){
-    nav.main-nav{position:fixed; inset:0; width:100%; height:100vh; background:rgba(8,9,11,.92); backdrop-filter:blur(26px); -webkit-backdrop-filter:blur(26px); flex-direction:column; align-items:flex-start; justify-content:center; padding:0 44px; gap:28px; transform:translateX(100%); transition:transform .5s cubic-bezier(.22,1,.36,1);}
+    nav.main-nav{position:fixed; inset:0; width:100%; height:100vh; background:#08090b; backdrop-filter:blur(26px); -webkit-backdrop-filter:blur(26px); flex-direction:column; align-items:flex-start; justify-content:center; padding:0 44px; gap:28px; transform:translateX(100%); transition:transform .5s cubic-bezier(.22,1,.36,1);}
     nav.main-nav.open{transform:translateX(0);}
     nav.main-nav a{font-size:21px; opacity:0; transform:translateX(16px); transition:opacity .4s var(--ease), transform .4s var(--ease);}
     nav.main-nav.open a{opacity:1; transform:translateX(0);}
@@ -367,6 +370,10 @@
     nav.main-nav.open a:nth-child(2){transition-delay:.14s;}
     nav.main-nav.open a:nth-child(3){transition-delay:.2s;}
     nav.main-nav.open a:nth-child(4){transition-delay:.26s;}
+    nav.main-nav.open a:nth-child(5){transition-delay:.32s;}
+    nav.main-nav.open a:nth-child(6){transition-delay:.38s;}
+    nav.main-nav.open a:nth-child(7){transition-delay:.44s;}
+    nav.main-nav a.nav-contact{display:inline-block; color:var(--cyan);}
     .menu-toggle{display:flex; flex-direction:column; justify-content:center; gap:5px; z-index:70; width:26px;}
     .menu-toggle span{width:100%; height:1.5px; background:var(--cream); transition:transform .3s var(--ease), opacity .3s var(--ease);}
     .menu-toggle.active span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
@@ -605,10 +612,12 @@
   </div>
   <nav class="main-nav" id="main-nav">
     <a href="#work"><span class="fr" lang="fr">Réalisations</span><span class="en" lang="en">Work</span></a>
+    <a href="#temoignages"><span class="fr" lang="fr">Témoignages</span><span class="en" lang="en">Testimonials</span></a>
     <a href="#solutions"><span class="fr" lang="fr">Services</span><span class="en" lang="en">Services</span></a>
     <a href="#clients"><span class="fr" lang="fr">Pour qui</span><span class="en" lang="en">Who we serve</span></a>
     <a href="#process"><span class="fr" lang="fr">Méthode</span><span class="en" lang="en">Process</span></a>
     <a href="#founder"><span class="fr" lang="fr">À propos</span><span class="en" lang="en">About</span></a>
+    <a href="#contact" class="nav-contact">Contact</a>
   </nav>
   <div class="header-right">
     <div class="lang-switch">
