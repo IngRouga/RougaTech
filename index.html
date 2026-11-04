@@ -515,6 +515,23 @@
   .testi-link{display:inline-flex; align-items:center; gap:8px; font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--cyan);}
   .testi-link svg{width:12px; height:12px;}
   @media (max-width:900px){.testi-card{grid-template-columns:1fr;} .testi-photo{height:380px;} .testi-body{padding:30px 24px;} .testi-body blockquote p:first-child{font-size:18px;} .testi-body blockquote p{font-size:16px;}}
+  /* ===== client logo marquee ===== */
+  .stats-strip .stat-label{font-size:12px;}
+  .logo-marquee{margin-top:34px; overflow:hidden; -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent); mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);}
+  .logo-track{display:flex; width:max-content; animation:logoScroll 45s linear infinite;}
+  .logo-marquee:hover .logo-track{animation-play-state:paused;}
+  .logo-set{display:flex; gap:22px; padding-right:22px; flex:none;}
+  .logo-tile{flex:none; height:78px; display:flex; align-items:center; justify-content:center; border-radius:14px; overflow:hidden; border:1px solid rgba(247,247,244,.1); transition:transform .3s var(--ease), border-color .3s var(--ease), box-shadow .3s var(--ease);}
+  .logo-tile img{height:100%; width:auto; display:block;}
+  .logo-light{background:#fff; padding:5px 20px;}
+  .logo-cream{background:#faf6f0;}
+  .logo-dark{background:#120d1c;}
+  .logo-full{background:#3d0a6b;}
+  .logo-tile:not(a){cursor:default;}
+  .logo-tile:hover{transform:translateY(-3px); border-color:rgba(127,227,255,.5); box-shadow:0 12px 30px -14px rgba(127,227,255,.6);}
+  @keyframes logoScroll{from{transform:translateX(0);} to{transform:translateX(-50%);}}
+  @media (max-width:720px){.logo-tile{height:62px;} .logo-set{gap:14px; padding-right:14px;} .logo-track{animation-duration:34s;}}
+  @media (prefers-reduced-motion: reduce){.logo-track{animation:none; flex-wrap:wrap; justify-content:center; width:auto;} .logo-set[aria-hidden="true"]{display:none;} .logo-set{flex-wrap:wrap; justify-content:center;}}
 </style>
 <script type="application/ld+json">
 {
@@ -646,13 +663,32 @@
     <div class="wrap">
       <div class="stats-row reveal">
         <div class="stat-item">
-          <div class="stat-num"><span class="count" data-count="10">10</span><span class="stat-plus">+</span></div>
-          <div class="stat-label"><span class="fr" lang="fr">Projets réalisés</span><span class="en" lang="en">Completed projects</span></div>
+          <div class="stat-num"><span class="stat-plus">+</span><span class="count" data-count="10">10</span></div>
+          <div class="stat-label"><span class="fr" lang="fr">Entreprises et institutions accompagnées</span><span class="en" lang="en">Businesses and institutions supported</span></div>
         </div>
-        <div class="stat-divider" aria-hidden="true"></div>
-        <div class="stat-item">
-          <div class="stat-num"><span class="count" data-count="90">90</span><span class="stat-plus">%</span></div>
-          <div class="stat-label"><span class="fr" lang="fr">Clients satisfaits</span><span class="en" lang="en">Satisfied clients</span></div>
+      </div>
+      <div class="logo-marquee reveal" aria-label="Clients">
+        <div class="logo-track">
+          <div class="logo-set">
+            <a class="logo-tile logo-dark" href="https://www.gcap11.com" target="_blank" rel="noopener" title="GCAP11"><img src="assets/clients/gcap11.png" alt="GCAP11" loading="lazy"></a>
+            <a class="logo-tile logo-light" href="https://www.ipstgleader.com" target="_blank" rel="noopener" title="IPSTG-LEADER"><img src="assets/clients/ipstg-leader.png" alt="IPSTG-LEADER" loading="lazy"></a>
+            <span class="logo-tile logo-light" title="ESCOM — École Supérieure de Communication et de Management"><img src="assets/clients/escom.png" alt="ESCOM — École Supérieure de Communication et de Management" loading="lazy"></span>
+            <a class="logo-tile logo-cream" href="https://www.coachmarinabf.com" target="_blank" rel="noopener" title="Coach Marina Minoungou"><img src="assets/clients/coach-marina.png" alt="Coach Marina Minoungou" loading="lazy"></a>
+            <a class="logo-tile logo-light" href="https://www.iphecniger.com" target="_blank" rel="noopener" title="IPHEC — Institut Privé des Hautes Études Commerciales"><img src="assets/clients/iphec.png" alt="IPHEC — Institut Privé des Hautes Études Commerciales" loading="lazy"></a>
+            <span class="logo-tile logo-full" title="KPS — Kolea Prestations de Services"><img src="assets/clients/kps.png" alt="KPS — Kolea Prestations de Services" loading="lazy"></span>
+            <span class="logo-tile logo-light" title="American English Language Program — American Corner Niamey"><img src="assets/clients/aelp.png" alt="American English Language Program — American Corner Niamey" loading="lazy"></span>
+            <a class="logo-tile logo-dark" href="https://www.hgccso.com" target="_blank" rel="noopener" title="Hope Giver Conference Center"><img src="assets/clients/hgc.png" alt="Hope Giver Conference Center" loading="lazy"></a>
+          </div>
+          <div class="logo-set" aria-hidden="true">
+            <a class="logo-tile logo-dark" href="https://www.gcap11.com" target="_blank" rel="noopener" title="GCAP11" aria-hidden="true" tabindex="-1"><img src="assets/clients/gcap11.png" alt="" loading="lazy"></a>
+            <a class="logo-tile logo-light" href="https://www.ipstgleader.com" target="_blank" rel="noopener" title="IPSTG-LEADER" aria-hidden="true" tabindex="-1"><img src="assets/clients/ipstg-leader.png" alt="" loading="lazy"></a>
+            <span class="logo-tile logo-light" title="ESCOM — École Supérieure de Communication et de Management"><img src="assets/clients/escom.png" alt="" loading="lazy"></span>
+            <a class="logo-tile logo-cream" href="https://www.coachmarinabf.com" target="_blank" rel="noopener" title="Coach Marina Minoungou" aria-hidden="true" tabindex="-1"><img src="assets/clients/coach-marina.png" alt="" loading="lazy"></a>
+            <a class="logo-tile logo-light" href="https://www.iphecniger.com" target="_blank" rel="noopener" title="IPHEC — Institut Privé des Hautes Études Commerciales" aria-hidden="true" tabindex="-1"><img src="assets/clients/iphec.png" alt="" loading="lazy"></a>
+            <span class="logo-tile logo-full" title="KPS — Kolea Prestations de Services"><img src="assets/clients/kps.png" alt="" loading="lazy"></span>
+            <span class="logo-tile logo-light" title="American English Language Program — American Corner Niamey"><img src="assets/clients/aelp.png" alt="" loading="lazy"></span>
+            <a class="logo-tile logo-dark" href="https://www.hgccso.com" target="_blank" rel="noopener" title="Hope Giver Conference Center" aria-hidden="true" tabindex="-1"><img src="assets/clients/hgc.png" alt="" loading="lazy"></a>
+          </div>
         </div>
       </div>
     </div>
