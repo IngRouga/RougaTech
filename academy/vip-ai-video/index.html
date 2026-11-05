@@ -122,11 +122,11 @@
   .price-new small{font:800 .24em/1 var(--f-body); letter-spacing:.2em; margin-left:6px; color:var(--gold); -webkit-text-fill-color:var(--gold); vertical-align:middle;}
   .save{display:block; text-align:center; margin-top:12px; font:600 italic 21px/1.2 var(--f-serif); color:var(--gold-hi);}
   .cd-label{text-align:center; margin-top:24px; font:700 11px/1 var(--f-body); letter-spacing:.24em; text-transform:uppercase; color:var(--muted);}
-  .cd{display:flex; justify-content:center; align-items:flex-start; gap:10px; margin-top:12px;}
-  .cd .u{min-width:74px; padding:12px 6px 10px; text-align:center; border-radius:14px; border:1px solid var(--line); background:rgba(0,0,0,.25);}
-  .cd .n{font:400 38px/1 var(--f-display); color:var(--text); font-variant-numeric:tabular-nums;}
+  .cd{display:flex; justify-content:center; align-items:flex-start; gap:6px; margin-top:12px;}
+  .cd .u{min-width:58px; padding:12px 4px 10px; text-align:center; border-radius:14px; border:1px solid var(--line); background:rgba(0,0,0,.25);}
+  .cd .n{font:400 32px/1 var(--f-display); color:var(--text); font-variant-numeric:tabular-nums;}
   .cd .l{font:700 9.5px/1 var(--f-body); letter-spacing:.2em; text-transform:uppercase; color:var(--faint); margin-top:8px;}
-  .cd .sep{font:400 30px/1 var(--f-display); color:var(--gold); padding-top:12px;}
+  .cd .sep{font:400 24px/1 var(--f-display); color:var(--gold); padding-top:14px;}
   .offer .btn{margin-top:24px;}
   .ended-msg{display:none; text-align:center; margin-top:18px; font-size:15px; color:var(--text); padding:14px; border-radius:14px; border:1px solid var(--line-soft); background:rgba(255,255,255,.03);}
   body.offer-ended .ended-msg{display:block;}
@@ -364,7 +364,7 @@
 </head>
 <body>
 
-<div class="topbar" id="topbar"><span class="promo-only">Offre spéciale · <b>24 999 FCFA</b> au lieu de 50 000 · fin dans <b data-cd="compact">--:--:--</b></span><span class="ended-only" style="display:none;">L'offre promotionnelle est terminée · écrivez-nous pour la prochaine session</span></div>
+<div class="topbar" id="topbar"><span class="promo-only">Offre spéciale · <b>24 999 FCFA</b> au lieu de 50 000 · inscriptions de la semaine fermées dans <b data-cd="compact">--:--:--</b></span><span class="ended-only" style="display:none;">L'offre promotionnelle est terminée · écrivez-nous pour la prochaine session</span></div>
 
 <header class="nav">
   <a class="brand" href="/academy/"><span class="plate"><img src="/logo.png" alt="ROUGATECH"></span>Rougatech <em>Academy</em></a>
@@ -392,11 +392,11 @@
     </div>
 
     <div class="offer rv" id="offer-hero">
-      <span class="offer-tag promo-only">Aujourd'hui seulement · −50 %</span>
+      <span class="offer-tag promo-only">Session de la semaine · −50 %</span>
       <div class="price-old">Prix normal <s>50 000 FCFA</s></div>
       <div class="price-new promo-only"><span class="gold-text">24 999</span><small>FCFA</small></div>
       <span class="save promo-only">Vous économisez 25 001 FCFA</span>
-      <div class="cd-label promo-only">L'offre expire dans</div>
+      <div class="cd-label promo-only">Les inscriptions de cette session ferment dans</div>
       <div class="cd promo-only" data-cd="full" aria-live="off"></div>
       <div class="ended-msg">L'offre à 24 999 FCFA est terminée. Écrivez-nous sur WhatsApp pour connaître la prochaine session.</div>
       <a class="btn btn--gold btn--block" data-wa href="#"><span class="wa-ic" aria-hidden="true"></span><span class="promo-only">Profiter de l'offre à 24 999 FCFA</span><span class="ended-only" style="display:none;">Être informé de la prochaine session</span></a>
@@ -556,12 +556,12 @@
         <li>Attestation de formation</li>
       </ul>
       <div class="offer rv" style="margin-top:48px;">
-        <span class="offer-tag promo-only">Aujourd'hui · −50 %</span>
+        <span class="offer-tag promo-only">Session de la semaine · −50 %</span>
         <div class="line"><span>Prix normal</span><span><s>50 000 FCFA</s></span></div>
-        <div class="price-old promo-only" style="margin-top:24px;">Aujourd'hui</div>
+        <div class="price-old promo-only" style="margin-top:24px;">Prix de la session</div>
         <div class="price-new promo-only"><span class="gold-text">24 999</span><small>FCFA</small></div>
         <span class="save promo-only">Économisez 25 001 FCFA</span>
-        <span class="deadline promo-only">Offre valable jusqu'à 00H00</span>
+        <span class="deadline promo-only">Inscriptions ouvertes jusqu'à dimanche 23h59</span>
         <div class="cd promo-only" data-cd="full"></div>
         <div class="ended-msg">L'offre à 24 999 FCFA est terminée. Écrivez-nous sur WhatsApp pour connaître la prochaine session.</div>
         <a class="btn btn--gold btn--block" data-wa href="#"><span class="wa-ic" aria-hidden="true"></span><span class="promo-only">Je profite de l'offre</span><span class="ended-only" style="display:none;">Nous écrire sur WhatsApp</span></a>
@@ -587,7 +587,7 @@
       <details><summary>Dois-je montrer mon visage&nbsp;?</summary><p>Non. La méthode permet de créer des vidéos avec l'IA sans apparaître à l'écran&nbsp;: c'est exactement ce que fait le formateur sur son propre compte TikTok.</p></details>
       <details><summary>Suis-je accompagné&nbsp;?</summary><p>Oui. Un accompagnement personnalisé fait partie des bonus VIP.</p></details>
       <details><summary>Combien coûte la formation&nbsp;?</summary><p>Le prix normal est de 50 000 FCFA. Avec l'offre en cours (−50 %), elle est à 24 999 FCFA.</p></details>
-      <details><summary>Jusqu'à quand l'offre est-elle disponible&nbsp;?</summary><p>Jusqu'à 00H00 (heure du Niger), comme indiqué par le compte à rebours. Une fois le délai passé, l'offre se termine.</p></details>
+      <details><summary>Comment fonctionnent les sessions&nbsp;?</summary><p>Une nouvelle session démarre chaque semaine. Les inscriptions de la session en cours ferment le dimanche à 23h59 (heure du Niger), comme indiqué par le compte à rebours. Passé ce délai, vous serez inscrit à la session suivante.</p></details>
       <details><summary>Comment s'inscrire&nbsp;?</summary><p>Cliquez sur l'un des boutons WhatsApp de la page&nbsp;: un message est déjà préparé. Notre équipe vous explique comment finaliser votre inscription, le mode de paiement et l'accès à la formation.</p></details>
     </div>
   </div>
@@ -602,7 +602,7 @@
     <div class="offer rv">
       <div class="price-old"><s>50 000 FCFA</s></div>
       <div class="price-new promo-only"><span class="gold-text">24 999</span><small>FCFA</small></div>
-      <span class="deadline promo-only">Offre disponible jusqu'à 00H00 uniquement</span>
+      <span class="deadline promo-only">Session de la semaine · inscriptions jusqu'à dimanche 23h59</span>
       <div class="cd promo-only" data-cd="full"></div>
       <div class="ended-msg">L'offre à 24 999 FCFA est terminée. Écrivez-nous sur WhatsApp pour connaître la prochaine session.</div>
       <a class="btn btn--gold btn--block" data-wa href="#"><span class="wa-ic" aria-hidden="true"></span><span class="promo-only">Je veux ma place</span><span class="ended-only" style="display:none;">Nous écrire sur WhatsApp</span></a>
@@ -627,23 +627,30 @@
 <script>
 /* ============ RÉGLAGES (à modifier ici) ============ */
 var WHATSAPP_NUMBER = '22791340905';
-// Fin réelle de la promotion (heure du Niger). À changer pour chaque nouvelle session promo.
-var OFFER_DEADLINE = '2026-11-04T00:00:00+01:00';
+// Les inscriptions de chaque session ferment automatiquement le dimanche à 23h59 (heure du Niger, UTC+1).
+// Le compteur repart tout seul pour la session suivante.
+function nextSessionClose(){
+  var TZ = 3600000, now = Date.now(), n = new Date(now + TZ);
+  var toSun = (7 - n.getUTCDay()) % 7;
+  var end = Date.UTC(n.getUTCFullYear(), n.getUTCMonth(), n.getUTCDate() + toSun, 23, 59, 59) - TZ;
+  if(end <= now) end += 7 * 86400000;
+  return end;
+}
 /* =================================================== */
 (function(){
-  var MSG_PROMO = "Bonjour RougaTech Academy 👋\nJe suis intéressé(e) par la formation VIP AI Video Training à 24 999 FCFA au lieu de 50 000 FCFA.\nJe souhaite profiter de l'offre d'aujourd'hui.\nPouvez-vous m'indiquer comment procéder ?";
+  var MSG_PROMO = "Bonjour RougaTech Academy 👋\nJe suis intéressé(e) par la formation VIP AI Video Training à 24 999 FCFA au lieu de 50 000 FCFA.\nJe souhaite m'inscrire à la session de cette semaine.\nPouvez-vous m'indiquer comment procéder ?";
   var MSG_AFTER = "Bonjour RougaTech Academy 👋\nJe suis intéressé(e) par la formation VIP AI Video Training.\nPouvez-vous m'indiquer la prochaine session et comment m'inscrire ?";
-  var deadline = new Date(OFFER_DEADLINE).getTime(), ended = false;
+  var deadline = nextSessionClose(), ended = false;
   function setLinks(msg){ var url='https://wa.me/'+WHATSAPP_NUMBER+'?text='+encodeURIComponent(msg); document.querySelectorAll('[data-wa]').forEach(function(a){ a.href=url; a.target='_blank'; a.rel='noopener'; }); }
   function pad(n){ return (n<10?'0':'')+n; }
   var fulls=document.querySelectorAll('[data-cd="full"]'), compacts=document.querySelectorAll('[data-cd="compact"]');
-  fulls.forEach(function(el){ el.innerHTML='<div class="u"><div class="n" data-h>00</div><div class="l">Heures</div></div><span class="sep">:</span><div class="u"><div class="n" data-m>00</div><div class="l">Min</div></div><span class="sep">:</span><div class="u"><div class="n" data-s>00</div><div class="l">Sec</div></div>'; });
+  fulls.forEach(function(el){ el.innerHTML='<div class="u"><div class="n" data-d>0</div><div class="l">Jours</div></div><span class="sep">:</span><div class="u"><div class="n" data-h>00</div><div class="l">Heures</div></div><span class="sep">:</span><div class="u"><div class="n" data-m>00</div><div class="l">Min</div></div><span class="sep">:</span><div class="u"><div class="n" data-s>00</div><div class="l">Sec</div></div>'; });
   function endOffer(){ ended=true; document.body.classList.add('offer-ended'); document.querySelectorAll('.ended-only').forEach(function(e){ e.style.display=''; }); setLinks(MSG_AFTER); }
   function tick(){
-    var left=Math.max(0,deadline-Date.now()), t=Math.floor(left/1000), h=Math.floor(t/3600), m=Math.floor(t%3600/60), s=t%60;
-    fulls.forEach(function(el){ el.querySelector('[data-h]').textContent=pad(h); el.querySelector('[data-m]').textContent=pad(m); el.querySelector('[data-s]').textContent=pad(s); });
-    compacts.forEach(function(el){ el.textContent=pad(h)+':'+pad(m)+':'+pad(s); });
-    if(left<=0 && !ended) endOffer();
+    var left=Math.max(0,deadline-Date.now()), t=Math.floor(left/1000), dd=Math.floor(t/86400), h=Math.floor(t%86400/3600), m=Math.floor(t%3600/60), s=t%60;
+    fulls.forEach(function(el){ el.querySelector('[data-d]').textContent = dd; el.querySelector('[data-h]').textContent = pad(h); el.querySelector('[data-m]').textContent=pad(m); el.querySelector('[data-s]').textContent=pad(s); });
+    compacts.forEach(function(el){ el.textContent = (dd ? dd + 'j ' : '') + pad(h) + ':' + pad(m) + ':' + pad(s); });
+    if(left <= 0){ deadline = nextSessionClose(); }
   }
   setLinks(MSG_PROMO); tick();
   if(!ended){ var iv=setInterval(function(){ tick(); if(ended) clearInterval(iv); },1000); }
