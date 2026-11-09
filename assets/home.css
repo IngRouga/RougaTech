@@ -478,3 +478,14 @@ footer{background:var(--ink); color:rgba(255,255,255,.75); padding:72px 0 36px; 
 .ba-sec .ba-lists{margin-top:0;}
 .compare-standalone{margin-top:0;}
 .compare-sec{padding-top:0;}
+
+/* hand-drawn underline in hero headline */
+.scribble{position:relative; display:inline-block; white-space:nowrap;}
+.scribble-line{position:absolute; left:-2%; width:104%; bottom:-.16em; height:.32em; overflow:visible; pointer-events:none;}
+.scribble-line path{fill:none; stroke:var(--blue); stroke-width:5.5; stroke-linecap:round; stroke-linejoin:round; vector-effect:non-scaling-stroke;}
+@media (max-width:720px){.scribble-line path{stroke-width:4;}}
+@media (prefers-reduced-motion: no-preference){
+  .scribble-line path{stroke-dasharray:420; stroke-dashoffset:420; animation:scribble 1s cubic-bezier(.6,0,.3,1) .5s forwards;}
+  .scribble + .scribble .scribble-line path, h1 .scribble:nth-of-type(2) .scribble-line path{animation-delay:.9s;}
+  @keyframes scribble{to{stroke-dashoffset:0;}}
+}
