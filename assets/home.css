@@ -489,3 +489,13 @@ footer{background:var(--ink); color:rgba(255,255,255,.75); padding:72px 0 36px; 
   .scribble + .scribble .scribble-line path, h1 .scribble:nth-of-type(2) .scribble-line path{animation-delay:.9s;}
   @keyframes scribble{to{stroke-dashoffset:0;}}
 }
+
+/* positioning statement between "need" and "work" */
+.need-sec{padding-bottom:0;}
+.pos-sec{padding:88px 0 0;}
+.pos-text{font-family:var(--display); font-weight:700; font-size:clamp(28px,3.6vw,48px); line-height:1.22; letter-spacing:-.025em; color:var(--ink); max-width:24ch; padding-left:28px; border-left:6px solid var(--blue);}
+.pos-text strong{font-weight:800; color:var(--blue);}
+.pos-text em{font-style:normal; color:var(--ink);}
+.pos-mark{background:linear-gradient(transparent 62%, rgba(255,176,32,.55) 62%); padding:0 .06em;}
+#work{padding-top:96px;}
+@media (max-width:720px){.pos-sec{padding-top:64px;} .pos-text{padding-left:18px; border-left-width:5px;} #work{padding-top:72px;}}
