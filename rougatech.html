@@ -655,6 +655,29 @@
     }
   })();
 
+  // Scroll animations: portfolio reveal + hero parallax (skipped when reduced motion is requested)
+  (function(){
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+    document.documentElement.classList.add('anim');
+    const projIo = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); projIo.unobserve(e.target); } });
+    }, {threshold:.2, rootMargin:'0px 0px -6% 0px'});
+    document.querySelectorAll('.proj').forEach(el => projIo.observe(el));
+
+    const hero = document.getElementById('hero');
+    const shots = [...document.querySelectorAll('.hero-stack .shot')];
+    const speeds = [0.10, 0.18, 0.26];
+    let ticking = false, heroVisible = true;
+    new IntersectionObserver(([e]) => { heroVisible = e.isIntersecting; }).observe(hero);
+    function update(){
+      ticking = false;
+      if(!heroVisible) return;
+      const y = Math.min(window.scrollY, hero.offsetHeight);
+      shots.forEach((s, i) => { s.style.translate = '0 ' + (-y * speeds[i]).toFixed(1) + 'px'; });
+    }
+    window.addEventListener('scroll', () => { if(!ticking){ ticking = true; requestAnimationFrame(update); } }, {passive:true});
+  })();
+
   // Escape closes the mobile menu
   document.addEventListener('keydown', (e) => {
     if(e.key === 'Escape' && nav.classList.contains('open')) toggle.click();
