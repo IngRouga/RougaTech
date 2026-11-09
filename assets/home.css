@@ -499,3 +499,12 @@ footer{background:var(--ink); color:rgba(255,255,255,.75); padding:72px 0 36px; 
 .pos-mark{background:linear-gradient(transparent 62%, rgba(255,176,32,.55) 62%); padding:0 .06em;}
 #work{padding-top:96px;}
 @media (max-width:720px){.pos-sec{padding-top:64px;} .pos-text{padding-left:18px; border-left-width:5px;} #work{padding-top:72px;}}
+
+/* animated green checks in comparison table */
+@media (prefers-reduced-motion: no-preference){
+  .anim .cmp .t-yes{transform:scale(0); transition:transform .45s cubic-bezier(.34,1.56,.64,1);}
+  .anim .cmp .t-yes path{stroke-dasharray:24; stroke-dashoffset:24; transition:stroke-dashoffset .45s ease-out .3s;}
+  .anim .cmp tr.in .t-yes{transform:scale(1); animation:checkPulse 2.4s ease-out 1s infinite;}
+  .anim .cmp tr.in .t-yes path{stroke-dashoffset:0;}
+  @keyframes checkPulse{0%{box-shadow:0 0 0 0 rgba(22,163,74,.45);} 70%{box-shadow:0 0 0 10px rgba(22,163,74,0);} 100%{box-shadow:0 0 0 0 rgba(22,163,74,0);}}
+}
