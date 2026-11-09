@@ -131,6 +131,11 @@
   .course-cta:hover{background:var(--blue);}
   @media (max-width:760px){.course-grid{grid-template-columns:1fr;} .course-card{padding:26px 22px;}}
 
+
+  .course-img{display:block; margin:-34px -34px 6px; aspect-ratio:1; overflow:hidden; border-radius:var(--radius-lg) var(--radius-lg) 0 0; background:#0b1f8f;}
+  .course-img img{width:100%; height:100%; object-fit:cover; transition:transform .5s var(--ease);}
+  .course-card:hover .course-img img{transform:scale(1.03);}
+  @media (max-width:760px){.course-img{margin:-26px -22px 6px;}}
   .category-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
 
   /* why */
@@ -324,7 +329,8 @@
     {
       slug: "ecommerce-premium-pro",
       url: "/academy/ecommerce-premium-pro/",
-      title: "E-Commerce Premium Pro",
+      title: "E-commerce Premium",
+      image: "/academy/ecommerce-premium-pro/vignette.jpg",
       category: "E-commerce",
       desc: "Acheter en toute sécurité en Chine et vendre efficacement en ligne : Alibaba, Facebook, WhatsApp, TikTok et techniques de vente. +96 entrepreneurs déjà formés.",
       level: "Débutants bienvenus",
@@ -358,7 +364,8 @@
 
     function courseCard(c){
       return '' +
-        '<article class="course-card" data-category="' + c.category + '">' +
+        '<article class="course-card' + (c.image ? ' has-img' : '') + '" data-category="' + c.category + '">' +
+          (c.image ? '<a class="course-img" href="' + c.url + '"><img src="' + c.image + '" alt="' + c.title + '" loading="lazy" width="900" height="900"></a>' : '') +
           '<div class="course-top">' +
             '<span class="course-category">' + c.category + '</span>' +
             '<span class="course-status">' + c.status + '</span>' +
