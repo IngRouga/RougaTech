@@ -28,8 +28,8 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/pages.css">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/pages.css?v=202611090513">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -116,54 +116,54 @@
     <div class="page-hero-bg" aria-hidden="true"></div>
     <div class="wrap">
       <div class="breadcrumbs"><a href="/"><span class="fr" lang="fr">Accueil</span><span class="en" lang="en">Home</span></a><span class="sep">/</span><span class="current"><span class="fr" lang="fr">Contact</span><span class="en" lang="en">Contact</span></span></div>
-      <div class="eyebrow"><span class="fr" lang="fr">CONTACT</span><span class="en" lang="en">CONTACT</span></div>
+      <div class="eyebrow"><span class="fr" lang="fr">Contact</span><span class="en" lang="en">Contact</span></div>
       <h1><span class="fr" lang="fr">Transformons votre entreprise</span><span class="en" lang="en">Let's transform your business</span></h1>
       <p class="lede"><span class="fr" lang="fr">Dites-nous où en est votre entreprise aujourd'hui et où vous voulez qu'elle aille.</span><span class="en" lang="en">Tell us where your business is today and where you want it to go.</span></p>
     </div>
   </section>
 
-  <section class="section" style="padding-top:0;">
-    <div class="wrap-narrow" style="display:grid; grid-template-columns:1fr 1.3fr; gap:60px;">
+  <section class="section contact-page">
+    <div class="wrap contact-grid">
       <div class="reveal">
         <h3 style="font-size:18px; margin-bottom:14px;"><span class="fr" lang="fr">Coordonnées</span><span class="en" lang="en">Contact details</span></h3>
         <p style="color:var(--gray-mute); font-size:15px; margin-bottom:8px;"><span class="fr" lang="fr">Afrique · clients partout dans le monde</span><span class="en" lang="en">Africa · clients worldwide</span></p>
         <a href="mailto:hello@rougatech.com" style="color:var(--cyan); font-size:15px; display:block; margin-bottom:8px;">hello@rougatech.com</a>
-        <a href="https://wa.me/22791340905?text=Bonjour%20ROUGATECH%2C%20j%27ai%20un%20projet%20de%20site%20web%20/%20plateforme." target="_blank" rel="noopener" style="color:#4ADE80; font-size:15px; display:block; margin-bottom:24px;">WhatsApp : +227 91 34 09 05</a>
+        <a href="https://wa.me/22791340905?text=Bonjour%20ROUGATECH%2C%20j%27ai%20un%20projet%20de%20site%20web%20/%20plateforme." target="_blank" rel="noopener" style="color:#15803d; font-weight:600; font-size:15px; display:block; margin-bottom:24px;">WhatsApp : +227 91 34 09 05</a>
         <h3 style="font-size:18px; margin-bottom:14px;"><span class="fr" lang="fr">Nos solutions</span><span class="en" lang="en">Our solutions</span></h3>
         <p style="color:var(--gray-mute); font-size:14px;"><span class="fr" lang="fr">Sites web, agents IA, SaaS, automatisation, commerce digital.</span><span class="en" lang="en">Websites, AI agents, SaaS, automation, digital commerce.</span></p>
-        <a href="/solutions/" style="color:var(--cyan); font-size:13px; font-family:'JetBrains Mono',monospace; text-transform:uppercase; display:inline-block; margin-top:10px;"><span class="fr" lang="fr">Voir nos solutions</span><span class="en" lang="en">See our solutions</span> &rarr;</a>
+        <a href="/solutions/" class="arrow-link" style="margin-top:12px;"><span class="fr" lang="fr">Voir nos solutions</span><span class="en" lang="en">See our solutions</span> &rarr;</a>
       </div>
-      <form id="contact-form-page" class="reveal" style="display:flex; flex-direction:column; gap:16px;">
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+      <form id="contact-form-page" class="contact-form-card">
+        <div class="cf-row">
           <div>
-            <label style="display:block; font-size:12px; color:var(--gray-mute); margin-bottom:6px;"><span class="fr" lang="fr">Nom complet</span><span class="en" lang="en">Full name</span></label>
-            <input id="cf-name" type="text" required style="width:100%; padding:13px 14px; background:var(--black-soft); border:1px solid var(--line); border-radius:10px; color:var(--cream); font:inherit;">
+            <label class="cf-label"><span class="fr" lang="fr">Nom complet</span><span class="en" lang="en">Full name</span></label>
+            <input id="cf-name" type="text" required class="cf-input">
           </div>
           <div>
-            <label style="display:block; font-size:12px; color:var(--gray-mute); margin-bottom:6px;"><span class="fr" lang="fr">Entreprise</span><span class="en" lang="en">Company</span></label>
-            <input id="cf-company" type="text" style="width:100%; padding:13px 14px; background:var(--black-soft); border:1px solid var(--line); border-radius:10px; color:var(--cream); font:inherit;">
-          </div>
-        </div>
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
-          <div>
-            <label style="display:block; font-size:12px; color:var(--gray-mute); margin-bottom:6px;">Email</label>
-            <input id="cf-email" type="email" required style="width:100%; padding:13px 14px; background:var(--black-soft); border:1px solid var(--line); border-radius:10px; color:var(--cream); font:inherit;">
-          </div>
-          <div>
-            <label style="display:block; font-size:12px; color:var(--gray-mute); margin-bottom:6px;"><span class="fr" lang="fr">Téléphone</span><span class="en" lang="en">Phone</span></label>
-            <input id="cf-phone" type="tel" style="width:100%; padding:13px 14px; background:var(--black-soft); border:1px solid var(--line); border-radius:10px; color:var(--cream); font:inherit;">
+            <label class="cf-label"><span class="fr" lang="fr">Entreprise</span><span class="en" lang="en">Company</span></label>
+            <input id="cf-company" type="text" class="cf-input">
           </div>
         </div>
-        <div>
-          <label style="display:block; font-size:12px; color:var(--gray-mute); margin-bottom:6px;"><span class="fr" lang="fr">Que voulez-vous améliorer ?</span><span class="en" lang="en">What do you want to improve?</span></label>
-          <input id="cf-improve" type="text" style="width:100%; padding:13px 14px; background:var(--black-soft); border:1px solid var(--line); border-radius:10px; color:var(--cream); font:inherit;">
+        <div class="cf-row">
+          <div>
+            <label class="cf-label">Email</label>
+            <input id="cf-email" type="email" required class="cf-input">
+          </div>
+          <div>
+            <label class="cf-label"><span class="fr" lang="fr">Téléphone</span><span class="en" lang="en">Phone</span></label>
+            <input id="cf-phone" type="tel" class="cf-input">
+          </div>
         </div>
         <div>
-          <label style="display:block; font-size:12px; color:var(--gray-mute); margin-bottom:6px;"><span class="fr" lang="fr">Message</span><span class="en" lang="en">Message</span></label>
-          <textarea id="cf-msg" rows="4" required style="width:100%; padding:13px 14px; background:var(--black-soft); border:1px solid var(--line); border-radius:10px; color:var(--cream); font:inherit; resize:vertical;"></textarea>
+          <label class="cf-label"><span class="fr" lang="fr">Que voulez-vous améliorer ?</span><span class="en" lang="en">What do you want to improve?</span></label>
+          <input id="cf-improve" type="text" class="cf-input">
         </div>
-        <button type="submit" class="btn btn-primary" style="align-self:flex-start;"><span><span class="fr" lang="fr">Démarrer ma transformation</span><span class="en" lang="en">Start My Transformation</span></span></button>
-        <p id="form-status-page" role="status" aria-live="polite" style="font-size:12px; color:var(--gray-mute);"><span class="fr" lang="fr">Ou écrivez-nous directement à hello@rougatech.com.</span><span class="en" lang="en">Or email us directly at hello@rougatech.com.</span></p>
+        <div>
+          <label class="cf-label"><span class="fr" lang="fr">Message</span><span class="en" lang="en">Message</span></label>
+          <textarea id="cf-msg" rows="4" required class="cf-input"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary cf-submit"><span class="fr" lang="fr">Envoyer ma demande</span><span class="en" lang="en">Send my request</span></button>
+        <p id="form-status-page" class="cf-status" role="status" aria-live="polite"><span class="fr" lang="fr">Ou écrivez-nous directement à hello@rougatech.com.</span><span class="en" lang="en">Or email us directly at hello@rougatech.com.</span></p>
       </form>
     </div>
   </section>
@@ -212,7 +212,7 @@
     <div class="footer-top">
       <div class="footer-brand">
         <div class="brand"><span class="logo-plate"><img src="/logo.png" alt="ROUGATECH"></span></div>
-        <p><span class="fr" lang="fr">TRANSFORMEZ VOTRE ENTREPRISE. VENDEZ PLUS.</span><span class="en" lang="en">TRANSFORM YOUR BUSINESS. SELL MORE.</span></p>
+        <p><span class="fr" lang="fr">Sites web et plateformes SaaS pour les entreprises et les institutions.</span><span class="en" lang="en">Websites and SaaS platforms for businesses and institutions.</span></p>
       </div>
       <div class="footer-nav">
         <div class="footer-col">
@@ -232,18 +232,18 @@
         </div>
         <div class="footer-col">
           <h5><span class="fr" lang="fr">Contact</span><span class="en" lang="en">Contact</span></h5>
-          <span style="display:block; font-size:14px; color:var(--gray); margin-bottom:10px;">Afrique · International</span>
+          <span style="display:block; font-size:15px; color:rgba(255,255,255,.72); margin-bottom:10px;">Afrique et international</span>
           <a href="mailto:hello@rougatech.com">hello@rougatech.com</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 ROUGATECH. <span class="fr" lang="fr">Tous droits réservés.</span><span class="en" lang="en">All rights reserved.</span></span>
-      <span><span class="fr" lang="fr">TRANSFORMEZ VOTRE ENTREPRISE. VENDEZ PLUS.</span><span class="en" lang="en">TRANSFORM YOUR BUSINESS. SELL MORE.</span></span>
+      <span><span class="fr" lang="fr">Afrique et international</span><span class="en" lang="en">Africa and worldwide</span></span>
     </div>
   </div>
 </footer>
-<script src="/assets/pages.js"></script>
+<script src="/assets/pages.js?v=202611090513"></script>
 <script>
   // Pour activer l'envoi direct : collez votre clé Web3Forms (gratuite, web3forms.com) entre les guillemets.
   var WEB3FORMS_KEY = '1a6299e3-8607-40ed-bab0-37abc0104dba';
@@ -252,7 +252,7 @@
   function showStatus(fr, en, ok){
     if(!pageStatus) return;
     pageStatus.innerHTML = '<span class="fr" lang="fr">' + fr + '</span><span class="en" lang="en">' + en + '</span>';
-    pageStatus.style.color = ok ? '#4ADE80' : '#F87171';
+    pageStatus.style.color = ok ? '#15803d' : '#c0262d';
   }
   if(pageForm){
     pageForm.addEventListener('submit', function(e){

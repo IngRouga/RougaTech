@@ -12,11 +12,15 @@
   if(toggle && nav){
     toggle.addEventListener('click', function(){
       var open = nav.classList.toggle('open');
+      toggle.classList.toggle('active', open);
+      document.body.classList.toggle('nav-open', open);
       toggle.setAttribute('aria-expanded', open);
     });
     nav.querySelectorAll('a').forEach(function(a){
       a.addEventListener('click', function(){
         nav.classList.remove('open');
+        toggle.classList.remove('active');
+        document.body.classList.remove('nav-open');
         toggle.setAttribute('aria-expanded', false);
       });
     });
@@ -26,16 +30,6 @@
     entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('in'); });
   }, {threshold:.05, rootMargin:"0px 0px -10% 0px"});
   document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
-
-  document.querySelectorAll('.btn-primary').forEach(function(btn){
-    btn.addEventListener('mousemove', function(e){
-      var r = btn.getBoundingClientRect();
-      var x = e.clientX - r.left - r.width/2;
-      var y = e.clientY - r.top - r.height/2;
-      btn.style.transform = 'translate(' + (x*0.12) + 'px, ' + (y*0.28) + 'px)';
-    });
-    btn.addEventListener('mouseleave', function(){ btn.style.transform = 'translate(0,0)'; });
-  });
 
   // language switch (same storage key as homepage, so the choice persists across pages)
   var langButtons = document.querySelectorAll('[data-lang-btn]');
