@@ -91,7 +91,7 @@ body.nav-open{overflow:hidden;}
 .hero-latest{display:inline-flex; align-items:center; gap:10px; font-size:14.5px; font-weight:500; color:var(--ink-2); padding:7px 14px 7px 10px; border-radius:999px; background:var(--mist);}
 .hero-latest:hover{color:var(--ink);}
 .hero-latest .dot{width:8px; height:8px; border-radius:50%; background:#16a34a; box-shadow:0 0 0 4px rgba(22,163,74,.15);}
-.hero h1{font-size:clamp(40px,5.3vw,78px); font-weight:800; letter-spacing:-.035em; line-height:.98; margin:0 0 26px; max-width:15ch;}
+.hero h1{font-size:clamp(40px,5.3vw,78px); font-weight:800; letter-spacing:-.035em; line-height:1.14; margin:0 0 26px; max-width:15ch;}
 .hero-sub{font-size:clamp(18px,1.6vw,21px); color:var(--ink-2); max-width:40ch; line-height:1.5;}
 .hero-ctas{display:flex; flex-wrap:wrap; gap:12px; margin-top:34px;}
 .hero-wa{display:inline-flex; align-items:center; gap:9px; margin-top:22px; font-size:15px; color:var(--ink-3);}
@@ -481,7 +481,7 @@ footer{background:var(--ink); color:rgba(255,255,255,.75); padding:72px 0 36px; 
 
 /* hand-drawn underline in hero headline */
 .scribble{position:relative; display:inline-block; white-space:nowrap;}
-.scribble-line{position:absolute; left:-2%; width:104%; bottom:-.16em; height:.32em; overflow:visible; pointer-events:none;}
+.scribble-line{position:absolute; left:-2%; width:104%; bottom:-.12em; height:.28em; overflow:visible; pointer-events:none;}
 .scribble-line path{fill:none; stroke:var(--blue); stroke-width:5.5; stroke-linecap:round; stroke-linejoin:round; vector-effect:non-scaling-stroke;}
 @media (max-width:720px){.scribble-line path{stroke-width:4;}}
 @media (prefers-reduced-motion: no-preference){
