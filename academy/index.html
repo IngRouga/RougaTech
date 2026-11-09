@@ -214,6 +214,34 @@
     .a-hero{padding:110px 0 60px;}
     .a-hero-ctas .btn{flex:1 1 100%;}
   }
+
+  /* ebooks */
+  .eb-intro{font-size:18px; color:var(--ink-2); max-width:560px; margin-top:12px;}
+  .ebook-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:24px;}
+  .ebook-card{background:#fff; border-radius:var(--radius-lg); overflow:hidden; display:flex; flex-direction:column; box-shadow:0 1px 0 var(--line), 0 20px 50px -30px rgba(13,27,52,.35); transition:transform .35s var(--ease), box-shadow .35s var(--ease);}
+  .ebook-card:hover{transform:translateY(-4px); box-shadow:0 1px 0 var(--line), 0 30px 60px -30px rgba(13,27,52,.45);}
+  .ebook-cover{aspect-ratio:4/3; background:#eef1f6; overflow:hidden;}
+  .ebook-cover img{width:100%; height:100%; object-fit:cover; transition:transform .6s var(--ease);}
+  .ebook-card:hover .ebook-cover img{transform:scale(1.04);}
+  .ebook-body{padding:26px 28px 28px; display:flex; flex-direction:column; gap:12px; flex:1;}
+  .ebook-top{display:flex; align-items:center; justify-content:space-between; gap:10px;}
+  .ebook-tag{font-size:13px; font-weight:700; color:#fff; background:var(--blue); border-radius:999px; padding:5px 12px;}
+  .ebook-format{font-size:13px; font-weight:700; color:var(--ink-3); letter-spacing:.06em; text-transform:uppercase;}
+  .ebook-card h3{font-size:clamp(23px,2.2vw,28px); font-weight:800; line-height:1.15;}
+  .ebook-author{font-size:14.5px; color:var(--ink-3); margin-top:-4px;}
+  .ebook-desc{font-size:16.5px; color:var(--ink-2); flex:1;}
+  .ebook-points{display:flex; flex-wrap:wrap; gap:6px;}
+  .ebook-points span{font-size:13px; font-weight:600; color:var(--ink); background:var(--mist); border-radius:999px; padding:6px 11px;}
+  .ebook-buy{display:flex; align-items:center; justify-content:space-between; gap:14px; padding-top:16px; border-top:1px solid var(--line); flex-wrap:wrap;}
+  .ebook-price{display:flex; flex-direction:column; line-height:1.1;}
+  .ebook-price s{font-size:14px; color:var(--ink-3);}
+  .ebook-price b{font-family:var(--display); font-size:26px; font-weight:800; color:var(--ink);}
+  .ebook-price b.ask{font-size:19px;}
+  .ebook-price small{font-size:13px; font-weight:600; color:var(--ink-3);}
+  .ebook-cta{background:#16a34a; color:#fff; display:inline-flex; align-items:center; gap:10px;}
+  .ebook-cta:hover{background:#15803d;}
+  .ebook-cta svg{width:18px; height:18px;}
+  @media (max-width:760px){ .ebook-grid{grid-template-columns:1fr;} .ebook-body{padding:22px;} .ebook-cta{width:100%; justify-content:center;} }
 </style>
 </head>
 <body>
@@ -226,6 +254,7 @@
   <nav class="a-nav" id="a-nav">
     <a href="#hero">Accueil</a>
     <a href="#courses">Formations</a>
+    <a href="#ebooks">Ebooks</a>
     <a href="#about-academy">À propos</a>
     <a href="../index.html#contact">Contact</a>
   </nav>
@@ -271,6 +300,19 @@
     </div>
   </section>
 
+
+
+  <!-- EBOOKS -->
+  <section class="section section-alt" id="ebooks">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Ebooks</div>
+        <h2>Nos ebooks</h2>
+        <p class="eb-intro">Des guides pratiques à lire à votre rythme, livrés en PDF directement sur WhatsApp.</p>
+      </div>
+      <div class="ebook-grid reveal" id="ebook-grid"></div>
+    </div>
+  </section>
 
   <!-- WHY ACADEMY -->
   <section class="section" id="why-academy">
@@ -396,6 +438,56 @@
   ];
 
   // Catégories affichées automatiquement à partir des formations publiées (E-commerce, IA…)
+
+
+  /* ================= EBOOKS =================
+     Pour ajouter un ebook : copiez un bloc { ... } ci-dessous.
+     price : prix en FCFA (laisser null tant que le prix n'est pas fixé)
+     oldPrice : ancien prix barré (facultatif) */
+  var ROUGATECH_WHATSAPP = '22791340905';
+  var ACADEMY_EBOOKS = [
+    {
+      title: "100 Prompts pour créer du contenu pro",
+      author: "Par Amadou Rouga",
+      cover: "/academy/ebooks/100-prompts.jpg",
+      coverPosition: "50% 0%",
+      tag: "Intelligence artificielle",
+      desc: "100 commandes prêtes à l'emploi pour créer du contenu professionnel avec l'IA : branding, produits et packaging, réseaux sociaux, publicité et communication d'entreprise.",
+      points: ["Branding", "Produits & packaging", "Réseaux sociaux", "Publicité", "Business"],
+      price: null,
+      oldPrice: null
+    },
+    {
+      title: "Speak English With Confidence",
+      author: "Easy Speak Academy",
+      cover: "/academy/ebooks/speak-english.jpg",
+      tag: "Anglais",
+      desc: "100 expressions anglaises du quotidien que tout francophone devrait connaître, avec des exemples clairs, la prononciation et les erreurs courantes à éviter.",
+      points: ["100 expressions", "Exemples", "Prononciation", "Pratique"],
+      price: null,
+      oldPrice: null
+    }
+  ];
+  (function renderEbooks(){
+    var grid=document.getElementById('ebook-grid'); if(!grid) return;
+    if(!ACADEMY_EBOOKS.length){ var sec=document.getElementById('ebooks'); if(sec) sec.style.display='none'; return; }
+    function fmt(n){ return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,' '); }
+    var wa='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>';
+    grid.innerHTML=ACADEMY_EBOOKS.map(function(e){
+      var msg='Bonjour RougaTech Academy 👋\nJe souhaite acheter l\'ebook « '+e.title+' »'+(e.price?(' à '+fmt(e.price)+' FCFA'):'')+'.\nComment procéder ?';
+      var url='https://wa.me/'+ROUGATECH_WHATSAPP+'?text='+encodeURIComponent(msg);
+      var price=e.price ? ((e.oldPrice?'<s>'+fmt(e.oldPrice)+' FCFA</s>':'')+'<b>'+fmt(e.price)+' FCFA</b>') : '<small>Ebook PDF</small><b class="ask">Prix sur WhatsApp</b>';
+      return '<article class="ebook-card">'+
+        '<div class="ebook-cover"><img style="object-position:'+(e.coverPosition||'50% 50%')+'" src="'+e.cover+'" alt="Ebook '+e.title+'" loading="lazy"></div>'+
+        '<div class="ebook-body">'+
+          '<div class="ebook-top"><span class="ebook-tag">'+e.tag+'</span><span class="ebook-format">PDF</span></div>'+
+          '<h3>'+e.title+'</h3><p class="ebook-author">'+e.author+'</p>'+
+          '<p class="ebook-desc">'+e.desc+'</p>'+
+          '<div class="ebook-points">'+e.points.map(function(p){ return '<span>'+p+'</span>'; }).join('')+'</div>'+
+          '<div class="ebook-buy"><div class="ebook-price">'+price+'</div><a class="btn ebook-cta" href="'+url+'" target="_blank" rel="noopener">'+wa+'Commander</a></div>'+
+        '</div></article>';
+    }).join('');
+  })();
 
   (function renderAcademy(){
     var filterRow = document.getElementById('filter-row');
