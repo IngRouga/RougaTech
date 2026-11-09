@@ -464,3 +464,10 @@ footer{background:var(--ink); color:rgba(255,255,255,.75); padding:72px 0 36px; 
 /* alert heading (need section) */
 .sec-head h2.h-alert{color:var(--ink);}
 .h-alert u{text-decoration:underline; text-decoration-color:#d61f1f; text-decoration-thickness:.09em; text-underline-offset:.12em; text-decoration-skip-ink:none;}
+
+/* 2-column comparison: social media vs website */
+.compare-intro{font-size:18px; color:var(--ink-2); max-width:62ch; margin:-12px 0 28px;}
+.cmp-2{min-width:640px;}
+.cmp-2 tbody th{width:28%;}
+.cmp thead th small{display:block; font-family:var(--text); font-size:13px; font-weight:500; margin-top:4px; opacity:.75;}
+@media (max-width:720px){.cmp.cmp-2{min-width:0;} .cmp-2 tbody th{width:auto;} .compare-intro{margin-top:-8px;}}
