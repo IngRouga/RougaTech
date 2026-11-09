@@ -17,7 +17,7 @@
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://rougatech.com/academy/stock-market-investment/partage.jpg">
-<meta name="theme-color" content="#08111F">
+<meta name="theme-color" content="#07080B">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
@@ -26,7 +26,7 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Course","name":"Stock Market Investment","description":"Comprendre le marché boursier, investir dans les grandes entreprises, ETF et diversification, plateformes d'investissement, analyse fondamentale, gestion du portefeuille et stratégie à long terme.","inLanguage":"fr","instructor":{"@type":"Person","name":"Amadou Rouga"},"provider":{"@type":"Organization","name":"ROUGATECH Academy","url":"https://rougatech.com/academy/"},"offers":{"@type":"Offer","price":"19000","priceCurrency":"XOF","category":"Paid"}}
 </script>
@@ -37,7 +37,7 @@
     --gold:#C9A54C; --gold-hi:#E8CB7E; --gold-lo:#9C7A2C;
     --line:rgba(201,165,76,.18); --line2:rgba(201,165,76,.34);
     --green:#21C07E; --red:#E5484D; --led:#3BF08F; --amber:#FFB341;
-    --f-display:"Instrument Serif",Georgia,"Times New Roman",serif;
+    --f-display:"Montserrat","Arial Black",system-ui,sans-serif;
     --f-body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
     --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
     --ease:cubic-bezier(.2,.7,.2,1);
@@ -60,7 +60,7 @@
   .kicker::before{content:""; width:26px; height:1px; background:var(--gold);}
   .center .kicker::after{content:""; width:26px; height:1px; background:var(--gold);}
   .h2{font:400 clamp(38px,6vw,70px)/1 var(--f-display); letter-spacing:-.01em; margin-top:16px;}
-  .h2 em{font-style:italic; color:var(--gold-hi);}
+  .h2 em{font-style:normal; color:var(--gold-hi);}
   .lead{font-size:clamp(16.5px,1.6vw,18.5px); line-height:1.65; color:var(--muted); margin-top:18px; max-width:60ch;}
   .lead strong{color:var(--text);}
   .center{text-align:center;} .center .lead{margin-left:auto; margin-right:auto;}
@@ -102,7 +102,7 @@
   .hero-grid > *{min-width:0;}
   .hero h1{font:400 clamp(56px,10.4vw,126px)/.9 var(--f-display); letter-spacing:-.02em; margin-top:18px;}
   .hero h1 span{display:block;}
-  .hero h1 em{font-style:italic; background:linear-gradient(180deg,#F3DB9A,#C9A54C 60%,#E8CB7E); -webkit-background-clip:text; background-clip:text; color:transparent;}
+  .hero h1 em{font-style:normal; background:linear-gradient(180deg,#F3DB9A,#C9A54C 60%,#E8CB7E); -webkit-background-clip:text; background-clip:text; color:transparent;}
   .hero .sub{font:700 clamp(18px,2vw,21px)/1.4 var(--f-body); margin-top:22px; max-width:30ch;}
   .hero-meta{display:flex; flex-wrap:wrap; gap:8px; margin-top:26px;}
   .hero-meta span{display:inline-flex; align-items:center; gap:8px; padding:9px 13px; border-radius:4px; background:rgba(16,30,51,.85); border:1px solid var(--line2); font:700 13px/1 var(--f-body);}
@@ -168,7 +168,7 @@
   .res div{padding:14px; border-radius:6px; background:rgba(255,255,255,.03); border:1px solid var(--line);}
   .res small{display:block; font:700 10.5px/1.3 var(--f-mono); text-transform:uppercase; letter-spacing:.06em; color:var(--faint);}
   .res b{display:block; font:400 26px/1.1 var(--f-display); margin-top:6px;}
-  .res .tot{grid-column:1 / -1; background:rgba(201,165,76,.08); border-color:var(--line2);}
+  .res .tot{grid-column:1 / -1; background:rgba(255,194,26,.08); border-color:var(--line2);}
   .res .tot b{font-size:42px; color:var(--gold-hi);}
   .sim-chart{display:flex; flex-direction:column; padding:20px 18px 14px;}
   .sim-chart .legend{display:flex; flex-wrap:wrap; gap:6px 18px; font:500 11.5px/1.3 var(--f-mono); color:var(--muted);}
@@ -278,11 +278,10 @@
   .live-pill{display:inline-flex; align-items:center; gap:10px; padding:8px 14px; border-radius:999px; border:1px solid var(--line2); background:rgba(16,30,51,.7); font:700 11.5px/1.2 var(--f-mono); letter-spacing:.1em; text-transform:uppercase; color:var(--gold-hi);}
   .live-pill i{width:8px; height:8px; border-radius:50%; background:var(--led); box-shadow:0 0 10px var(--led);}
   .hero h1{margin-top:22px; font:400 clamp(42px,4.7vw,68px)/.98 var(--f-display); letter-spacing:-.02em;}
-  @media (min-width:960px){ .hero h1 .h1a{white-space:nowrap;} }
   @media (max-width:959px){ .hero h1{font-size:clamp(40px,8.6vw,64px);} }
   .hero h1 .h1a{display:block;}
   .rot-wrap{display:block; position:relative; height:1.08em; font-size:1.6em; line-height:1.05; overflow:hidden; padding-bottom:.08em;}
-  .rot{display:inline-block; font-style:italic; background:linear-gradient(180deg,#F6E1A6,#C9A54C 60%,#E8CB7E); -webkit-background-clip:text; background-clip:text; color:transparent; padding-right:.08em; transition:transform .45s var(--ease), opacity .45s var(--ease);}
+  .rot{display:inline-block; font-style:normal; background:linear-gradient(180deg,#F6E1A6,#C9A54C 60%,#E8CB7E); -webkit-background-clip:text; background-clip:text; color:transparent; padding-right:.08em; transition:transform .45s var(--ease), opacity .45s var(--ease);}
   .rot.out{transform:translateY(-70%); opacity:0;}
   .rot.pre{transform:translateY(70%); opacity:0; transition:none;}
   .hero .sub{font:500 clamp(17px,1.7vw,19.5px)/1.55 var(--f-body); color:var(--muted); margin-top:18px; max-width:46ch;}
@@ -324,6 +323,87 @@
   @keyframes fl{50%{transform:translateY(-8px)}}
   html.anim .live-pill i, html.anim .term-top .lv i{animation:pl 1.4s ease-in-out infinite;}
   @keyframes pl{50%{opacity:.3}}
+
+  /* ===== STYLE "WALL STREET GOLD" (fond noir, lueurs dorées, majuscules épaisses, pas d'italique) ===== */
+  :root{
+    --bg:#07080B; --bg2:#0C0E13; --deep:#040507; --card:#111419; --card2:#171B22;
+    --text:#FFFFFF; --muted:#B5BAC4; --faint:#737A86;
+    --gold:#FFC21A; --gold-hi:#FFD54F; --gold-lo:#E0A100;
+    --line:rgba(255,194,26,.16); --line2:rgba(255,194,26,.38);
+    --f-display:"Montserrat","Arial Black",system-ui,sans-serif;
+  }
+  em,i:not([class]){font-style:normal;}
+  .hero h1 .rot{display:inline-block;}
+  body{background:var(--bg);}
+  .alt{background:var(--bg2);}
+  .dark{background:var(--deep);}
+  .hero{background:
+    radial-gradient(60% 55% at 85% 12%,rgba(255,170,20,.30),transparent 65%),
+    radial-gradient(40% 40% at 60% 95%,rgba(255,194,26,.12),transparent 70%),
+    radial-gradient(35% 35% at 5% 10%,rgba(255,140,0,.10),transparent 70%),
+    var(--bg);}
+  .pillars{opacity:.9; background:repeating-linear-gradient(90deg,transparent 0 70px,rgba(255,194,26,.06) 70px 72px,transparent 72px 96px,rgba(255,194,26,.06) 96px 98px,transparent 98px 170px);}
+  .hero::after{content:""; position:absolute; inset:auto -10% 0 -10%; height:260px; background:radial-gradient(50% 100% at 50% 100%,rgba(255,194,26,.18),transparent 70%); pointer-events:none; z-index:0;}
+
+  .h2,.hero h1,.mrow h3,.price-new,.res b,.donut-c b,.tc-head b,.sticky .sp b,.hb-price b{font-family:var(--f-display); font-style:normal;}
+  .h2{font-weight:900; text-transform:uppercase; letter-spacing:-.02em; font-size:clamp(30px,4.6vw,56px); line-height:1.02;}
+  .h2 em{font-style:normal; color:var(--gold); text-shadow:0 0 30px rgba(255,194,26,.35);}
+  .kicker{color:var(--gold);}
+  .kicker::before,.center .kicker::after{background:var(--gold);}
+
+  .hero h1{font-weight:900; text-transform:uppercase; letter-spacing:-.03em; font-size:clamp(34px,3.9vw,56px); line-height:1.02;}
+  @media (max-width:959px){ .hero h1{font-size:clamp(32px,8vw,56px);} }
+  .rot-wrap{height:auto; font-size:1.2em; overflow:hidden; margin:.02em -.4em -.3em; padding:.18em .4em .4em;}
+  .rot{font-style:normal; background:var(--gold); -webkit-background-clip:border-box; background-clip:border-box; color:#0A0A0A; -webkit-text-fill-color:#0A0A0A; padding:.06em .28em .1em; border-radius:12px; box-shadow:0 0 0 1px rgba(255,255,255,.25) inset, 0 18px 50px -12px rgba(255,194,26,.75);}
+  .live-pill{background:rgba(255,194,26,.08); color:var(--gold-hi);}
+
+  .btn{border-radius:10px;}
+  .btn--go{background:var(--gold); color:#0A0A0A; box-shadow:0 0 0 1px rgba(255,255,255,.2) inset, 0 16px 40px -12px rgba(255,194,26,.85);}
+  .btn--go:hover{background:var(--gold-hi); filter:none;}
+
+  .hero-buy{background:linear-gradient(90deg,rgba(255,194,26,.14),rgba(17,20,25,.75)); border-color:var(--line2);}
+  .hb-price b{font-weight:900; letter-spacing:-.03em; font-size:40px;}
+  .price-new{font-weight:900; letter-spacing:-.04em; font-size:clamp(58px,13vw,82px);}
+  .price-new small,.hb-price b small{color:var(--gold);}
+  .offer{border-radius:16px; background:linear-gradient(180deg,#171B22,#0F1217); border-color:var(--line2); box-shadow:0 0 0 1px rgba(255,194,26,.08), 0 40px 90px -40px rgba(0,0,0,.95), 0 0 70px -30px rgba(255,194,26,.45);}
+  .offer::before{border-color:rgba(255,194,26,.10); border-radius:12px;}
+  .offer-head{color:var(--gold);}
+
+  .term{background:linear-gradient(180deg,#14171D,#0B0D11); border-radius:16px; box-shadow:0 0 0 1px rgba(255,194,26,.10), 0 50px 100px -40px rgba(0,0,0,.95), 0 0 90px -30px rgba(255,194,26,.5);}
+  .tc-head b{font-weight:800; font-size:16px; text-transform:uppercase; letter-spacing:.02em;}
+  .term-top{color:var(--gold);}
+
+  .mrow h3{font-weight:800; text-transform:uppercase; letter-spacing:-.01em; font-size:clamp(17px,1.8vw,21px); line-height:1.2;}
+  .mrow .no{color:var(--gold); text-shadow:none;}
+  .mrow:hover{background:linear-gradient(90deg,transparent,rgba(255,194,26,.07),transparent);}
+  .board{border-top-color:var(--gold);}
+
+  .sim-ctrl,.sim-chart{background:var(--card); border-color:var(--line2); border-radius:14px;}
+  .res b{font-weight:800; font-size:22px; letter-spacing:-.02em;}
+  .res .tot b{font-size:34px; color:var(--gold);}
+  .bar .inv{background:#3A3F49;}
+  .bar .gain{background:linear-gradient(180deg,#FFD54F,#FFB300);}
+  input[type=range]::-webkit-slider-thumb{background:var(--gold);}
+  .fld label output{color:var(--gold); text-shadow:none;}
+
+  .donut-c b{font-weight:900; font-size:34px; color:var(--gold);}
+  .for li .n{background:var(--gold); color:#0A0A0A;}
+  .coach-photo::before{border-color:var(--line2); border-radius:14px;}
+  .coach-photo img{border-radius:10px;}
+  .coach-role{color:var(--gold); border-color:var(--line2);}
+  .coach-photo .badge{border-color:var(--gold); border-radius:8px;}
+  .coach-photo .badge b{color:var(--gold);}
+  .stack{border-top-color:var(--gold);} .stack li.sum{border-bottom-color:var(--gold);}
+  .stack li.hl span:first-child{color:var(--gold);}
+  .risk{background:var(--card); border-radius:12px;}
+  .risk .ri{background:var(--gold); color:#0A0A0A;}
+  .faq{border-top-color:var(--gold);}
+  .faq summary::after{color:var(--gold);}
+  .final{background:radial-gradient(60% 70% at 50% 100%,rgba(255,194,26,.22),transparent 70%),var(--deep);}
+  .sticky{border-top-color:var(--gold);}
+  .sticky .sp b{font-weight:900; font-size:22px; color:var(--gold);}
+  footer a{color:var(--gold);}
+  .tape span.i::after{color:var(--gold);}
 </style>
 </head>
 <body>
@@ -422,7 +502,7 @@
         </div>
       </div>
       <div class="sim-chart" aria-hidden="true">
-        <div class="legend"><span><i style="background:#34465F"></i>Argent versé</span><span><i style="background:#C9A54C"></i>Intérêts composés</span></div>
+        <div class="legend"><span><i style="background:#3A3F49"></i>Argent versé</span><span><i style="background:#FFC21A"></i>Intérêts composés</span></div>
         <div class="bars" id="bars"></div>
         <div class="xlab"><span>Année 1</span><span id="xEnd">Année 15</span></div>
       </div>
@@ -439,7 +519,7 @@
       <h2 class="h2">Ne mettez pas tous vos œufs <em>dans le même panier</em></h2>
       <p class="lead">Un ETF vous permet d'acheter en une seule fois des centaines d'entreprises de secteurs différents. Vous apprendrez à construire un portefeuille qui répartit le risque selon vos objectifs.</p>
       <ul class="alloc">
-        <li><i style="background:#E8CB7E"></i>Technologie<span>30 %</span></li>
+        <li><i style="background:#FFC21A"></i>Technologie<span>30 %</span></li>
         <li><i style="background:#21C07E"></i>Santé<span>15 %</span></li>
         <li><i style="background:#5B8DEF"></i>Finance<span>15 %</span></li>
         <li><i style="background:#E5484D"></i>Consommation<span>15 %</span></li>
@@ -621,8 +701,8 @@ function nextSessionClose(){
     var l=el('path',{d:d,fill:'none',stroke:color,'stroke-width':2.5,'stroke-linejoin':'round','class':'draw','vector-effect':'non-scaling-stroke'},svg); setLen(l);
     var last=xy[xy.length-1]; el('circle',{cx:last[0]-4,cy:last[1],r:6,fill:color,'class':'dot'},svg);
   }
-  areaChart('heroArea', 5, '#C9A54C', 'rgba(201,165,76,.10)', 1400, 380);
-  areaChart('finalArea', 9, '#E8CB7E', 'rgba(201,165,76,.08)', 1400, 380);
+  areaChart('heroArea', 5, '#FFC21A', 'rgba(255,194,26,.12)', 1400, 380);
+  areaChart('finalArea', 9, '#FFC21A', 'rgba(255,194,26,.08)', 1400, 380);
 
   /* ---- mini-courbes du programme ---- */
   document.querySelectorAll('[data-spark]').forEach(function(svg){
@@ -670,9 +750,9 @@ function nextSessionClose(){
   function donut(){
     if(donutDone) return; donutDone=true;
     var svg=document.getElementById('donut'); if(!svg) return;
-    var parts=[[30,'#E8CB7E'],[15,'#21C07E'],[15,'#5B8DEF'],[15,'#E5484D'],[12,'#9AA7B8'],[13,'#4A5A73']];
+    var parts=[[30,'#FFC21A'],[15,'#21C07E'],[15,'#5B8DEF'],[15,'#E5484D'],[12,'#9AA7B8'],[13,'#4A5A73']];
     var R=80, C=2*Math.PI*R, off=0;
-    el('circle',{cx:100,cy:100,r:R,fill:'none',stroke:'#1B2C45','stroke-width':26},svg);
+    el('circle',{cx:100,cy:100,r:R,fill:'none',stroke:'#1E222A','stroke-width':26},svg);
     parts.forEach(function(p,i){
       var len=p[0]/100*C, c=el('circle',{cx:100,cy:100,r:R,fill:'none',stroke:p[1],'stroke-width':26,'stroke-dasharray':(reduce?len-2:0)+' '+C,'stroke-dashoffset':-off,'class':'seg'},svg);
       if(!reduce) setTimeout(function(){ c.setAttribute('stroke-dasharray',(len-2)+' '+C); }, 150+i*220);
@@ -703,7 +783,7 @@ function nextSessionClose(){
       var mx=-1e9,mn=1e9; c.forEach(function(k){ mx=Math.max(mx,k.h); mn=Math.min(mn,k.l); });
       var pad=(mx-mn)*.12; mx+=pad; mn-=pad;
       function y(v){ return H-(v-mn)/(mx-mn)*H; }
-      for(var g=1;g<4;g++) el('line',{x1:0,x2:W,y1:g*H/4,y2:g*H/4,stroke:'rgba(201,165,76,.10)','stroke-width':1},svg);
+      for(var g=1;g<4;g++) el('line',{x1:0,x2:W,y1:g*H/4,y2:g*H/4,stroke:'rgba(255,194,26,.12)','stroke-width':1},svg);
       var st=W/N, ma=[];
       c.forEach(function(k,i){
         var x=i*st+st/2, up=k.c>=k.o, col=up?'#21C07E':'#E5484D';
@@ -712,10 +792,10 @@ function nextSessionClose(){
         el('rect',{x:x-st*.32,y:t,width:st*.64,height:Math.max(1.5,b-t),fill:col,rx:1},svg);
         var s=0,n=0; for(var j=Math.max(0,i-5);j<=i;j++){ s+=c[j].c; n++; } ma.push(x+','+y(s/n).toFixed(1));
       });
-      el('polyline',{points:ma.join(' '),fill:'none',stroke:'#E8CB7E','stroke-width':1.8,opacity:.9},svg);
+      el('polyline',{points:ma.join(' '),fill:'none',stroke:'#FFC21A','stroke-width':1.8,opacity:.9},svg);
       var last=c[c.length-1], ly=y(last.c);
-      el('line',{x1:0,x2:W,y1:ly,y2:ly,stroke:'#E8CB7E','stroke-width':1,'stroke-dasharray':'3 4',opacity:.6},svg);
-      el('circle',{cx:(N-.5)*st,cy:ly,r:3.5,fill:'#E8CB7E'},svg);
+      el('line',{x1:0,x2:W,y1:ly,y2:ly,stroke:'#FFC21A','stroke-width':1,'stroke-dasharray':'3 4',opacity:.6},svg);
+      el('circle',{cx:(N-.5)*st,cy:ly,r:3.5,fill:'#FFC21A'},svg);
     }
     var rows=[].slice.call(document.querySelectorAll('#watch li')), series=rows.map(function(_,i){ var rr=rng(40+i*7), v=10, a=[]; for(var k=0;k<20;k++){ v+=(rr()-.4)*2; a.push(v); } return {r:rr,a:a}; });
     function drawWatch(i){
