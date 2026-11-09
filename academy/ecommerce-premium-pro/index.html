@@ -337,7 +337,6 @@
 </head>
 <body>
 
-<div class="topbar" id="topbar"><span class="promo-only">Offre spéciale · <b>17 500 FCFA</b> au lieu de 30 000 · inscriptions de la semaine fermées dans <b data-cd="compact">--:--:--</b></span><span class="ended-only" style="display:none;">L'offre promotionnelle est terminée · écrivez-nous pour la prochaine session</span></div>
 
 <header class="nav">
   <a class="brand" href="/academy/"><span class="plate"><img src="/logo.png" alt="ROUGATECH"></span>Rougatech <em>Academy</em></a>
@@ -767,7 +766,7 @@ var PROOFS = [
   function endOffer(){
     ended = true;
     document.body.classList.add('offer-ended');
-    document.getElementById('topbar').classList.add('ended');
+    var tb=document.getElementById('topbar'); if(tb) tb.classList.add('ended');
     document.querySelectorAll('.ended-only').forEach(function(e){ e.style.display = ''; });
     setLinks(MSG_AFTER);
   }
