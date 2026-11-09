@@ -70,7 +70,7 @@
     widget.querySelectorAll('.ai-action').forEach(function(a){ a.addEventListener('click', closeWidget); });
     var alreadyDismissed = false;
     try{ alreadyDismissed = sessionStorage.getItem('rougatech-ai-dismissed') === '1'; }catch(e){}
-    if(!alreadyDismissed){ setTimeout(openWidget, 3500); }
+    if(!alreadyDismissed){ setTimeout(openWidget, 30000); }
   }
 
   // article share — copy link button
