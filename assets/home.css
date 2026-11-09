@@ -460,3 +460,7 @@ footer{background:var(--ink); color:rgba(255,255,255,.75); padding:72px 0 36px; 
 /* chat button stays visible on dark sections */
 .ai-fab{box-shadow:0 0 0 2px #fff, 0 14px 30px -12px rgba(13,27,52,.6);}
 .ba-sec .ba-list-before{background:var(--mist);}
+
+/* alert heading (need section) */
+.sec-head h2.h-alert{color:#d61f1f;}
+.h-alert u{text-decoration:underline; text-decoration-thickness:.09em; text-underline-offset:.12em; text-decoration-skip-ink:none;}
