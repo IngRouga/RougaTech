@@ -471,3 +471,8 @@ footer{background:var(--ink); color:rgba(255,255,255,.75); padding:72px 0 36px; 
 .cmp-2 tbody th{width:28%;}
 .cmp thead th small{display:block; font-family:var(--text); font-size:13px; font-weight:500; margin-top:4px; opacity:.75;}
 @media (max-width:720px){.cmp.cmp-2{min-width:0;} .cmp-2 tbody th{width:auto;} .compare-intro{margin-top:-8px;}}
+
+/* before / after: centered title */
+.ba-title{text-align:center; font-size:clamp(36px,5vw,64px); font-weight:800; letter-spacing:-.035em; margin:0 auto 48px; max-width:none;}
+.ba-title u{text-decoration:underline; text-decoration-color:var(--blue); text-decoration-thickness:.09em; text-underline-offset:.12em; text-decoration-skip-ink:none;}
+.ba-sec .ba-lists{margin-top:0;}
