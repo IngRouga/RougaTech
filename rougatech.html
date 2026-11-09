@@ -55,491 +55,8 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --black:#08090A;
-    --black-soft:#101114;
-    --cream:#F7F7F4;
-    --gray:#E9EAEC;
-    --gray-mute:#9a9ca3;
-    --blue:#2F5CFF;
-    --blue-deep:#1436B0;
-    --cyan:#7FE3FF;
-    --gold:#F5A623;
-    --line: rgba(247,247,244,0.12);
-    --line-soft: rgba(8,9,10,0.10);
-    --ease: cubic-bezier(.16,.84,.32,1);
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{background:var(--black); color:var(--cream); font-family:'Plus Jakarta Sans',sans-serif; font-size:16px; line-height:1.55; overflow-x:hidden; -webkit-font-smoothing:antialiased;}
-  ::selection{background:var(--blue); color:#fff;}
-  a{color:inherit; text-decoration:none;}
-  img{max-width:100%; display:block;}
-  button{font-family:inherit; cursor:pointer; border:none; background:none; color:inherit;}
-
-  /* bilingual toggle */
-  body[data-lang="fr"] .en{display:none;}
-  body[data-lang="en"] .fr{display:none;}
-
-  .eyebrow{font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--cyan); display:flex; align-items:center; gap:10px;}
-  .eyebrow::before{content:''; width:22px; height:1px; background:linear-gradient(90deg,var(--cyan),transparent);}
-  .hero-kicker{font-weight:700; font-size:13px; letter-spacing:.3em; color:var(--cream);}
-  h1,h2,h3{font-family:'Sora',sans-serif; font-weight:700; letter-spacing:-0.02em; line-height:1.05;}
-  .wrap{max-width:1240px; margin:0 auto; padding:0 40px;}
-  :focus-visible{outline:2px solid var(--cyan); outline-offset:3px;}
-
-  #signal-line{position:fixed; left:0; top:0; width:2px; height:100vh; z-index:60; pointer-events:none; background:var(--line);}
-  #signal-line .fill{position:absolute; left:0; top:0; width:100%; height:0%; background:linear-gradient(180deg,var(--cyan),var(--blue)); box-shadow:0 0 12px rgba(127,227,255,.6); transition:height .05s linear;}
-
-  header{position:fixed; top:0; left:0; width:100%; z-index:50; padding:20px 40px; display:flex; align-items:center; justify-content:space-between; transition:background .4s var(--ease), backdrop-filter .4s var(--ease), border-color .4s var(--ease), padding .4s var(--ease); border-bottom:1px solid transparent; background:linear-gradient(180deg, rgba(8,9,10,.4), transparent);}
-  header.scrolled{background:rgba(8,9,10,0.75); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--line); padding:13px 40px;}
-  body.nav-open{overflow:hidden;}
-  body.nav-open .ai-widget{opacity:0; visibility:hidden; pointer-events:none;}
-  .brand{display:flex; align-items:center; gap:10px;}
-  .brand .logo-plate{background:var(--cream); border-radius:8px; padding:6px 10px; display:flex; align-items:center; line-height:0; transition:padding .4s var(--ease);}
-  .brand img{height:16px; width:auto; transition:height .4s var(--ease);}
-  header.scrolled .brand .logo-plate{padding:5px 9px;}
-  header.scrolled .brand img{height:14px;}
-
-  /* custom cursor (desktop, fine pointer only) */
-  .cursor-dot,.cursor-ring{position:fixed; top:0; left:0; pointer-events:none; z-index:999; border-radius:50%; transform:translate(-50%,-50%); opacity:0;}
-  .cursor-dot{width:6px; height:6px; background:var(--cyan); transition:opacity .25s var(--ease), background .2s var(--ease);}
-  .cursor-ring{width:38px; height:38px; border:1px solid rgba(127,227,255,.45); display:flex; align-items:center; justify-content:center; transition:width .28s var(--ease), height .28s var(--ease), border-color .28s var(--ease), opacity .25s var(--ease), background .28s var(--ease);}
-  .cursor-ring::after{content:attr(data-cursor-label); font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--black); opacity:0; transition:opacity .2s var(--ease);}
-  html.cursor-ready.cursor-moved .cursor-dot,html.cursor-ready.cursor-moved .cursor-ring{opacity:1;}
-  html.cursor-ready.cursor-hide .cursor-dot,html.cursor-ready.cursor-hide .cursor-ring{opacity:0;}
-  .cursor-ring.is-hover{width:52px; height:52px; border-color:var(--cyan); background:rgba(127,227,255,.08);}
-  .cursor-ring.is-label{width:74px; height:74px; background:var(--cyan); border-color:var(--cyan);}
-  .cursor-ring.is-label::after{opacity:1;}
-  .cursor-ring.is-label ~ .cursor-dot,.cursor-ring.is-label{opacity:1;}
-  html.cursor-ready.cursor-active{cursor:none;}
-  html.cursor-ready.cursor-active a,html.cursor-ready.cursor-active button{cursor:none;}
-  @media (hover:none),(pointer:coarse){.cursor-dot,.cursor-ring{display:none !important;}}
-  nav.main-nav{display:flex; align-items:center; gap:34px;}
-  nav.main-nav a.nav-contact{display:none;}
-  nav.main-nav a{font-size:14px; color:var(--gray-mute); position:relative; padding:4px 0; transition:color .25s var(--ease);}
-  nav.main-nav a:hover{color:var(--cream);}
-  nav.main-nav a::after{content:''; position:absolute; left:0; bottom:0; width:0; height:1px; background:var(--cyan); transition:width .3s var(--ease);}
-  nav.main-nav a:hover::after{width:100%;}
-
-  /* trust badges (footer) */
-  .trust-row{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px;}
-  .trust-badge{display:inline-flex; align-items:center; gap:7px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.04em; color:var(--gray-mute); border:1px solid var(--line); border-radius:100px; padding:7px 13px;}
-  .trust-badge svg{width:13px; height:13px; flex-shrink:0; color:var(--cyan);}
-
-  .header-right{display:flex; align-items:center; gap:18px; position:relative; z-index:71;}
-  .brand{position:relative; z-index:71;}
-  .lang-switch{display:flex; gap:6px; font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--gray-mute);}
-  .lang-switch button{padding:2px 4px; opacity:.5; transition:opacity .2s, color .2s;}
-  .lang-switch button.active{opacity:1; color:var(--cyan);}
-
-  .btn{display:inline-flex; align-items:center; gap:10px; font-size:13px; font-weight:600; letter-spacing:.02em; text-transform:uppercase; padding:14px 24px; border-radius:100px; position:relative; overflow:hidden; isolation:isolate; transition:transform .3s var(--ease), box-shadow .3s var(--ease);}
-  .btn-primary{background:var(--cream); color:var(--black);}
-  .btn-primary:not([disabled]){animation:ctaPulse 3s ease-in-out infinite;}
-  .btn-primary span{position:relative; z-index:2;}
-  .btn-primary::before{content:''; position:absolute; inset:0; background:linear-gradient(120deg,var(--cyan),var(--blue)); transform:translateY(101%); transition:transform .35s var(--ease); z-index:0;}
-  .btn-primary:not([disabled])::after{content:''; position:absolute; top:0; left:-60%; width:35%; height:100%; background:linear-gradient(120deg, transparent, rgba(255,255,255,.65), transparent); transform:skewX(-20deg); z-index:1; pointer-events:none; animation:ctaShine 3.6s ease-in-out infinite;}
-  .btn-primary:hover::before{transform:translateY(0);}
-  .btn-primary:hover{color:#fff; transform:translateY(-2px); box-shadow:0 10px 28px -6px rgba(127,227,255,.5); animation-play-state:paused;}
-  .btn-outline{border:1px solid var(--line); color:var(--cream); background:transparent;}
-  .btn-outline span{position:relative; z-index:1;}
-  .btn-outline::before{content:''; position:absolute; top:0; bottom:0; left:-60%; width:35%; background:linear-gradient(120deg, transparent, rgba(127,227,255,.4), transparent); transform:skewX(-20deg); pointer-events:none; transition:left .55s var(--ease); z-index:0;}
-  .btn-outline:hover::before{left:120%;}
-  .btn-outline:hover{border-color:var(--cyan); color:var(--cyan); transform:translateY(-2px);}
-  .btn-header{padding:11px 20px; font-size:12px;}
-  @keyframes ctaPulse{0%,100%{box-shadow:0 0 0 0 rgba(127,227,255,.4);} 50%{box-shadow:0 0 0 9px rgba(127,227,255,0);}}
-  @keyframes ctaShine{0%,45%{left:-60%;} 65%{left:120%;} 100%{left:120%;}}
-  .menu-toggle{display:none;}
-
-  section{position:relative;}
-  .hero{min-height:100vh; display:flex; flex-direction:column; justify-content:center; padding:150px 0 70px;}
-  .hero-grid{position:absolute; inset:0; background-image:linear-gradient(var(--line-soft) 1px, transparent 1px), linear-gradient(90deg, var(--line-soft) 1px, transparent 1px); background-size:80px 80px; mask-image:linear-gradient(180deg, rgba(0,0,0,.5), transparent 75%); opacity:.5;}
-  .hero-atmosphere{position:absolute; left:50%; top:46%; width:min(92vmin,94vw); height:min(92vmin,94vw); margin-left:calc(min(92vmin,94vw) / -2); margin-top:calc(min(92vmin,94vw) / -2); border-radius:50%; background:radial-gradient(circle, rgba(47,92,255,.18), rgba(127,227,255,.06) 42%, transparent 72%); filter:blur(46px); pointer-events:none; z-index:1; animation:atmosphereBreathe 11s ease-in-out infinite;}
-  @keyframes atmosphereBreathe{0%,100%{opacity:.75; transform:scale(1);} 50%{opacity:1; transform:scale(1.08);}}
-  .hero-content{position:relative; z-index:2;}
-  .hero-layout{display:grid; grid-template-columns:1.05fr .95fr; gap:56px; align-items:center;}
-  .hero-text{opacity:0; animation:heroFadeUp .7s var(--ease) forwards;}
-  .hero-text .eyebrow{animation-delay:0s;}
-  .hero h1{font-size:clamp(38px,5.6vw,74px); margin:26px 0 26px; max-width:15ch;}
-  .hero h1 .accent{background:linear-gradient(100deg,var(--cyan),var(--blue) 60%); -webkit-background-clip:text; background-clip:text; color:transparent;}
-  .hero-sub{font-size:19px; color:var(--gray-mute); max-width:520px; margin-bottom:36px;}
-  .hero-ctas{display:flex; gap:16px; flex-wrap:wrap; justify-content:flex-start; margin-bottom:34px;}
-  .hero-founder-line{display:flex; align-items:center; gap:12px; font-family:'JetBrains Mono',monospace; font-size:12.5px; color:var(--gray-mute); padding-top:22px; border-top:1px solid var(--line);}
-  .hero-founder-line strong{color:var(--cream); font-family:'Plus Jakarta Sans',sans-serif; font-weight:600;}
-  @keyframes heroFadeUp{from{opacity:0; transform:translateY(18px);} to{opacity:1; transform:translateY(0);}}
-
-  /* hero 3D digital core (WebGL) + floating-bubble fallback */
-  .hero-visual{position:relative; height:420px; opacity:0; animation:heroFadeUp .8s var(--ease) .15s forwards;}
-  .hero-canvas{position:absolute; inset:-15% -10%; width:120%; height:130%; display:block; opacity:0; transition:opacity .9s var(--ease);}
-  .hero-visual.webgl-active .hero-canvas{opacity:1;}
-  .hero-visual.webgl-active .hero-orb,.hero-visual.webgl-active .hero-bubble{opacity:0; pointer-events:none; transition:opacity .6s var(--ease);}
-  .hero-orb{position:absolute; top:50%; left:50%; width:130px; height:130px; margin:-65px 0 0 -65px; border-radius:50%; background:radial-gradient(circle at 35% 30%, rgba(127,227,255,.85), rgba(47,92,255,.45) 55%, transparent 76%);}
-  .hero-orb::before, .hero-orb::after{content:''; position:absolute; inset:0; border-radius:50%; border:1px solid rgba(127,227,255,.4); animation:pulseRing 3.4s ease-out infinite;}
-  .hero-orb::after{animation-delay:1.2s; border-color:rgba(47,92,255,.35);}
-  @keyframes pulseRing{0%{transform:scale(1); opacity:.7;} 100%{transform:scale(2.7); opacity:0;}}
-  .hero-bubble{position:absolute; display:inline-flex; align-items:center; font-family:'JetBrains Mono',monospace; font-size:13px; font-weight:500; letter-spacing:.01em; color:var(--cream); background:rgba(19,17,16,.74); border:1px solid var(--line); border-radius:100px; padding:12px 20px; white-space:nowrap; box-shadow:0 14px 30px -12px rgba(0,0,0,.55); backdrop-filter:blur(6px);}
-  .hero-bubble .dot{display:inline-block; width:7px; height:7px; border-radius:50%; margin-right:10px; flex-shrink:0;}
-  .hero-bubble.b1{top:4%; left:0%; animation:bubbleFloatA 6.6s ease-in-out infinite;}
-  .hero-bubble.b1 .dot{background:var(--cyan);}
-  .hero-bubble.b2{top:20%; right:2%; animation:bubbleFloatB 7.6s ease-in-out infinite; animation-delay:.5s;}
-  .hero-bubble.b2 .dot{background:var(--blue);}
-  .hero-bubble.b3{top:48%; left:-6%; animation:bubbleFloatC 7s ease-in-out infinite; animation-delay:1s;}
-  .hero-bubble.b3 .dot{background:var(--gold);}
-  .hero-bubble.b4{bottom:16%; right:8%; animation:bubbleFloatA 7.8s ease-in-out infinite; animation-delay:1.5s;}
-  .hero-bubble.b4 .dot{background:#4ADE80;}
-  .hero-bubble.b5{bottom:2%; left:14%; animation:bubbleFloatB 6.8s ease-in-out infinite; animation-delay:.8s;}
-  .hero-bubble.b5 .dot{background:var(--cyan);}
-  @keyframes bubbleFloatA{0%,100%{transform:translateY(0);} 50%{transform:translateY(-14px);}}
-  @keyframes bubbleFloatB{0%,100%{transform:translateY(0);} 50%{transform:translateY(12px);}}
-  @keyframes bubbleFloatC{0%,100%{transform:translateY(0);} 50%{transform:translateY(-9px);}}
-  @media (prefers-reduced-motion: reduce){.hero-text,.hero-visual{animation:none; opacity:1;} .hero-orb::before,.hero-orb::after,.hero-bubble,.hero-atmosphere{animation:none;}}
-
-  /* dynamic aurora background */
-  .aurora-bg{position:fixed; inset:0; z-index:-1; overflow:hidden; pointer-events:none; background:var(--black);}
-  .aurora-bg span{position:absolute; border-radius:50%; filter:blur(110px); opacity:.32; will-change:transform;}
-  .aurora-bg span:nth-child(1){width:620px; height:620px; background:var(--blue); top:-15%; left:-12%; animation:auroraMove1 28s ease-in-out infinite;}
-  .aurora-bg span:nth-child(2){width:540px; height:540px; background:var(--cyan); top:25%; right:-16%; animation:auroraMove2 34s ease-in-out infinite;}
-  .aurora-bg span:nth-child(3){width:500px; height:500px; background:var(--blue-deep); bottom:-18%; left:22%; animation:auroraMove3 40s ease-in-out infinite;}
-  @keyframes auroraMove1{0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(90px,60px) scale(1.15);}}
-  @keyframes auroraMove2{0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(-80px,50px) scale(0.9);}}
-  @keyframes auroraMove3{0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(60px,-70px) scale(1.1);}}
-  @media (prefers-reduced-motion: reduce){.aurora-bg span{animation:none;}}
-
-  .reveal{opacity:0; transform:translateY(28px); transition:opacity .5s var(--ease), transform .5s var(--ease);}
-  .reveal.in{opacity:1; transform:translateY(0);}
-
-  /* slim stats strip — real numbers only, no chart/dashboard mockup */
-  .stats-strip{padding:44px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
-  .stats-row{display:flex; align-items:center; justify-content:center; gap:64px;}
-  .stat-item{text-align:center;}
-  .stat-num{font-family:'Sora',sans-serif; font-weight:700; font-size:clamp(34px,4.4vw,52px); line-height:1; color:var(--cream); letter-spacing:-.01em;}
-  .stat-num .stat-plus{color:var(--cyan);}
-  .stat-label{margin-top:10px; font-family:'JetBrains Mono',monospace; font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--gray-mute);}
-  .stat-divider{width:1px; height:46px; background:var(--line);}
-  @media (max-width:560px){.stats-row{gap:36px;} .stat-divider{height:38px;}}
-
-  .section{padding:110px 0;}
-  .section-head{max-width:760px; margin-bottom:60px;}
-  .section-head h2{font-size:clamp(28px,4vw,48px); margin-top:22px;}
-  .section-sub{font-size:17px; color:var(--gray-mute); margin-top:18px; max-width:60ch;}
-
-  /* 05 — selected work */
-  .work-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:28px;}
-  .work-card{background:var(--black-soft); border:1px solid var(--line); border-radius:18px; overflow:hidden; display:flex; flex-direction:column; transition:transform .4s var(--ease), border-color .4s var(--ease);}
-  .work-card:hover{transform:translateY(-6px); border-color:rgba(127,227,255,.35);}
-  .work-media{position:relative; aspect-ratio:4/3; overflow:hidden; background:var(--black);}
-  .work-media img{width:100%; height:100%; object-fit:cover; object-position:top center; transition:transform .6s var(--ease);}
-  .work-card:hover .work-media img{transform:scale(1.045);}
-  .work-body{padding:28px 26px 30px; display:flex; flex-direction:column; gap:10px; flex:1;}
-  .work-category{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--cyan);}
-  .work-card h3{font-size:21px;}
-  .work-card p{font-size:14px; color:var(--gray-mute); flex:1;}
-  .work-link{display:inline-flex; align-items:center; gap:8px; font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--cream); transition:color .25s var(--ease);}
-  .work-link svg{width:13px; height:13px; transition:transform .25s var(--ease);}
-  .work-link:hover{color:var(--cyan);}
-  .work-card:hover .work-link svg{transform:translate(3px,-3px);}
-  .work-link-row{display:flex; gap:22px; flex-wrap:wrap; margin-top:10px; padding-top:16px; border-top:1px solid var(--line);}
-  @media (max-width:980px){.work-grid{grid-template-columns:1fr; max-width:520px; margin:0 auto;}}
-  @media (max-width:720px){.work-grid{grid-template-columns:1fr; max-width:none;}}
-
-
-  /* FAQ */
-  .faq-list{max-width:820px; display:flex; flex-direction:column; gap:12px;}
-  .faq-item{border:1px solid var(--line); border-radius:14px; background:var(--black-soft); transition:border-color .3s var(--ease);}
-  .faq-item[open]{border-color:rgba(127,227,255,.35);}
-  .faq-item summary{list-style:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:18px; padding:20px 22px; font-weight:600; font-size:16px; color:var(--cream);}
-  .faq-item summary::-webkit-details-marker{display:none;}
-  .faq-plus{position:relative; flex:0 0 14px; width:14px; height:14px;}
-  .faq-plus::before,.faq-plus::after{content:''; position:absolute; left:0; top:6px; width:14px; height:2px; background:var(--cyan); transition:transform .3s var(--ease);}
-  .faq-plus::after{transform:rotate(90deg);}
-  .faq-item[open] .faq-plus::after{transform:rotate(0);}
-  .faq-item p{padding:0 22px 20px; color:var(--gray-mute); font-size:15px; max-width:68ch;}
-  /* 05 — selected work: floating browser-window showcase */
-  .work-win{perspective:1400px;}
-  .work-win-inner{transform-style:preserve-3d; transition:transform .25s var(--ease);}
-  .work-chrome{display:flex; align-items:center; gap:6px; padding:12px 14px; background:var(--black); border-bottom:1px solid var(--line);}
-  .work-chrome span{width:8px; height:8px; border-radius:50%; background:var(--line);}
-  .work-media{transform:translateZ(0);}
-  @media (prefers-reduced-motion: reduce){.work-win-inner{transition:none;}}
-
-  /* 07 — founder glass depth frame */
-  .founder-photo-frame{position:relative;}
-  .founder-photo-frame::before{display:none;}
-  .founder-photo-frame .corner{position:absolute; width:22px; height:22px; border-color:var(--cyan); opacity:.75; pointer-events:none;}
-  .founder-photo-frame .corner.tl{top:-18px; left:-18px; border-top:2px solid; border-left:2px solid; border-top-left-radius:10px;}
-  .founder-photo-frame .corner.br{bottom:-18px; right:-18px; border-bottom:2px solid; border-right:2px solid; border-bottom-right-radius:10px;}
-  .founder-photo-glow{position:absolute; inset:-40px; background:radial-gradient(circle at 60% 30%, rgba(127,227,255,.18), transparent 65%); filter:blur(26px); z-index:-1; pointer-events:none;}
-
-  /* 07 — founder */
-  .founder-wrap{display:grid; grid-template-columns:1fr 320px; gap:60px; align-items:center;}
-  .founder-photo{border-radius:50%; overflow:hidden; aspect-ratio:1/1; order:2; box-shadow:0 20px 60px rgba(3,20,60,.45);}
-  .founder-text{order:1;}
-  .founder-photo img{width:100%; height:100%; object-fit:cover; display:block;}
-  .founder-role{font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--cyan); margin-top:8px;}
-  .founder-name{font-size:28px; margin-top:16px;}
-  .founder-wrap .founder-text p{color:var(--gray-mute); font-size:16px; max-width:58ch; margin-top:16px;}
-  .founder-ctas{display:flex; gap:14px; flex-wrap:wrap; margin-top:28px;}
-  @media (max-width:900px){.founder-wrap{grid-template-columns:1fr; gap:34px;} .founder-photo{max-width:300px; order:0;} .founder-text{order:0;}}
-
-  /* 08 — contact */
-  .contact-wrap{display:grid; grid-template-columns:.85fr 1.15fr; gap:80px;}
-  .contact-info h2{font-size:clamp(28px,3.6vw,42px); margin-bottom:22px;}
-  .contact-info p{color:var(--gray-mute); font-size:16px; max-width:40ch; margin-bottom:30px;}
-  .contact-ctas{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:34px;}
-  .contact-detail{font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--gray-mute); line-height:2;}
-  form{display:flex; flex-direction:column; gap:18px;}
-  .field-row{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
-  .field{display:flex; flex-direction:column; gap:8px;}
-  .field label{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--gray-mute);}
-  .field input, .field textarea{background:transparent; border:none; border-bottom:1px solid var(--line); color:var(--cream); font-family:'Plus Jakarta Sans',sans-serif; font-size:16px; padding:12px 2px; transition:border-color .3s var(--ease);}
-  .field input:focus, .field textarea:focus{border-color:var(--cyan); outline:none;}
-  .field textarea{resize:vertical; min-height:80px;}
-  form .btn-primary{align-self:flex-start; margin-top:12px;}
-  .form-note{font-size:12px; color:var(--gray-mute); margin-top:-4px;}
-  @media (max-width:980px){.contact-wrap{grid-template-columns:1fr; gap:50px;} .field-row{grid-template-columns:1fr;}}
-
-  footer{padding:70px 0 40px; border-top:1px solid var(--line);}
-  .footer-top{display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:40px; margin-bottom:44px;}
-  .footer-brand{max-width:340px;}
-  .footer-brand .brand{margin-bottom:14px;}
-  .footer-brand p{color:var(--gray-mute); font-size:14px;}
-  .footer-nav{display:flex; flex-direction:column; align-items:flex-end; gap:14px;}
-  .footer-links{display:flex; gap:28px; flex-wrap:wrap;}
-  .footer-links a{font-size:14px; color:var(--gray);}
-  .footer-links a:hover{color:var(--cyan);}
-  .footer-contact{font-size:13px; color:var(--gray-mute); text-align:right;}
-  .footer-contact a{color:var(--gray-mute);}
-  .footer-contact a:hover{color:var(--cyan);}
-  .footer-more{margin-top:18px; font-size:12px; color:#54555c;}
-  .footer-more a{color:#54555c; margin:0 2px;}
-  .footer-more a:hover{color:var(--gray-mute);}
-  .footer-bottom{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; padding-top:26px; border-top:1px solid var(--line); font-size:12px; color:var(--gray-mute); font-family:'JetBrains Mono',monospace;}
-  @media (max-width:720px){.footer-nav{align-items:flex-start;} .footer-contact{text-align:left;}}
-
-  /* floating welcome pill */
-  .ai-widget{position:fixed; right:26px; bottom:26px; z-index:80;}
-  .ai-fab{display:flex; align-items:center; gap:10px; height:52px; padding:0 20px 0 16px; border-radius:100px; background:rgba(13,16,19,.78); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border:1px solid rgba(127,227,255,.3); cursor:pointer; position:relative; box-shadow:0 16px 34px -10px rgba(0,0,0,.6), 0 0 0 0 rgba(127,227,255,.3); transition:border-color .3s var(--ease), transform .25s var(--ease), box-shadow .3s var(--ease);}
-  .ai-fab:hover{border-color:var(--cyan); transform:translateY(-2px);}
-  .ai-fab-dot{position:relative; width:9px; height:9px; border-radius:50%; background:linear-gradient(135deg,var(--blue),var(--cyan)); flex-shrink:0;}
-  .ai-fab-dot::after{content:''; position:absolute; inset:-7px; border-radius:50%; border:1px solid rgba(127,227,255,.5); animation:ctaPulse 2.6s ease-in-out infinite;}
-  .ai-fab-label{font-family:'JetBrains Mono',monospace; font-size:11.5px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--cream); white-space:nowrap;}
-  .ai-fab svg{width:16px; height:16px; color:var(--cyan); transition:opacity .2s var(--ease), transform .2s var(--ease); flex-shrink:0;}
-  .ai-fab .icon-close{position:absolute; right:19px; opacity:0; transform:scale(.6) rotate(-45deg);}
-  .ai-widget.open .ai-fab .icon-chat{opacity:0; transform:scale(.6) rotate(45deg);}
-  .ai-widget.open .ai-fab .icon-close{opacity:1; transform:scale(1) rotate(0);}
-  .ai-widget.open .ai-fab .ai-fab-label{opacity:0;}
-  .ai-fab .ai-ping{position:absolute; top:-2px; right:-2px; width:12px; height:12px; border-radius:50%; background:#4ADE80; border:2px solid var(--black);}
-  .ai-panel{position:absolute; bottom:76px; right:0; width:328px; max-width:calc(100vw - 40px); background:var(--black-soft); border:1px solid var(--line); border-radius:20px; padding:22px; box-shadow:0 34px 70px -20px rgba(0,0,0,.65); opacity:0; visibility:hidden; transform:translateY(18px) scale(.96); transform-origin:bottom right; transition:opacity .35s var(--ease), transform .35s var(--ease), visibility .35s;}
-  .ai-widget.open .ai-panel{opacity:1; visibility:visible; transform:translateY(0) scale(1);}
-  .ai-panel-head{display:flex; align-items:center; gap:11px; margin-bottom:16px;}
-  .ai-avatar{width:38px; height:38px; border-radius:50%; background:linear-gradient(135deg,var(--blue),var(--cyan)); display:flex; align-items:center; justify-content:center; flex-shrink:0;}
-  .ai-avatar svg{width:18px; height:18px; color:#08090A;}
-  .ai-panel-head .ai-id{flex:1;}
-  .ai-panel-head .ai-name{font-family:'Sora',sans-serif; font-weight:700; font-size:14px;}
-  .ai-panel-head .ai-status{font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.06em; text-transform:uppercase; color:#4ADE80; display:flex; align-items:center; gap:6px; margin-top:3px;}
-  .ai-panel-head .ai-status::before{content:''; width:6px; height:6px; border-radius:50%; background:#4ADE80;}
-  .ai-msg{font-size:14px; line-height:1.55; color:var(--cream); background:rgba(127,227,255,.06); border:1px solid var(--line); border-radius:14px 14px 14px 4px; padding:14px 16px; margin-bottom:16px;}
-  .ai-actions{display:flex; flex-direction:column; gap:8px; margin-bottom:14px;}
-  .ai-action{display:flex; align-items:center; justify-content:space-between; gap:10px; font-size:13px; font-family:'Plus Jakarta Sans',sans-serif; font-weight:500; padding:12px 14px; border:1px solid var(--line); border-radius:12px; color:var(--cream); transition:border-color .25s var(--ease), color .25s var(--ease), background .25s var(--ease);}
-  .ai-action:hover{border-color:var(--cyan); color:var(--cyan); background:rgba(127,227,255,.05);}
-  .ai-action svg{width:14px; height:14px; flex-shrink:0; transition:transform .25s var(--ease);}
-  .ai-action:hover svg{transform:translate(2px,-2px);}
-  .ai-note{font-size:11px; color:var(--gray-mute); text-align:center; line-height:1.4;}
-  @media (max-width:480px){
-    .ai-widget{right:16px; bottom:16px;}
-    .ai-panel{right:-8px;}
-    .ai-fab{padding:0; width:50px; height:50px; justify-content:center;}
-    .ai-fab-dot,.ai-fab-label{display:none;}
-    .ai-fab .icon-close{right:50%; margin-right:-8px;}
-  }
-  @media (prefers-reduced-motion: reduce){.ai-fab,.ai-fab-dot::after{animation:none;}}
-
-  @media (max-width:980px){
-    .hero-layout{grid-template-columns:1fr; gap:6px;}
-    .hero-visual{height:300px; order:-1; margin-bottom:6px;}
-    .hero-ctas{justify-content:flex-start;}
-  }
-  @media (max-width:900px){
-    nav.main-nav{position:fixed; inset:0; width:100%; height:100vh; background:#08090b; backdrop-filter:blur(26px); -webkit-backdrop-filter:blur(26px); flex-direction:column; align-items:flex-start; justify-content:center; padding:0 44px; gap:28px; transform:translateX(100%); transition:transform .5s cubic-bezier(.22,1,.36,1);}
-    nav.main-nav.open{transform:translateX(0);}
-    nav.main-nav a{font-size:21px; opacity:0; transform:translateX(16px); transition:opacity .4s var(--ease), transform .4s var(--ease);}
-    nav.main-nav.open a{opacity:1; transform:translateX(0);}
-    nav.main-nav.open a:nth-child(1){transition-delay:.08s;}
-    nav.main-nav.open a:nth-child(2){transition-delay:.14s;}
-    nav.main-nav.open a:nth-child(3){transition-delay:.2s;}
-    nav.main-nav.open a:nth-child(4){transition-delay:.26s;}
-    nav.main-nav.open a:nth-child(5){transition-delay:.32s;}
-    nav.main-nav.open a:nth-child(6){transition-delay:.38s;}
-    nav.main-nav.open a:nth-child(7){transition-delay:.44s;}
-    nav.main-nav a.nav-contact{display:inline-block; color:var(--cyan);}
-    .menu-toggle{display:flex; flex-direction:column; justify-content:center; gap:5px; z-index:70; width:26px;}
-    .menu-toggle span{width:100%; height:1.5px; background:var(--cream); transition:transform .3s var(--ease), opacity .3s var(--ease);}
-    .menu-toggle.active span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
-    .menu-toggle.active span:nth-child(2){opacity:0;}
-    .menu-toggle.active span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
-    header .btn-header{display:none;}
-  }
-  @media (max-width:720px){
-    .wrap{padding:0 22px;}
-    .hero{padding:98px 0 56px;}
-    .hero-visual{height:238px; margin-bottom:0;}
-    .hero-text .eyebrow{margin-bottom:2px;}
-    .hero h1{margin:14px 0 16px; font-size:clamp(32px,8.6vw,46px); line-height:1.08;}
-    .hero-sub{font-size:16px; margin-bottom:22px;}
-    .hero-ctas{margin-bottom:22px;}
-    .hero-founder-line{padding-top:16px;}
-    .section{padding:64px 0;}
-    #signal-line{display:none;}
-    .hero-bubble.b1{left:4%;}
-    .hero-bubble.b2{right:4%;}
-    .hero-bubble.b3{left:2%;}
-    .hero-bubble.b4{right:4%;}
-    .hero-bubble.b5{left:8%;}
-  }
-  @media (max-width:480px){
-    .hero-visual{height:210px;}
-    .hero-bubble{font-size:11.5px; padding:8px 14px;}
-    .hero-orb{width:84px; height:84px; margin:-42px 0 0 -42px;}
-  }
-  @media (prefers-reduced-motion: reduce){*{animation-duration:.001s !important; transition-duration:.001s !important;} html{scroll-behavior:auto;}}
-
-  /* ===== 2026-11 homepage: clear offer + portfolio first ===== */
-  .hero-latest{display:inline-flex; align-items:center; gap:10px; padding:8px 14px 8px 12px; border:1px solid var(--line); border-radius:100px; font-size:13px; color:var(--cream); background:rgba(247,247,244,.04); transition:border-color .3s var(--ease), background .3s var(--ease);}
-  .hero-latest:hover{border-color:rgba(127,227,255,.5); background:rgba(127,227,255,.07);}
-  .hero-latest svg{width:14px; height:14px; color:var(--cyan);}
-  .hl-dot{width:7px; height:7px; border-radius:50%; background:#4ADE80; box-shadow:0 0 0 4px rgba(74,222,128,.15);}
-  .hero h1{max-width:13ch; font-size:clamp(36px,5vw,64px);}
-  @media (max-width:720px){.hero h1{font-size:clamp(30px,8.4vw,44px);}}
-  .hero-audience{list-style:none; display:flex; flex-wrap:wrap; gap:8px; margin:0;}
-  .hero-audience li{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--gray-mute); border:1px solid var(--line); border-radius:6px; padding:6px 10px;}
-  .work-cta{margin-top:48px; display:flex; justify-content:center;}
-  .svc2-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
-  .svc2-card,.aud-card{background:var(--black-soft); border:1px solid var(--line); border-radius:18px; padding:36px 32px; display:flex; flex-direction:column; gap:14px; transition:border-color .35s var(--ease), transform .35s var(--ease);}
-  .svc2-card:hover,.aud-card:hover{border-color:rgba(127,227,255,.35); transform:translateY(-4px);}
-  .svc2-card h3{font-size:26px;}
-  .svc2-card p,.aud-card p{color:var(--gray-mute); font-size:15px;}
-  .svc2-icon{width:46px; height:46px; border-radius:12px; display:flex; align-items:center; justify-content:center; background:rgba(127,227,255,.08); color:var(--cyan);}
-  .svc2-icon svg{width:22px; height:22px;}
-  .svc2-list{list-style:none; display:flex; flex-direction:column; gap:10px; margin:6px 0 10px; flex:1;}
-  .svc2-list li{position:relative; padding-left:26px; font-size:14.5px; color:var(--cream);}
-  .svc2-list li::before{content:''; position:absolute; left:0; top:6px; width:14px; height:8px; border-left:2px solid var(--cyan); border-bottom:2px solid var(--cyan); transform:rotate(-45deg);}
-  .svc2-card .cap-link,.aud-card .cap-link{display:inline-flex; align-items:center; gap:8px; font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--cyan); margin-top:auto;}
-  .svc2-card .cap-link svg,.aud-card .cap-link svg{width:12px; height:12px; flex:none;}
-  .svc2-more{margin-top:28px; color:var(--gray-mute); font-size:15px; text-align:center;}
-  .svc2-more a{color:var(--cyan); white-space:nowrap;}
-  .aud-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px;}
-  .aud-card{background:var(--black); padding:30px 26px;}
-  .aud-card h3{font-size:20px;}
-  .steps{list-style:none; display:grid; grid-template-columns:repeat(4,1fr); gap:20px; counter-reset:none;}
-  .step{border-top:1px solid var(--line); padding-top:24px; display:flex; flex-direction:column; gap:10px;}
-  .step-num{font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--cyan);}
-  .step h3{font-size:21px;}
-  .step p{color:var(--gray-mute); font-size:15px;}
-  .ptype{border:none; padding:0; margin:0;}
-  .ptype legend{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--gray-mute); margin-bottom:12px;}
-  .ptype-row{display:flex; flex-wrap:wrap; gap:10px;}
-  .ptype-row label{cursor:pointer; font-family:'Plus Jakarta Sans',sans-serif; text-transform:none; letter-spacing:0; position:relative;}
-  .ptype-row input{position:absolute; opacity:0; pointer-events:none;}
-  .ptype-row label > span{display:inline-block; padding:10px 16px; border:1px solid var(--line); border-radius:100px; font-size:13.5px; color:var(--gray-mute); transition:all .25s var(--ease);}
-  .ptype-row input:checked + span{border-color:var(--cyan); color:var(--cream); background:rgba(127,227,255,.1);}
-  .ptype-row input:focus-visible + span{outline:2px solid var(--cyan); outline-offset:2px;}
-  @media (max-width:1080px){.aud-grid{grid-template-columns:repeat(2,1fr);} .steps{grid-template-columns:repeat(2,1fr); row-gap:36px;}}
-  @media (max-width:720px){.svc2-grid,.aud-grid,.steps{grid-template-columns:1fr;} .svc2-card{padding:30px 24px;} .hero-latest{font-size:12px;} .work-cta .btn{width:100%; justify-content:center;}}
-  .work-media{position:relative;}
-  .work-badge{position:absolute; top:12px; left:12px; z-index:2; font-family:'JetBrains Mono',monospace; font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; padding:6px 10px; border-radius:100px; background:rgba(8,9,10,.82); color:var(--cyan); border:1px solid rgba(127,227,255,.35); backdrop-filter:blur(6px);}
-  .btn-wa .wa-ico{width:18px; height:18px;}
-  .btn-wa{background:#25D366; color:#062b16;}
-  .hero-wa{display:inline-flex; align-items:center; gap:8px; font-size:14px; color:var(--gray-mute); margin:-14px 0 26px; transition:color .25s var(--ease);}
-  .hero-wa:hover{color:#4ADE80;}
-  .hero-wa .wa-ico{width:16px; height:16px; color:#25D366;}
-  .stat-num .count{display:inline-block; min-width:2ch; text-align:right; font-variant-numeric:tabular-nums;}
-  .stat-num.counted .stat-plus{animation:statPop .5s var(--ease);}
-  @keyframes statPop{0%{transform:scale(.6); opacity:.3;} 60%{transform:scale(1.25);} 100%{transform:scale(1); opacity:1;}}
-  .stat-num .stat-plus{display:inline-block;}
-  @media (min-width:981px){
-    .work-wide{grid-column:1/-1; display:grid; grid-template-columns:1.25fr 1fr; align-items:stretch;}
-    .work-wide .work-win-inner{border-right:1px solid var(--line);}
-    .work-wide .work-body{justify-content:center; padding:40px 44px;}
-    .work-wide h3{font-size:30px;}
-    .work-wide .work-body p{flex:none; font-size:15.5px;}
-    .work-wide .work-link-row{margin-top:10px;}
-  }
-  /* ===== contact form card ===== */
-  .form-card{position:relative; border-radius:24px; padding:40px 38px 34px; background:linear-gradient(160deg, rgba(22,27,40,.92), rgba(12,14,20,.96)); isolation:isolate; box-shadow:0 30px 80px -30px rgba(47,92,255,.45), 0 0 0 1px rgba(127,227,255,.08);}
-  .form-card::before{content:''; position:absolute; inset:0; border-radius:inherit; padding:1px; background:linear-gradient(140deg, rgba(127,227,255,.75), rgba(47,92,255,.35) 40%, rgba(247,247,244,.06) 70%, rgba(127,227,255,.45)); -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite:xor; mask-composite:exclude; pointer-events:none;}
-  .form-card-glow{position:absolute; z-index:-1; inset:-60px -40px auto auto; width:320px; height:320px; border-radius:50%; background:radial-gradient(circle, rgba(127,227,255,.22), transparent 65%); filter:blur(10px); pointer-events:none;}
-  .form-card-head{margin-bottom:28px;}
-  .form-kicker{display:inline-flex; align-items:center; gap:9px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--cyan); padding:7px 12px; border-radius:100px; background:rgba(127,227,255,.08); border:1px solid rgba(127,227,255,.22);}
-  .form-card-head h3{font-size:clamp(24px,2.6vw,30px); margin-top:16px;}
-  .form-card-head p{color:var(--gray-mute); font-size:15px; margin-top:10px;}
-  #contact-form{gap:20px;}
-  #contact-form .field label{color:#c9cbd1;}
-  #contact-form .req{color:var(--cyan); font-style:normal;}
-  .input-wrap{position:relative; display:flex; align-items:center;}
-  .input-wrap svg{position:absolute; left:15px; width:18px; height:18px; color:#6b6e78; pointer-events:none; transition:color .25s var(--ease);}
-  #contact-form .field input, #contact-form .field textarea{width:100%; background:rgba(247,247,244,.04); border:1px solid rgba(247,247,244,.12); border-radius:12px; padding:15px 16px; font-size:15.5px; color:var(--cream); transition:border-color .25s var(--ease), box-shadow .25s var(--ease), background .25s var(--ease);}
-  #contact-form .input-wrap input{padding-left:46px;}
-  #contact-form .field input::placeholder, #contact-form .field textarea::placeholder{color:#5f626b;}
-  #contact-form .field input:hover, #contact-form .field textarea:hover{border-color:rgba(247,247,244,.22);}
-  #contact-form .field input:focus, #contact-form .field textarea:focus{outline:none; border-color:var(--cyan); background:rgba(127,227,255,.05); box-shadow:0 0 0 4px rgba(127,227,255,.14);}
-  .input-wrap:focus-within svg{color:var(--cyan);}
-  #contact-form .field textarea{min-height:120px; resize:vertical; line-height:1.5;}
-  #contact-form .ptype-row{display:grid; grid-template-columns:repeat(3,1fr); gap:10px;}
-  #contact-form .ptype-row label > span{display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; padding:16px 10px; border-radius:14px; background:rgba(247,247,244,.03); border:1px solid rgba(247,247,244,.12); font-size:14px; text-align:center; height:100%;}
-  #contact-form .ptype-row label > span svg{width:22px; height:22px;}
-  #contact-form .ptype-row label:hover > span{border-color:rgba(247,247,244,.25); color:var(--cream);}
-  #contact-form .ptype-row input:checked + span{border-color:var(--cyan); color:var(--cream); background:linear-gradient(160deg, rgba(127,227,255,.16), rgba(47,92,255,.12)); box-shadow:0 0 0 1px rgba(127,227,255,.35), 0 10px 26px -12px rgba(127,227,255,.55);}
-  #contact-form .ptype-row input:checked + span svg{color:var(--cyan);}
-  .btn-send{display:flex; align-items:center; justify-content:center; gap:12px; width:100%; margin-top:6px; padding:18px 26px; border-radius:14px; font-family:'Sora',sans-serif; font-size:16px; font-weight:700; letter-spacing:.01em; color:#fff; background:linear-gradient(110deg, #33c9f0, var(--blue) 55%, #5b3bff); background-size:160% 100%; box-shadow:0 14px 36px -12px rgba(47,92,255,.8), inset 0 1px 0 rgba(255,255,255,.25); transition:transform .25s var(--ease), box-shadow .25s var(--ease), background-position .5s var(--ease);}
-  .btn-send svg{width:20px; height:20px; transition:transform .25s var(--ease);}
-  .btn-send:hover{transform:translateY(-2px); background-position:100% 0; box-shadow:0 20px 44px -12px rgba(47,92,255,.95), inset 0 1px 0 rgba(255,255,255,.3);}
-  .btn-send:hover svg{transform:translateX(4px);}
-  .btn-send:active{transform:translateY(0);}
-  .btn-send:disabled{opacity:.75; cursor:wait;}
-  .btn-send.is-loading svg{animation:sendPulse .8s ease-in-out infinite alternate;}
-  @keyframes sendPulse{to{transform:translateX(6px); opacity:.4;}}
-  #contact-form .form-note{text-align:center; font-size:13.5px; margin-top:2px;}
-  #contact-form .form-note a{color:#4ADE80; font-weight:600;}
-  @media (max-width:720px){.form-card{padding:28px 20px 24px; border-radius:20px;} #contact-form .ptype-row label > span{padding:13px 6px; font-size:13px;}}
-  @media (prefers-reduced-motion: reduce){.btn-send,.btn-send svg{transition:none;} .btn-send.is-loading svg{animation:none;}}
-  /* ===== testimonial ===== */
-  .testi-card{margin:0; display:grid; grid-template-columns:minmax(260px,.8fr) 1.4fr; border-radius:24px; overflow:hidden; background:linear-gradient(160deg, rgba(22,27,40,.9), rgba(12,14,20,.95)); border:1px solid rgba(127,227,255,.18); box-shadow:0 30px 80px -40px rgba(47,92,255,.5);}
-  .testi-photo{position:relative; min-height:100%; background:#d9dee4;}
-  .testi-photo img{width:100%; height:100%; object-fit:cover; object-position:50% 12%; display:block;}
-  .testi-client{position:absolute; left:16px; bottom:16px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.12em; padding:7px 12px; border-radius:100px; background:rgba(8,9,10,.8); color:var(--cyan); border:1px solid rgba(127,227,255,.35); backdrop-filter:blur(6px);}
-  .testi-body{padding:48px 52px; display:flex; flex-direction:column; gap:18px;}
-  .testi-mark{width:46px; height:34px; color:var(--cyan); opacity:.85;}
-  .testi-body blockquote{margin:0; display:flex; flex-direction:column; gap:14px;}
-  .testi-body blockquote p{font-size:17px; line-height:1.65; color:#d8dae0;}
-  .testi-body blockquote p:first-child{font-family:'Sora',sans-serif; font-size:20px; line-height:1.5; color:var(--cream);}
-  .testi-body blockquote a{color:var(--cyan); border-bottom:1px solid rgba(127,227,255,.35);}
-  .testi-body blockquote em{font-style:normal; color:var(--cream); font-weight:600;}
-  .testi-body figcaption{display:flex; flex-direction:column; gap:4px; padding-top:18px; border-top:1px solid var(--line);}
-  .testi-body figcaption strong{font-family:'Sora',sans-serif; font-size:19px;}
-  .testi-body figcaption span{color:var(--gray-mute); font-size:14px;}
-  .testi-link{display:inline-flex; align-items:center; gap:8px; font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--cyan);}
-  .testi-link svg{width:12px; height:12px;}
-  @media (max-width:900px){.testi-card{grid-template-columns:1fr;} .testi-photo{height:380px;} .testi-body{padding:30px 24px;} .testi-body blockquote p:first-child{font-size:18px;} .testi-body blockquote p{font-size:16px;}}
-  /* ===== client logo marquee ===== */
-  .stats-strip .stat-label{font-size:12px;}
-  .logo-marquee{margin-top:34px; overflow:hidden; -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent); mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);}
-  .logo-track{display:flex; width:max-content; animation:logoScroll 45s linear infinite;}
-  .logo-marquee:hover .logo-track{animation-play-state:paused;}
-  .logo-set{display:flex; gap:22px; padding-right:22px; flex:none;}
-  .logo-tile{flex:none; height:78px; display:flex; align-items:center; justify-content:center; border-radius:14px; overflow:hidden; border:1px solid rgba(247,247,244,.1); transition:transform .3s var(--ease), border-color .3s var(--ease), box-shadow .3s var(--ease);}
-  .logo-tile img{height:100%; width:auto; display:block;}
-  .logo-light{background:#fff; padding:5px 20px;}
-  .logo-cream{background:#faf6f0;}
-  .logo-dark{background:#120d1c;}
-  .logo-full{background:#3d0a6b;}
-  .logo-light.logo-pad{padding:16px 24px;}
-  .logo-tile{cursor:default;}
-  @keyframes logoScroll{from{transform:translateX(0);} to{transform:translateX(-50%);}}
-  @media (max-width:720px){.logo-tile{height:62px;} .logo-set{gap:14px; padding-right:14px;} .logo-track{animation-duration:34s;}}
-  @media (prefers-reduced-motion: reduce){.logo-track{animation:none; flex-wrap:wrap; justify-content:center; width:auto;} .logo-set[aria-hidden="true"]{display:none;} .logo-set{flex-wrap:wrap; justify-content:center;}}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/home.css">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -598,87 +115,60 @@
 </script>
 </head>
 <body data-lang="fr">
-
-<div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
-<div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
-
-<div class="aurora-bg" aria-hidden="true"><span></span><span></span><span></span></div>
-
-<div id="signal-line"><div class="fill"></div></div>
+<a class="skip" href="#main"><span class="fr" lang="fr">Aller au contenu</span><span class="en" lang="en">Skip to content</span></a>
 
 <header id="site-header">
-  <div class="brand">
-    <a href="#hero" class="logo-plate"><img src="logo.png" alt="ROUGATECH"></a>
-  </div>
-  <nav class="main-nav" id="main-nav">
-    <a href="#work"><span class="fr" lang="fr">Réalisations</span><span class="en" lang="en">Work</span></a>
-    <a href="#temoignages"><span class="fr" lang="fr">Témoignages</span><span class="en" lang="en">Testimonials</span></a>
-    <a href="#solutions"><span class="fr" lang="fr">Services</span><span class="en" lang="en">Services</span></a>
-    <a href="#clients"><span class="fr" lang="fr">Pour qui</span><span class="en" lang="en">Who we serve</span></a>
-    <a href="#process"><span class="fr" lang="fr">Méthode</span><span class="en" lang="en">Process</span></a>
-    <a href="#founder"><span class="fr" lang="fr">À propos</span><span class="en" lang="en">About</span></a>
-    <a href="#contact" class="nav-contact">Contact</a>
-  </nav>
-  <div class="header-right">
-    <div class="lang-switch">
-      <button data-lang-btn="fr" class="active">FR</button><span>|</span><button data-lang-btn="en">EN</button>
+  <div class="bar">
+    <a href="#hero" class="brand" aria-label="ROUGATECH"><img src="logo.png" alt="ROUGATECH" width="400" height="133"></a>
+    <nav class="main-nav" id="main-nav">
+      <a href="#work"><span class="fr" lang="fr">Réalisations</span><span class="en" lang="en">Work</span></a>
+      <a href="#temoignages"><span class="fr" lang="fr">Témoignages</span><span class="en" lang="en">Testimonials</span></a>
+      <a href="#solutions">Services</a>
+      <a href="#clients"><span class="fr" lang="fr">Pour qui</span><span class="en" lang="en">Who we serve</span></a>
+      <a href="#process"><span class="fr" lang="fr">Méthode</span><span class="en" lang="en">Process</span></a>
+      <a href="#founder"><span class="fr" lang="fr">À propos</span><span class="en" lang="en">About</span></a>
+      <a href="#contact" class="nav-contact">Contact</a>
+    </nav>
+    <div class="header-right">
+      <div class="lang-switch" role="group" aria-label="Langue / Language">
+        <button data-lang-btn="fr" class="active">FR</button><button data-lang-btn="en">EN</button>
+      </div>
+      <a href="#contact" class="btn btn-blue btn-sm btn-header"><span class="fr" lang="fr">Demander un devis</span><span class="en" lang="en">Get a quote</span></a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="main-nav"><span></span><span></span></button>
     </div>
-    <a href="#contact" class="btn btn-primary btn-header"><span class="fr" lang="fr">Demander un devis</span><span class="en" lang="en">Get a quote</span></a>
-    <button class="menu-toggle" id="menu-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-<main>
+<main id="main">
 
-  <!-- 01 — HERO -->
   <section class="hero" id="hero">
-    <div class="hero-grid"></div>
-    <div class="hero-atmosphere" aria-hidden="true"></div>
-    <div class="wrap hero-content">
-      <div class="hero-layout">
-        <div class="hero-text">
-          <a href="#work" class="hero-latest"><span class="hl-dot" aria-hidden="true"></span><span class="fr" lang="fr">Réalisation récente : GCAP11</span><span class="en" lang="en">Recent project: GCAP11</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <h1>
-            <span class="fr" lang="fr">Création de sites web <span class="accent">&amp; plateformes SaaS</span></span>
-            <span class="en" lang="en">Websites <span class="accent">&amp; SaaS platforms</span></span>
-          </h1>
-          <p class="hero-sub">
-            <span class="fr" lang="fr">Pour les entreprises, les coachs et les institutions privées et publiques. Depuis l'Afrique, nous concevons pour des clients partout dans le monde des sites et des outils digitaux modernes, pensés pour présenter votre activité et attirer des clients.</span><span class="en" lang="en">For businesses, coaches, and private and public institutions. From Africa, we design modern websites and digital tools for clients all over the world, built to present your activity and attract customers.</span>
-          </p>
-          <div class="hero-ctas">
-            <a href="#contact" class="btn btn-primary"><span class="fr" lang="fr">Demander un devis</span><span class="en" lang="en">Get a quote</span></a>
-            <a href="#work" class="btn btn-outline"><span class="fr" lang="fr">Voir nos réalisations</span><span class="en" lang="en">See our work</span></a>
-          </div>
-          <a class="hero-wa" href="https://wa.me/22791340905?text=Bonjour%20ROUGATECH%2C%20j%27ai%20un%20projet%20de%20site%20web%20/%20plateforme." target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.1.8.8-3-.2-.3C4 15 3.6 13.5 3.6 12c0-4.6 3.8-8.4 8.4-8.4s8.4 3.8 8.4 8.4-3.8 8.2-8.4 8.2z"/></svg><span class="fr" lang="fr">Ou écrivez-nous directement sur WhatsApp</span><span class="en" lang="en">Or message us directly on WhatsApp</span></a>
-          <ul class="hero-audience" aria-label="Clients">
-            <li><span class="fr" lang="fr">Entreprises</span><span class="en" lang="en">Businesses</span></li><li><span class="fr" lang="fr">Coachs</span><span class="en" lang="en">Coaches</span></li><li><span class="fr" lang="fr">Institutions privées</span><span class="en" lang="en">Private institutions</span></li><li><span class="fr" lang="fr">Institutions publiques</span><span class="en" lang="en">Public institutions</span></li>
-          </ul>
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <a href="#work" class="hero-latest"><span class="dot" aria-hidden="true"></span><span class="fr" lang="fr">Dernière mise en ligne : GCAP11</span><span class="en" lang="en">Latest launch: GCAP11</span></a>
+        <h1><span class="fr" lang="fr">Des sites web et des plateformes SaaS qui font grandir votre activité.</span><span class="en" lang="en">Websites and SaaS platforms that grow your business.</span></h1>
+        <p class="hero-sub"><span class="fr" lang="fr">Nous les concevons pour les entreprises, les coachs et les institutions privées et publiques, en Afrique et partout dans le monde.</span><span class="en" lang="en">We design them for businesses, coaches, and private and public institutions, in Africa and around the world.</span></p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-blue"><span class="fr" lang="fr">Demander un devis</span><span class="en" lang="en">Get a quote</span></a>
+          <a href="#work" class="btn btn-ghost"><span class="fr" lang="fr">Voir nos réalisations</span><span class="en" lang="en">See our work</span></a>
         </div>
-        <div class="hero-visual" id="hero-visual" aria-hidden="true">
-          <canvas class="hero-canvas" id="hero-canvas"></canvas>
-          <div class="hero-orb" id="hero-orb"></div>
-          <div class="hero-bubble b1"><span class="dot"></span><span class="fr" lang="fr">Visibilité +</span><span class="en" lang="en">Visibility +</span></div>
-          <div class="hero-bubble b2"><span class="dot"></span><span class="fr" lang="fr">Plus de vente</span><span class="en" lang="en">More sales</span></div>
-          <div class="hero-bubble b3"><span class="dot"></span><span class="fr" lang="fr">Plus de client</span><span class="en" lang="en">More customers</span></div>
-          <div class="hero-bubble b4"><span class="dot"></span><span class="fr" lang="fr">Client satisfait</span><span class="en" lang="en">Happy customers</span></div>
-          <div class="hero-bubble b5"><span class="dot"></span><span class="fr" lang="fr">Grandir</span><span class="en" lang="en">Grow</span></div>
-        </div>
+        <a class="hero-wa" href="https://wa.me/22791340905?text=Bonjour%20ROUGATECH%2C%20j%27ai%20un%20projet%20de%20site%20web%20/%20plateforme." target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.1.8.8-3-.2-.3C4 15 3.6 13.5 3.6 12c0-4.6 3.8-8.4 8.4-8.4s8.4 3.8 8.4 8.4-3.8 8.2-8.4 8.2z"/></svg><span class="fr" lang="fr">Ou écrivez-nous sur WhatsApp : +227 91 34 09 05</span><span class="en" lang="en">Or message us on WhatsApp: +227 91 34 09 05</span></a>
+      </div>
+      <div class="hero-stack" aria-hidden="true">
+        <figure class="shot shot-1"><img src="work-gcap11.jpg" alt="" width="1200" height="900"></figure>
+        <figure class="shot shot-2"><img src="work-marina.jpg" alt="" width="1200" height="900"></figure>
+        <figure class="shot shot-3"><img src="work-ipstg.jpg" alt="" width="1200" height="900"></figure>
       </div>
     </div>
   </section>
 
-  <!-- STATS STRIP — slim proof band, no dashboard/chart mockup, just the real numbers -->
-  <section class="stats-strip">
-    <div class="wrap">
-      <div class="stats-row reveal">
-        <div class="stat-item">
-          <div class="stat-num"><span class="stat-plus">+</span><span class="count" data-count="10">10</span></div>
-          <div class="stat-label"><span class="fr" lang="fr">Entreprises et institutions accompagnées</span><span class="en" lang="en">Businesses and institutions supported</span></div>
-        </div>
-      </div>
-      <div class="logo-marquee reveal" aria-label="Clients">
-        <div class="logo-track">
-          <div class="logo-set">
+  <section class="trust" aria-label="Clients">
+    <div class="wrap trust-head">
+      <p class="trust-num"><span class="plus">+</span><span class="count" data-count="10">10</span></p>
+      <p class="trust-label"><span class="fr" lang="fr">entreprises et institutions nous ont confié leur projet digital.</span><span class="en" lang="en">businesses and institutions have trusted us with their digital project.</span></p>
+    </div>
+    <div class="logo-marquee">
+      <div class="logo-track">
+        <div class="logo-set">
             <span class="logo-tile logo-dark" title="GCAP11"><img src="assets/clients/gcap11.png" alt="GCAP11" loading="lazy"></span>
             <span class="logo-tile logo-light" title="IPSTG-LEADER"><img src="assets/clients/ipstg-leader.png" alt="IPSTG-LEADER" loading="lazy"></span>
             <span class="logo-tile logo-light" title="ESCOM — École Supérieure de Communication et de Management"><img src="assets/clients/escom.png" alt="ESCOM — École Supérieure de Communication et de Management" loading="lazy"></span>
@@ -688,8 +178,8 @@
             <span class="logo-tile logo-light" title="American English Language Program — American Corner Niamey"><img src="assets/clients/aelp.png" alt="American English Language Program — American Corner Niamey" loading="lazy"></span>
             <span class="logo-tile logo-dark" title="Hope Giver Conference Center"><img src="assets/clients/hgc.png" alt="Hope Giver Conference Center" loading="lazy"></span>
             <span class="logo-tile logo-light logo-pad" title="ScolPay"><img src="assets/clients/scolpay.png" alt="ScolPay" loading="lazy"></span>
-          </div>
-          <div class="logo-set" aria-hidden="true">
+        </div>
+        <div class="logo-set" aria-hidden="true">
             <span class="logo-tile logo-dark" title="GCAP11"><img src="assets/clients/gcap11.png" alt="" loading="lazy"></span>
             <span class="logo-tile logo-light" title="IPSTG-LEADER"><img src="assets/clients/ipstg-leader.png" alt="" loading="lazy"></span>
             <span class="logo-tile logo-light" title="ESCOM — École Supérieure de Communication et de Management"><img src="assets/clients/escom.png" alt="" loading="lazy"></span>
@@ -699,264 +189,175 @@
             <span class="logo-tile logo-light" title="American English Language Program — American Corner Niamey"><img src="assets/clients/aelp.png" alt="" loading="lazy"></span>
             <span class="logo-tile logo-dark" title="Hope Giver Conference Center"><img src="assets/clients/hgc.png" alt="" loading="lazy"></span>
             <span class="logo-tile logo-light logo-pad" title="ScolPay"><img src="assets/clients/scolpay.png" alt="" loading="lazy"></span>
-          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 05 — SELECTED WORK -->
-  <section class="section" id="work" style="background:var(--black-soft);">
+  <section class="sec" id="work">
     <div class="wrap">
-      <div class="section-head reveal">
-        <div class="eyebrow"><span class="fr" lang="fr">RÉALISATIONS</span><span class="en" lang="en">OUR WORK</span></div>
+      <div class="sec-head">
         <h2><span class="fr" lang="fr">Nos réalisations récentes</span><span class="en" lang="en">Our recent work</span></h2>
-        <p class="section-sub"><span class="fr" lang="fr">Des sites réels, conçus et mis en ligne pour nos clients. Cliquez pour les visiter.</span><span class="en" lang="en">Real websites, designed and launched for our clients. Click to visit them.</span></p>
+        <p><span class="fr" lang="fr">Des sites et des plateformes réels, conçus et mis en ligne pour nos clients.</span><span class="en" lang="en">Real websites and platforms, designed and launched for our clients.</span></p>
       </div>
-      <!-- PROJETS — pour ajouter un projet, copiez un bloc <article> ci-dessous et changez le texte, l'image et les liens. -->
-      <div class="work-grid reveal" id="work-grid">
-        <article class="work-card work-win">
-          <div class="work-win-inner">
-            <div class="work-chrome" aria-hidden="true"><span></span><span></span><span></span></div>
-            <div class="work-media"><img src="work-gcap11.jpg" alt="GCAP11 — Page de vente · Événement" loading="lazy" width="1200" height="900"></div>
-          </div>
-          <div class="work-body">
-            <span class="work-category"><span class="fr" lang="fr">Page de vente · Événement</span><span class="en" lang="en">Sales page · Event</span></span>
+      <div class="work-grid">
+        <article class="proj proj-feature">
+          <div class="proj-img"><img src="work-gcap11.jpg" alt="GCAP11 — Page de vente · Événement" loading="lazy" width="1200" height="900"></div>
+          <div class="proj-txt">
+            <p class="proj-cat"><span class="fr" lang="fr">Page de vente · Événement</span><span class="en" lang="en">Sales page · Event</span></p>
             <h3>GCAP11</h3>
-            <p><span class="fr" lang="fr">Landing page de vente pour la Grande Conférence de l'Abondance et de la Prospérité du Coach Simon Ouedraogo, avec réservation des pass.</span><span class="en" lang="en">Sales landing page for Coach Simon Ouedraogo's Grande Conférence de l'Abondance et de la Prospérité, with pass booking.</span></p>
-            <div class="work-link-row">
-              <a class="work-link" href="https://www.gcap11.com" target="_blank" rel="noopener"><span class="fr" lang="fr">Voir le site</span><span class="en" lang="en">Visit site</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-            </div>
+            <p class="proj-desc"><span class="fr" lang="fr">Landing page de vente pour la Grande Conférence de l'Abondance et de la Prospérité du Coach Simon Ouedraogo, avec réservation des pass.</span><span class="en" lang="en">Sales landing page for Coach Simon Ouedraogo's Grande Conférence de l'Abondance et de la Prospérité, with pass booking.</span></p>
+            <div class="proj-links"><a href="https://www.gcap11.com" target="_blank" rel="noopener"><span class="fr" lang="fr">Voir le site</span><span class="en" lang="en">Visit site</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
           </div>
         </article>
-        <article class="work-card work-win">
-          <div class="work-win-inner">
-            <div class="work-chrome" aria-hidden="true"><span></span><span></span><span></span></div>
-            <div class="work-media"><img src="work-ipstg.jpg" alt="IPSTG-LEADER — Site institutionnel" loading="lazy" width="1200" height="900"></div>
-          </div>
-          <div class="work-body">
-            <span class="work-category"><span class="fr" lang="fr">Site institutionnel</span><span class="en" lang="en">Institutional website</span></span>
+        <article class="proj">
+          <div class="proj-img"><img src="work-ipstg.jpg" alt="IPSTG-LEADER — Site institutionnel" loading="lazy" width="1200" height="900"></div>
+          <div class="proj-txt">
+            <p class="proj-cat"><span class="fr" lang="fr">Site institutionnel</span><span class="en" lang="en">Institutional website</span></p>
             <h3>IPSTG-LEADER</h3>
-            <p><span class="fr" lang="fr">Site multipage pour un institut privé d'enseignement supérieur de Niamey : filières, admissions, formation continue et vie étudiante.</span><span class="en" lang="en">Multi-page website for a private higher-education institute in Niamey: programs, admissions, continuing education and student life.</span></p>
-            <div class="work-link-row">
-              <a class="work-link" href="https://www.ipstgleader.com" target="_blank" rel="noopener"><span class="fr" lang="fr">Voir le site</span><span class="en" lang="en">Visit site</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-            </div>
+            <p class="proj-desc"><span class="fr" lang="fr">Site multipage pour un institut privé d'enseignement supérieur de Niamey : filières, admissions, formation continue et vie étudiante.</span><span class="en" lang="en">Multi-page website for a private higher-education institute in Niamey: programs, admissions, continuing education and student life.</span></p>
+            <div class="proj-links"><a href="https://www.ipstgleader.com" target="_blank" rel="noopener"><span class="fr" lang="fr">Voir le site</span><span class="en" lang="en">Visit site</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
           </div>
         </article>
-        <article class="work-card work-win">
-          <div class="work-win-inner">
-            <div class="work-chrome" aria-hidden="true"><span></span><span></span><span></span></div>
-            <div class="work-media"><img src="work-marina.jpg" alt="Coach Marina — Marque personnelle / Coaching" loading="lazy" width="1200" height="900"></div>
-          </div>
-          <div class="work-body">
-            <span class="work-category"><span class="fr" lang="fr">Marque personnelle / Coaching</span><span class="en" lang="en">Personal brand / Coaching</span></span>
+        <article class="proj">
+          <div class="proj-img"><img src="work-marina.jpg" alt="Coach Marina — Marque personnelle / Coaching" loading="lazy" width="1200" height="900"></div>
+          <div class="proj-txt">
+            <p class="proj-cat"><span class="fr" lang="fr">Marque personnelle / Coaching</span><span class="en" lang="en">Personal brand / Coaching</span></p>
             <h3>Coach Marina</h3>
-            <p><span class="fr" lang="fr">Une plateforme digitale premium conçue pour présenter les programmes de coaching, la communauté, les événements et les services de Coach Marina.</span><span class="en" lang="en">A premium digital platform designed to present Coach Marina's coaching programs, community, events and services.</span></p>
-            <div class="work-link-row">
-              <a class="work-link" href="https://www.coachmarinabf.com" target="_blank" rel="noopener"><span class="fr" lang="fr">Voir le site</span><span class="en" lang="en">Visit site</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-              <a class="work-link" href="/projects/coach-marina/"><span class="fr" lang="fr">Étude de cas</span><span class="en" lang="en">Case study</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-            </div>
+            <p class="proj-desc"><span class="fr" lang="fr">Une plateforme digitale premium conçue pour présenter les programmes de coaching, la communauté, les événements et les services de Coach Marina.</span><span class="en" lang="en">A premium digital platform designed to present Coach Marina's coaching programs, community, events and services.</span></p>
+            <div class="proj-links"><a href="https://www.coachmarinabf.com" target="_blank" rel="noopener"><span class="fr" lang="fr">Voir le site</span><span class="en" lang="en">Visit site</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a><a href="/projects/coach-marina/"><span class="fr" lang="fr">Étude de cas</span><span class="en" lang="en">Case study</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
           </div>
         </article>
-        <article class="work-card work-win">
-          <div class="work-win-inner">
-            <div class="work-chrome" aria-hidden="true"><span></span><span></span><span></span></div>
-            <div class="work-media"><img src="work-iphec.jpg" alt="IPHEC Niger — Site institutionnel" loading="lazy" width="1200" height="900"></div>
-          </div>
-          <div class="work-body">
-            <span class="work-category"><span class="fr" lang="fr">Site institutionnel</span><span class="en" lang="en">Institutional website</span></span>
+        <article class="proj">
+          <div class="proj-img"><img src="work-iphec.jpg" alt="IPHEC Niger — Site institutionnel" loading="lazy" width="1200" height="900"></div>
+          <div class="proj-txt">
+            <p class="proj-cat"><span class="fr" lang="fr">Site institutionnel</span><span class="en" lang="en">Institutional website</span></p>
             <h3>IPHEC Niger</h3>
-            <p><span class="fr" lang="fr">Une présence digitale institutionnelle moderne conçue pour présenter l'IPHEC Niger, ses programmes et sa mission éducative avec clarté et crédibilité.</span><span class="en" lang="en">Modern institutional digital presence designed to present IPHEC Niger, its programs and its educational mission with clarity and credibility.</span></p>
-            <div class="work-link-row">
-              <a class="work-link" href="https://www.iphecniger.com" target="_blank" rel="noopener"><span class="fr" lang="fr">Voir le site</span><span class="en" lang="en">Visit site</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-              <a class="work-link" href="/projects/iphec-niger/"><span class="fr" lang="fr">Étude de cas</span><span class="en" lang="en">Case study</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-            </div>
+            <p class="proj-desc"><span class="fr" lang="fr">Une présence digitale institutionnelle moderne conçue pour présenter l'IPHEC Niger, ses programmes et sa mission éducative avec clarté et crédibilité.</span><span class="en" lang="en">Modern institutional digital presence designed to present IPHEC Niger, its programs and its educational mission with clarity and credibility.</span></p>
+            <div class="proj-links"><a href="https://www.iphecniger.com" target="_blank" rel="noopener"><span class="fr" lang="fr">Voir le site</span><span class="en" lang="en">Visit site</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a><a href="/projects/iphec-niger/"><span class="fr" lang="fr">Étude de cas</span><span class="en" lang="en">Case study</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
           </div>
         </article>
-        <article class="work-card work-win">
-          <div class="work-win-inner">
-            <div class="work-chrome" aria-hidden="true"><span></span><span></span><span></span></div>
-            <div class="work-media"><span class="work-badge"><span class="fr" lang="fr">En développement</span><span class="en" lang="en">In development</span></span><img src="work-hgc.jpg" alt="Hope Giver Conference Center — Site institutionnel" loading="lazy" width="1200" height="900"></div>
-          </div>
-          <div class="work-body">
-            <span class="work-category"><span class="fr" lang="fr">Site institutionnel</span><span class="en" lang="en">Institutional website</span></span>
+        <article class="proj">
+          <div class="proj-img"><span class="badge"><span class="fr" lang="fr">En développement</span><span class="en" lang="en">In development</span></span><img src="work-hgc.jpg" alt="Hope Giver Conference Center — Site institutionnel" loading="lazy" width="1200" height="900"></div>
+          <div class="proj-txt">
+            <p class="proj-cat"><span class="fr" lang="fr">Site institutionnel</span><span class="en" lang="en">Institutional website</span></p>
             <h3>Hope Giver Conference Center</h3>
-            <p><span class="fr" lang="fr">Site officiel du centre de conférences, de formation et de résidence porté par le Coach Simon Ouedraogo à Koubri, près de Ouagadougou.</span><span class="en" lang="en">Official website of the conference, training and residence centre led by Coach Simon Ouedraogo in Koubri, near Ouagadougou.</span></p>
-            <div class="work-link-row">
-              <a class="work-link" href="https://www.hgccso.com" target="_blank" rel="noopener"><span class="fr" lang="fr">Voir le site</span><span class="en" lang="en">Visit site</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-            </div>
+            <p class="proj-desc"><span class="fr" lang="fr">Site officiel du centre de conférences, de formation et de résidence porté par le Coach Simon Ouedraogo à Koubri, près de Ouagadougou.</span><span class="en" lang="en">Official website of the conference, training and residence centre led by Coach Simon Ouedraogo in Koubri, near Ouagadougou.</span></p>
+            <div class="proj-links"><a href="https://www.hgccso.com" target="_blank" rel="noopener"><span class="fr" lang="fr">Voir le site</span><span class="en" lang="en">Visit site</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
           </div>
         </article>
-        <article class="work-card work-win">
-          <div class="work-win-inner">
-            <div class="work-chrome" aria-hidden="true"><span></span><span></span><span></span></div>
-            <div class="work-media"><span class="work-badge"><span class="fr" lang="fr">SaaS</span><span class="en" lang="en">SaaS</span></span><img src="work-digitalcampus.jpg" alt="Digital Campus — Plateforme SaaS" loading="lazy" width="1200" height="900"></div>
-          </div>
-          <div class="work-body">
-            <span class="work-category"><span class="fr" lang="fr">Plateforme SaaS</span><span class="en" lang="en">SaaS platform</span></span>
+        <article class="proj">
+          <div class="proj-img"><span class="badge"><span class="fr" lang="fr">SaaS</span><span class="en" lang="en">SaaS</span></span><img src="work-digitalcampus.jpg" alt="Digital Campus — Plateforme SaaS" loading="lazy" width="1200" height="900"></div>
+          <div class="proj-txt">
+            <p class="proj-cat"><span class="fr" lang="fr">Plateforme SaaS</span><span class="en" lang="en">SaaS platform</span></p>
             <h3>Digital Campus</h3>
-            <p><span class="fr" lang="fr">Campus numérique pour écoles et universités : cours, ressources, annonces, espaces étudiants et enseignants, avec des données séparées par établissement.</span><span class="en" lang="en">Digital campus for schools and universities: courses, resources, announcements, student and teacher portals, with data kept separate per institution.</span></p>
-            <div class="work-link-row">
-              <a class="work-link" href="#contact"><span class="fr" lang="fr">Demander une démo</span><span class="en" lang="en">Request a demo</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-            </div>
+            <p class="proj-desc"><span class="fr" lang="fr">Campus numérique pour écoles et universités : cours, ressources, annonces, espaces étudiants et enseignants, avec des données séparées par établissement.</span><span class="en" lang="en">Digital campus for schools and universities: courses, resources, announcements, student and teacher portals, with data kept separate per institution.</span></p>
+            <div class="proj-links"><a href="#contact"><span class="fr" lang="fr">Demander une démo</span><span class="en" lang="en">Request a demo</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
           </div>
         </article>
-        <article class="work-card work-win work-wide">
-          <div class="work-win-inner">
-            <div class="work-chrome" aria-hidden="true"><span></span><span></span><span></span></div>
-            <div class="work-media"><span class="work-badge">SaaS</span><img src="work-scolpay.jpg" alt="ScolPay — Plateforme SaaS de gestion scolaire" loading="lazy" width="1200" height="900"></div>
-          </div>
-          <div class="work-body">
-            <span class="work-category"><span class="fr" lang="fr">Plateforme SaaS · Gestion scolaire</span><span class="en" lang="en">SaaS platform · School management</span></span>
+        <article class="proj">
+          <div class="proj-img"><span class="badge">SaaS</span><img src="work-scolpay.jpg" alt="ScolPay — Plateforme SaaS de gestion scolaire" loading="lazy" width="1200" height="900"></div>
+          <div class="proj-txt">
+            <p class="proj-cat"><span class="fr" lang="fr">Plateforme SaaS · Gestion scolaire</span><span class="en" lang="en">SaaS platform · School management</span></p>
             <h3>ScolPay</h3>
-            <p><span class="fr" lang="fr">Logiciel en ligne pour les écoles privées : élèves, classes, frais de scolarité, paiements, reçus et rapports financiers, avec un espace pour le directeur et un pour le caissier.</span><span class="en" lang="en">Online software for private schools: students, classes, tuition fees, payments, receipts and financial reports, with separate access for the director and the cashier.</span></p>
-            <div class="work-link-row">
-              <a class="work-link" href="https://www.scolpay.com" target="_blank" rel="noopener"><span class="fr" lang="fr">Voir le site</span><span class="en" lang="en">Visit site</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-            </div>
+            <p class="proj-desc"><span class="fr" lang="fr">Logiciel en ligne pour les écoles privées : élèves, classes, frais de scolarité, paiements, reçus et rapports financiers, avec un espace pour le directeur et un pour le caissier.</span><span class="en" lang="en">Online software for private schools: students, classes, tuition fees, payments, receipts and financial reports, with separate access for the director and the cashier.</span></p>
+            <div class="proj-links"><a href="https://www.scolpay.com" target="_blank" rel="noopener"><span class="fr" lang="fr">Voir le site</span><span class="en" lang="en">Visit site</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
           </div>
         </article>
       </div>
-      <div class="work-cta reveal"><a href="#contact" class="btn btn-primary"><span class="fr" lang="fr">Je veux un site comme ça</span><span class="en" lang="en">I want a site like this</span></a></div>
+      <div class="sec-cta"><a href="#contact" class="btn btn-ink"><span class="fr" lang="fr">Je veux un site comme ça</span><span class="en" lang="en">I want a site like this</span></a></div>
     </div>
   </section>
-  <!-- TÉMOIGNAGE -->
-  <section class="section testi-section" id="temoignages">
+
+  <section class="sec sec-mist" id="temoignages">
     <div class="wrap">
-      <div class="section-head reveal">
-        <div class="eyebrow"><span class="fr" lang="fr">TÉMOIGNAGE</span><span class="en" lang="en">TESTIMONIAL</span></div>
-        <h2><span class="fr" lang="fr">Ce que disent nos clients</span><span class="en" lang="en">What our clients say</span></h2>
-      </div>
-      <figure class="testi-card reveal">
-        <div class="testi-photo">
-          <img src="temoignage-ipstg.jpg" alt="DG Maïga, fondateur d'IPSTG-LEADER" loading="lazy" width="800" height="1000">
-          <span class="testi-client">IPSTG-LEADER</span>
-        </div>
-        <div class="testi-body">
-          <svg class="testi-mark" viewBox="0 0 48 36" aria-hidden="true"><path fill="currentColor" d="M0 36V22.6C0 9.9 6.6 2.4 19.7 0l2.1 5.1C14.6 7 11 11.2 10.7 17.4H20V36H0zm28 0V22.6C28 9.9 34.6 2.4 47.7 0l2.1 5.1C42.6 7 39 11.2 38.7 17.4H48V36H28z"/></svg>
+      <h2 class="sr-only"><span class="fr" lang="fr">Témoignage</span><span class="en" lang="en">Testimonial</span></h2>
+      <figure class="quote">
+        <div class="quote-photo"><img src="temoignage-ipstg.jpg" alt="DG Maïga, fondateur d'IPSTG-LEADER" loading="lazy" width="800" height="1000"></div>
+        <div class="quote-body">
           <blockquote><p><span class="fr" lang="fr">Nous tenons à exprimer toute notre satisfaction suite à la réalisation de notre site web officiel <a href="https://www.ipstgleader.com" target="_blank" rel="noopener">www.ipstgleader.com</a> par M. Amadou Rouga. Professionnalisme, écoute, réactivité et sens du détail.</span><span class="en" lang="en">We would like to express our full satisfaction with the creation of our official website <a href="https://www.ipstgleader.com" target="_blank" rel="noopener">www.ipstgleader.com</a> by Mr Amadou Rouga. Professionalism, attentiveness, responsiveness and an eye for detail.</span></p><p><span class="fr" lang="fr">M. Rouga n'a pas simplement créé un site web, il a su traduire l'âme et la vision de notre école de prestige, IPSTG-LEADER : <em>Former les Leaders de Demain</em>. Le résultat dépasse nos attentes : un site moderne, rapide, élégant et parfaitement à l'image de l'excellence que nous prônons.</span><span class="en" lang="en">Mr Rouga did not simply build a website: he captured the soul and vision of our prestigious school, IPSTG-LEADER: <em>Training the Leaders of Tomorrow</em>. The result exceeds our expectations: a modern, fast, elegant website that perfectly reflects the excellence we stand for.</span></p><p><span class="fr" lang="fr">Nous recommandons vivement M. Amadou Rouga à toute entreprise ou institution qui recherche un travail de qualité supérieure.</span><span class="en" lang="en">We highly recommend Mr Amadou Rouga to any company or institution looking for top-quality work.</span></p></blockquote>
           <figcaption>
             <strong>DG Maïga</strong>
-            <span><span class="fr" lang="fr">Fondateur — IPSTG-LEADER, École de Prestige</span><span class="en" lang="en">Founder — IPSTG-LEADER, School of Excellence</span></span>
+            <span><span class="fr" lang="fr">Fondateur, IPSTG-LEADER, École de Prestige</span><span class="en" lang="en">Founder, IPSTG-LEADER, School of Excellence</span></span>
           </figcaption>
-          <a class="cap-link testi-link" href="https://www.ipstgleader.com" target="_blank" rel="noopener"><span class="fr" lang="fr">Voir le site réalisé</span><span class="en" lang="en">See the website</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
         </div>
       </figure>
     </div>
   </section>
 
-  <!-- 02 — SERVICES -->
-  <section class="section" id="solutions">
+  <section class="sec sec-ink" id="solutions">
     <div class="wrap">
-      <div class="section-head reveal">
-        <div class="eyebrow">SERVICES</div>
+      <div class="sec-head">
         <h2><span class="fr" lang="fr">Ce que nous créons pour vous</span><span class="en" lang="en">What we build for you</span></h2>
-        <p class="section-sub"><span class="fr" lang="fr">Deux métiers, un objectif : vous donner des outils digitaux professionnels qui travaillent pour votre activité.</span><span class="en" lang="en">Two crafts, one goal: giving you professional digital tools that work for your business.</span></p>
+        <p><span class="fr" lang="fr">Deux métiers, un objectif : des outils digitaux professionnels qui travaillent pour votre activité.</span><span class="en" lang="en">Two crafts, one goal: professional digital tools that work for your business.</span></p>
       </div>
-      <div class="svc2-grid">
-        <article class="svc2-card reveal">
-          <div class="svc2-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 8h18M8 21h8M12 18v3"/></svg></div>
+      <div class="svc-grid">
+        <div class="svc">
           <h3><span class="fr" lang="fr">Sites web</span><span class="en" lang="en">Websites</span></h3>
           <p><span class="fr" lang="fr">Un site professionnel, rapide et clair, qui présente votre activité et transforme les visiteurs en prospects.</span><span class="en" lang="en">A fast, clear, professional website that presents your activity and turns visitors into leads.</span></p>
-          <ul class="svc2-list"><li><span class="fr" lang="fr">Site vitrine d'entreprise</span><span class="en" lang="en">Business website</span></li><li><span class="fr" lang="fr">Site institutionnel (écoles, organismes)</span><span class="en" lang="en">Institutional website (schools, organizations)</span></li><li><span class="fr" lang="fr">Site de coach et page de vente</span><span class="en" lang="en">Coach website and sales page</span></li><li><span class="fr" lang="fr">Adapté au mobile, bilingue, visible sur Google</span><span class="en" lang="en">Mobile-ready, bilingual, visible on Google</span></li></ul>
-          <a class="cap-link" href="/solutions/websites/"><span class="fr" lang="fr">En savoir plus</span><span class="en" lang="en">Learn more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-        </article>
-        <article class="svc2-card reveal">
-          <div class="svc2-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg></div>
+          <ul><li><span class="fr" lang="fr">Site vitrine d'entreprise</span><span class="en" lang="en">Business website</span></li><li><span class="fr" lang="fr">Site institutionnel (écoles, organismes)</span><span class="en" lang="en">Institutional website (schools, organizations)</span></li><li><span class="fr" lang="fr">Site de coach et page de vente</span><span class="en" lang="en">Coach website and sales page</span></li><li><span class="fr" lang="fr">Adapté au mobile, bilingue, visible sur Google</span><span class="en" lang="en">Mobile-ready, bilingual, visible on Google</span></li></ul>
+          <a class="link-light" href="/solutions/websites/"><span class="fr" lang="fr">En savoir plus sur les sites web</span><span class="en" lang="en">More about websites</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+        <div class="svc">
           <h3><span class="fr" lang="fr">Plateformes SaaS</span><span class="en" lang="en">SaaS platforms</span></h3>
-          <p><span class="fr" lang="fr">Des logiciels en ligne sur mesure pour gérer votre activité, vos clients et vos paiements au même endroit. Exemple : Digital Campus.</span><span class="en" lang="en">Custom online software to manage your operations, customers and payments in one place. Example: Digital Campus.</span></p>
-          <ul class="svc2-list"><li><span class="fr" lang="fr">Logiciel de gestion sur mesure</span><span class="en" lang="en">Custom management software</span></li><li><span class="fr" lang="fr">Campus numérique et gestion scolaire</span><span class="en" lang="en">Digital campus and school management</span></li><li><span class="fr" lang="fr">Espaces clients et tableaux de bord</span><span class="en" lang="en">Client portals and dashboards</span></li><li><span class="fr" lang="fr">Automatisation des tâches répétitives</span><span class="en" lang="en">Automation of repetitive tasks</span></li></ul>
-          <a class="cap-link" href="/solutions/saas/"><span class="fr" lang="fr">En savoir plus</span><span class="en" lang="en">Learn more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-        </article>
+          <p><span class="fr" lang="fr">Des logiciels en ligne sur mesure pour gérer votre activité, vos clients et vos paiements au même endroit.</span><span class="en" lang="en">Custom online software to manage your operations, customers and payments in one place.</span></p>
+          <ul><li><span class="fr" lang="fr">Logiciel de gestion sur mesure</span><span class="en" lang="en">Custom management software</span></li><li><span class="fr" lang="fr">Campus numérique et gestion scolaire</span><span class="en" lang="en">Digital campus and school management</span></li><li><span class="fr" lang="fr">Espaces clients et tableaux de bord</span><span class="en" lang="en">Client portals and dashboards</span></li><li><span class="fr" lang="fr">Automatisation des tâches répétitives</span><span class="en" lang="en">Automation of repetitive tasks</span></li></ul>
+          <a class="link-light" href="/solutions/saas/"><span class="fr" lang="fr">En savoir plus sur les plateformes SaaS</span><span class="en" lang="en">More about SaaS platforms</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
       </div>
-      <p class="svc2-more reveal"><span class="fr" lang="fr">Aussi : agents IA, automatisation et e-commerce.</span><span class="en" lang="en">Also: AI agents, automation and e-commerce.</span> <a href="/solutions/"><span class="fr" lang="fr">Toutes nos solutions</span><span class="en" lang="en">All our solutions</span> →</a></p>
+      <p class="svc-more"><span class="fr" lang="fr">Nous réalisons aussi des agents IA, de l'automatisation et de l'e-commerce.</span><span class="en" lang="en">We also build AI agents, automation and e-commerce.</span> <a href="/solutions/"><span class="fr" lang="fr">Toutes nos solutions</span><span class="en" lang="en">All our solutions</span></a></p>
     </div>
   </section>
 
-  <!-- 03 — WHO WE SERVE -->
-  <section class="section" id="clients" style="background:var(--black-soft);">
+  <section class="sec" id="clients">
     <div class="wrap">
-      <div class="section-head reveal">
-        <div class="eyebrow"><span class="fr" lang="fr">POUR QUI</span><span class="en" lang="en">WHO WE SERVE</span></div>
+      <div class="sec-head">
         <h2><span class="fr" lang="fr">Pensé pour votre type d'activité</span><span class="en" lang="en">Built for your kind of organization</span></h2>
       </div>
       <div class="aud-grid">
-        <article class="aud-card reveal">
-          <div class="svc2-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></div>
-          <h3><span class="fr" lang="fr">Entreprises</span><span class="en" lang="en">Businesses</span></h3>
-          <p><span class="fr" lang="fr">Présenter vos services, rassurer vos clients et recevoir des demandes de devis.</span><span class="en" lang="en">Present your services, reassure customers and receive quote requests.</span></p>
-          
-        </article>
-        <article class="aud-card reveal">
-          <div class="svc2-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M4 21v-1a7 7 0 0 1 16 0v1"/></svg></div>
-          <h3><span class="fr" lang="fr">Coachs</span><span class="en" lang="en">Coaches</span></h3>
-          <p><span class="fr" lang="fr">Mettre en valeur votre expertise, vos programmes et vos événements, et remplir vos sessions.</span><span class="en" lang="en">Showcase your expertise, programs and events, and fill your sessions.</span></p>
-          <a class="cap-link" href="#work"><span class="fr" lang="fr">Exemples : Coach Marina, GCAP11</span><span class="en" lang="en">Examples: Coach Marina, GCAP11</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-        </article>
-        <article class="aud-card reveal">
-          <div class="svc2-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 4 2 10l10 6 10-6z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></div>
-          <h3><span class="fr" lang="fr">Institutions privées</span><span class="en" lang="en">Private institutions</span></h3>
-          <p><span class="fr" lang="fr">Écoles et instituts : présenter vos formations et faciliter les admissions.</span><span class="en" lang="en">Schools and institutes: present your programs and simplify admissions.</span></p>
-          <a class="cap-link" href="#work"><span class="fr" lang="fr">Exemples : IPHEC, IPSTG-LEADER</span><span class="en" lang="en">Examples: IPHEC, IPSTG-LEADER</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-        </article>
-        <article class="aud-card reveal">
-          <div class="svc2-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10M19 21V10M9 21V10M15 21V10M2 10l10-6 10 6"/></svg></div>
-          <h3><span class="fr" lang="fr">Institutions publiques</span><span class="en" lang="en">Public institutions</span></h3>
-          <p><span class="fr" lang="fr">Informer clairement les citoyens et rendre vos services accessibles en ligne.</span><span class="en" lang="en">Inform citizens clearly and make your services accessible online.</span></p>
-          
-        </article>
+        <div class="aud"><span class="aud-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg></span><h3><span class="fr" lang="fr">Entreprises</span><span class="en" lang="en">Businesses</span></h3><p><span class="fr" lang="fr">Présenter vos services, rassurer vos clients et recevoir des demandes de devis.</span><span class="en" lang="en">Present your services, reassure customers and receive quote requests.</span></p></div>
+        <div class="aud"><span class="aud-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M4 21v-1a7 7 0 0 1 16 0v1"/></svg></span><h3><span class="fr" lang="fr">Coachs</span><span class="en" lang="en">Coaches</span></h3><p><span class="fr" lang="fr">Mettre en valeur votre expertise, vos programmes et vos événements, et remplir vos sessions.</span><span class="en" lang="en">Showcase your expertise, programs and events, and fill your sessions.</span></p><a href="#work"><span class="fr" lang="fr">Exemples : Coach Marina, GCAP11</span><span class="en" lang="en">Examples: Coach Marina, GCAP11</span></a></div>
+        <div class="aud"><span class="aud-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 4 2 10l10 6 10-6z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></span><h3><span class="fr" lang="fr">Institutions privées</span><span class="en" lang="en">Private institutions</span></h3><p><span class="fr" lang="fr">Écoles et instituts : présenter vos formations et faciliter les admissions.</span><span class="en" lang="en">Schools and institutes: present your programs and simplify admissions.</span></p><a href="#work"><span class="fr" lang="fr">Exemples : IPHEC, IPSTG-LEADER</span><span class="en" lang="en">Examples: IPHEC, IPSTG-LEADER</span></a></div>
+        <div class="aud"><span class="aud-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10M19 21V10M9 21V10M15 21V10M2 10l10-6 10 6"/></svg></span><h3><span class="fr" lang="fr">Institutions publiques</span><span class="en" lang="en">Public institutions</span></h3><p><span class="fr" lang="fr">Informer clairement les citoyens et rendre vos services accessibles en ligne.</span><span class="en" lang="en">Inform citizens clearly and make your services accessible online.</span></p></div>
       </div>
     </div>
   </section>
 
-  <!-- 04 — PROCESS -->
-  <section class="section" id="process">
+  <section class="sec sec-mist" id="process">
     <div class="wrap">
-      <div class="section-head reveal">
-        <div class="eyebrow"><span class="fr" lang="fr">MÉTHODE</span><span class="en" lang="en">PROCESS</span></div>
+      <div class="sec-head">
         <h2><span class="fr" lang="fr">Votre projet en 4 étapes</span><span class="en" lang="en">Your project in 4 steps</span></h2>
       </div>
       <ol class="steps">
-        <li class="step reveal"><span class="step-num">01</span><h3><span class="fr" lang="fr">Échange</span><span class="en" lang="en">Discovery</span></h3><p><span class="fr" lang="fr">Vous nous parlez de votre activité et de vos objectifs.</span><span class="en" lang="en">You tell us about your activity and goals.</span></p></li>
-        <li class="step reveal"><span class="step-num">02</span><h3><span class="fr" lang="fr">Proposition</span><span class="en" lang="en">Proposal</span></h3><p><span class="fr" lang="fr">Nous vous envoyons une proposition claire avec le devis.</span><span class="en" lang="en">We send you a clear proposal with a quote.</span></p></li>
-        <li class="step reveal"><span class="step-num">03</span><h3><span class="fr" lang="fr">Conception</span><span class="en" lang="en">Build</span></h3><p><span class="fr" lang="fr">Nous créons votre site ou votre plateforme, vous validez chaque étape.</span><span class="en" lang="en">We build your site or platform; you approve each step.</span></p></li>
-        <li class="step reveal"><span class="step-num">04</span><h3><span class="fr" lang="fr">Mise en ligne</span><span class="en" lang="en">Launch</span></h3><p><span class="fr" lang="fr">Votre projet est publié et prêt à recevoir vos clients.</span><span class="en" lang="en">Your project goes live, ready for your customers.</span></p></li>
+        <li><span class="step-n">1</span><h3><span class="fr" lang="fr">Échange</span><span class="en" lang="en">Discovery</span></h3><p><span class="fr" lang="fr">Vous nous parlez de votre activité et de vos objectifs.</span><span class="en" lang="en">You tell us about your activity and goals.</span></p></li>
+        <li><span class="step-n">2</span><h3><span class="fr" lang="fr">Proposition</span><span class="en" lang="en">Proposal</span></h3><p><span class="fr" lang="fr">Nous vous envoyons une proposition claire avec le devis.</span><span class="en" lang="en">We send you a clear proposal with a quote.</span></p></li>
+        <li><span class="step-n">3</span><h3><span class="fr" lang="fr">Conception</span><span class="en" lang="en">Build</span></h3><p><span class="fr" lang="fr">Nous créons votre site ou votre plateforme, vous validez chaque étape.</span><span class="en" lang="en">We build your site or platform; you approve each step.</span></p></li>
+        <li><span class="step-n">4</span><h3><span class="fr" lang="fr">Mise en ligne</span><span class="en" lang="en">Launch</span></h3><p><span class="fr" lang="fr">Votre projet est publié et prêt à recevoir vos clients.</span><span class="en" lang="en">Your project goes live, ready for your customers.</span></p></li>
       </ol>
-      <div class="work-cta reveal"><a href="#contact" class="btn btn-primary"><span class="fr" lang="fr">Démarrer mon projet</span><span class="en" lang="en">Start my project</span></a></div>
+      <div class="sec-cta"><a href="#contact" class="btn btn-blue"><span class="fr" lang="fr">Démarrer mon projet</span><span class="en" lang="en">Start my project</span></a></div>
     </div>
   </section>
 
-  <!-- 07 — FOUNDER -->
-  <section class="section" id="founder" style="background:var(--black-soft);">
-    <div class="wrap">
-      <div class="founder-wrap">
-        <div class="founder-photo reveal founder-photo-frame">
-          <div class="founder-photo-glow" aria-hidden="true"></div>
-          <img src="founder-amadou.jpg" alt="Amadou Rouga Achirou" loading="lazy">
-        </div>
-        <div class="founder-text reveal">
-          <div class="eyebrow"><span class="fr" lang="fr">FONDATEUR</span><span class="en" lang="en">FOUNDER</span></div>
-          <h2 style="margin-top:14px; font-size:clamp(24px,3vw,34px);"><span class="fr" lang="fr">Construire la technologie avec une vision pour l'Afrique</span><span class="en" lang="en">Building technology with a vision for Africa</span></h2>
-          <div class="founder-role" style="margin-top:18px;">Founder &amp; CEO — ROUGATECH</div>
-          <h3 class="founder-name" style="font-size:clamp(22px,2.6vw,30px);">Amadou Rouga Achirou</h3>
-          <p><span class="fr" lang="fr">Amadou Rouga Achirou est le fondateur de ROUGATECH, une entreprise technologique africaine qui crée des sites web et des plateformes SaaS pour les entreprises, les coachs et les institutions, en Afrique et partout dans le monde.</span><span class="en" lang="en">Amadou Rouga Achirou is the founder of ROUGATECH, an African technology company building websites and SaaS platforms for businesses, coaches and institutions in Africa and around the world.</span></p>
-          <p style="color:var(--cream); font-size:17px; margin-top:16px; max-width:46ch;"><span class="fr" lang="fr">La technologie doit aider les entreprises africaines à mieux fonctionner, vendre davantage et construire l'avenir.</span><span class="en" lang="en">Technology should help African businesses operate better, sell more and build for the future.</span></p>
-          <div class="founder-ctas">
-            <a href="mailto:hello@rougatech.com" class="btn btn-primary"><span class="fr" lang="fr">Contacter Amadou</span><span class="en" lang="en">Contact Amadou</span></a>
-            <a href="#contact" class="btn btn-outline"><span class="fr" lang="fr">Écrire à ROUGATECH</span><span class="en" lang="en">Message ROUGATECH</span></a>
-          </div>
+  <section class="sec" id="founder">
+    <div class="wrap founder">
+      <div class="founder-photo"><img src="founder-amadou.jpg" alt="Amadou Rouga Achirou" loading="lazy"></div>
+      <div class="founder-text">
+        <h2><span class="fr" lang="fr">Construire la technologie avec une vision pour l'Afrique</span><span class="en" lang="en">Building technology with a vision for Africa</span></h2>
+        <p class="founder-name"><strong>Amadou Rouga Achirou</strong> <span>Founder &amp; CEO, ROUGATECH</span></p>
+        <p><span class="fr" lang="fr">Amadou Rouga Achirou est le fondateur de ROUGATECH, une entreprise technologique africaine qui crée des sites web et des plateformes SaaS pour les entreprises, les coachs et les institutions, en Afrique et partout dans le monde.</span><span class="en" lang="en">Amadou Rouga Achirou is the founder of ROUGATECH, an African technology company building websites and SaaS platforms for businesses, coaches and institutions in Africa and around the world.</span></p>
+        <p class="founder-vision"><span class="fr" lang="fr">La technologie doit aider les entreprises africaines à mieux fonctionner, vendre davantage et construire l'avenir.</span><span class="en" lang="en">Technology should help African businesses operate better, sell more and build for the future.</span></p>
+        <div class="founder-ctas">
+          <a href="mailto:hello@rougatech.com" class="btn btn-ink"><span class="fr" lang="fr">Contacter Amadou</span><span class="en" lang="en">Contact Amadou</span></a>
+          <a href="#contact" class="btn btn-ghost"><span class="fr" lang="fr">Écrire à ROUGATECH</span><span class="en" lang="en">Message ROUGATECH</span></a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 08 — CONTACT -->
-  <section class="section" id="faq">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div class="eyebrow">FAQ</div>
-        <h2><span class="fr" lang="fr">Questions fréquentes</span><span class="en" lang="en">Frequently asked questions</span></h2>
-      </div>
-      <div class="faq-list reveal">
+  <section class="sec sec-mist" id="faq">
+    <div class="wrap faq-wrap">
+      <div class="sec-head"><h2><span class="fr" lang="fr">Questions fréquentes</span><span class="en" lang="en">Frequently asked questions</span></h2></div>
+      <div class="faq-list">
         <details class="faq-item">
           <summary><span class="fr" lang="fr">Combien de temps faut-il pour créer mon site ?</span><span class="en" lang="en">How long does it take to build my website?</span><span class="faq-plus" aria-hidden="true"></span></summary>
           <p><span class="fr" lang="fr">Cela dépend de la taille du projet (nombre de pages, fonctionnalités). Après un premier échange, nous vous indiquons un délai précis dans le devis.</span><span class="en" lang="en">It depends on the size of the project (number of pages, features). After a first conversation, we give you a precise timeline in the quote.</span></p>
@@ -985,29 +386,22 @@
     </div>
   </section>
 
-  <section class="section" id="contact">
-    <div class="wrap">
-      <div class="contact-wrap">
-        <div class="contact-info reveal">
-          <div class="eyebrow">Contact</div>
-          <h2 style="margin-top:20px;"><span class="fr" lang="fr">Parlons de votre projet</span><span class="en" lang="en">Let's talk about your project</span></h2>
-          <p><span class="fr" lang="fr">Décrivez votre besoin en quelques lignes. Nous revenons vers vous avec une proposition adaptée.</span><span class="en" lang="en">Describe what you need in a few lines. We'll get back to you with a tailored proposal.</span></p>
-          <div class="contact-ctas">
-            <a href="https://wa.me/22791340905?text=Bonjour%20ROUGATECH%2C%20j%27ai%20un%20projet%20de%20site%20web%20/%20plateforme." target="_blank" rel="noopener" class="btn btn-primary btn-wa"><svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.1.8.8-3-.2-.3C4 15 3.6 13.5 3.6 12c0-4.6 3.8-8.4 8.4-8.4s8.4 3.8 8.4 8.4-3.8 8.2-8.4 8.2z"/></svg><span class="fr" lang="fr">Écrire sur WhatsApp</span><span class="en" lang="en">Chat on WhatsApp</span></a>
-            <a href="mailto:hello@rougatech.com" class="btn btn-outline"><span class="fr" lang="fr">Nous écrire par email</span><span class="en" lang="en">Email us</span></a>
-          </div>
-          <div class="contact-detail">
-            ROUGATECH<br>AFRIQUE · INTERNATIONAL<br>HELLO@ROUGATECH.COM<br>WHATSAPP : +227 91 34 09 05
-          </div>
-        </div>
-        <div class="form-card reveal">
-          <div class="form-card-glow" aria-hidden="true"></div>
-          <div class="form-card-head">
-            <span class="form-kicker"><span class="hl-dot" aria-hidden="true"></span><span class="fr" lang="fr">Demande de devis</span><span class="en" lang="en">Quote request</span></span>
-            <h3><span class="fr" lang="fr">Parlez-nous de votre projet</span><span class="en" lang="en">Tell us about your project</span></h3>
-            <p><span class="fr" lang="fr">Remplissez ce formulaire en une minute. Votre demande nous arrive directement.</span><span class="en" lang="en">Fill in this form in one minute. Your request comes straight to us.</span></p>
-          </div>
-          <form id="contact-form">
+  <section class="sec sec-blue" id="contact">
+    <div class="wrap contact">
+      <div class="contact-info">
+        <h2><span class="fr" lang="fr">Parlons de votre projet</span><span class="en" lang="en">Let's talk about your project</span></h2>
+        <p><span class="fr" lang="fr">Décrivez votre besoin en quelques lignes. Nous revenons vers vous avec une proposition adaptée.</span><span class="en" lang="en">Describe what you need in a few lines. We'll get back to you with a tailored proposal.</span></p>
+        <a href="https://wa.me/22791340905?text=Bonjour%20ROUGATECH%2C%20j%27ai%20un%20projet%20de%20site%20web%20/%20plateforme." target="_blank" rel="noopener" class="btn btn-white"><svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.1.8.8-3-.2-.3C4 15 3.6 13.5 3.6 12c0-4.6 3.8-8.4 8.4-8.4s8.4 3.8 8.4 8.4-3.8 8.2-8.4 8.2z"/></svg><span class="fr" lang="fr">Écrire sur WhatsApp</span><span class="en" lang="en">Chat on WhatsApp</span></a>
+        <dl class="contact-list">
+          <div><dt>Email</dt><dd><a href="mailto:hello@rougatech.com">hello@rougatech.com</a></dd></div>
+          <div><dt>WhatsApp</dt><dd><a href="https://wa.me/22791340905?text=Bonjour%20ROUGATECH%2C%20j%27ai%20un%20projet%20de%20site%20web%20/%20plateforme." target="_blank" rel="noopener">+227 91 34 09 05</a></dd></div>
+          <div><dt><span class="fr" lang="fr">Zone</span><span class="en" lang="en">Area</span></dt><dd><span class="fr" lang="fr">Afrique et international</span><span class="en" lang="en">Africa and worldwide</span></dd></div>
+        </dl>
+      </div>
+      <div class="form-card">
+        <h3><span class="fr" lang="fr">Demande de devis</span><span class="en" lang="en">Quote request</span></h3>
+        <p class="form-intro"><span class="fr" lang="fr">Une minute suffit. Votre demande nous arrive directement.</span><span class="en" lang="en">It takes one minute. Your request comes straight to us.</span></p>
+        <form id="contact-form">
             <div class="field-row">
               <div class="field">
                 <label for="f-name"><span class="fr" lang="fr">Nom</span><span class="en" lang="en">Name</span> <i class="req" aria-hidden="true">*</i></label>
@@ -1043,7 +437,6 @@
             <button type="submit" class="btn-send"><span class="fr" lang="fr">Envoyer ma demande</span><span class="en" lang="en">Send my request</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
             <p class="form-note" id="form-status" role="status" aria-live="polite"><span class="fr" lang="fr">Vous préférez WhatsApp ?</span><span class="en" lang="en">Prefer WhatsApp?</span> <a href="https://wa.me/22791340905?text=Bonjour%20ROUGATECH%2C%20j%27ai%20un%20projet%20de%20site%20web%20/%20plateforme." target="_blank" rel="noopener">+227 91 34 09 05</a></p>
           </form>
-        </div>
       </div>
     </div>
   </section>
@@ -1052,34 +445,31 @@
 
 <footer>
   <div class="wrap">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <div class="brand"><span class="logo-plate"><img src="logo.png" alt="ROUGATECH"></span></div>
-        <p><span class="fr" lang="fr">SITES WEB &amp; PLATEFORMES SAAS</span><span class="en" lang="en">WEBSITES &amp; SAAS PLATFORMS</span></p>
+    <div class="foot-top">
+      <div class="foot-brand">
+        <span class="foot-logo"><img src="logo.png" alt="ROUGATECH" width="400" height="133"></span>
+        <p><span class="fr" lang="fr">Sites web et plateformes SaaS pour les entreprises et les institutions.</span><span class="en" lang="en">Websites and SaaS platforms for businesses and institutions.</span></p>
       </div>
-      <div class="footer-nav">
-        <div class="footer-links">
-          <a href="#work"><span class="fr" lang="fr">Réalisations</span><span class="en" lang="en">Work</span></a>
-          <a href="#solutions">Services</a>
-          <a href="#process"><span class="fr" lang="fr">Méthode</span><span class="en" lang="en">Process</span></a>
-          <a href="#founder"><span class="fr" lang="fr">À propos</span><span class="en" lang="en">About</span></a>
-          <a href="#contact">Contact</a>
-        </div>
-        <div class="footer-contact">
-          Afrique · International<br>
-          <a href="mailto:hello@rougatech.com">hello@rougatech.com</a><br>
-          <a href="https://wa.me/22791340905?text=Bonjour%20ROUGATECH%2C%20j%27ai%20un%20projet%20de%20site%20web%20/%20plateforme." target="_blank" rel="noopener">WhatsApp : +227 91 34 09 05</a>
-        </div>
-        <div class="footer-more">
-          <span class="fr" lang="fr">Aussi&nbsp;:</span><span class="en" lang="en">Also:</span>
-          <a href="/solutions/">Solutions</a>·<a href="/industries/">Industries</a>·<a href="/academy/">Academy</a>·<a href="/blog/">Blog</a>
-        </div>
+      <nav class="foot-col" aria-label="Footer">
+        <a href="#work"><span class="fr" lang="fr">Réalisations</span><span class="en" lang="en">Work</span></a>
+        <a href="#solutions">Services</a>
+        <a href="#process"><span class="fr" lang="fr">Méthode</span><span class="en" lang="en">Process</span></a>
+        <a href="#founder"><span class="fr" lang="fr">À propos</span><span class="en" lang="en">About</span></a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <nav class="foot-col" aria-label="Plus">
+        <a href="/solutions/">Solutions</a>
+        <a href="/industries/">Industries</a>
+        <a href="/academy/">Academy</a>
+        <a href="/blog/">Blog</a>
+      </nav>
+      <div class="foot-col">
+        <a href="mailto:hello@rougatech.com">hello@rougatech.com</a>
+        <a href="https://wa.me/22791340905?text=Bonjour%20ROUGATECH%2C%20j%27ai%20un%20projet%20de%20site%20web%20/%20plateforme." target="_blank" rel="noopener">WhatsApp : +227 91 34 09 05</a>
+        <span><span class="fr" lang="fr">Afrique et international</span><span class="en" lang="en">Africa and worldwide</span></span>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 ROUGATECH. <span class="fr" lang="fr">Tous droits réservés.</span><span class="en" lang="en">All rights reserved.</span></span>
-      <span><span class="fr" lang="fr">SITES WEB &amp; PLATEFORMES SAAS</span><span class="en" lang="en">WEBSITES &amp; SAAS PLATFORMS</span></span>
-    </div>
+    <div class="foot-bottom">© 2026 ROUGATECH. <span class="fr" lang="fr">Tous droits réservés.</span><span class="en" lang="en">All rights reserved.</span></div>
   </div>
 </footer>
 
@@ -1130,16 +520,11 @@
     <span class="ai-ping" aria-hidden="true"></span>
   </button>
 </div>
-
 <script>
   const header = document.getElementById('site-header');
-  const fill = document.querySelector('#signal-line .fill');
   function onScroll(){
     const y = window.scrollY;
     header.classList.toggle('scrolled', y > 40);
-    const max = document.documentElement.scrollHeight - window.innerHeight;
-    const pct = max > 0 ? (y / max) * 100 : 0;
-    if(fill) fill.style.height = pct + '%';
   }
   window.addEventListener('scroll', onScroll, {passive:true});
   onScroll();
@@ -1158,38 +543,6 @@
     toggle.setAttribute('aria-expanded', false);
     document.body.classList.remove('nav-open');
   }));
-
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
-  }, {threshold:.05, rootMargin:"0px 0px -10% 0px"});
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-  // capability cards stagger animation
-  const capCards = document.querySelectorAll('#cap-grid .cap-card');
-  const capIo = new IntersectionObserver((entries) => {
-    entries.forEach((e, i) => {
-      if(e.isIntersecting){
-        const idx = Array.from(capCards).indexOf(e.target);
-        setTimeout(() => e.target.classList.add('in'), idx * 70);
-        capIo.unobserve(e.target);
-      }
-    });
-  }, {threshold:.15, rootMargin:"0px 0px -8% 0px"});
-  capCards.forEach(c => capIo.observe(c));
-
-  const canMagnet = window.matchMedia('(hover:hover) and (pointer:fine)').matches
-    && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(canMagnet){
-    document.querySelectorAll('.btn').forEach(btn => {
-      btn.addEventListener('mousemove', (e) => {
-        const r = btn.getBoundingClientRect();
-        const x = e.clientX - r.left - r.width/2;
-        const y = e.clientY - r.top - r.height/2;
-        btn.style.transform = `translate(${x*0.12}px, ${y*0.28}px)`;
-      });
-      btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
-    });
-  }
 
   // language switch
   const langButtons = document.querySelectorAll('[data-lang-btn]');
@@ -1214,7 +567,7 @@
   function showFormStatus(fr, en, ok){
     if(!formStatus) return;
     formStatus.innerHTML = '<span class="fr" lang="fr">' + fr + '</span><span class="en" lang="en">' + en + '</span>';
-    formStatus.style.color = ok ? '#4ADE80' : '#F87171';
+    formStatus.classList.toggle('is-error', !ok); formStatus.classList.toggle('is-ok', ok);
   }
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -1302,35 +655,11 @@
       setTimeout(openWidget, 3500);
     }
   })();
-</script>
 
-<!-- GSAP + ScrollTrigger + Lenis (vendored locally, no build step) — classic scripts, loaded after first paint -->
-<script>
-  (function(){
-    function loadScript(src){
-      return new Promise(function(resolve){
-        var s = document.createElement('script');
-        s.src = src; s.defer = true;
-        s.onload = resolve; s.onerror = resolve;
-        document.body.appendChild(s);
-      });
-    }
-    function boot(){
-      Promise.all([
-        loadScript('assets/vendor/gsap.min.js'),
-        loadScript('assets/vendor/ScrollTrigger.min.js'),
-        loadScript('assets/vendor/lenis.min.js')
-      ]).then(function(){
-        var m = document.createElement('script');
-        m.type = 'module';
-        m.src = 'assets/rougatech-engine.js';
-        document.body.appendChild(m);
-      });
-    }
-    if('requestIdleCallback' in window){ requestIdleCallback(boot, {timeout:1200}); }
-    else { setTimeout(boot, 200); }
-  })();
+  // Escape closes the mobile menu
+  document.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape' && nav.classList.contains('open')) toggle.click();
+  });
 </script>
-
 </body>
 </html>
