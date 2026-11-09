@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stock Market Investment : investir en bourse avec méthode | ROUGATECH Academy</title>
+<meta name="description" content="Formation Stock Market Investment : comprendre les actions et les indices, investir dans les grandes entreprises (Apple, Microsoft, Nvidia, Amazon), ETF, plateformes, analyse fondamentale et stratégie long terme. 19 000 FCFA au lieu de 40 000.">
+<link rel="canonical" href="https://rougatech.com/academy/stock-market-investment/">
+<meta property="og:title" content="Stock Market Investment | ROUGATECH Academy">
+<meta property="og:description" content="7 modules pour investir en bourse avec méthode : actions, indices, ETF, plateformes et stratégie long terme. 19 000 FCFA au lieu de 40 000 FCFA.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rougatech.com/academy/stock-market-investment/">
+<meta property="og:site_name" content="ROUGATECH Academy">
+<meta property="og:image" content="https://rougatech.com/academy/stock-market-investment/partage.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://rougatech.com/academy/stock-market-investment/partage.jpg">
+<meta name="theme-color" content="#F5F2EA">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Course","name":"Stock Market Investment","description":"Comprendre le marché boursier, investir dans les grandes entreprises, ETF et diversification, plateformes d'investissement, analyse fondamentale, gestion du portefeuille et stratégie à long terme.","inLanguage":"fr","instructor":{"@type":"Person","name":"Amadou Rouga"},"provider":{"@type":"Organization","name":"ROUGATECH Academy","url":"https://rougatech.com/academy/"},"offers":{"@type":"Offer","price":"19000","priceCurrency":"XOF","category":"Paid"}}
+</script>
+<style>
+  :root{
+    --paper:#F5F2EA; --paper2:#ECE6D8; --card:#FFFDF8;
+    --ink:#0E1A2B; --ink2:#1B2A3F; --muted:#56606D; --faint:#8B929B;
+    --line:#D8D0BF; --line2:#C7BDA8;
+    --green:#0B8A57; --green-hi:#10A86A; --green-bg:#E2F2E9; --red:#C2403A;
+    --f-display:"Instrument Serif",Georgia,"Times New Roman",serif;
+    --f-body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+    --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+    --ease:cubic-bezier(.2,.7,.2,1);
+  }
+  *,*::before,*::after{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth; -webkit-text-size-adjust:100%;}
+  body{background:var(--paper); color:var(--ink); font:400 16px/1.6 var(--f-body); -webkit-font-smoothing:antialiased; overflow-x:hidden; padding-bottom:84px;}
+  @media (min-width:900px){ body{padding-bottom:0;} }
+  img,svg{display:block; max-width:100%;}
+  a{color:inherit; text-decoration:none;}
+  ul{list-style:none;}
+  :focus-visible{outline:2px solid var(--green); outline-offset:3px; border-radius:6px;}
+  .wrap{width:100%; max-width:1180px; margin:0 auto; padding:0 clamp(18px,4vw,40px); position:relative; z-index:1;}
+  section{position:relative; padding:clamp(72px,10vw,120px) 0; overflow:hidden;}
+  .alt{background:var(--paper2);}
+  .dark{background:var(--ink); color:#F2EEE4;}
+
+  .kicker{display:inline-flex; align-items:center; gap:10px; font:700 11.5px/1.3 var(--f-mono); letter-spacing:.08em; text-transform:uppercase; color:var(--green);}
+  .kicker::before{content:""; width:8px; height:8px; background:var(--green); border-radius:2px;}
+  .dark .kicker{color:#5FD39C;} .dark .kicker::before{background:#5FD39C;}
+  .h2{font:400 clamp(38px,6vw,68px)/1 var(--f-display); letter-spacing:-.015em; margin-top:16px;}
+  .h2 em{font-style:italic; color:var(--green);}
+  .dark .h2 em{color:#5FD39C;}
+  .lead{font-size:clamp(16.5px,1.6vw,18.5px); line-height:1.65; color:var(--muted); margin-top:18px; max-width:60ch;}
+  .dark .lead{color:#AEB6C1;}
+  .lead strong{color:var(--ink);}
+  .center{text-align:center;} .center .lead{margin-left:auto; margin-right:auto;}
+  .sec-head{margin-bottom:clamp(36px,6vw,60px);}
+  .rule{height:1px; background:var(--ink); opacity:.85;}
+
+  /* buttons */
+  .btn{--h:56px; display:inline-flex; align-items:center; justify-content:center; gap:12px; min-height:var(--h); padding:14px 28px; border-radius:12px; border:0; cursor:pointer;
+    font:800 15px/1.25 var(--f-body); text-align:center; transition:transform .3s var(--ease), box-shadow .3s var(--ease), background .3s;}
+  .btn--go{background:var(--green); color:#fff; box-shadow:0 14px 30px -14px rgba(11,138,87,.75), inset 0 -3px 0 rgba(0,0,0,.18);}
+  .btn--go:hover{background:var(--green-hi); transform:translateY(-2px);}
+  .btn--sm{--h:42px; padding:0 16px; font-size:13.5px; border-radius:10px;}
+  .btn--block{width:100%;}
+  .wa-ic{width:20px; height:20px; flex:0 0 20px; background:currentColor;
+    -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.1.8.8-3-.2-.3C4 15 3.6 13.5 3.6 12c0-4.6 3.8-8.4 8.4-8.4s8.4 3.8 8.4 8.4-3.8 8.2-8.4 8.2z'/%3E%3C/svg%3E") center/contain no-repeat;
+            mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.1.8.8-3-.2-.3C4 15 3.6 13.5 3.6 12c0-4.6 3.8-8.4 8.4-8.4s8.4 3.8 8.4 8.4-3.8 8.2-8.4 8.2z'/%3E%3C/svg%3E") center/contain no-repeat;}
+  .cta-note{font:500 12px/1.4 var(--f-mono); color:var(--faint); margin-top:14px; text-align:center;}
+
+  /* nav */
+  .nav{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:18px clamp(18px,4vw,40px); max-width:1180px; margin:0 auto; position:relative; z-index:3;}
+  .brand{display:flex; align-items:center; gap:10px; font:700 12.5px/1 var(--f-mono); letter-spacing:.06em; text-transform:uppercase;}
+  .brand .plate{background:#fff; border:1px solid var(--line); border-radius:8px; padding:5px 8px; display:inline-flex;}
+  .brand .plate img{height:17px; width:auto; max-width:none;}
+  .brand em{font-style:normal; color:var(--green);}
+  .btn.nav-cta{display:none;}
+  @media (min-width:900px){ .btn.nav-cta{display:inline-flex;} }
+
+  /* hero */
+  .hero{padding:10px 0 0;}
+  .masthead{display:flex; justify-content:space-between; gap:12px; padding:10px 0; border-top:2px solid var(--ink); border-bottom:1px solid var(--ink); font:700 11px/1.3 var(--f-mono); letter-spacing:.06em; text-transform:uppercase; color:var(--ink2);}
+  .masthead span:nth-child(2){display:none;}
+  @media (min-width:760px){ .masthead span:nth-child(2){display:inline;} }
+  .hero-area{position:absolute; left:0; right:0; bottom:0; height:62%; z-index:0; pointer-events:none;}
+  .hero-area svg{width:100%; height:100%;}
+  .hero-grid{display:grid; gap:44px; padding:clamp(36px,5vw,56px) 0 clamp(64px,8vw,96px);}
+  @media (min-width:960px){ .hero-grid{grid-template-columns:1.1fr .9fr; align-items:center; gap:64px;} }
+  .hero-grid > *{min-width:0;}
+  .hero h1{font:400 clamp(56px,10.4vw,124px)/.9 var(--f-display); letter-spacing:-.025em; margin-top:18px;}
+  .hero h1 span{display:block;}
+  .hero h1 em{font-style:italic; color:var(--green);}
+  .hero .sub{font:700 clamp(18px,2vw,21px)/1.4 var(--f-body); margin-top:22px; max-width:30ch;}
+  .hero-meta{display:flex; flex-wrap:wrap; gap:8px; margin-top:26px;}
+  .hero-meta span{display:inline-flex; align-items:center; gap:8px; padding:9px 13px; border-radius:999px; background:var(--card); border:1px solid var(--line); font:700 13px/1 var(--f-body);}
+  .hero-meta span b{font:700 12px/1 var(--f-mono); color:var(--green);}
+
+  /* ticker */
+  .tape{position:relative; z-index:2; background:var(--ink); color:#E9E4D8; overflow:hidden; white-space:nowrap;}
+  .tape-track{display:inline-flex; padding:14px 0;}
+  .tape span{display:inline-flex; align-items:center; gap:10px; padding:0 22px; font:700 13px/1 var(--f-mono); letter-spacing:.05em; text-transform:uppercase;}
+  .tape span::before{content:""; width:7px; height:7px; border-radius:50%; background:#5FD39C;}
+  .tape span.i{color:#AEB6C1;}
+  .tape span.i::before{background:#E9C46A; border-radius:1px;}
+
+  /* offer card */
+  .offer{position:relative; border-radius:20px; padding:28px 24px 24px; background:var(--card); border:1.5px solid var(--ink); box-shadow:10px 10px 0 var(--ink);}
+  .offer-head{display:flex; align-items:center; justify-content:space-between; gap:10px; font:700 11px/1.2 var(--f-mono); letter-spacing:.06em; text-transform:uppercase; color:var(--muted); padding-bottom:14px; border-bottom:1px dashed var(--line2);}
+  .offer-head .pct{color:#fff; background:var(--red); padding:6px 9px; border-radius:6px;}
+  .price-old{margin-top:16px; font:600 13px/1.3 var(--f-mono); color:var(--faint);}
+  .price-old s{color:var(--muted); text-decoration-color:var(--red); text-decoration-thickness:2px;}
+  .price-new{font:400 clamp(66px,15vw,92px)/.9 var(--f-display); letter-spacing:-.02em; margin-top:6px;}
+  .price-new small{font:700 .2em/1 var(--f-mono); margin-left:8px; color:var(--green); vertical-align:.95em;}
+  .save{display:inline-flex; align-items:center; gap:8px; margin-top:10px; font:700 13px/1 var(--f-mono); color:var(--green); background:var(--green-bg); padding:8px 10px; border-radius:7px;}
+  .spark{display:block; width:100%; height:44px; margin-top:16px;}
+  .cd-label{margin-top:16px; font:700 11px/1.3 var(--f-mono); letter-spacing:.04em; text-transform:uppercase; color:var(--muted);}
+  .cd{display:flex; align-items:flex-start; gap:6px; margin-top:10px;}
+  .cd .u{flex:1; padding:11px 4px 9px; text-align:center; border-radius:10px; background:var(--ink); color:#fff;}
+  .cd .n{font:700 26px/1 var(--f-mono); font-variant-numeric:tabular-nums;}
+  .cd .l{font:700 9px/1 var(--f-mono); letter-spacing:.1em; text-transform:uppercase; color:#AEB6C1; margin-top:7px;}
+  .cd .sep{font:700 20px/1 var(--f-mono); color:var(--ink); padding-top:12px;}
+  .offer .btn{margin-top:20px;}
+  .ended-msg{display:none; margin-top:18px; font-size:15px; padding:14px; border-radius:12px; border:1px solid var(--line); background:var(--paper);}
+  body.offer-ended .ended-msg{display:block;}
+  body.offer-ended .promo-only{display:none !important;}
+
+  /* programme: tableau de cotation */
+  .board{border-top:2px solid var(--ink);}
+  .mrow{display:grid; grid-template-columns:66px 1fr; gap:6px 18px; padding:24px 0; border-bottom:1px solid var(--line2); align-items:start;}
+  @media (min-width:860px){ .mrow{grid-template-columns:70px 1.15fr 1fr 150px; align-items:center; gap:24px;} }
+  .mrow .no{font:700 12px/1 var(--f-mono); color:var(--green); padding-top:8px; white-space:nowrap;}
+  @media (min-width:860px){ .mrow .no{padding-top:0;} }
+  .mrow h3{font:400 clamp(26px,3.2vw,34px)/1.05 var(--f-display); letter-spacing:-.01em;}
+  .mrow p{grid-column:2; color:var(--muted); font-size:15.5px;}
+  @media (min-width:860px){ .mrow p{grid-column:auto;} }
+  .mrow svg{display:none;}
+  @media (min-width:860px){ .mrow svg{display:block; width:150px; height:42px;} }
+  .mrow:hover{background:linear-gradient(90deg,transparent,rgba(11,138,87,.06),transparent);}
+
+  /* simulateur */
+  .sim{display:grid; gap:28px; margin-top:8px;}
+  @media (min-width:960px){ .sim{grid-template-columns:380px 1fr; gap:40px; align-items:stretch;} }
+  .sim-ctrl{background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.12); border-radius:18px; padding:24px;}
+  .fld + .fld{margin-top:22px;}
+  .fld label{display:flex; justify-content:space-between; gap:10px; font:700 12px/1.3 var(--f-mono); text-transform:uppercase; letter-spacing:.04em; color:#AEB6C1;}
+  .fld label output{color:#fff; font-size:14px;}
+  input[type=range]{-webkit-appearance:none; appearance:none; width:100%; height:6px; border-radius:99px; background:rgba(255,255,255,.14); margin-top:14px; outline:none;}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none; width:22px; height:22px; border-radius:50%; background:#5FD39C; border:3px solid var(--ink); box-shadow:0 0 0 2px #5FD39C; cursor:pointer;}
+  input[type=range]::-moz-range-thumb{width:18px; height:18px; border-radius:50%; background:#5FD39C; border:3px solid var(--ink); cursor:pointer;}
+  .res{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:24px;}
+  .res div{padding:14px; border-radius:12px; background:rgba(255,255,255,.05);}
+  .res small{display:block; font:700 10.5px/1.3 var(--f-mono); text-transform:uppercase; letter-spacing:.04em; color:#AEB6C1;}
+  .res b{display:block; font:400 26px/1.1 var(--f-display); margin-top:6px; color:#fff;}
+  .res .tot{grid-column:1 / -1; background:rgba(95,211,156,.12);}
+  .res .tot b{font-size:40px; color:#5FD39C;}
+  .sim-chart{background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.12); border-radius:18px; padding:20px 18px 14px; display:flex; flex-direction:column;}
+  .sim-chart .legend{display:flex; flex-wrap:wrap; gap:6px 18px; font:500 11.5px/1.3 var(--f-mono); color:#AEB6C1;}
+  .sim-chart .legend i{display:inline-block; width:12px; height:12px; border-radius:3px; margin-right:7px; vertical-align:-2px;}
+  .bars{flex:1; min-height:260px; display:flex; align-items:flex-end; gap:3px; margin-top:16px; border-bottom:1px solid rgba(255,255,255,.18); position:relative;}
+  .bar{flex:1; display:flex; flex-direction:column-reverse; height:100%; min-width:0;}
+  .bar i{display:block; width:100%; transition:height .6s var(--ease);}
+  .bar .inv{background:#4A5A70; border-radius:0 0 2px 2px;}
+  .bar .gain{background:#5FD39C; border-radius:3px 3px 0 0;}
+  .xlab{display:flex; justify-content:space-between; font:500 11px/1 var(--f-mono); color:#7E8A99; margin-top:8px;}
+  .sim-note{font-size:13px; color:#8D97A4; margin-top:20px; max-width:80ch;}
+
+  /* diversification */
+  .div{display:grid; gap:40px; align-items:center;}
+  @media (min-width:900px){ .div{grid-template-columns:1fr 1fr; gap:64px;} }
+  .donut-wrap{position:relative; max-width:min(380px,82vw); margin:0 auto; width:100%;}
+  .donut-wrap svg{width:100%; height:auto; transform:rotate(-90deg);}
+  .donut-c{position:absolute; inset:0; display:grid; place-items:center; text-align:center;}
+  .donut-c b{display:block; font:400 46px/1 var(--f-display);}
+  .donut-c small{font:700 11px/1.3 var(--f-mono); text-transform:uppercase; color:var(--muted);}
+  .alloc{display:grid; gap:0; margin-top:26px; border-top:1px solid var(--line2);}
+  .alloc li{display:flex; align-items:center; gap:12px; padding:12px 0; border-bottom:1px solid var(--line2); font-weight:700; font-size:15px;}
+  .alloc li i{width:12px; height:12px; border-radius:3px; flex:0 0 auto;}
+  .alloc li span{margin-left:auto; font:700 13px/1 var(--f-mono); color:var(--muted);}
+  .tiny{font-size:12.5px; color:var(--faint); margin-top:12px;}
+
+  /* pour qui */
+  .for{display:grid; border-top:2px solid var(--ink);}
+  @media (min-width:760px){ .for{grid-template-columns:1fr 1fr; column-gap:48px;} }
+  .for li{display:flex; align-items:center; gap:16px; padding:18px 0; border-bottom:1px solid var(--line2); font-weight:700; font-size:16px;}
+  .for li .n{flex:0 0 auto; font:700 12px/1 var(--f-mono); color:#fff; background:var(--ink); padding:7px 8px; border-radius:6px;}
+
+  /* coach */
+  .coach{display:grid; gap:40px; align-items:center;}
+  @media (min-width:900px){ .coach{grid-template-columns:380px 1fr; gap:64px;} }
+  .coach-photo{position:relative; max-width:340px; margin:0 auto; width:100%;}
+  .coach-photo img{width:100%; aspect-ratio:4/5; object-fit:cover; object-position:top; border-radius:18px; border:1.5px solid var(--ink); box-shadow:10px 10px 0 var(--green);}
+  .coach-photo .badge{position:absolute; left:-10px; bottom:22px; background:var(--card); border:1.5px solid var(--ink); border-radius:12px; padding:10px 12px; font:700 11.5px/1.3 var(--f-mono); text-transform:uppercase;}
+  .coach-photo .badge b{color:var(--green);}
+  .coach-role{display:inline-flex; margin-top:14px; font:700 12.5px/1.3 var(--f-mono); color:var(--green); padding:8px 12px; border-radius:8px; background:var(--green-bg);}
+  .coach-text > p{color:var(--muted); margin-top:14px;}
+  .coach-text > p b{color:var(--ink);}
+
+  /* pricing */
+  .pricing{display:grid; gap:40px; align-items:center; max-width:1000px; margin:0 auto;}
+  @media (min-width:900px){ .pricing{grid-template-columns:1fr 440px; gap:56px;} }
+  .stack{border-top:2px solid var(--ink);}
+  .stack li{display:flex; justify-content:space-between; gap:14px; padding:15px 0; border-bottom:1px solid var(--line2); font-weight:700; font-size:15.5px;}
+  .stack li span:last-child{font:700 12.5px/1.6 var(--f-mono); color:var(--green); white-space:nowrap;}
+  .stack li.sum{border-bottom:2px solid var(--ink); font-size:17px;}
+  .stack li.sum span:last-child{color:var(--ink); font-size:15px;}
+
+  .risk{display:flex; gap:16px; max-width:860px; margin:0 auto; padding:22px 24px; border-radius:16px; border:1.5px solid var(--ink); background:var(--card); color:var(--muted); font-size:15px;}
+  .risk .ri{flex:0 0 auto; width:34px; height:34px; border-radius:8px; display:grid; place-items:center; background:var(--ink); color:#fff; font:700 17px/1 var(--f-mono);}
+  .risk b{color:var(--ink);}
+
+  /* faq */
+  .faq{max-width:820px; margin:0 auto; border-top:2px solid var(--ink);}
+  .faq details{border-bottom:1px solid var(--line2);}
+  .faq summary{list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:20px; padding:22px 0; font:700 17px/1.4 var(--f-body);}
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary::after{content:"+"; font:700 22px/1 var(--f-mono); color:var(--green); transition:transform .3s var(--ease);}
+  .faq details[open] summary::after{transform:rotate(45deg);}
+  .faq details p{padding:0 0 22px; color:var(--muted); font-size:15.5px; max-width:68ch;}
+
+  /* final */
+  .final{text-align:center;}
+  .final .h2{max-width:15ch; margin-left:auto; margin-right:auto;}
+  .final .offer{max-width:440px; margin:44px auto 0; text-align:left; color:var(--ink); box-shadow:10px 10px 0 #5FD39C;}
+  .final-area{position:absolute; left:0; right:0; bottom:0; height:55%; pointer-events:none; opacity:.5;}
+  .final-area svg{width:100%; height:100%;}
+
+  footer{border-top:1px solid var(--line2); padding:30px 0; text-align:center; font:500 12px/1.5 var(--f-mono); color:var(--faint);}
+  footer a{color:var(--ink);}
+
+  .sticky{position:fixed; left:0; right:0; bottom:0; z-index:60; display:flex; align-items:center; gap:12px; padding:10px 14px calc(10px + env(safe-area-inset-bottom)); background:rgba(245,242,234,.96); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-top:1.5px solid var(--ink); transform:translateY(110%); transition:transform .4s var(--ease);}
+  .sticky.show{transform:none;}
+  .sticky .sp{flex:0 0 auto; line-height:1;}
+  .sticky .sp s{font:500 11px/1 var(--f-mono); color:var(--faint);}
+  .sticky .sp b{display:block; font:400 26px/1 var(--f-display); margin-top:3px;}
+  .sticky .sp small{display:block; font:700 10px/1 var(--f-mono); color:var(--green); margin-top:4px; font-variant-numeric:tabular-nums;}
+  .sticky .btn{flex:1; --h:50px; padding:10px 14px; font-size:14px;}
+  @media (min-width:900px){ .sticky{display:none;} }
+
+  /* ===== animations (désactivées si l'utilisateur réduit les mouvements) ===== */
+  .rv{transition:opacity .8s var(--ease), transform .8s var(--ease);}
+  html.anim .rv{opacity:0; transform:translateY(22px);}
+  html.anim .rv.in{opacity:1; transform:none;}
+  html.anim .tape-track{animation:tape 40s linear infinite;}
+  @keyframes tape{to{transform:translateX(-50%)}}
+  html.anim .draw{stroke-dasharray:var(--len); stroke-dashoffset:var(--len); animation:draw 3.6s .3s var(--ease) forwards;}
+  html.anim .in .draw, html.anim .in.draw{animation-play-state:running;}
+  @keyframes draw{to{stroke-dashoffset:0}}
+  html.anim .fadearea{opacity:0; animation:fadein 1.4s 2.2s ease forwards;}
+  @keyframes fadein{to{opacity:1}}
+  html.anim .dot{animation:dotb 1.6s ease-in-out infinite;}
+  @keyframes dotb{50%{r:9; opacity:.5}}
+  html.anim .mrow .mline{stroke-dasharray:var(--len); stroke-dashoffset:var(--len); transition:stroke-dashoffset 1.6s var(--ease) .2s;}
+  html.anim .mrow.in .mline{stroke-dashoffset:0;}
+  html.anim .seg{transition:stroke-dasharray 1.2s var(--ease);}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="/academy/"><span class="plate"><img src="/logo.png" alt="ROUGATECH"></span>Rougatech <em>Academy</em></a>
+  <a class="btn btn--go btn--sm nav-cta" data-wa href="#"><span class="wa-ic" aria-hidden="true"></span>S'inscrire sur WhatsApp</a>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-area" aria-hidden="true"><svg id="heroArea" preserveAspectRatio="none"></svg></div>
+  <div class="wrap">
+    <div class="masthead"><span>Rougatech Academy · Formation bourse</span><span>Actions · Indices · ETF · Long terme</span><span id="today">Édition de la semaine</span></div>
+    <div class="hero-grid">
+      <div class="rv">
+        <span class="kicker">Nouvelle formation</span>
+        <h1><span>Stock Market</span><span><em>Investment</em></span></h1>
+        <p class="sub">Investissez dans les plus grandes entreprises du monde, avec méthode et sur le long terme.</p>
+        <p class="lead">Apple, Microsoft, Nvidia, Amazon… Apprenez à comprendre les actions et les indices, à choisir une plateforme, à construire un portefeuille diversifié et à faire travailler les intérêts composés pour vous.</p>
+        <div class="hero-meta">
+          <span><b>07</b> modules</span>
+          <span><b>ETF</b> diversification</span>
+          <span><b>∞</b> stratégie long terme</span>
+        </div>
+      </div>
+      <div class="offer rv" id="offer-hero">
+        <div class="offer-head"><span>Offre de lancement</span><span class="pct promo-only">−21 000 F</span></div>
+        <div class="price-old">Prix normal <s>40 000 FCFA</s></div>
+        <div class="price-new promo-only">19 000<small>FCFA</small></div>
+        <span class="save promo-only">▲ Vous économisez 21 000 FCFA</span>
+        <div class="cd-label promo-only">Les inscriptions de cette session ferment dans</div>
+        <div class="cd promo-only" data-cd="full" aria-live="off"></div>
+        <div class="ended-msg">L'offre à 19 000 FCFA est terminée. Écrivez-nous sur WhatsApp pour connaître la prochaine session.</div>
+        <a class="btn btn--go btn--block" data-wa href="#"><span class="wa-ic" aria-hidden="true"></span><span class="promo-only">Je profite de l'offre à 19 000 FCFA</span><span class="ended-only" style="display:none;">Être informé de la prochaine session</span></a>
+        <p class="cta-note">Réponse sur WhatsApp · inscription en quelques minutes</p>
+      </div>
+    </div>
+  </div>
+  <div class="tape" aria-hidden="true">
+    <div class="tape-track">
+      <span>Apple</span><span>Microsoft</span><span>Nvidia</span><span>Amazon</span><span class="i">S&amp;P 500</span><span>Alphabet</span><span>Meta</span><span class="i">Nasdaq 100</span><span>Tesla</span><span class="i">ETF monde</span><span class="i">Dividendes</span><span class="i">Intérêts composés</span>
+      <span>Apple</span><span>Microsoft</span><span>Nvidia</span><span>Amazon</span><span class="i">S&amp;P 500</span><span>Alphabet</span><span>Meta</span><span class="i">Nasdaq 100</span><span>Tesla</span><span class="i">ETF monde</span><span class="i">Dividendes</span><span class="i">Intérêts composés</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMME -->
+<section id="programme">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">Le programme</span>
+      <h2 class="h2">7 modules pour passer de débutant<br>à <em>investisseur méthodique</em></h2>
+      <p class="lead">Chaque module se lit comme une ligne de cotation&nbsp;: une compétence claire, que vous ajoutez à votre portefeuille de connaissances.</p>
+    </div>
+    <div class="board">
+      <div class="mrow rv"><span class="no">MOD. 01</span><h3>Introduction au marché boursier</h3><p>Comprendre les actions et les indices&nbsp;: comment fonctionne la bourse et ce que vous achetez vraiment.</p><svg viewBox="0 0 150 42" data-spark="1" aria-hidden="true"></svg></div>
+      <div class="mrow rv"><span class="no">MOD. 02</span><h3>Investir dans les grandes entreprises</h3><p>Apple, Microsoft, Nvidia, Amazon… comment investir dans les leaders mondiaux.</p><svg viewBox="0 0 150 42" data-spark="2" aria-hidden="true"></svg></div>
+      <div class="mrow rv"><span class="no">MOD. 03</span><h3>ETF et diversification</h3><p>Construire un portefeuille équilibré au lieu de tout miser sur une seule action.</p><svg viewBox="0 0 150 42" data-spark="3" aria-hidden="true"></svg></div>
+      <div class="mrow rv"><span class="no">MOD. 04</span><h3>Plateformes d'investissement</h3><p>Courtiers, ouverture de compte et passage de vos premières transactions.</p><svg viewBox="0 0 150 42" data-spark="4" aria-hidden="true"></svg></div>
+      <div class="mrow rv"><span class="no">MOD. 05</span><h3>Analyse fondamentale</h3><p>Comprendre une entreprise avant d'y investir&nbsp;: activité, chiffres, solidité.</p><svg viewBox="0 0 150 42" data-spark="5" aria-hidden="true"></svg></div>
+      <div class="mrow rv"><span class="no">MOD. 06</span><h3>Gestion du portefeuille</h3><p>Risque, capital et horizon d'investissement&nbsp;: protéger et faire grandir votre argent.</p><svg viewBox="0 0 150 42" data-spark="6" aria-hidden="true"></svg></div>
+      <div class="mrow rv"><span class="no">MOD. 07</span><h3>Construire une stratégie à long terme</h3><p>Investissement régulier et intérêts composés&nbsp;: la méthode qui travaille pour vous.</p><svg viewBox="0 0 150 42" data-spark="7" aria-hidden="true"></svg></div>
+    </div>
+    <div class="center rv" style="margin-top:44px;"><a class="btn btn--go" data-wa href="#"><span class="wa-ic" aria-hidden="true"></span>Je veux suivre ce programme</a></div>
+  </div>
+</section>
+
+<!-- SIMULATEUR -->
+<section class="dark" id="simulateur">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">Simulateur · Module 07</span>
+      <h2 class="h2">La force des <em>intérêts composés</em></h2>
+      <p class="lead">Bougez les curseurs pour voir comment un investissement régulier peut grandir avec le temps. C'est le principe que vous apprendrez à utiliser dans le dernier module.</p>
+    </div>
+    <div class="sim rv">
+      <div class="sim-ctrl">
+        <div class="fld"><label for="sMonth">Montant par mois <output id="oMonth">25 000 F</output></label><input type="range" id="sMonth" min="5000" max="200000" step="5000" value="25000"></div>
+        <div class="fld"><label for="sYears">Durée <output id="oYears">15 ans</output></label><input type="range" id="sYears" min="1" max="30" step="1" value="15"></div>
+        <div class="fld"><label for="sRate">Rendement annuel supposé <output id="oRate">7 %</output></label><input type="range" id="sRate" min="2" max="12" step="0.5" value="7"></div>
+        <div class="res">
+          <div><small>Total versé</small><b id="rInv">—</b></div>
+          <div><small>Gains simulés</small><b id="rGain">—</b></div>
+          <div class="tot"><small>Valeur estimée</small><b id="rTot">—</b></div>
+        </div>
+      </div>
+      <div class="sim-chart" aria-hidden="true">
+        <div class="legend"><span><i style="background:#4A5A70"></i>Argent versé</span><span><i style="background:#5FD39C"></i>Intérêts composés</span></div>
+        <div class="bars" id="bars"></div>
+        <div class="xlab"><span>Année 1</span><span id="xEnd">Année 15</span></div>
+      </div>
+    </div>
+    <p class="sim-note">Simulation théorique à rendement constant, pour illustrer le principe des intérêts composés. Les marchés ne montent pas en ligne droite&nbsp;: les rendements réels varient chaque année, peuvent être négatifs, et les performances passées ne garantissent pas les performances futures.</p>
+  </div>
+</section>
+
+<!-- DIVERSIFICATION -->
+<section class="alt">
+  <div class="wrap div">
+    <div class="rv">
+      <span class="kicker">ETF et diversification · Module 03</span>
+      <h2 class="h2">Ne mettez pas tous vos œufs <em>dans le même panier</em></h2>
+      <p class="lead">Un ETF vous permet d'acheter en une seule fois des centaines d'entreprises de secteurs différents. Vous apprendrez à construire un portefeuille qui répartit le risque selon vos objectifs.</p>
+      <ul class="alloc">
+        <li><i style="background:#0E1A2B"></i>Technologie<span>30 %</span></li>
+        <li><i style="background:#0B8A57"></i>Santé<span>15 %</span></li>
+        <li><i style="background:#E9C46A"></i>Finance<span>15 %</span></li>
+        <li><i style="background:#C2403A"></i>Consommation<span>15 %</span></li>
+        <li><i style="background:#6C8CB5"></i>Industrie<span>12 %</span></li>
+        <li><i style="background:#B9AF9A"></i>Autres secteurs<span>13 %</span></li>
+      </ul>
+      <p class="tiny">Répartition donnée à titre d'exemple pédagogique, pas une recommandation.</p>
+    </div>
+    <div class="donut-wrap rv" id="donutWrap" aria-hidden="true">
+      <svg viewBox="0 0 200 200" id="donut"></svg>
+      <div class="donut-c"><div><b>1 ETF</b><small>des centaines<br>d'entreprises</small></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- POUR QUI -->
+<section>
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">Pour qui&nbsp;?</span>
+      <h2 class="h2">Cette formation est faite <em>pour vous si…</em></h2>
+    </div>
+    <ul class="for rv">
+      <li><span class="n">01</span>Vous voulez enfin comprendre comment fonctionne la bourse</li>
+      <li><span class="n">02</span>Vous voulez devenir actionnaire des grandes entreprises mondiales</li>
+      <li><span class="n">03</span>Vous ne savez pas quelle plateforme choisir ni comment ouvrir un compte</li>
+      <li><span class="n">04</span>Vous voulez investir pour le long terme plutôt que spéculer</li>
+      <li><span class="n">05</span>Vous voulez faire travailler votre argent avec une méthode claire</li>
+      <li><span class="n">06</span>Vous débutez&nbsp;: aucune connaissance préalable n'est nécessaire</li>
+    </ul>
+  </div>
+</section>
+
+<!-- FORMATEUR -->
+<section class="alt" id="formateur">
+  <div class="wrap">
+    <div class="coach">
+      <div class="coach-photo rv">
+        <img src="/founder-amadou.jpg" alt="Amadou Rouga, formateur Stock Market Investment" loading="lazy">
+        <span class="badge">Formateur · <b>Rougatech Academy</b></span>
+      </div>
+      <div class="coach-text rv">
+        <span class="kicker">Votre formateur</span>
+        <h2 class="h2">Qui va <em>vous former&nbsp;?</em></h2>
+        <span class="coach-role">Amadou Rouga · fondateur de ROUGATECH</span>
+        <p>Amadou Rouga est investisseur et fondateur de ROUGATECH. Il intervient sur l'intelligence artificielle à la télévision depuis 2023 et forme, à travers ROUGATECH Academy, des débutants à l'investissement et aux outils numériques.</p>
+        <p>Sa méthode est <b>pratique et pédagogique</b>&nbsp;: expliquer simplement ce qu'est une action, un indice ou un ETF, puis vous montrer pas à pas comment passer à l'action sur une vraie plateforme.</p>
+        <p>Avec Stock Market Investment, son objectif est de vous rendre <b>autonome</b>&nbsp;: comprendre ce que vous achetez, gérer votre risque et construire une stratégie qui tient sur plusieurs années.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRIX -->
+<section id="offre">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <span class="kicker">L'offre</span>
+      <h2 class="h2">Tout ce que vous obtenez <em>pour 19 000 FCFA</em></h2>
+    </div>
+    <div class="pricing">
+      <ul class="stack rv">
+        <li><span>Module 1&nbsp;: Introduction au marché boursier</span><span>✓ inclus</span></li>
+        <li><span>Module 2&nbsp;: Investir dans les grandes entreprises</span><span>✓ inclus</span></li>
+        <li><span>Module 3&nbsp;: ETF et diversification</span><span>✓ inclus</span></li>
+        <li><span>Module 4&nbsp;: Plateformes d'investissement</span><span>✓ inclus</span></li>
+        <li><span>Module 5&nbsp;: Analyse fondamentale</span><span>✓ inclus</span></li>
+        <li><span>Module 6&nbsp;: Gestion du portefeuille</span><span>✓ inclus</span></li>
+        <li><span>Module 7&nbsp;: Stratégie à long terme</span><span>✓ inclus</span></li>
+        <li class="sum"><span>Prix normal</span><span><s>40 000 FCFA</s></span></li>
+      </ul>
+      <div class="offer rv">
+        <div class="offer-head"><span>Session de la semaine</span><span class="pct promo-only">−21 000 F</span></div>
+        <div class="price-old">Prix normal <s>40 000 FCFA</s></div>
+        <div class="price-new promo-only">19 000<small>FCFA</small></div>
+        <span class="save promo-only">▲ Moins de 2 800 FCFA par module</span>
+        <div class="cd-label promo-only">Les inscriptions de cette session ferment dans</div>
+        <div class="cd promo-only" data-cd="full" aria-live="off"></div>
+        <div class="ended-msg">L'offre à 19 000 FCFA est terminée. Écrivez-nous sur WhatsApp pour connaître la prochaine session.</div>
+        <a class="btn btn--go btn--block" data-wa href="#"><span class="wa-ic" aria-hidden="true"></span><span class="promo-only">Je profite de l'offre à 19 000 FCFA</span><span class="ended-only" style="display:none;">Être informé de la prochaine session</span></a>
+        <p class="cta-note">Réponse sur WhatsApp · inscription en quelques minutes</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RISQUES -->
+<section style="padding-top:0;">
+  <div class="wrap">
+    <p class="risk rv"><span class="ri" aria-hidden="true">!</span><span><b>À savoir avant d'investir&nbsp;:</b> investir en bourse comporte un risque de perte en capital. La valeur des actions et des ETF peut baisser, parfois fortement. Cette formation transmet des connaissances et des méthodes&nbsp;; elle ne constitue pas un conseil financier personnalisé et ne garantit aucun gain. Les entreprises citées le sont à titre d'exemple, pas comme recommandation d'achat.</span></p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <span class="kicker">FAQ</span>
+      <h2 class="h2">Vos questions, <em>nos réponses</em></h2>
+    </div>
+    <div class="faq rv">
+      <details><summary>Je n'y connais rien, est-ce pour moi&nbsp;?</summary><p>Oui. Le premier module part de zéro&nbsp;: ce qu'est une action, un indice, et comment fonctionne la bourse. La suite avance étape par étape jusqu'à votre stratégie à long terme.</p></details>
+      <details><summary>Puis-je investir depuis l'Afrique&nbsp;?</summary><p>Le module 4 présente les plateformes d'investissement et vous apprend à vérifier qu'un courtier est réglementé et accepte les résidents de votre pays. Les conditions varient d'une plateforme et d'un pays à l'autre.</p></details>
+      <details><summary>Faut-il beaucoup d'argent pour commencer&nbsp;?</summary><p>Non. Selon la plateforme, il est possible de commencer avec de petits montants, parfois en achetant des fractions d'actions. La formation vous aide à définir un montant adapté à votre budget et à votre horizon.</p></details>
+      <details><summary>Est-ce que je vais forcément gagner de l'argent&nbsp;?</summary><p>Non, et personne ne peut le garantir. La bourse comporte un risque de perte. La formation vous apprend à comprendre ce que vous achetez, à diversifier et à gérer votre risque pour investir avec méthode.</p></details>
+      <details><summary>Combien coûte la formation&nbsp;?</summary><p>Le prix normal est de 40 000 FCFA. Avec l'offre en cours, elle est à 19 000 FCFA, soit 21 000 FCFA d'économie.</p></details>
+      <details><summary>Comment fonctionnent les sessions&nbsp;?</summary><p>Une nouvelle session démarre chaque semaine. Les inscriptions de la session en cours ferment le dimanche à 23h59 (heure du Niger), comme indiqué par le compte à rebours. Passé ce délai, vous serez inscrit à la session suivante.</p></details>
+      <details><summary>Comment s'inscrire&nbsp;?</summary><p>Cliquez sur l'un des boutons WhatsApp de la page&nbsp;: un message est déjà préparé. Notre équipe vous explique comment finaliser votre inscription, le mode de paiement et l'accès à la formation.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="final dark">
+  <div class="final-area" aria-hidden="true"><svg id="finalArea" preserveAspectRatio="none"></svg></div>
+  <div class="wrap">
+    <span class="kicker rv">Le meilleur moment pour commencer, c'est maintenant</span>
+    <h2 class="h2 rv">Devenez actionnaire des entreprises <em>qui font le monde</em></h2>
+    <div class="offer rv">
+      <div class="offer-head"><span>Stock Market Investment</span><span class="pct promo-only">−21 000 F</span></div>
+      <div class="price-old"><s>40 000 FCFA</s></div>
+      <div class="price-new promo-only">19 000<small>FCFA</small></div>
+      <div class="cd-label promo-only">Inscriptions jusqu'à dimanche 23h59</div>
+      <div class="cd promo-only" data-cd="full"></div>
+      <div class="ended-msg">L'offre à 19 000 FCFA est terminée. Écrivez-nous sur WhatsApp pour connaître la prochaine session.</div>
+      <a class="btn btn--go btn--block" data-wa href="#"><span class="wa-ic" aria-hidden="true"></span><span class="promo-only">Je réserve ma place</span><span class="ended-only" style="display:none;">Nous écrire sur WhatsApp</span></a>
+      <p class="cta-note">Redirection immédiate vers WhatsApp</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Rougatech Academy · <a href="/academy/">Toutes les formations</a> · <a href="/">rougatech.com</a></div>
+</footer>
+
+<div class="sticky" id="sticky">
+  <div class="sp promo-only"><s>40 000</s><b>19 000 F</b><small data-cd="compact">--:--:--</small></div>
+  <a class="btn btn--go" data-wa href="#"><span class="wa-ic" aria-hidden="true"></span><span class="promo-only">S'inscrire sur WhatsApp</span><span class="ended-only" style="display:none;">Nous écrire</span></a>
+</div>
+
+<script>
+/* ============ RÉGLAGES (à modifier ici) ============ */
+var WHATSAPP_NUMBER = '22791340905';
+// Les inscriptions de chaque session ferment automatiquement le dimanche à 23h59 (heure du Niger, UTC+1).
+function nextSessionClose(){
+  var TZ = 3600000, now = Date.now(), n = new Date(now + TZ);
+  var toSun = (7 - n.getUTCDay()) % 7;
+  var end = Date.UTC(n.getUTCFullYear(), n.getUTCMonth(), n.getUTCDate() + toSun, 23, 59, 59) - TZ;
+  if(end <= now) end += 7 * 86400000;
+  return end;
+}
+/* =================================================== */
+(function(){
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce) document.documentElement.classList.add('anim');
+  var NS='http://www.w3.org/2000/svg';
+  function el(t,a,p){ var e=document.createElementNS(NS,t); for(var k in a) e.setAttribute(k,a[k]); if(p) p.appendChild(e); return e; }
+  function rng(s){ return function(){ s=(s*16807)%2147483647; return (s-1)/2147483646; }; }
+  function setLen(p){ try{ p.style.setProperty('--len', Math.ceil(p.getTotalLength())); }catch(e){} }
+  function fmt(n){ return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g,' '); }
+
+  // date du jour dans le bandeau
+  try{ var d=new Date(), t=document.getElementById('today'); t.textContent = d.toLocaleDateString('fr-FR',{weekday:'long', day:'numeric', month:'long', year:'numeric'}); }catch(e){}
+
+  /* ---- courbe d'indice (illustration) ---- */
+  function areaChart(id, seed, color, fill, W, H){
+    var svg=document.getElementById(id); if(!svg) return;
+    svg.setAttribute('viewBox','0 0 '+W+' '+H);
+    var r=rng(seed), v=50, pts=[], N=90;
+    for(var i=0;i<N;i++){ v += .55 + (r()-.5)*6 + (i>30&&i<40 ? -2.2 : 0); pts.push(v); }
+    var mx=Math.max.apply(0,pts), mn=Math.min.apply(0,pts);
+    var xy=pts.map(function(p,i){ return [(i/(N-1))*W, H-10-(p-mn)/(mx-mn)*(H*.8)]; });
+    var d='M'+xy.map(function(p){ return p[0].toFixed(1)+','+p[1].toFixed(1); }).join(' L');
+    el('path',{d:d+' L'+W+','+H+' L0,'+H+' Z',fill:fill,'class':'fadearea'},svg);
+    var l=el('path',{d:d,fill:'none',stroke:color,'stroke-width':2.5,'stroke-linejoin':'round','class':'draw','vector-effect':'non-scaling-stroke'},svg); setLen(l);
+    var last=xy[xy.length-1]; el('circle',{cx:last[0]-4,cy:last[1],r:6,fill:color,'class':'dot'},svg);
+  }
+  areaChart('heroArea', 5, '#0B8A57', 'rgba(11,138,87,.08)', 1400, 380);
+  areaChart('finalArea', 9, '#5FD39C', 'rgba(95,211,156,.08)', 1400, 380);
+
+  /* ---- mini-courbes du programme ---- */
+  document.querySelectorAll('[data-spark]').forEach(function(svg){
+    var r=rng(+svg.getAttribute('data-spark')*31), v=30, pts=[];
+    for(var i=0;i<16;i++){ v += .9 + (r()-.5)*5; pts.push(v); }
+    var mx=Math.max.apply(0,pts), mn=Math.min.apply(0,pts);
+    var d='M'+pts.map(function(p,i){ return (i*10).toFixed(1)+','+(38-(p-mn)/(mx-mn)*32).toFixed(1); }).join(' L');
+    var l=el('path',{d:d,fill:'none',stroke:'#0B8A57','stroke-width':2,'stroke-linejoin':'round','class':'mline'},svg); setLen(l);
+  });
+
+  /* ---- sparkline des cartes d'offre ---- */
+  document.querySelectorAll('.offer .save').forEach(function(s){
+    var svg=el('svg',{'class':'spark',viewBox:'0 0 300 44',preserveAspectRatio:'none','aria-hidden':'true'});
+    s.parentNode.insertBefore(svg, s.nextSibling);
+    var d='M0,36 C30,35 40,28 62,30 S100,37 118,26 S150,12 170,18 S210,26 228,14 S270,6 300,4';
+    el('path',{d:d+' L300,44 L0,44 Z',fill:'rgba(11,138,87,.10)'},svg);
+    var l=el('path',{d:d,fill:'none',stroke:'#0B8A57','stroke-width':2.2,'class':'draw','vector-effect':'non-scaling-stroke'},svg); setLen(l);
+  });
+
+  /* ---- simulateur d'intérêts composés ---- */
+  (function(){
+    var sM=document.getElementById('sMonth'), sY=document.getElementById('sYears'), sR=document.getElementById('sRate'), bars=document.getElementById('bars');
+    if(!sM||!bars) return;
+    function run(){
+      var m=+sM.value, y=+sY.value, a=+sR.value/100, rm=Math.pow(1+a,1/12)-1, val=0, inv=0, rows=[];
+      for(var k=1;k<=y*12;k++){ val=val*(1+rm)+m; inv+=m; if(k%12===0) rows.push([inv,val]); }
+      document.getElementById('oMonth').textContent=fmt(m)+' F';
+      document.getElementById('oYears').textContent=y+(y>1?' ans':' an');
+      document.getElementById('oRate').textContent=(+sR.value).toString().replace('.',',')+' %';
+      document.getElementById('rInv').textContent=fmt(inv)+' F';
+      document.getElementById('rGain').textContent=fmt(val-inv)+' F';
+      document.getElementById('rTot').textContent=fmt(val)+' F';
+      document.getElementById('xEnd').textContent='Année '+y;
+      var max=rows[rows.length-1][1];
+      while(bars.children.length<rows.length){ var b=document.createElement('div'); b.className='bar'; b.innerHTML='<i class="inv"></i><i class="gain"></i>'; bars.appendChild(b); }
+      while(bars.children.length>rows.length) bars.removeChild(bars.lastChild);
+      rows.forEach(function(r,i){ var b=bars.children[i]; b.children[0].style.height=(r[0]/max*100)+'%'; b.children[1].style.height=((r[1]-r[0])/max*100)+'%'; });
+    }
+    [sM,sY,sR].forEach(function(s){ s.addEventListener('input',run); });
+    run();
+  })();
+
+  /* ---- donut ETF ---- */
+  var donutDone=false;
+  function donut(){
+    if(donutDone) return; donutDone=true;
+    var svg=document.getElementById('donut'); if(!svg) return;
+    var parts=[[30,'#0E1A2B'],[15,'#0B8A57'],[15,'#E9C46A'],[15,'#C2403A'],[12,'#6C8CB5'],[13,'#B9AF9A']];
+    var R=80, C=2*Math.PI*R, off=0;
+    el('circle',{cx:100,cy:100,r:R,fill:'none',stroke:'#D8D0BF','stroke-width':26},svg);
+    parts.forEach(function(p,i){
+      var len=p[0]/100*C, c=el('circle',{cx:100,cy:100,r:R,fill:'none',stroke:p[1],'stroke-width':26,'stroke-dasharray':(reduce?len-2:0)+' '+C,'stroke-dashoffset':-off,'class':'seg'},svg);
+      if(!reduce) setTimeout(function(){ c.setAttribute('stroke-dasharray',(len-2)+' '+C); }, 150+i*220);
+      off+=len;
+    });
+  }
+
+  /* ---- offre, compte à rebours, WhatsApp ---- */
+  var MSG_PROMO="Bonjour RougaTech Academy 👋\nJe suis intéressé(e) par la formation Stock Market Investment à 19 000 FCFA au lieu de 40 000 FCFA.\nJe souhaite m'inscrire à la session de cette semaine.\nPouvez-vous m'indiquer comment procéder ?";
+  var deadline=nextSessionClose();
+  function setLinks(msg){ var url='https://wa.me/'+WHATSAPP_NUMBER+'?text='+encodeURIComponent(msg); document.querySelectorAll('[data-wa]').forEach(function(a){ a.href=url; a.target='_blank'; a.rel='noopener'; }); }
+  function pad(n){ return (n<10?'0':'')+n; }
+  var fulls=document.querySelectorAll('[data-cd="full"]'), compacts=document.querySelectorAll('[data-cd="compact"]');
+  fulls.forEach(function(e){ e.innerHTML='<div class="u"><div class="n" data-d>0</div><div class="l">Jours</div></div><span class="sep">:</span><div class="u"><div class="n" data-h>00</div><div class="l">Heures</div></div><span class="sep">:</span><div class="u"><div class="n" data-m>00</div><div class="l">Min</div></div><span class="sep">:</span><div class="u"><div class="n" data-s>00</div><div class="l">Sec</div></div>'; });
+  function tick(){
+    var left=Math.max(0,deadline-Date.now()), t=Math.floor(left/1000), dd=Math.floor(t/86400), h=Math.floor(t%86400/3600), m=Math.floor(t%3600/60), s=t%60;
+    fulls.forEach(function(e){ e.querySelector('[data-d]').textContent=dd; e.querySelector('[data-h]').textContent=pad(h); e.querySelector('[data-m]').textContent=pad(m); e.querySelector('[data-s]').textContent=pad(s); });
+    compacts.forEach(function(e){ e.textContent=(dd?dd+'j ':'')+pad(h)+':'+pad(m)+':'+pad(s); });
+    if(left<=0) deadline=nextSessionClose();
+  }
+  setLinks(MSG_PROMO); tick(); setInterval(tick,1000);
+
+  /* ---- apparitions au défilement ---- */
+  var rv=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); if(e.target.id==='donutWrap') donut(); io.unobserve(e.target); } }); },{rootMargin:'0px 0px -8% 0px'});
+    rv.forEach(function(x){ io.observe(x); });
+  } else { rv.forEach(function(x){ x.classList.add('in'); }); donut(); }
+
+  var sticky=document.getElementById('sticky'), hero=document.getElementById('offer-hero');
+  function onScroll(){ sticky.classList.toggle('show', hero.getBoundingClientRect().bottom<0); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+})();
+</script>
+</body>
+</html>
