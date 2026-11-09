@@ -462,5 +462,5 @@ footer{background:var(--ink); color:rgba(255,255,255,.75); padding:72px 0 36px; 
 .ba-sec .ba-list-before{background:var(--mist);}
 
 /* alert heading (need section) */
-.sec-head h2.h-alert{color:#d61f1f;}
-.h-alert u{text-decoration:underline; text-decoration-thickness:.09em; text-underline-offset:.12em; text-decoration-skip-ink:none;}
+.sec-head h2.h-alert{color:var(--ink);}
+.h-alert u{text-decoration:underline; text-decoration-color:#d61f1f; text-decoration-thickness:.09em; text-underline-offset:.12em; text-decoration-skip-ink:none;}
