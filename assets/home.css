@@ -476,3 +476,5 @@ footer{background:var(--ink); color:rgba(255,255,255,.75); padding:72px 0 36px; 
 .ba-title{text-align:center; font-size:clamp(36px,5vw,64px); font-weight:800; letter-spacing:-.035em; margin:0 auto 48px; max-width:none;}
 .ba-title u{text-decoration:underline; text-decoration-color:var(--blue); text-decoration-thickness:.09em; text-underline-offset:.12em; text-decoration-skip-ink:none;}
 .ba-sec .ba-lists{margin-top:0;}
+.compare-standalone{margin-top:0;}
+.compare-sec{padding-top:0;}
