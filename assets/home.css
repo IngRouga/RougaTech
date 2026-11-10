@@ -684,3 +684,10 @@ footer{padding:84px 0 32px; text-align:center; background:radial-gradient(60% 50
 .foot-links a:hover, .foot-lang:hover{color:#fff; text-decoration:underline; text-underline-offset:5px;}
 .foot-c .foot-bottom{width:100%; margin-top:56px;}
 @media (max-width:760px){ .foot-links{grid-template-columns:1fr 1fr; gap:20px 40px;} .foot-links a, .foot-lang{font-size:19px;} }
+
+/* ordre : méthode juste après les témoignages, sur fond blanc */
+.process-sec{background:#fff;}
+.sc1 .sc-inner{background:var(--mist);}
+/* soulignés rouges conservés avec l'animation mot par mot */
+.fx .h-alert u .w{padding-bottom:.32em; margin-bottom:-.32em;}
+.fx .h-alert u .wi{text-decoration:underline; text-decoration-color:#d61f1f; text-decoration-thickness:.09em; text-underline-offset:.12em; text-decoration-skip-ink:none;}
