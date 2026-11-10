@@ -59,7 +59,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/home.css?v=202611101725">
+<link rel="stylesheet" href="assets/home.css?v=202611101744">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -654,6 +654,13 @@
   window.addEventListener('scroll', onScroll, {passive:true});
   onScroll();
 
+
+  // numérotation automatique des réalisations : « 01 / 07 » s'adapte au nombre de projets
+  (function(){
+    const projs=document.querySelectorAll('.work-stack > .proj');
+    const total=' / '+String(projs.length).padStart(2,'0');
+    projs.forEach(p=>{ const t=p.querySelector('.proj-txt'); if(t) t.setAttribute('data-total',total); });
+  })();
 
   // cartes empilées (méthode + réalisations) : la carte recouverte recule légèrement
   (function(){
