@@ -581,3 +581,18 @@ footer{background:var(--ink); color:rgba(255,255,255,.75); padding:72px 0 36px; 
 .audit-list li{display:grid; grid-template-columns:30px 1fr; column-gap:12px; font-size:16px; line-height:1.45; color:rgba(255,255,255,.82);}
 .audit-list li::before{content:''; grid-row:1 / span 2; width:26px; height:26px; border-radius:50%; background:rgba(255,255,255,.16) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center/14px no-repeat;}
 .audit-list li b{color:#fff; font-weight:700; font-size:17px;}
+
+/* ===== finitions : titres mot par mot, haut de page vivant ===== */
+.fx .w{display:inline-block; overflow:hidden; vertical-align:bottom; padding-bottom:.12em; margin-bottom:-.12em;}
+.fx .wi{display:inline-block; transform:translateY(105%); transition:transform .9s cubic-bezier(.2,.75,.15,1);}
+.fx .in .wi, .fx .in.wi{transform:none;}
+.fx .hero h1 .scribble-line path{animation-delay:1.05s;}
+.fx .hero h1 .scribble:nth-of-type(2) .scribble-line path, .fx .hero h1 .scribble + .scribble .scribble-line path{animation-delay:1.35s;}
+.fx .hero-sub, .fx .hero-ctas{opacity:0; transform:translateY(18px); transition:opacity .8s var(--ease), transform .8s var(--ease);}
+.fx .hero-text.in .hero-sub{opacity:1; transform:none; transition-delay:.55s;}
+.fx .hero-text.in .hero-ctas{opacity:1; transform:none; transition-delay:.7s;}
+.fx .sec-head p{opacity:0; transform:translateY(16px); transition:opacity .8s var(--ease) .25s, transform .8s var(--ease) .25s;}
+.fx .sec-head p.in{opacity:1; transform:none;}
+.hero-stack{transition:transform .6s cubic-bezier(.2,.7,.2,1); transform-style:preserve-3d;}
+.shot img.swap{position:absolute; inset:0; opacity:0; transform:scale(1.06); transition:opacity .9s ease, transform 1.2s var(--ease);}
+.shot img.swap.on{opacity:1; transform:none;}

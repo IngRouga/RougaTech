@@ -59,7 +59,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/home.css?v=202611101758">
+<link rel="stylesheet" href="assets/home.css?v=202611101836">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -849,6 +849,90 @@
   })();
 
 
+
+
+  /* ===== Finitions : titres mot par mot, haut de page vivant, défilement fluide ===== */
+  (function(){
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(reduce || !('IntersectionObserver' in window)) return;
+    const root = document.documentElement;
+    root.classList.add('fx');
+
+    // 1. Découpe des titres en mots (les balises internes, comme le trait bleu, sont conservées)
+    function split(el){
+      const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, {acceptNode:n => n.parentNode.closest('svg') ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT});
+      const nodes = []; while(walker.nextNode()) nodes.push(walker.currentNode);
+      let i = 0;
+      nodes.forEach(n => {
+        const parts = n.textContent.split(/(\s+)/); const frag = document.createDocumentFragment();
+        parts.forEach(t => {
+          if(!t) return;
+          if(/^\s+$/.test(t)){ frag.appendChild(document.createTextNode(t)); return; }
+          const w = document.createElement('span'); w.className = 'w';
+          const wi = document.createElement('span'); wi.className = 'wi'; wi.textContent = t; wi.style.transitionDelay = (i * 0.055).toFixed(3) + 's';
+          w.appendChild(wi); frag.appendChild(w); i++;
+        });
+        n.parentNode.replaceChild(frag, n);
+      });
+    }
+    // chaque langue est découpée séparément pour que le délai reparte de zéro
+    document.querySelectorAll('.hero h1 > .fr, .hero h1 > .en, .sec-head h2 > .fr, .sec-head h2 > .en, .compare-title > .fr, .compare-title > .en').forEach(split);
+    const heroTitle = document.querySelector('.hero h1');
+    requestAnimationFrame(() => requestAnimationFrame(() => { heroTitle && heroTitle.classList.add('in'); document.querySelector('.hero-text') && document.querySelector('.hero-text').classList.add('in'); }));
+    const tio = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); tio.unobserve(e.target); } }), {threshold:.35});
+    document.querySelectorAll('.sec-head h2, .compare-title, .sec-head p').forEach(h => tio.observe(h));
+
+    // 2. Haut de page vivant : les captures changent de projet et suivent la souris
+    const shots = [...document.querySelectorAll('.hero-stack .shot')];
+    const pool = ['work-gcap11.jpg','work-marina.jpg','work-ipstg.jpg','work-iphec.jpg','work-hgc.jpg','work-scolpay.jpg','work-digitalcampus.jpg'];
+    pool.forEach(src => { const im = new Image(); im.src = src; });
+    let shown = shots.map(s => s.querySelector('img').getAttribute('src'));
+    let turn = 2, heroOn = true;
+    new IntersectionObserver(([e]) => { heroOn = e.isIntersecting; }).observe(document.getElementById('hero'));
+    setInterval(() => {
+      if(!heroOn || document.hidden || !shots.length) return;
+      const shot = shots[turn]; turn = (turn + 2) % shots.length;
+      const next = pool.find(src => !shown.includes(src)) || pool[0];
+      const old = shot.querySelector('img');
+      const img = document.createElement('img'); img.src = next; img.alt = ''; img.className = 'swap';
+      shot.appendChild(img);
+      requestAnimationFrame(() => requestAnimationFrame(() => img.classList.add('on')));
+      setTimeout(() => { old.remove(); img.classList.remove('swap','on'); }, 1000);
+      shown[shots.indexOf(shot)] = next;
+      pool.push(pool.splice(pool.indexOf(next),1)[0]);
+    }, 3200);
+    const stack = document.querySelector('.hero-stack');
+    if(stack && window.matchMedia('(pointer: fine)').matches){
+      const hero = document.getElementById('hero');
+      hero.addEventListener('mousemove', e => {
+        const r = hero.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+        stack.style.transform = 'perspective(1200px) rotateY(' + (x * 8).toFixed(2) + 'deg) rotateX(' + (-y * 6).toFixed(2) + 'deg)';
+      });
+      hero.addEventListener('mouseleave', () => { stack.style.transform = ''; });
+    }
+
+    // 3. Défilement fluide à la molette (ordinateur uniquement)
+    if(!window.matchMedia('(pointer: fine)').matches || /Mac/.test(navigator.platform)) return;
+    let target = window.scrollY, current = window.scrollY, running = false;
+    const maxY = () => document.documentElement.scrollHeight - window.innerHeight;
+    function loop(){
+      current += (target - current) * 0.12;
+      if(Math.abs(target - current) < 0.5){ current = target; running = false; }
+      window.scrollTo(0, current);
+      if(running) requestAnimationFrame(loop);
+    }
+    window.addEventListener('wheel', e => {
+      if(e.ctrlKey || e.defaultPrevented || document.body.classList.contains('nav-open')) return;
+      if(e.target.closest('textarea, .table-scroll, .ai-panel, [data-native-scroll]')) return;
+      e.preventDefault();
+      if(!running){ target = current = window.scrollY; }
+      const d = e.deltaMode === 1 ? e.deltaY * 40 : e.deltaY;
+      target = Math.max(0, Math.min(maxY(), target + d));
+      if(!running){ running = true; root.style.scrollBehavior = 'auto'; requestAnimationFrame(loop); }
+    }, {passive:false});
+    window.addEventListener('scroll', () => { if(!running){ target = current = window.scrollY; root.style.scrollBehavior = ''; } }, {passive:true});
+  })();
 
   // Comparison table: green checks pop in row by row
   (function(){
