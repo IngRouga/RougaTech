@@ -310,3 +310,6 @@ textarea.cf-input{resize:vertical; min-height:120px;}
   body.nav-open .menu-toggle span{background:#fff !important;}
 }
 @media (max-width:1000px) and (prefers-reduced-motion:reduce){ nav.main-nav > a, nav.main-nav .nav-item > a, nav.main-nav .m-lang{transform:none; transition:none;} }
+
+.m-lang{display:none;}
+@media (max-width:1000px){ .m-lang{display:flex;} }

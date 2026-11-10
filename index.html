@@ -58,8 +58,8 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/home.css?v=202611102059">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/home.css?v=202611102109">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -463,18 +463,20 @@
     </div>
   </section>
 
-  <section class="sec" id="founder">
-    <div class="wrap founder">
-      <div class="founder-photo"><img src="founder-amadou.jpg" alt="Amadou Rouga Achirou" loading="lazy"></div>
-      <div class="founder-text">
-        <h2><span class="fr" lang="fr">Construire la technologie avec une vision pour l'Afrique</span><span class="en" lang="en">Building technology with a vision for Africa</span></h2>
-        <p class="founder-name"><strong>Amadou Rouga Achirou</strong> <span>Founder &amp; CEO, ROUGATECH</span></p>
-        <p><span class="fr" lang="fr">Amadou Rouga Achirou est le fondateur de ROUGATECH, une entreprise technologique africaine qui crée des sites web et des plateformes SaaS pour les entreprises, les coachs et les institutions, en Afrique et partout dans le monde.</span><span class="en" lang="en">Amadou Rouga Achirou is the founder of ROUGATECH, an African technology company building websites and SaaS platforms for businesses, coaches and institutions in Africa and around the world.</span></p>
-        <p class="founder-vision"><span class="fr" lang="fr">La technologie doit aider les entreprises africaines à mieux fonctionner, vendre davantage et construire l'avenir.</span><span class="en" lang="en">Technology should help African businesses operate better, sell more and build for the future.</span></p>
-        <div class="founder-ctas">
-          <a href="mailto:hello@rougatech.com" class="btn btn-ink"><span class="fr" lang="fr">Contacter Amadou</span><span class="en" lang="en">Contact Amadou</span></a>
-          <a href="#contact" class="btn btn-ghost"><span class="fr" lang="fr">Écrire à ROUGATECH</span><span class="en" lang="en">Message ROUGATECH</span></a>
-        </div>
+  <section class="sec founder-sec" id="founder">
+    <div class="wrap">
+      <div class="letter">
+        <div class="letter-photo"><img src="founder-amadou-portrait.jpg" alt="Amadou Rouga Achirou, fondateur de ROUGATECH" width="740" height="1000" loading="lazy"></div>
+        <article class="letter-card">
+          <h2><span class="fr" lang="fr">Nous construisons des partenariats durables</span><span class="en" lang="en">We build lasting partnerships</span></h2>
+          <p class="letter-lead"><span class="fr" lang="fr">C'est notre plus grand objectif.</span><span class="en" lang="en">That is our biggest goal.</span></p>
+          <p><span class="fr" lang="fr">Trop d'agences livrent un site puis disparaissent. Pas nous. Avant de construire quoi que ce soit, nous prenons le temps de comprendre votre activité, vos clients et vos objectifs.</span><span class="en" lang="en">Too many agencies deliver a website and disappear. Not us. Before we build anything, we take the time to understand your business, your customers and your goals.</span></p>
+          <p><span class="fr" lang="fr">Chaque projet est suivi de près, du premier échange à la mise en ligne, et nous restons à vos côtés pour faire évoluer votre site ou votre plateforme.</span><span class="en" lang="en">Every project is closely followed, from the first call to launch, and we stay by your side to keep your website or platform growing.</span></p>
+          <p><span class="fr" lang="fr">Nous ne sommes pas les moins chers… mais vous aurez un outil pensé pour vous apporter des clients, et une équipe qui vous répond.</span><span class="en" lang="en">We are not the cheapest… but you get a tool built to bring you customers, and a team that answers you.</span></p>
+          <div class="letter-sign" aria-hidden="true">Amadou Rouga</div>
+          <p class="letter-name">Amadou Rouga Achirou <span><span class="fr" lang="fr">Fondateur & CEO, ROUGATECH</span><span class="en" lang="en">Founder & CEO, ROUGATECH</span></span></p>
+          <a href="#contact" class="btn letter-cta"><span class="fr" lang="fr">Demander un audit gratuit</span><span class="en" lang="en">Get a free audit</span></a>
+        </article>
       </div>
     </div>
   </section>
@@ -945,6 +947,10 @@
     }, {passive:false});
     window.addEventListener('scroll', () => { if(!running){ target = current = window.scrollY; root.style.scrollBehavior = ''; } }, {passive:true});
   })();
+
+  // signature du fondateur qui s'écrit à l'apparition
+  (function(){ const sg=document.querySelector('.letter-sign'); if(!sg || !('IntersectionObserver' in window)) return;
+    new IntersectionObserver((es,o)=>es.forEach(e=>{ if(e.isIntersecting){ sg.classList.add('in'); o.disconnect(); } }),{threshold:.3}).observe(sg.nextElementSibling||sg); })();
 
   // Comparison table: green checks pop in row by row
   (function(){
