@@ -59,7 +59,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/home.css?v=202611101721">
+<link rel="stylesheet" href="assets/home.css?v=202611101725">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -222,7 +222,7 @@
         <h2><span class="fr" lang="fr">Nos réalisations récentes</span><span class="en" lang="en">Our recent work</span></h2>
         <p><span class="fr" lang="fr">Des sites et des plateformes réels, conçus et mis en ligne pour nos clients.</span><span class="en" lang="en">Real websites and platforms, designed and launched for our clients.</span></p>
       </div>
-      <div class="work-grid">
+      <div class="work-grid work-stack">
         <article class="proj proj-feature">
           <div class="proj-img"><img src="work-gcap11.jpg" alt="GCAP11 — Page de vente · Événement" loading="lazy" width="1200" height="900"></div>
           <div class="proj-txt">
@@ -655,21 +655,26 @@
   onScroll();
 
 
-  // cartes empilées : la carte recouverte recule légèrement
+  // cartes empilées (méthode + réalisations) : la carte recouverte recule légèrement
   (function(){
-    const cards=[...document.querySelectorAll('.stack-card')];
-    if(!cards.length || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const groups=[
+      {cards:[...document.querySelectorAll('.stack-card')], target:c=>c.firstElementChild, depth:.06},
+      {cards:[...document.querySelectorAll('.work-stack > .proj')], target:c=>c, depth:.05}
+    ].filter(g=>g.cards.length);
+    if(!groups.length) return;
+    groups[1] && groups[1].cards.forEach((c,i)=>c.style.setProperty('--i',i));
     let ticking=false;
     function update(){
       ticking=false;
-      cards.forEach((c,i)=>{
-        const next=cards[i+1]; const inner=c.firstElementChild;
-        if(!next){ inner.style.transform=''; inner.style.filter=''; return; }
+      groups.forEach(g=>g.cards.forEach((c,i)=>{
+        const next=g.cards[i+1], t=g.target(c);
+        if(!next){ t.style.transform=''; t.style.filter=''; return; }
         const top=c.getBoundingClientRect().top, ntop=next.getBoundingClientRect().top;
-        const dist=Math.max(0,Math.min(1,1-(ntop-top)/ (c.offsetHeight||1)));
-        inner.style.transform='scale('+(1-dist*0.06)+')';
-        inner.style.filter='brightness('+(1-dist*0.18)+')';
-      });
+        const d=Math.max(0,Math.min(1,1-(ntop-top)/(c.offsetHeight||1)));
+        t.style.transform=d>0?'scale('+(1-d*g.depth)+')':'';
+        t.style.filter=d>0?'brightness('+(1-d*0.2)+')':'';
+      }));
     }
     window.addEventListener('scroll',()=>{ if(!ticking){ ticking=true; requestAnimationFrame(update); } },{passive:true});
     window.addEventListener('resize',update); update();
