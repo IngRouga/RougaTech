@@ -59,7 +59,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/home.css?v=202611101836">
+<link rel="stylesheet" href="assets/home.css?v=202611102059">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -130,7 +130,7 @@
       <a href="#clients"><span class="fr" lang="fr">Pour qui</span><span class="en" lang="en">Who we serve</span></a>
       <a href="#process"><span class="fr" lang="fr">Méthode</span><span class="en" lang="en">Process</span></a>
       <a href="#founder"><span class="fr" lang="fr">À propos</span><span class="en" lang="en">About</span></a>
-      <a href="#contact" class="nav-contact">Contact</a>
+      <a href="#contact" class="nav-contact"><span class="fr" lang="fr">Demander un audit gratuit</span><span class="en" lang="en">Get a free audit</span></a>
     </nav>
     <div class="header-right">
       <div class="lang-switch" role="group" aria-label="Langue / Language">
@@ -695,6 +695,18 @@
     }
     window.addEventListener('scroll',()=>{ if(!ticking){ ticking=true; requestAnimationFrame(update); } },{passive:true});
     window.addEventListener('resize',update); update();
+  })();
+
+
+  // menu mobile : bouton « changer de langue », ordre d'apparition et bouton principal
+  (function(){
+    var nav=document.getElementById('main-nav'); if(!nav) return;
+    var cta=nav.querySelector('.nav-contact');
+    var lang=document.createElement('button'); lang.type='button'; lang.className='m-lang';
+    lang.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><span class="fr" lang="fr">English</span><span class="en" lang="en">Français</span>';
+    lang.addEventListener('click',function(){ var cur=document.body.getAttribute('data-lang')||'fr'; var b=document.querySelector('[data-lang-btn="'+(cur==='fr'?'en':'fr')+'"]'); if(b) b.click(); });
+    if(cta){ cta.classList.add('m-cta'); nav.insertBefore(lang,cta); } else nav.appendChild(lang);
+    var k=0; [].forEach.call(nav.children,function(el){ var t=el.classList.contains('nav-item')?el.querySelector(':scope > a'):el; if(t) t.style.setProperty('--k',k++); });
   })();
 
   const toggle = document.getElementById('menu-toggle');
