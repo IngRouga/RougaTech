@@ -692,13 +692,11 @@ footer{padding:84px 0 32px; text-align:center; background:radial-gradient(60% 50
 .fx .h-alert u .w{padding-bottom:.32em; margin-bottom:-.32em;}
 .fx .h-alert u .wi{text-decoration:underline; text-decoration-color:#d61f1f; text-decoration-thickness:.09em; text-underline-offset:.12em; text-decoration-skip-ink:none;}
 
-/* signature monogramme AR */
-svg.letter-sign{display:block; width:clamp(190px,30vw,260px); height:auto; margin:30px auto 0; transform:none; overflow:visible;}
-.letter-sign .sg-l{fill:#fff; stroke:#fff; stroke-width:6;}
-.letter-sign .sg-f{fill:none; stroke:var(--saffron); stroke-width:16; stroke-linecap:round;}
-html.anim svg.letter-sign{clip-path:none;}
-html.anim .letter-sign .sg-l{fill-opacity:0; stroke-dasharray:1; stroke-dashoffset:1; transition:stroke-dashoffset 1.6s cubic-bezier(.6,0,.3,1), fill-opacity .6s ease 1.3s;}
-html.anim .letter-sign .sg-r{transition-delay:.55s, 1.7s;}
-html.anim .letter-sign .sg-f{stroke-dasharray:1; stroke-dashoffset:1; transition:stroke-dashoffset 1s cubic-bezier(.5,0,.2,1) 1.9s;}
-html.anim .letter-sign.in .sg-l{fill-opacity:1; stroke-dashoffset:0;}
+/* signature manuscrite fine « Amadou Rouga » */
+svg.letter-sign{display:block; width:clamp(240px,62%,360px); height:auto; margin:30px auto 0; overflow:visible;}
+.letter-sign .sg-n{fill:#fff;}
+.letter-sign .sg-f{fill:none; stroke:#fff; stroke-width:16; stroke-linecap:round; opacity:.9;}
+html.anim .letter-sign .sg-n{clip-path:inset(-20% 100% -20% -5%); transition:clip-path 1.8s cubic-bezier(.55,0,.35,1) .1s;}
+html.anim .letter-sign .sg-f{stroke-dasharray:1; stroke-dashoffset:1; transition:stroke-dashoffset 1.1s cubic-bezier(.5,0,.2,1) 1.6s;}
+html.anim .letter-sign.in .sg-n{clip-path:inset(-20% -5% -20% -5%);}
 html.anim .letter-sign.in .sg-f{stroke-dashoffset:0;}
