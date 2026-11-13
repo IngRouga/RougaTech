@@ -74,9 +74,17 @@
       if(widget.classList.contains('open') && !widget.contains(e.target)) closeWidget();
     });
     widget.querySelectorAll('.ai-action').forEach(function(a){ a.addEventListener('click', closeWidget); });
-    var alreadyDismissed = false;
-    try{ alreadyDismissed = sessionStorage.getItem('rougatech-ai-dismissed') === '1'; }catch(e){}
-    if(!alreadyDismissed){ setTimeout(openWidget, 30000); }
+
+    // bulle « Besoin d'aide ? » : apparaît toutes les 30 s puis repart (le panneau ne s'ouvre plus tout seul)
+    var nudge=document.createElement('button'); nudge.type='button'; nudge.className='ai-nudge'; nudge.setAttribute('aria-hidden','true'); nudge.tabIndex=-1;
+    nudge.innerHTML='<span class="fr" lang="fr">Besoin d\'aide ? 👋</span><span class="en" lang="en">Need help? 👋</span>';
+    widget.appendChild(nudge);
+    nudge.addEventListener('click', function(e){ e.stopPropagation(); nudge.classList.remove('show'); openWidget(); });
+    setInterval(function(){
+      if(document.hidden || widget.classList.contains('open')) return;
+      nudge.classList.add('show');
+      setTimeout(function(){ nudge.classList.remove('show'); }, 5000);
+    }, 30000);
   }
 
   // article share — copy link button
