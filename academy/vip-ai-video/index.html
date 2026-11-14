@@ -63,12 +63,14 @@ section{padding:clamp(80px,10vw,128px) 0; position:relative;}
 .head{margin-bottom:clamp(40px,6vw,64px);}
 
 .btn{white-space:nowrap; display:inline-flex; align-items:center; justify-content:center; gap:10px; height:54px; padding:0 26px; border:0; border-radius:4px; cursor:pointer; font-weight:700; font-stretch:90%; font-size:16px; transition:background .2s, transform .2s;}
-.btn-go{background:var(--tungsten); color:#1A1206;}
-.btn-go:hover{background:#FFC25C;}
+.btn-go{background:linear-gradient(180deg,#FFC457 0%,#FFAA2B 100%); color:#1A1206; box-shadow:inset 0 1px 0 rgba(255,255,255,.45), inset 0 -2px 0 rgba(0,0,0,.18), 0 10px 28px -10px rgba(255,170,43,.65);}
+.btn-go:hover{background:linear-gradient(180deg,#FFCD6E 0%,#FFB43F 100%); transform:translateY(-1px);}
+.btn-go:active{transform:translateY(1px); box-shadow:inset 0 2px 4px rgba(0,0,0,.2);}
+.btn-hero{height:60px; padding:0 32px; font-size:17px; border-radius:6px;}
 .btn-line{background:transparent; color:var(--paper); border:1px solid var(--rule2);}
 .btn-line:hover{border-color:var(--paper);}
 .btn-block{width:100%;}
-.wa{width:19px; height:19px; flex:0 0 19px; background:currentColor; -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z'/%3E%3C/svg%3E") center/contain no-repeat; mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z'/%3E%3C/svg%3E") center/contain no-repeat;}
+.wa{width:19px; height:19px; flex:0 0 19px; background:currentColor; -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill-rule='evenodd' d='M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z'/%3E%3C/svg%3E") center/contain no-repeat; mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill-rule='evenodd' d='M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z'/%3E%3C/svg%3E") center/contain no-repeat;}
 
 /* barre d'application */
 .app{position:sticky; top:0; z-index:50; background:var(--deck2); border-bottom:1px solid var(--rule);}
@@ -110,7 +112,7 @@ section{padding:clamp(80px,10vw,128px) 0; position:relative;}
 
 /* barre de transport sous le moniteur */
 .transport{display:grid; gap:16px; align-items:center; padding:18px 0 0;}
-@media (min-width:900px){ .transport{grid-template-columns:1fr auto auto;} }
+@media (min-width:900px){ .transport{grid-template-columns:1fr auto; gap:40px;} }
 .scrub{position:relative; height:28px;}
 .scrub::before{content:""; position:absolute; left:0; right:0; top:13px; height:2px; background:var(--rule2);}
 .scrub b{position:absolute; left:0; top:13px; height:2px; width:0; background:var(--tungsten);}
@@ -120,7 +122,10 @@ section{padding:clamp(80px,10vw,128px) 0; position:relative;}
 .tp-price s{color:var(--faint); font-size:15px;}
 .tp-price b{font-weight:800; font-stretch:80%; font-size:30px;}
 .tp-actions{display:flex; gap:10px; flex-wrap:wrap;}
-@media (max-width:899px){ .tp-actions .btn{flex:1; padding:0 14px;} }
+.tp-actions{align-items:center; gap:22px;}
+.tp-link{color:var(--paper); font-weight:600; font-stretch:90%; text-decoration:underline; text-decoration-color:var(--rule2); text-underline-offset:5px; transition:text-decoration-color .2s;}
+.tp-link:hover{text-decoration-color:var(--tungsten);}
+@media (max-width:899px){ .tp-actions{flex-direction:column; align-items:stretch; gap:14px;} .tp-actions .btn{width:100%;} .tp-link{text-align:center;} }
 .facts{display:flex; flex-wrap:wrap; gap:8px 28px; margin-top:22px; color:var(--muted); font-size:15px;}
 .facts b{color:var(--paper); font-weight:600;}
 
@@ -312,10 +317,9 @@ footer a{color:var(--muted);}
     </div>
     <div class="transport">
       <div class="scrub" aria-hidden="true"><b id="scrub-b"></b><i id="scrub-i"></i><span class="tc">00:00:27</span></div>
-      <div class="tp-price promo-only"><s>50 000 FCFA</s><b>24 999 FCFA</b></div>
       <div class="tp-actions">
-        <a class="btn btn-go" id="hero-cta" data-wa href="#"><span class="wa" aria-hidden="true"></span><span class="promo-only">Je m'inscris</span><span class="ended-only" style="display:none;">Prochaine session</span></a>
-        <a class="btn btn-line" href="#programme">Voir le programme</a>
+        <a class="btn btn-go btn-hero" id="hero-cta" data-wa href="#"><span class="wa" aria-hidden="true"></span><span class="promo-only">Réserver ma place</span><span class="ended-only" style="display:none;">Prochaine session</span></a>
+        <a class="tp-link" href="#programme">Voir le programme</a>
       </div>
     </div>
     <p class="facts"><span><b>7 modules</b> de la niche à la publication</span><span><b>Accès à vie</b> et mises à jour</span><span>Accompagnement <b>personnalisé</b></span></p>
