@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VIP AI Video Training | ROUGATECH Academy</title>
-<meta name="description" content="Formation VIP AI Video Training : apprenez à créer des vidéos ultra-réalistes avec l'IA, dans n'importe quelle langue, pour votre marque, votre entreprise et vos réseaux sociaux. 7 modules, accompagnement, accès à vie.">
+<meta name="description" content="Formation VIP AI Video Training : apprenez à créer des vidéos ultra-réalistes avec l'IA, dans n'importe quelle langue, sans caméra ni studio. 7 modules, accompagnement, accès à vie.">
 <link rel="canonical" href="https://rougatech.com/academy/vip-ai-video/">
 <meta property="og:title" content="VIP AI Video Training | ROUGATECH Academy">
-<meta property="og:description" content="Maîtrisez la création de contenus ultra-réalistes avec l'IA. 7 modules, accompagnement personnalisé, accès à vie.">
+<meta property="og:description" content="Créez des vidéos ultra-réalistes avec l'IA, sans caméra ni studio. 7 modules, accompagnement personnalisé, accès à vie.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://rougatech.com/academy/vip-ai-video/">
 <meta property="og:site_name" content="ROUGATECH Academy">
@@ -17,7 +17,7 @@
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://rougatech.com/academy/vip-ai-video/partage.jpg">
-<meta name="theme-color" content="#05060A">
+<meta name="theme-color" content="#141414">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -25,437 +25,401 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Course","name":"VIP AI Video Training","description":"Maîtrisez la création de contenus ultra-réalistes avec l'IA : niche, marque, voix IA, prompt engineering, montage vidéo, réseaux sociaux et veille IA.","inLanguage":"fr","instructor":{"@type":"Person","name":"Amadou Rouga"},"provider":{"@type":"Organization","name":"ROUGATECH Academy","url":"https://rougatech.com/academy/"},"offers":{"@type":"Offer","price":"24999","priceCurrency":"XOF","category":"Paid"}}
 </script>
 <style>
+/* Direction : la page est un logiciel de montage. Moniteur de programme en ouverture,
+   timeline pour le programme, chutier pour les exemples, clap pour le tarif. */
 :root{
-  --bg:#05060A; --bg2:#090B12; --panel:#0D1018; --panel2:#121622;
-  --text:#F5F7FB; --muted:#A1A8B8; --faint:#646C7E;
-  --line:rgba(255,255,255,.08); --line2:rgba(255,255,255,.14);
-  --blue:#3B82F6; --violet:#8B5CF6; --cyan:#22D3EE; --green:#34D399;
-  --grad:linear-gradient(90deg,#60A5FA 0%,#A78BFA 50%,#22D3EE 100%);
-  --sans:"Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-  --mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --deck:#141414; --deck2:#1B1B1B; --panel:#222222; --panel2:#2A2A2A;
+  --rule:#333333; --rule2:#444444;
+  --paper:#ECE9E2; --muted:#A39F96; --faint:#6F6B64;
+  --tungsten:#FFB238; --rec:#FF3B30;
+  --c1:#2A9D8F; --c2:#8E5BB5; --c3:#4A6FD1; --c4:#B0563A; --c5:#C8496E; --c6:#5E9C46; --c7:#3E8FB0;
+  --sans:"Archivo",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --tc:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
   --ease:cubic-bezier(.2,.7,.2,1);
 }
 *,*::before,*::after{box-sizing:border-box; margin:0; padding:0;}
 html{scroll-behavior:smooth; -webkit-text-size-adjust:100%;}
-body{background:var(--bg); color:var(--text); font:400 16px/1.6 var(--sans); -webkit-font-smoothing:antialiased; overflow-x:hidden; padding-bottom:80px;}
+body{background:var(--deck); color:var(--paper); font:400 17px/1.6 var(--sans); font-stretch:100%; -webkit-font-smoothing:antialiased; overflow-x:hidden; padding-bottom:76px;}
 @media (min-width:900px){ body{padding-bottom:0;} }
 img,video,svg{display:block; max-width:100%;}
 a{color:inherit; text-decoration:none;}
-ul{list-style:none;}
+ul,ol{list-style:none;}
 button{font:inherit; color:inherit;}
-:focus-visible{outline:2px solid var(--cyan); outline-offset:3px; border-radius:6px;}
-.wrap{width:100%; max-width:1180px; margin:0 auto; padding:0 clamp(18px,4vw,40px); position:relative; z-index:1;}
-section{position:relative; padding:clamp(80px,11vw,140px) 0; overflow:hidden;}
-.grad-text{background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent;}
+:focus-visible{outline:2px solid var(--tungsten); outline-offset:3px;}
+.wrap{width:100%; max-width:1200px; margin:0 auto; padding:0 clamp(16px,4vw,40px);}
+section{padding:clamp(80px,10vw,128px) 0; position:relative;}
+.tc{font-family:var(--tc); font-weight:500; font-variant-numeric:tabular-nums; letter-spacing:0;}
 
-.eyebrow{display:inline-flex; align-items:center; gap:10px; padding:6px 12px 6px 8px; border-radius:999px; border:1px solid var(--line2); background:rgba(255,255,255,.03); font:500 12.5px/1 var(--mono); letter-spacing:.02em; color:var(--muted);}
-.eyebrow i{width:8px; height:8px; border-radius:50%; background:var(--green); box-shadow:0 0 10px var(--green);}
-.h2{font-weight:600; font-size:clamp(34px,5.4vw,60px); line-height:1.04; letter-spacing:-.045em; margin-top:18px;}
-.lead{font-size:clamp(16.5px,1.5vw,19px); color:var(--muted); line-height:1.6; margin-top:18px; max-width:62ch;}
-.lead strong{color:var(--text); font-weight:500;}
-.sec-head{margin-bottom:clamp(40px,6vw,64px);}
-.center{text-align:center;} .center .lead{margin-left:auto; margin-right:auto;}
+/* titres façon générique de film : condensés, serrés */
+.title{font-family:var(--sans); font-weight:800; font-stretch:72%; text-transform:uppercase; line-height:.9; letter-spacing:-.01em; font-size:clamp(44px,7.2vw,96px);}
+.title-sm{font-size:clamp(36px,5vw,64px);}
+.intro{color:var(--muted); font-size:clamp(17px,1.5vw,19px); max-width:58ch; margin-top:20px;}
+.intro b{color:var(--paper); font-weight:600;}
+.head{margin-bottom:clamp(40px,6vw,64px);}
 
-/* buttons */
-.btn{display:inline-flex; align-items:center; justify-content:center; gap:10px; height:52px; padding:0 24px; border-radius:12px; font-weight:600; font-size:15px; letter-spacing:-.01em; border:0; cursor:pointer; transition:transform .25s var(--ease), box-shadow .25s, background .25s;}
-.btn-primary{background:#fff; color:#05060A; box-shadow:0 0 0 1px rgba(255,255,255,.2), 0 10px 40px -10px rgba(139,92,246,.7);}
-.btn-primary:hover{transform:translateY(-2px); box-shadow:0 0 0 1px rgba(255,255,255,.3), 0 16px 50px -10px rgba(139,92,246,.9);}
-.btn-ghost{background:rgba(255,255,255,.04); color:var(--text); border:1px solid var(--line2);}
-.btn-ghost:hover{background:rgba(255,255,255,.08);}
+.btn{white-space:nowrap; display:inline-flex; align-items:center; justify-content:center; gap:10px; height:54px; padding:0 26px; border:0; border-radius:4px; cursor:pointer; font-weight:700; font-stretch:90%; font-size:16px; transition:background .2s, transform .2s;}
+.btn-go{background:var(--tungsten); color:#1A1206;}
+.btn-go:hover{background:#FFC25C;}
+.btn-line{background:transparent; color:var(--paper); border:1px solid var(--rule2);}
+.btn-line:hover{border-color:var(--paper);}
 .btn-block{width:100%;}
-.btn-sm{height:40px; padding:0 16px; font-size:14px; border-radius:10px;}
-.wa{width:18px; height:18px; flex:0 0 18px; background:currentColor; -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z'/%3E%3C/svg%3E") center/contain no-repeat; mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z'/%3E%3C/svg%3E") center/contain no-repeat;}
-.note{font:500 12px/1.4 var(--mono); color:var(--faint); margin-top:12px; text-align:center;}
+.wa{width:19px; height:19px; flex:0 0 19px; background:currentColor; -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z'/%3E%3C/svg%3E") center/contain no-repeat; mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z'/%3E%3C/svg%3E") center/contain no-repeat;}
 
-/* nav */
-.nav{position:sticky; top:0; z-index:50; border-bottom:1px solid var(--line); background:rgba(5,6,10,.72); -webkit-backdrop-filter:blur(14px) saturate(1.4); backdrop-filter:blur(14px) saturate(1.4);}
-.nav .wrap{display:flex; align-items:center; justify-content:space-between; height:64px;}
-.brand{display:flex; align-items:center; gap:10px; font-weight:600; font-size:14.5px; letter-spacing:-.01em;}
-.brand .plate{background:#fff; border-radius:7px; padding:4px 7px; display:flex;}
-.brand .plate img{height:15px; width:auto;}
-.brand span{color:var(--muted);}
-.nav-links{display:none; gap:28px; font-size:14px; color:var(--muted);}
-.nav-links a:hover{color:var(--text);}
-@media (min-width:900px){ .nav-links{display:flex;} }
+/* barre d'application */
+.app{position:sticky; top:0; z-index:50; background:var(--deck2); border-bottom:1px solid var(--rule);}
+.app .wrap{display:flex; align-items:center; gap:18px; height:58px;}
+.app .logo{background:#fff; border-radius:3px; padding:4px 7px;}
+.app .logo img{height:15px; width:auto;}
+.app .proj{font-weight:600; font-stretch:90%; font-size:15px;}
+.app .proj span{color:var(--faint); font-weight:400;}
+.app .rec{margin-left:auto; display:flex; align-items:center; gap:8px; color:var(--muted); font-size:13px;}
+.app .rec i{width:9px; height:9px; border-radius:50%; background:var(--rec);}
+.app .btn{height:38px; padding:0 16px; font-size:14px;}
+@media (max-width:640px){ .app .proj span,.app .rec{display:none;} .app .btn{margin-left:auto;} }
 
-/* hero */
-.hero{padding:clamp(56px,8vw,96px) 0 clamp(64px,8vw,100px);}
-.grid-bg{position:absolute; inset:0; z-index:0; pointer-events:none; background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px); background-size:64px 64px; -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 30%,transparent 80%); mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 30%,transparent 80%);}
-.aurora{position:absolute; inset:-20% -10% auto; height:900px; z-index:0; pointer-events:none; filter:blur(80px); opacity:.55;}
-.aurora i{position:absolute; border-radius:50%;}
-.aurora i:nth-child(1){width:520px; height:520px; left:8%; top:0; background:#3B82F6;}
-.aurora i:nth-child(2){width:480px; height:480px; right:6%; top:40px; background:#8B5CF6;}
-.aurora i:nth-child(3){width:380px; height:380px; left:42%; top:260px; background:#06B6D4; opacity:.7;}
-.hero-grid{display:grid; gap:56px; align-items:center;}
-@media (min-width:1000px){ .hero-grid{grid-template-columns:1.05fr .95fr; gap:64px;} }
-.hero-grid > *{min-width:0;}
-.hero h1{font-weight:600; font-size:clamp(40px,5.2vw,68px); line-height:1; letter-spacing:-.055em; margin-top:22px;}
-.hero h1 .rot{display:inline-block; min-width:4ch;}
-.hero .lead{margin-top:22px; font-size:clamp(17px,1.6vw,20px);}
-.hero-ctas{display:flex; flex-wrap:wrap; gap:12px; margin-top:32px;}
-.hero-meta{display:flex; flex-wrap:wrap; gap:22px; margin-top:34px; font:500 13px/1.3 var(--mono); color:var(--muted);}
-.hero-meta b{color:var(--text); font-weight:600;}
-.hero-meta span{display:inline-flex; align-items:center; gap:8px;}
-.hero-meta span::before{content:""; width:5px; height:5px; border-radius:50%; background:var(--cyan);}
+/* moniteur de programme */
+.monitor{padding:clamp(20px,3vw,36px) 0 0;}
+.screen{position:relative; background:#000; border:1px solid var(--rule); aspect-ratio:21/10; max-height:78vh; width:100%; overflow:hidden;}
+@media (max-width:760px){ .screen{aspect-ratio:4/5;} }
+.screen video{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transform:scale(1.04); transition:transform 2.4s var(--ease);}
+.screen.rolling video{transform:none;}
+.bars::before,.bars::after{content:""; position:absolute; left:0; right:0; height:13%; background:#000; z-index:2; transition:height 1.4s cubic-bezier(.7,0,.2,1);}
+.bars::before{top:0;} .bars::after{bottom:0;}
+.screen.rolling .bars::before,.screen.rolling .bars::after{height:7%;}
+.bars{position:absolute; inset:0; z-index:2; pointer-events:none;}
+.safe{position:absolute; inset:10% 6%; z-index:3; pointer-events:none;}
+.safe i{position:absolute; width:22px; height:22px; border-color:rgba(255,255,255,.55); border-style:solid; border-width:0;}
+.safe i:nth-child(1){left:0; top:0; border-left-width:1px; border-top-width:1px;}
+.safe i:nth-child(2){right:0; top:0; border-right-width:1px; border-top-width:1px;}
+.safe i:nth-child(3){left:0; bottom:0; border-left-width:1px; border-bottom-width:1px;}
+.safe i:nth-child(4){right:0; bottom:0; border-right-width:1px; border-bottom-width:1px;}
+.hud{position:absolute; z-index:4; display:flex; align-items:center; gap:8px; font-size:13px; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,.6);}
+.hud-tl{left:7%; top:12%;} .hud-tr{right:7%; top:12%;}
+.hud-tl i{width:9px; height:9px; border-radius:50%; background:var(--rec); animation:rec 1.2s steps(1) infinite;}
+@keyframes rec{50%{opacity:.15}}
+.lower{position:absolute; z-index:4; left:7%; right:7%; bottom:12%;}
+.lower h1{font-weight:800; font-stretch:72%; text-transform:uppercase; font-size:clamp(34px,4.4vw,64px); line-height:.92; color:#fff; text-shadow:0 2px 30px rgba(0,0,0,.55); max-width:17ch;}
+.lower p{margin-top:14px; display:inline-block; background:rgba(0,0,0,.72); color:#fff; padding:8px 12px; font-size:clamp(15px,1.4vw,18px);}
+.lower p span{color:var(--tungsten); font-weight:600;}
+@media (max-width:760px){ .lower{bottom:9%;} .hud-tl,.hud-tr{top:9%;} }
 
-/* AI studio mockup */
-.studio{position:relative; border-radius:18px; padding:1px; background:linear-gradient(140deg,rgba(255,255,255,.28),rgba(255,255,255,.04) 40%,rgba(139,92,246,.5));}
-.studio-in{border-radius:17px; background:linear-gradient(180deg,#0E111B,#080A10); overflow:hidden;}
-.st-top{display:flex; align-items:center; gap:8px; padding:12px 14px; border-bottom:1px solid var(--line); font:500 12px/1 var(--mono); color:var(--faint);}
-.st-top i{width:10px; height:10px; border-radius:50%; background:#2A2F3D;}
-.st-top em{font-style:normal; margin-left:auto; color:var(--green); display:inline-flex; align-items:center; gap:6px;}
-.st-top em::before{content:""; width:6px; height:6px; border-radius:50%; background:var(--green); box-shadow:0 0 8px var(--green);}
-.st-body{padding:16px;}
-.prompt{border:1px solid var(--line2); border-radius:12px; background:rgba(255,255,255,.02); padding:14px 14px 12px;}
-.prompt label{display:block; font:500 11px/1 var(--mono); text-transform:uppercase; letter-spacing:.08em; color:var(--faint);}
-.prompt p{font:400 15px/1.5 var(--sans); color:var(--text); margin-top:8px; min-height:3em;}
-.prompt p .caret{display:inline-block; width:2px; height:1.1em; background:var(--cyan); vertical-align:-3px; margin-left:2px; animation:blink 1s steps(1) infinite;}
-@keyframes blink{50%{opacity:0}}
-.prompt-foot{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:12px;}
-.chips{display:flex; gap:6px; flex-wrap:wrap;}
-.chips span{font:500 11px/1 var(--mono); color:var(--muted); padding:6px 8px; border-radius:6px; background:rgba(255,255,255,.05); border:1px solid var(--line);}
-.gen{font:600 12px/1 var(--sans); color:#05060A; background:#fff; padding:8px 12px; border-radius:8px;}
-.preview{position:relative; margin-top:14px; border-radius:12px; overflow:hidden; aspect-ratio:16/10; background:#0B0E16; border:1px solid var(--line);}
-.preview video{width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity .6s ease;}
-.preview video.on{opacity:1;}
-.preview .scan{position:absolute; inset:0; background:linear-gradient(180deg,transparent 0%,rgba(34,211,238,.18) 48%,rgba(34,211,238,.35) 50%,rgba(34,211,238,.18) 52%,transparent 100%); background-size:100% 220%; opacity:0; pointer-events:none;}
-.preview.loading .scan{opacity:1; animation:scan 1.6s linear infinite;}
-@keyframes scan{from{background-position:0 120%} to{background-position:0 -120%}}
-.preview .tag{position:absolute; left:10px; top:10px; font:500 11px/1 var(--mono); padding:6px 8px; border-radius:6px; background:rgba(5,6,10,.7); border:1px solid var(--line2); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);}
-.bar{height:3px; margin-top:12px; border-radius:99px; background:rgba(255,255,255,.06); overflow:hidden;}
-.bar i{display:block; height:100%; width:0; background:var(--grad); border-radius:99px;}
-.st-status{display:flex; justify-content:space-between; margin-top:8px; font:500 11.5px/1 var(--mono); color:var(--faint);}
-.float-card{position:absolute; z-index:2; display:flex; align-items:center; gap:10px; padding:10px 12px; border-radius:12px; background:rgba(13,16,24,.9); border:1px solid var(--line2); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px); box-shadow:0 20px 40px -20px rgba(0,0,0,.9); font-size:13px; white-space:nowrap;}
-.float-card b{display:block; font-weight:600; font-size:13.5px;}
-.float-card small{color:var(--muted); font:500 11px/1.2 var(--mono);}
-.float-card .ic{width:30px; height:30px; border-radius:8px; display:grid; place-items:center; background:rgba(139,92,246,.18); color:#C4B5FD; font:600 13px/1 var(--mono);}
-.fc1{left:-26px; bottom:70px;} .fc2{right:-18px; top:-26px;}
-.fc2 .ic{background:rgba(34,211,238,.15); color:var(--cyan);}
-@media (max-width:999px){ .fc1{left:10px; bottom:-18px;} .fc2{right:10px; top:-18px;} }
-@media (max-width:600px){ .float-card{display:none;} .brand span{display:none;} .hero-ctas .btn{width:100%;} }
-html.anim .float-card{animation:float 6s ease-in-out infinite;} html.anim .fc2{animation-delay:-3s;}
-@keyframes float{50%{transform:translateY(-8px)}}
+/* barre de transport sous le moniteur */
+.transport{display:grid; gap:16px; align-items:center; padding:18px 0 0;}
+@media (min-width:900px){ .transport{grid-template-columns:1fr auto auto;} }
+.scrub{position:relative; height:28px;}
+.scrub::before{content:""; position:absolute; left:0; right:0; top:13px; height:2px; background:var(--rule2);}
+.scrub b{position:absolute; left:0; top:13px; height:2px; width:0; background:var(--tungsten);}
+.scrub i{position:absolute; top:6px; width:2px; height:16px; background:var(--tungsten); left:0;}
+.scrub span{position:absolute; top:-2px; right:0; font-size:12px; color:var(--faint);}
+.tp-price{display:flex; align-items:baseline; gap:12px; white-space:nowrap;}
+.tp-price s{color:var(--faint); font-size:15px;}
+.tp-price b{font-weight:800; font-stretch:80%; font-size:30px;}
+.tp-actions{display:flex; gap:10px; flex-wrap:wrap;}
+@media (max-width:899px){ .tp-actions .btn{flex:1; padding:0 14px;} }
+.facts{display:flex; flex-wrap:wrap; gap:8px 28px; margin-top:22px; color:var(--muted); font-size:15px;}
+.facts b{color:var(--paper); font-weight:600;}
 
-/* logos / tools marquee */
-.tools{border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:var(--bg2); padding:22px 0; overflow:hidden;}
-.tools p{text-align:center; font:500 12px/1 var(--mono); color:var(--faint); text-transform:uppercase; letter-spacing:.1em; margin-bottom:18px;}
-.marquee{display:flex; width:max-content; gap:56px; animation:mq 32s linear infinite; -webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);}
-.marquee span{font-weight:600; font-size:19px; letter-spacing:-.02em; color:#6B7385; white-space:nowrap;}
-@keyframes mq{to{transform:translateX(-50%)}}
+/* devis de production : tournage contre IA */
+.sheet{border:1px solid var(--rule); background:var(--deck2);}
+.sheet-row{display:grid; grid-template-columns:1fr; border-top:1px solid var(--rule);}
+.sheet-row:first-child{border-top:0;}
+@media (min-width:760px){ .sheet-row{grid-template-columns:200px 1fr 1fr;} }
+.sheet-row > *{padding:18px 22px;}
+.sheet-row .k{font-weight:700; font-stretch:85%;}
+.sheet-row .old{color:var(--faint); text-decoration:line-through; text-decoration-color:rgba(255,59,48,.6);}
+.sheet-row .new{color:var(--paper);}
+.sheet-head{color:var(--muted); font-size:14px; background:var(--panel);}
+.sheet-head .new{color:var(--tungsten); font-weight:600;}
+@media (max-width:759px){ .sheet-row > *{padding:6px 18px;} .sheet-row .k{padding-top:16px;} .sheet-row .new{padding-bottom:16px;} .sheet-head{display:none;} .sheet-row .old::before{content:"Tournage : "; display:inline;} .sheet-row .new::before{content:"Avec l'IA : "; color:var(--tungsten);} }
+.after-sheet{display:grid; gap:24px; margin-top:40px;}
+@media (min-width:760px){ .after-sheet{grid-template-columns:1fr 1fr;} }
+.after-sheet h3{font-weight:700; font-stretch:85%; font-size:21px;}
+.after-sheet p{color:var(--muted); margin-top:6px;}
 
-/* why AI bento */
-.bento{display:grid; gap:16px;}
-@media (min-width:900px){ .bento{grid-template-columns:repeat(6,1fr);} .b1{grid-column:span 3} .b2{grid-column:span 3} .b3,.b4,.b5{grid-column:span 2} .b6{grid-column:span 6} }
-.card{position:relative; border-radius:18px; border:1px solid var(--line); background:linear-gradient(180deg,var(--panel2),var(--panel)); padding:28px; overflow:hidden; isolation:isolate;}
-.card::before{content:""; position:absolute; inset:0; z-index:-1; opacity:0; transition:opacity .35s; background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(139,92,246,.18),transparent 45%);}
-.card:hover::before{opacity:1;}
-.card .k{font:500 12px/1 var(--mono); color:var(--cyan); letter-spacing:.04em;}
-.card h3{font-weight:600; font-size:clamp(21px,2vw,25px); letter-spacing:-.03em; line-height:1.15; margin-top:14px;}
-.card p{color:var(--muted); margin-top:10px; font-size:15.5px;}
-.card .viz{margin-top:24px;}
-/* mini visuals */
-.timecmp{display:grid; gap:10px; font:500 12.5px/1 var(--mono);}
-.timecmp div{display:grid; grid-template-columns:96px 1fr; align-items:center; gap:12px; color:var(--muted);}
-.timecmp i{display:block; height:10px; border-radius:99px; background:#2A2F3D; transform-origin:left; transform:scaleX(0); transition:transform 1.4s var(--ease);}
-.timecmp .ai i{background:var(--grad);}
-.card.in .timecmp i{transform:scaleX(var(--w));}
-.langs{display:flex; flex-wrap:wrap; gap:8px;}
-.langs span{font:500 13px/1 var(--mono); padding:9px 12px; border-radius:8px; border:1px solid var(--line2); color:var(--muted); background:rgba(255,255,255,.02);}
-.langs span.on{color:var(--text); border-color:rgba(34,211,238,.5); background:rgba(34,211,238,.08);}
-.cost{display:flex; align-items:flex-end; gap:12px;}
-.cost div{flex:1; text-align:center; font:500 11.5px/1.3 var(--mono); color:var(--faint);}
-.cost i{display:block; margin:0 auto 10px; width:100%; max-width:64px; border-radius:8px 8px 4px 4px; background:#2A2F3D;}
-.cost .ai i{background:var(--grad);}
-.big-num{font-weight:600; font-size:clamp(46px,6vw,72px); letter-spacing:-.05em; line-height:1;}
-.b6{display:grid; gap:24px; align-items:center;}
-@media (min-width:900px){ .b6{grid-template-columns:1.2fr 1fr; padding:36px 40px;} }
+/* timeline du programme */
+.tl-sec{background:var(--deck2); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); padding-bottom:0;}
+.tl-pin{height:340vh; position:relative;}
+.tl-stage{position:sticky; top:58px; height:calc(100vh - 58px); display:flex; flex-direction:column; justify-content:center; gap:28px; padding:24px 0;}
+.inspector{display:grid; gap:10px 40px; align-items:end; min-height:200px;}
+@media (min-width:900px){ .inspector{grid-template-columns:1.1fr 1fr;} }
+.inspector .tc{color:var(--tungsten); font-size:14px;}
+.inspector h3{font-weight:800; font-stretch:72%; text-transform:uppercase; font-size:clamp(40px,6vw,80px); line-height:.9; margin-top:6px;}
+.inspector p{color:var(--muted); font-size:clamp(17px,1.6vw,20px); max-width:44ch;}
+.timeline{position:relative; border:1px solid var(--rule); background:var(--deck); user-select:none;}
+.ruler{position:relative; height:26px; border-bottom:1px solid var(--rule); margin-left:56px; font-size:11px; color:var(--faint);}
+.ruler span{position:absolute; top:6px; transform:translateX(2px);}
+.ruler span::before{content:""; position:absolute; left:-2px; top:-6px; width:1px; height:8px; background:var(--rule2);}
+.track{display:flex; height:58px; border-bottom:1px solid var(--rule);}
+.track:last-of-type{border-bottom:0;}
+.track > .lbl{flex:0 0 56px; display:grid; place-items:center; font-size:12px; color:var(--muted); background:var(--panel); border-right:1px solid var(--rule);}
+.lane{position:relative; flex:1;}
+.clip{position:absolute; top:6px; bottom:6px; border:0; border-radius:3px; padding:6px 8px; overflow:hidden; font-size:12.5px; font-weight:600; font-stretch:85%; color:#fff; white-space:nowrap; text-overflow:ellipsis; text-align:left; opacity:.5; transition:opacity .3s, box-shadow .3s; cursor:pointer;}
+.clip.on{opacity:1; box-shadow:0 0 0 2px var(--tungsten);}
+.audio .clip{cursor:default; opacity:.3; background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.45) 0 2px,transparent 2px 5px); background-size:100% 55%; background-repeat:no-repeat; background-position:0 60%;}
+.audio .clip.on{opacity:.9; box-shadow:none;}
+.playhead{position:absolute; top:0; bottom:0; width:2px; background:var(--tungsten); z-index:3; left:56px; pointer-events:none;}
+.playhead::before{content:""; position:absolute; top:-1px; left:-6px; border:7px solid transparent; border-top-color:var(--tungsten);}
+.tl-hint{color:var(--faint); font-size:14px;}
+.mlist{display:none;}
+.mlist li{display:grid; grid-template-columns:6px 1fr; background:var(--panel); border-radius:3px; overflow:hidden;}
+.mlist li i{background:var(--c);}
+.mlist li div{padding:16px 16px 18px;}
+.mlist .tc{font-size:12px; color:var(--faint);}
+.mlist h3{font-weight:800; font-stretch:78%; text-transform:uppercase; font-size:24px; line-height:1; margin-top:6px;}
+.mlist p{color:var(--muted); font-size:15.5px; margin-top:6px;}
+@media (max-width:899px){
+  .tl-pin{height:auto;} .tl-stage{position:static; height:auto; padding:40px 0 80px;}
+  .timeline,.inspector,.tl-hint{display:none;}
+  .mlist{display:grid; gap:10px;}
+}
 
-/* modules */
-.mods{display:grid; gap:12px; counter-reset:m;}
-@media (min-width:900px){ .mods{grid-template-columns:1fr 1fr;} .mods li:last-child{grid-column:1 / -1;} }
-.mods li{display:grid; grid-template-columns:52px 1fr; gap:16px; align-items:start; padding:22px; border-radius:16px; border:1px solid var(--line); background:var(--panel); transition:border-color .3s, transform .3s var(--ease);}
-.mods li:hover{border-color:rgba(139,92,246,.45); transform:translateY(-2px);}
-.mods .n{width:52px; height:52px; border-radius:12px; display:grid; place-items:center; font:600 15px/1 var(--mono); color:var(--text); background:linear-gradient(140deg,rgba(59,130,246,.25),rgba(139,92,246,.25)); border:1px solid rgba(255,255,255,.1);}
-.mods small{font:500 11.5px/1 var(--mono); color:var(--cyan); text-transform:uppercase; letter-spacing:.08em;}
-.mods h3{font-weight:600; font-size:20px; letter-spacing:-.025em; margin-top:6px;}
-.mods p{color:var(--muted); font-size:15px; margin-top:4px;}
+/* chutier d'exemples */
+.bin{display:grid; gap:18px; grid-template-columns:repeat(2,minmax(0,1fr));}
+@media (min-width:900px){ .bin{grid-template-columns:repeat(5,minmax(0,1fr));} }
+.rush{background:var(--deck2); border:1px solid var(--rule); display:flex; flex-direction:column; min-width:0;}
+.rush .v{position:relative; aspect-ratio:9/16; background:#000; overflow:hidden;}
+.rush.wide{grid-column:1 / -1;}
+.rush.wide .v{aspect-ratio:16/11;}
+@media (min-width:900px){ .rush.wide{grid-column:span 2;} .rush.wide .v{aspect-ratio:auto; flex:1;} }
+.rush video{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;}
+.rush .meta{display:flex; justify-content:space-between; gap:10px; padding:10px 12px; font-size:12px; color:var(--muted); border-top:1px solid var(--rule);}
+.rush .meta b{color:var(--paper); font-weight:500; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.rush .what{padding:0 12px 14px; font-size:15px; color:var(--muted);}
+.snd{position:absolute; right:10px; bottom:10px; z-index:2; height:34px; padding:0 12px; border-radius:3px; border:0; cursor:pointer; background:rgba(0,0,0,.7); color:#fff; font-size:13px; font-weight:600;}
+.snd.on{background:var(--tungsten); color:#1A1206;}
 
-/* videos */
-.vgrid{display:grid; gap:14px; grid-template-columns:1fr 1fr;}
-@media (min-width:900px){ .vgrid{grid-template-columns:2fr 1fr 1fr;} .vcard.wide{grid-row:span 2;} }
-.vcard.wide{grid-column:1 / -1;}
-@media (min-width:900px){ .vcard.wide{grid-column:auto;} }
-.vcard{position:relative; border-radius:16px; overflow:hidden; border:1px solid var(--line); background:#0B0E16;}
-.vwrap{position:relative; aspect-ratio:9/12;}
-.vcard.wide .vwrap{aspect-ratio:16/10;}
-@media (min-width:900px){ .vcard.wide .vwrap{aspect-ratio:auto; height:100%; min-height:520px;} }
-.vwrap video{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;}
-.vcard figcaption{position:absolute; left:0; right:0; bottom:0; padding:44px 14px 14px; background:linear-gradient(180deg,transparent,rgba(5,6,10,.9)); font-size:13.5px; color:var(--muted); pointer-events:none;}
-.vcard figcaption b{display:block; color:var(--text); font-weight:600; font-size:15px; margin-bottom:2px;}
-.vsound{position:absolute; top:10px; right:10px; z-index:2; font:500 11.5px/1 var(--mono); padding:7px 10px; border-radius:7px; background:rgba(5,6,10,.7); border:1px solid var(--line2); cursor:pointer; -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);}
-.vsound.on{background:#fff; color:#05060A;}
-.ai-badge{position:absolute; top:10px; left:10px; z-index:2; font:600 10.5px/1 var(--mono); padding:6px 8px; border-radius:6px; background:linear-gradient(90deg,rgba(59,130,246,.85),rgba(139,92,246,.85)); letter-spacing:.06em;}
-
-/* results */
-.stats{display:grid; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:18px; overflow:hidden;}
-@media (min-width:760px){ .stats{grid-template-columns:repeat(3,1fr);} }
-.stats div{background:var(--panel); padding:30px 26px;}
-.stats b{display:block; font-weight:600; font-size:clamp(40px,5vw,56px); letter-spacing:-.05em; line-height:1;}
-.stats small{display:block; color:var(--muted); margin-top:10px; font-size:14.5px;}
-.shots{display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-top:16px;}
-@media (min-width:760px){ .shots{grid-template-columns:repeat(4,1fr);} }
-.shots button{border:1px solid var(--line); border-radius:14px; overflow:hidden; background:var(--panel); cursor:zoom-in; padding:0; aspect-ratio:3/4;}
-.shots img{width:100%; height:100%; object-fit:cover; object-position:top; transition:transform .5s var(--ease);}
-.shots button:hover img{transform:scale(1.04);}
-.disclaimer{font-size:13px; color:var(--faint); margin-top:16px; text-align:center;}
-.lightbox{position:fixed; inset:0; z-index:100; background:rgba(0,0,0,.88); display:none; place-items:center; padding:20px; cursor:zoom-out;}
+/* résultats */
+.results{display:grid; gap:40px; align-items:start;}
+@media (min-width:900px){ .results{grid-template-columns:1fr 1.2fr;} }
+.figs{border-top:1px solid var(--rule);}
+.figs div{display:flex; align-items:baseline; justify-content:space-between; gap:20px; padding:20px 0; border-bottom:1px solid var(--rule);}
+.figs b{font-weight:800; font-stretch:72%; font-size:clamp(46px,6vw,72px); line-height:.9;}
+.figs span{color:var(--muted); text-align:right; max-width:22ch;}
+.shots{display:grid; grid-template-columns:repeat(2,1fr); gap:10px;}
+.shots button{border:1px solid var(--rule); background:var(--panel); padding:0; cursor:zoom-in; aspect-ratio:3/4; overflow:hidden;}
+.shots img{width:100%; height:100%; object-fit:cover; object-position:top;}
+.small{font-size:13.5px; color:var(--faint); margin-top:16px;}
+.lightbox{position:fixed; inset:0; z-index:100; background:rgba(0,0,0,.9); display:none; place-items:center; padding:20px; cursor:zoom-out;}
 .lightbox.open{display:grid;}
-.lightbox img{max-height:90vh; border-radius:12px;}
+.lightbox img{max-height:90vh;}
 
-/* for who */
-.who{display:grid; gap:12px;}
-@media (min-width:760px){ .who{grid-template-columns:repeat(3,1fr);} }
-.who li{padding:20px; border-radius:14px; border:1px solid var(--line); background:var(--panel); font-weight:500; font-size:15.5px; letter-spacing:-.01em; display:flex; gap:12px;}
-.who li::before{content:"→"; color:var(--cyan); font-family:var(--mono);}
+/* pour qui */
+.who{columns:1; column-gap:48px; border-top:1px solid var(--rule);}
+@media (min-width:760px){ .who{columns:2;} }
+.who li{break-inside:avoid; padding:18px 0; border-bottom:1px solid var(--rule); font-size:18px;}
 
-/* coach */
-.coach{display:grid; gap:40px; align-items:center;}
-@media (min-width:900px){ .coach{grid-template-columns:400px 1fr; gap:64px;} }
-.coach-photo{position:relative; border-radius:20px; overflow:hidden; border:1px solid var(--line2); aspect-ratio:4/5; max-width:400px; margin:0 auto; width:100%;}
-.coach-photo img{width:100%; height:100%; object-fit:cover; object-position:top;}
-.coach-photo .pill{position:absolute; left:12px; bottom:12px; font:500 12px/1 var(--mono); padding:8px 10px; border-radius:8px; background:rgba(5,6,10,.75); border:1px solid var(--line2); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);}
-.coach h2{margin-top:16px;}
-.coach p{color:var(--muted); margin-top:16px; font-size:16.5px;}
-.coach p b{color:var(--text); font-weight:500;}
+/* générique : formateur */
+.credits{display:grid; gap:40px; align-items:center;}
+@media (min-width:900px){ .credits{grid-template-columns:380px 1fr; gap:72px;} }
+.credits figure{aspect-ratio:4/5; overflow:hidden; border:1px solid var(--rule); background:#0d1f4f; max-width:380px; width:100%; margin:0 auto;}
+.credits img{width:100%; height:100%; object-fit:cover; object-position:top;}
+.credits .role{color:var(--muted); font-size:15px;}
+.credits p.name{color:var(--paper); font-weight:800; font-stretch:72%; text-transform:uppercase; font-size:clamp(48px,7vw,88px); line-height:.9; margin-top:4px;}
+.credits p{color:var(--muted); margin-top:18px; max-width:56ch;}
+.credits p b{color:var(--paper); font-weight:600;}
 
-/* pricing */
-.price-wrap{display:grid; gap:32px; align-items:center; max-width:1000px; margin:0 auto;}
-@media (min-width:900px){ .price-wrap{grid-template-columns:1fr 440px; gap:56px;} }
-.inc li{display:flex; gap:12px; padding:14px 0; border-bottom:1px solid var(--line); font-size:16px;}
-.inc li::before{content:""; flex:0 0 18px; height:18px; margin-top:3px; border-radius:50%; background:rgba(52,211,153,.15) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2334D399' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center/11px no-repeat;}
-.offer{position:relative; border-radius:20px; padding:1px; background:conic-gradient(from var(--a,0deg),rgba(96,165,250,.9),rgba(167,139,250,.9),rgba(34,211,238,.9),rgba(96,165,250,.9));}
-@property --a{syntax:'<angle>'; initial-value:0deg; inherits:false;}
-html.anim .offer{animation:spin 6s linear infinite;}
-@keyframes spin{to{--a:360deg}}
-.offer-in{border-radius:19px; background:linear-gradient(180deg,#0F1320,#090B12); padding:28px 24px 24px;}
-.offer-top{display:flex; justify-content:space-between; align-items:center; font:500 12px/1 var(--mono); color:var(--muted);}
-.offer-top .pct{color:#05060A; background:var(--green); padding:6px 8px; border-radius:6px; font-weight:600;}
-.old{margin-top:18px; font:500 14px/1 var(--mono); color:var(--faint);}
-.old s{text-decoration-color:#F87171;}
-.price{font-weight:600; font-size:clamp(52px,12vw,68px); letter-spacing:-.05em; line-height:1; margin-top:8px;}
-.price small{font:500 16px/1 var(--mono); color:var(--muted); letter-spacing:0; margin-left:6px;}
-.save{margin-top:10px; font:500 13px/1 var(--mono); color:var(--green);}
-.cd-label{margin-top:22px; font:500 11.5px/1 var(--mono); color:var(--faint); text-transform:uppercase; letter-spacing:.08em;}
-.cd{display:flex; gap:6px; margin-top:10px;}
-.cd .u{flex:1; text-align:center; padding:12px 4px 10px; border-radius:10px; background:rgba(255,255,255,.03); border:1px solid var(--line);}
-.cd .n{font:600 24px/1 var(--mono); font-variant-numeric:tabular-nums;}
-.cd .l{font:500 10px/1 var(--mono); color:var(--faint); text-transform:uppercase; letter-spacing:.08em; margin-top:7px;}
-.cd .sep{font:600 20px/1 var(--mono); color:var(--faint); padding-top:12px;}
-.offer .btn{margin-top:22px;}
-.ended-msg{display:none; margin-top:18px; font-size:14.5px; color:var(--muted); padding:12px; border-radius:10px; border:1px solid var(--line);}
+/* clap : tarif */
+.offer-grid{display:grid; gap:40px; align-items:start;}
+@media (min-width:900px){ .offer-grid{grid-template-columns:1fr 460px; gap:64px;} }
+.inc li{padding:15px 0; border-bottom:1px solid var(--rule); display:flex; gap:14px;}
+.inc li::before{content:""; flex:0 0 14px; height:2px; margin-top:13px; background:var(--tungsten);}
+.slate{background:#101010; border:1px solid var(--rule2); border-radius:6px; overflow:hidden; box-shadow:0 40px 80px -40px #000;}
+.clapper{height:44px; background:repeating-linear-gradient(-45deg,#ECE9E2 0 22px,#101010 22px 44px); transform-origin:0 100%; border-bottom:2px solid #000;}
+html.anim .slate .clapper{transform:rotate(-14deg);}
+html.anim .slate.in .clapper{animation:clap .7s cubic-bezier(.5,0,.3,1.4) .2s both;}
+@keyframes clap{0%{transform:rotate(-14deg)}60%{transform:rotate(0)}75%{transform:rotate(-3deg)}100%{transform:rotate(0)}}
+.slate-body{padding:22px 24px 24px;}
+.slate-grid{display:grid; grid-template-columns:1fr 1fr; border:1px solid var(--rule2);}
+.slate-grid div{padding:10px 12px; border-right:1px solid var(--rule2); border-bottom:1px solid var(--rule2);}
+.slate-grid div:nth-child(2n){border-right:0;}
+.slate-grid div:nth-last-child(-n+2){border-bottom:0;}
+.slate-grid small{display:block; font-size:12px; color:var(--faint);}
+.slate-grid span{font-weight:600; font-stretch:85%;}
+.slate-price{padding:22px 0 6px; display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;}
+.slate-price s{color:var(--faint);}
+.slate-price b{font-weight:800; font-stretch:72%; font-size:clamp(64px,13vw,88px); line-height:.85;}
+.slate-price em{font-style:normal; color:var(--muted);}
+.save{color:var(--tungsten); font-weight:600;}
+.cd-label{margin-top:20px; font-size:14px; color:var(--muted);}
+.cd{display:flex; gap:6px; margin-top:8px;}
+.cd .u{flex:1; text-align:center; padding:10px 4px 8px; background:var(--panel); border-radius:3px;}
+.cd .n{font-family:var(--tc); font-weight:700; font-size:24px; font-variant-numeric:tabular-nums;}
+.cd .l{font-size:11px; color:var(--faint); margin-top:4px;}
+.cd .sep{font-family:var(--tc); color:var(--faint); padding-top:10px;}
+.slate .btn{margin-top:20px;}
+.note{font-size:13px; color:var(--faint); margin-top:12px; text-align:center;}
+.ended-msg{display:none; margin-top:16px; color:var(--muted); font-size:15px;}
 body.offer-ended .ended-msg{display:block;}
 body.offer-ended .promo-only{display:none !important;}
 
-/* bonus */
-.bonus{display:grid; gap:12px; grid-template-columns:1fr 1fr;}
-@media (min-width:900px){ .bonus{grid-template-columns:repeat(4,1fr);} }
-.bonus div{padding:24px 20px; border-radius:16px; border:1px solid var(--line); background:var(--panel);}
-.bonus span{font:500 12px/1 var(--mono); color:var(--cyan);}
-.bonus b{display:block; margin-top:14px; font-weight:600; font-size:17px; letter-spacing:-.02em; line-height:1.25;}
-
 /* faq */
-.faq{max-width:780px; margin:0 auto;}
-.faq details{border-bottom:1px solid var(--line);}
-.faq summary{list-style:none; cursor:pointer; display:flex; justify-content:space-between; gap:20px; padding:22px 0; font-weight:500; font-size:17px; letter-spacing:-.015em;}
+.faq{max-width:820px; border-top:1px solid var(--rule);}
+.faq details{border-bottom:1px solid var(--rule);}
+.faq summary{list-style:none; cursor:pointer; display:flex; justify-content:space-between; gap:20px; padding:20px 0; font-weight:600; font-stretch:90%; font-size:18px;}
 .faq summary::-webkit-details-marker{display:none;}
-.faq summary::after{content:"+"; font:400 22px/1 var(--mono); color:var(--muted); transition:transform .3s;}
+.faq summary::after{content:"+"; color:var(--tungsten); font-size:22px; line-height:1; transition:transform .3s;}
 .faq details[open] summary::after{transform:rotate(45deg);}
-.faq p{padding:0 0 22px; color:var(--muted); font-size:15.5px;}
+.faq p{padding:0 0 20px; color:var(--muted); max-width:66ch;}
 
-/* final */
-.final{text-align:center;}
-.final .h2{max-width:16ch; margin-left:auto; margin-right:auto;}
-.final .offer{max-width:440px; margin:44px auto 0; text-align:left;}
-footer{border-top:1px solid var(--line); padding:28px 0; text-align:center; font:500 12.5px/1.6 var(--mono); color:var(--faint);}
+/* fin */
+.end{text-align:center; padding-bottom:clamp(100px,12vw,160px);}
+.end .title{max-width:14ch; margin:0 auto;}
+.end p{color:var(--muted); margin:18px auto 30px; max-width:46ch;}
+footer{border-top:1px solid var(--rule); padding:26px 0; text-align:center; font-size:14px; color:var(--faint);}
 footer a{color:var(--muted);}
 
-/* sticky mobile */
-.sticky{position:fixed; left:0; right:0; bottom:0; z-index:60; display:flex; align-items:center; gap:12px; padding:10px 14px calc(10px + env(safe-area-inset-bottom)); background:rgba(5,6,10,.9); -webkit-backdrop-filter:blur(14px); backdrop-filter:blur(14px); border-top:1px solid var(--line2); transform:translateY(110%); transition:transform .4s var(--ease);}
+.sticky{position:fixed; left:0; right:0; bottom:0; z-index:60; display:flex; align-items:center; gap:12px; padding:10px 14px calc(10px + env(safe-area-inset-bottom)); background:var(--deck2); border-top:1px solid var(--rule2); transform:translateY(110%); transition:transform .35s var(--ease);}
 .sticky.show{transform:none;}
-.sticky .sp{line-height:1;}
-.sticky .sp s{font:500 11px/1 var(--mono); color:var(--faint);}
-.sticky .sp b{display:block; font-weight:600; font-size:20px; letter-spacing:-.03em; margin-top:3px;}
-.sticky .sp small{display:block; font:500 10.5px/1 var(--mono); color:var(--cyan); margin-top:4px; font-variant-numeric:tabular-nums;}
+.sticky .sp{line-height:1.05;}
+.sticky .sp s{font-size:12px; color:var(--faint);}
+.sticky .sp b{display:block; font-weight:800; font-stretch:78%; font-size:22px;}
 .sticky .btn{flex:1; height:48px;}
 @media (min-width:900px){ .sticky{display:none;} }
-
-/* reveal */
-.rv{transition:opacity .8s var(--ease), transform .8s var(--ease);}
-html.anim .rv{opacity:0; transform:translateY(24px);}
-html.anim .rv.in{opacity:1; transform:none;}
-@media (prefers-reduced-motion:reduce){ .marquee{animation:none;} }
+@media (prefers-reduced-motion:reduce){ .screen video,.bars::before,.bars::after{transition:none;} .hud-tl i{animation:none;} }
 </style>
 </head>
 <body>
 
-<header class="nav">
+<header class="app">
   <div class="wrap">
-    <a class="brand" href="/academy/"><span class="plate"><img src="/logo.png" alt="ROUGATECH"></span>Academy <span>/ VIP AI Video</span></a>
-    <nav class="nav-links" aria-label="Sections"><a href="#pourquoi">Pourquoi l'IA</a><a href="#programme">Programme</a><a href="#exemples">Exemples</a><a href="#offre">Tarif</a><a href="#faq">FAQ</a></nav>
-    <a class="btn btn-primary btn-sm" data-wa href="#"><span class="wa" aria-hidden="true"></span>S'inscrire</a>
+    <a class="logo" href="/academy/"><img src="/logo.png" alt="ROUGATECH Academy"></a>
+    <span class="proj">VIP AI Video Training <span>· ROUGATECH Academy</span></span>
+    <span class="rec"><i></i><span class="tc" id="tc-app">00:00:00:00</span></span>
+    <a class="btn btn-go" data-wa href="#"><span class="wa" aria-hidden="true"></span>S'inscrire</a>
   </div>
 </header>
 
 <main>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
-  <div class="grid-bg" aria-hidden="true"></div>
-  <div class="wrap hero-grid">
-    <div>
-      <span class="eyebrow rv"><i></i>Formation IA · session de la semaine ouverte</span>
-      <h1 class="rv">Créez des vidéos <span class="grad-text">ultra-réalistes</span> avec l'IA,<br>en <span class="rot grad-text" id="rot">français</span></h1>
-      <p class="lead rv">VIP AI Video Training vous apprend à produire des vidéos professionnelles pour votre marque, votre entreprise ou vos réseaux sociaux&nbsp;: <strong>sans caméra, sans studio et sans montrer votre visage</strong>.</p>
-      <div class="hero-ctas rv">
-        <a class="btn btn-primary" data-wa href="#"><span class="wa" aria-hidden="true"></span><span class="promo-only">Rejoindre la formation · 24 999 F</span><span class="ended-only" style="display:none;">Être informé de la prochaine session</span></a>
-        <a class="btn btn-ghost" href="#exemples">Voir des exemples</a>
+<!-- MONITEUR -->
+<section class="monitor">
+  <div class="wrap">
+    <div class="screen" id="screen">
+      <video src="videos/cinema-premiere-classe.mp4" poster="videos/cinema-premiere-classe.jpg" muted loop playsinline autoplay preload="auto" aria-label="Scène en première classe, entièrement générée par l'IA"></video>
+      <div class="bars"></div>
+      <div class="safe" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div class="hud hud-tl tc" aria-hidden="true"><i></i>Généré par IA</div>
+      <div class="hud hud-tr tc" aria-hidden="true" id="tc-screen">00:00:00:00</div>
+      <div class="lower">
+        <h1>Créez des vidéos comme celle-ci avec l'IA</h1>
+        <p>Sans caméra, sans studio, sans montrer votre visage. En <span id="lang">français</span>.</p>
       </div>
-      <div class="hero-meta rv"><span><b>7</b>&nbsp;modules</span><span>Accès <b>à vie</b></span><span><b>15,3 K</b>&nbsp;abonnés TikTok (formateur)</span></div>
     </div>
-    <div class="rv" style="position:relative;">
-      <div class="studio" aria-hidden="true">
-        <div class="studio-in">
-          <div class="st-top"><i></i><i></i><i></i>&nbsp;ai-video-studio<em>en direct</em></div>
-          <div class="st-body">
-            <div class="prompt"><label>Prompt</label><p><span id="typed"></span><span class="caret"></span></p>
-              <div class="prompt-foot"><div class="chips"><span>4K</span><span>16:9</span><span id="langchip">FR</span></div><span class="gen">Générer ↗</span></div>
-            </div>
-            <div class="preview" id="preview">
-              <video muted loop playsinline preload="none" data-src="videos/cinema-premiere-classe.mp4" poster="videos/cinema-premiere-classe.jpg"></video>
-              <video muted loop playsinline preload="none" data-src="videos/spot-entreprise-kps.mp4" poster="videos/spot-entreprise-kps.jpg"></video>
-              <video muted loop playsinline preload="none" data-src="videos/avatar-tiktok-1.mp4" poster="videos/avatar-tiktok-1.jpg"></video>
-              <div class="scan"></div><span class="tag" id="ptag">Rendu IA</span>
-            </div>
-            <div class="bar"><i id="pbar"></i></div>
-            <div class="st-status"><span id="pstat">Génération…</span><span id="ppct">0 %</span></div>
-          </div>
-        </div>
+    <div class="transport">
+      <div class="scrub" aria-hidden="true"><b id="scrub-b"></b><i id="scrub-i"></i><span class="tc">00:00:27</span></div>
+      <div class="tp-price promo-only"><s>50 000 FCFA</s><b>24 999 FCFA</b></div>
+      <div class="tp-actions">
+        <a class="btn btn-go" id="hero-cta" data-wa href="#"><span class="wa" aria-hidden="true"></span><span class="promo-only">Je m'inscris</span><span class="ended-only" style="display:none;">Prochaine session</span></a>
+        <a class="btn btn-line" href="#programme">Voir le programme</a>
       </div>
-      <div class="float-card fc1"><span class="ic">◉</span><div><b>Voix IA clonée</b><small>naturelle · multilingue</small></div></div>
-      <div class="float-card fc2"><span class="ic">▶</span><div><b>Sans caméra</b><small>ni tournage, ni studio</small></div></div>
     </div>
+    <p class="facts"><span><b>7 modules</b> de la niche à la publication</span><span><b>Accès à vie</b> et mises à jour</span><span>Accompagnement <b>personnalisé</b></span></p>
   </div>
 </section>
 
-<div class="tools" aria-hidden="true">
-  <p>Ce que vous allez maîtriser</p>
-  <div class="marquee">
-    <span>Prompt engineering</span><span>Vidéo IA ultra-réaliste</span><span>Voice cloning</span><span>Avatars IA</span><span>Images IA</span><span>Montage vidéo</span><span>Stratégie de contenu</span><span>Personal branding</span><span>Veille IA</span>
-    <span>Prompt engineering</span><span>Vidéo IA ultra-réaliste</span><span>Voice cloning</span><span>Avatars IA</span><span>Images IA</span><span>Montage vidéo</span><span>Stratégie de contenu</span><span>Personal branding</span><span>Veille IA</span>
-  </div>
-</div>
-
-<!-- POURQUOI APPRENDRE L'IA -->
+<!-- POURQUOI L'IA -->
 <section id="pourquoi">
   <div class="wrap">
-    <div class="sec-head rv">
-      <span class="eyebrow"><i></i>Pourquoi apprendre l'IA maintenant</span>
-      <h2 class="h2">L'IA ne remplace pas les créateurs.<br><span class="grad-text">Elle remplace ceux qui ne l'utilisent pas.</span></h2>
-      <p class="lead">Ce qui demandait hier une équipe, du matériel et un budget se fait aujourd'hui seul, depuis un ordinateur. Voici ce que cette compétence change concrètement.</p>
+    <div class="head">
+      <h2 class="title title-sm">Ce que coûte une vidéo, avant et après l'IA</h2>
+      <p class="intro">Pour produire la scène que vous venez de voir, il fallait hier une équipe, un lieu et plusieurs jours. Aujourd'hui, <b>une personne formée et un ordinateur suffisent</b>.</p>
     </div>
-    <div class="bento">
-      <article class="card b1 rv"><span class="k">01 · Temps</span><h3>Produisez en quelques heures ce qui prenait des jours</h3><p>Écriture, voix, images, vidéo et montage&nbsp;: l'IA automatise les étapes les plus longues de la création.</p>
-        <div class="viz timecmp"><div><span>Tournage</span><i style="--w:1"></i></div><div class="ai"><span>Avec l'IA</span><i style="--w:.28"></i></div></div></article>
-      <article class="card b2 rv"><span class="k">02 · Langues</span><h3>Parlez à votre audience dans sa langue</h3><p>Créez la même vidéo en français, en anglais ou dans d'autres langues, avec une voix naturelle.</p>
-        <div class="viz langs" id="langs"><span>Français</span><span>English</span><span>Español</span><span>العربية</span><span>Português</span><span>+ d'autres</span></div></article>
-      <article class="card b3 rv"><span class="k">03 · Budget</span><h3>Fini le coût d'un tournage</h3><p>Pas de caméra, pas de studio, pas d'équipe à payer pour chaque vidéo.</p>
-        <div class="viz cost"><div><i style="height:110px"></i>Tournage</div><div class="ai"><i style="height:34px"></i>IA</div></div></article>
-      <article class="card b4 rv"><span class="k">04 · Discrétion</span><h3>Restez derrière l'écran</h3><p>Avatars et voix IA&nbsp;: vous développez votre audience sans jamais montrer votre visage.</p></article>
-      <article class="card b5 rv"><span class="k">05 · Revenus</span><h3>Une compétence qui se vend</h3><p>Utilisez-la pour votre business ou proposez la création de vidéos IA à des entreprises.</p></article>
-      <article class="card b6 rv"><div><span class="k">06 · Avance</span><h3>Les outils évoluent chaque mois. Vous aussi.</h3><p>Le module AI Updates et les mises à jour gratuites à vie vous gardent à jour quand de nouveaux outils sortent. Vous ne repartez jamais de zéro.</p></div>
-        <div class="center"><div class="big-num grad-text">À vie</div><p style="margin-top:8px">accès et mises à jour inclus</p></div></article>
+    <div class="sheet" role="table" aria-label="Comparaison entre un tournage classique et une vidéo créée avec l'IA">
+      <div class="sheet-row sheet-head" role="row"><span role="columnheader"></span><span role="columnheader">Tournage classique</span><span class="new" role="columnheader">Avec l'IA</span></div>
+      <div class="sheet-row" role="row"><span class="k" role="rowheader">Équipe</span><span class="old" role="cell">Réalisateur, cadreur, acteurs, monteur</span><span class="new" role="cell">Vous seul</span></div>
+      <div class="sheet-row" role="row"><span class="k" role="rowheader">Matériel</span><span class="old" role="cell">Caméra, lumières, micros</span><span class="new" role="cell">Un ordinateur</span></div>
+      <div class="sheet-row" role="row"><span class="k" role="rowheader">Lieu</span><span class="old" role="cell">Studio ou décor à louer</span><span class="new" role="cell">N'importe quel décor, généré</span></div>
+      <div class="sheet-row" role="row"><span class="k" role="rowheader">Délai</span><span class="old" role="cell">Plusieurs jours</span><span class="new" role="cell">Quelques heures</span></div>
+      <div class="sheet-row" role="row"><span class="k" role="rowheader">Langues</span><span class="old" role="cell">Un tournage par langue</span><span class="new" role="cell">Toutes les langues de votre audience</span></div>
+      <div class="sheet-row" role="row"><span class="k" role="rowheader">Votre visage</span><span class="old" role="cell">À l'écran</span><span class="new" role="cell">Facultatif, grâce aux avatars et voix IA</span></div>
+    </div>
+    <div class="after-sheet">
+      <div><h3>Une compétence que vous pouvez vendre</h3><p>Créez du contenu pour votre propre business, ou proposez la création de vidéos IA aux entreprises et aux créateurs de votre ville.</p></div>
+      <div><h3>Des outils qui changent chaque mois</h3><p>Le module AI Updates et les mises à jour gratuites à vie vous gardent à jour quand de nouveaux outils sortent.</p></div>
     </div>
   </div>
 </section>
 
-<!-- PROGRAMME -->
-<section id="programme" style="background:var(--bg2);">
+<!-- PROGRAMME EN TIMELINE -->
+<section class="tl-sec" id="programme">
   <div class="wrap">
-    <div class="sec-head center rv">
-      <span class="eyebrow"><i></i>Le programme</span>
-      <h2 class="h2">7 modules, de l'idée<br>à la <span class="grad-text">vidéo publiée</span></h2>
-      <p class="lead">Chaque module vous fait avancer d'une étape vers des contenus prêts à attirer et à vendre.</p>
+    <div class="head" style="margin-bottom:0;">
+      <h2 class="title title-sm">Le programme, monté comme une vidéo</h2>
+      <p class="intro">Sept modules dans l'ordre où vous les utiliserez, de l'idée à la vidéo publiée. Faites défiler pour avancer la tête de lecture.</p>
     </div>
-    <ol class="mods">
-      <li class="rv"><span class="n">01</span><div><small>Stratégie</small><h3>Niche Mastering</h3><p>Choisir une niche rentable et construire une stratégie de contenu.</p></div></li>
-      <li class="rv"><span class="n">02</span><div><small>Identité</small><h3>Brand Setup</h3><p>Créer une identité visuelle et une présence digitale cohérente.</p></div></li>
-      <li class="rv"><span class="n">03</span><div><small>Voix IA</small><h3>Voice Cloning &amp; Voice Cover</h3><p>Créer et utiliser une voix IA naturelle pour vos contenus.</p></div></li>
-      <li class="rv"><span class="n">04</span><div><small>Création</small><h3>Prompt Engineering</h3><p>Maîtriser les prompts pour générer des images et des vidéos ultra-réalistes.</p></div></li>
-      <li class="rv"><span class="n">05</span><div><small>Montage</small><h3>Video Editing</h3><p>Transformer vos créations IA en vidéos professionnelles prêtes à publier.</p></div></li>
-      <li class="rv"><span class="n">06</span><div><small>Diffusion</small><h3>Social Media</h3><p>Publier pour gagner des abonnés engagés et vendre vos produits ou services.</p></div></li>
-      <li class="rv"><span class="n">07</span><div><small>Veille</small><h3>AI Updates</h3><p>Découvrir les nouveaux outils et techniques IA au fur et à mesure de leur évolution.</p></div></li>
-    </ol>
-    <div class="center rv" style="margin-top:40px;"><a class="btn btn-primary" data-wa href="#"><span class="wa" aria-hidden="true"></span>Je veux suivre ce programme</a></div>
+  </div>
+  <div class="tl-pin" id="tl-pin">
+    <div class="tl-stage wrap">
+      <div class="inspector" aria-live="polite">
+        <div><span class="tc" id="ins-tc">Module 1 sur 7</span><h3 id="ins-t">Niche Mastering</h3></div>
+        <p id="ins-d">Choisir une niche rentable et construire une stratégie de contenu.</p>
+      </div>
+      <div class="timeline" id="timeline">
+        <div class="ruler tc" id="ruler"></div>
+        <div class="track"><span class="lbl tc">V2</span><div class="lane" id="lane-v2"></div></div>
+        <div class="track"><span class="lbl tc">V1</span><div class="lane" id="lane-v1"></div></div>
+        <div class="track audio"><span class="lbl tc">A1</span><div class="lane" id="lane-a1"></div></div>
+        <span class="playhead" id="playhead"></span>
+      </div>
+      <p class="tl-hint">Cliquez sur un clip pour aller directement au module.</p>
+      <ol class="mlist" id="mlist"></ol>
+    </div>
   </div>
 </section>
 
-<!-- EXEMPLES -->
+<!-- CHUTIER -->
 <section id="exemples">
   <div class="wrap">
-    <div class="sec-head center rv">
-      <span class="eyebrow"><i></i>Exemples réels</span>
-      <h2 class="h2">N'importe quelle vidéo,<br><span class="grad-text">dans n'importe quelle langue</span></h2>
-      <p class="lead">Scène de cinéma, avatar présentateur, contenu viral ou spot d'entreprise&nbsp;: voici des vidéos réalisées avec l'IA. Activez le son.</p>
+    <div class="head">
+      <h2 class="title title-sm">Le chutier : des vidéos réalisées avec l'IA</h2>
+      <p class="intro">Scène de cinéma, avatar présentateur, contenu viral ou spot d'entreprise. Activez le son pour entendre les voix IA.</p>
     </div>
-    <div class="vgrid rv">
-      <figure class="vcard wide"><div class="vwrap"><span class="ai-badge">GÉNÉRÉ PAR IA</span><video src="videos/cinema-premiere-classe.mp4" poster="videos/cinema-premiere-classe.jpg" muted loop playsinline preload="none" aria-label="Une scène réaliste en première classe, entièrement générée par l'IA"></video><button type="button" class="vsound" aria-label="Activer le son">Son</button></div><figcaption><b>Scène cinéma</b>Une scène réaliste en première classe, entièrement générée par l'IA</figcaption></figure>
-      <figure class="vcard"><div class="vwrap"><span class="ai-badge">IA</span><video src="videos/avatar-tiktok-1.mp4" poster="videos/avatar-tiktok-1.jpg" muted loop playsinline preload="none" aria-label="Vidéo TikTok présentée par un avatar IA"></video><button type="button" class="vsound" aria-label="Activer le son">Son</button></div><figcaption><b>Avatar présentateur</b>Sans montrer son visage</figcaption></figure>
-      <figure class="vcard"><div class="vwrap"><span class="ai-badge">IA</span><video src="videos/avatar-tiktok-2.mp4" poster="videos/avatar-tiktok-2.jpg" muted loop playsinline preload="none" aria-label="Vidéo produit pour TikTok, voix et visuels IA"></video><button type="button" class="vsound" aria-label="Activer le son">Son</button></div><figcaption><b>Contenu viral</b>Voix et visuels IA</figcaption></figure>
-      <figure class="vcard" style="grid-column:1 / -1;"><div class="vwrap" style="aspect-ratio:16/9;"><span class="ai-badge">IA</span><video src="videos/spot-entreprise-kps.mp4" poster="videos/spot-entreprise-kps.jpg" muted loop playsinline preload="none" aria-label="Vidéo de communication pour une entreprise, en français"></video><button type="button" class="vsound" aria-label="Activer le son">Son</button></div><figcaption><b>Spot entreprise</b>Vidéo de communication pour une entreprise, en français</figcaption></figure>
+    <div class="bin">
+      <figure class="rush wide"><div class="v"><video src="videos/cinema-premiere-classe.mp4" poster="videos/cinema-premiere-classe.jpg" muted loop playsinline preload="none" aria-label="Scène de cinéma en première classe générée par IA"></video><button type="button" class="snd">Son</button></div><figcaption><div class="meta"><b class="tc">premiere_classe.mp4</b><span class="tc">00:27</span></div><div class="what">Scène de cinéma, générée de A à Z</div></figcaption></figure>
+      <figure class="rush"><div class="v"><video src="videos/avatar-tiktok-1.mp4" poster="videos/avatar-tiktok-1.jpg" muted loop playsinline preload="none" aria-label="Vidéo TikTok présentée par un avatar IA"></video><button type="button" class="snd">Son</button></div><figcaption><div class="meta"><b class="tc">avatar_tiktok.mp4</b><span class="tc">00:35</span></div><div class="what">Avatar présentateur, sans montrer son visage</div></figcaption></figure>
+      <figure class="rush"><div class="v"><video src="videos/avatar-tiktok-2.mp4" poster="videos/avatar-tiktok-2.jpg" muted loop playsinline preload="none" aria-label="Vidéo produit pour TikTok"></video><button type="button" class="snd">Son</button></div><figcaption><div class="meta"><b class="tc">produit_viral.mp4</b><span class="tc">00:22</span></div><div class="what">Contenu viral, voix et visuels IA</div></figcaption></figure>
+      <figure class="rush"><div class="v"><video src="videos/spot-entreprise-kps.mp4" poster="videos/spot-entreprise-kps.jpg" muted loop playsinline preload="none" aria-label="Spot de communication pour une entreprise"></video><button type="button" class="snd">Son</button></div><figcaption><div class="meta"><b class="tc">spot_entreprise.mp4</b><span class="tc">00:30</span></div><div class="what">Spot d'entreprise, en français</div></figcaption></figure>
     </div>
   </div>
 </section>
 
 <!-- RÉSULTATS -->
-<section id="resultats" style="background:var(--bg2);">
-  <div class="wrap">
-    <div class="sec-head center rv">
-      <span class="eyebrow"><i></i>Résultats réels</span>
-      <h2 class="h2">La méthode appliquée<br><span class="grad-text">à mon propre business</span></h2>
-      <p class="lead">Avant de l'enseigner, je l'utilise tous les jours&nbsp;: des vidéos IA, <strong>sans montrer mon visage</strong>, pour attirer une audience qualifiée et vendre.</p>
+<section style="background:var(--deck2); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);">
+  <div class="wrap results">
+    <div>
+      <h2 class="title title-sm">La méthode sur mon propre compte</h2>
+      <p class="intro">Avant de l'enseigner, je l'utilise tous les jours&nbsp;: des vidéos IA, <b>sans montrer mon visage</b>, pour attirer une audience et vendre.</p>
+      <div class="figs" style="margin-top:32px;">
+        <div><b>15,3 K</b><span>abonnés TikTok dans ma niche</span></div>
+        <div><b>+401</b><span>membres dans mon groupe privé</span></div>
+        <div><b>+300 %</b><span>de ventes grâce aux vidéos IA</span></div>
+      </div>
     </div>
-    <div class="stats rv">
-      <div><b class="grad-text" data-count="15.3" data-suffix=" K">15,3 K</b><small>abonnés TikTok qualifiés dans ma niche</small></div>
-      <div><b class="grad-text" data-count="401" data-prefix="+">+401</b><small>membres dans mon groupe privé</small></div>
-      <div><b class="grad-text" data-count="300" data-prefix="+" data-suffix=" %">+300 %</b><small>de ventes grâce aux vidéos IA</small></div>
+    <div>
+      <div class="shots">
+        <button type="button" data-full="preuves/tiktok-profil.jpg"><img src="preuves/tiktok-profil.jpg" alt="Profil TikTok : 15,3 K abonnés" loading="lazy"></button>
+        <button type="button" data-full="preuves/tiktok-video-155k.jpg"><img src="preuves/tiktok-video-155k.jpg" alt="Vidéo TikTok à 155,9 K vues" loading="lazy"></button>
+        <button type="button" data-full="preuves/tiktok-video-116k.jpg"><img src="preuves/tiktok-video-116k.jpg" alt="Vidéo TikTok à 116,9 K vues" loading="lazy"></button>
+        <button type="button" data-full="preuves/groupe-whatsapp-401.jpg"><img src="preuves/groupe-whatsapp-401.jpg" alt="Groupe privé de 401 membres" loading="lazy"></button>
+      </div>
+      <p class="small">Résultats personnels du formateur, donnés à titre d'exemple et non garantis&nbsp;: les vôtres dépendront de votre niche, de votre régularité et de votre travail.</p>
     </div>
-    <div class="shots rv">
-      <button type="button" data-full="preuves/tiktok-profil.jpg"><img src="preuves/tiktok-profil.jpg" alt="Profil TikTok : 15,3 K abonnés et 39,8 K j'aime" loading="lazy"></button>
-      <button type="button" data-full="preuves/tiktok-video-155k.jpg"><img src="preuves/tiktok-video-155k.jpg" alt="Vidéo TikTok à 155,9 K vues" loading="lazy"></button>
-      <button type="button" data-full="preuves/tiktok-video-116k.jpg"><img src="preuves/tiktok-video-116k.jpg" alt="Vidéo TikTok à 116,9 K vues" loading="lazy"></button>
-      <button type="button" data-full="preuves/groupe-whatsapp-401.jpg"><img src="preuves/groupe-whatsapp-401.jpg" alt="Groupe privé de 401 membres" loading="lazy"></button>
-    </div>
-    <p class="disclaimer rv">Résultats personnels du formateur, présentés à titre d'exemple. Ils ne constituent pas une garantie&nbsp;: vos résultats dépendront de votre niche, de votre régularité et de votre travail.</p>
   </div>
 </section>
 
 <!-- POUR QUI -->
 <section>
   <div class="wrap">
-    <div class="sec-head center rv">
-      <span class="eyebrow"><i></i>Pour qui&nbsp;?</span>
-      <h2 class="h2">Faite pour vous si vous voulez</h2>
-    </div>
-    <ul class="who rv">
+    <div class="head"><h2 class="title title-sm">Pour vous si vous voulez</h2></div>
+    <ul class="who">
       <li>Créer des vidéos professionnelles pour votre marque</li>
       <li>Produire du contenu pour votre entreprise, sans équipe de tournage</li>
-      <li>Développer vos réseaux sociaux avec des contenus engageants</li>
+      <li>Développer vos réseaux sociaux avec des contenus qui retiennent l'attention</li>
       <li>Vendre vos produits ou services grâce au contenu</li>
       <li>Maîtriser les outils d'IA qui évoluent chaque mois</li>
       <li>Construire une vraie stratégie de contenu autour de l'IA</li>
@@ -463,30 +427,25 @@ html.anim .rv.in{opacity:1; transform:none;}
   </div>
 </section>
 
-<!-- FORMATEUR -->
-<section style="background:var(--bg2);">
-  <div class="wrap coach">
-    <div class="coach-photo rv"><img src="/founder-amadou-portrait.jpg" alt="Amadou Rouga, formateur VIP AI Video Training" loading="lazy"><span class="pill">Amadou Rouga · formateur</span></div>
-    <div class="rv">
-      <span class="eyebrow"><i></i>Votre formateur</span>
-      <h2 class="h2">Appris sur le terrain,<br><span class="grad-text">pas dans la théorie</span></h2>
-      <p>Amadou Rouga, fondateur de ROUGATECH, intervient sur l'intelligence artificielle à la télévision depuis 2023 et partage à travers ROUGATECH Academy une approche <b>pratique</b>&nbsp;: des outils et des méthodes à appliquer tout de suite.</p>
-      <p>Il applique lui-même cette méthode&nbsp;: <b>15,3 K abonnés TikTok</b> dans sa niche, <b>+401 membres</b> dans son groupe privé et des ventes en hausse de 300 % grâce aux vidéos IA, sans montrer son visage.</p>
-      <p>Son objectif avec VIP AI Video Training&nbsp;: vous rendre <b>autonome</b>, de l'idée à la publication.</p>
+<!-- GÉNÉRIQUE -->
+<section style="background:var(--deck2); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);">
+  <div class="wrap credits">
+    <figure><img src="/founder-amadou-portrait.jpg" alt="Amadou Rouga, formateur" loading="lazy"></figure>
+    <div>
+      <p class="role">Une formation de</p>
+      <p class="name">Amadou Rouga</p>
+      <p>Fondateur de ROUGATECH, Amadou intervient sur l'intelligence artificielle à la télévision depuis 2023. À travers ROUGATECH Academy, il enseigne une approche <b>pratique</b>&nbsp;: des outils et des méthodes à appliquer dès le premier module.</p>
+      <p>Il applique lui-même ce qu'il enseigne&nbsp;: <b>15,3 K abonnés TikTok</b>, <b>+401 membres</b> dans son groupe privé et des ventes en hausse de 300 % grâce aux vidéos IA, sans montrer son visage.</p>
     </div>
   </div>
 </section>
 
-<!-- OFFRE -->
+<!-- TARIF -->
 <section id="offre">
-  <div class="aurora" aria-hidden="true" style="opacity:.25; top:10%;"><i></i><i></i><i></i></div>
   <div class="wrap">
-    <div class="sec-head center rv">
-      <span class="eyebrow"><i></i>Tarif</span>
-      <h2 class="h2">Votre accès à <span class="grad-text">VIP AI Video Training</span></h2>
-    </div>
-    <div class="price-wrap">
-      <ul class="inc rv">
+    <div class="head"><h2 class="title title-sm">Votre place dans la session</h2></div>
+    <div class="offer-grid">
+      <ul class="inc">
         <li>7 modules, de la niche à la publication</li>
         <li>Tous types de vidéos, dans la langue de votre choix</li>
         <li>Voix IA, prompts, images et vidéos ultra-réalistes</li>
@@ -494,41 +453,39 @@ html.anim .rv.in{opacity:1; transform:none;}
         <li>Accès à la formation et mises à jour gratuites à vie</li>
         <li>Attestation de formation</li>
       </ul>
-      <div class="offer rv" id="offer-hero"><div class="offer-in">
-        <div class="offer-top"><span>Session de la semaine</span><span class="pct promo-only">−50 %</span></div>
-        <div class="old">Prix normal <s>50 000 FCFA</s></div>
-        <div class="price promo-only">24 999<small>FCFA</small></div>
-        <div class="save promo-only">↓ Vous économisez 25 001 FCFA</div>
-        <div class="cd-label promo-only">Les inscriptions ferment dans</div>
-        <div class="cd promo-only" data-cd="full"></div>
-        <div class="ended-msg">L'offre à 24 999 FCFA est terminée. Écrivez-nous sur WhatsApp pour connaître la prochaine session.</div>
-        <a class="btn btn-primary btn-block" data-wa href="#"><span class="wa" aria-hidden="true"></span><span class="promo-only">Profiter de l'offre</span><span class="ended-only" style="display:none;">Être informé de la prochaine session</span></a>
-        <p class="note">Aucun paiement sur cette page · inscription sur WhatsApp</p>
-      </div></div>
-    </div>
-    <div class="bonus rv" style="margin-top:48px;">
-      <div><span>Bonus 01</span><b>Accompagnement personnalisé</b></div>
-      <div><span>Bonus 02</span><b>Accès à la formation à vie</b></div>
-      <div><span>Bonus 03</span><b>Mises à jour gratuites à vie</b></div>
-      <div><span>Bonus 04</span><b>Attestation de formation</b></div>
+      <div class="slate" id="slate">
+        <div class="clapper" aria-hidden="true"></div>
+        <div class="slate-body">
+          <div class="slate-grid">
+            <div><small>Production</small><span>VIP AI Video Training</span></div>
+            <div><small>Réalisation</small><span>Amadou Rouga</span></div>
+            <div><small>Modules</small><span>7</span></div>
+            <div><small>Accès</small><span>À vie</span></div>
+          </div>
+          <div class="slate-price promo-only"><s>50 000 FCFA</s><b>24 999</b><em>FCFA</em></div>
+          <p class="save promo-only">Vous économisez 25 001 FCFA sur la session de la semaine.</p>
+          <p class="cd-label promo-only">Les inscriptions de cette session ferment dans</p>
+          <div class="cd promo-only" data-cd="full"></div>
+          <p class="ended-msg">L'offre à 24 999 FCFA est terminée. Écrivez-nous sur WhatsApp pour connaître la prochaine session.</p>
+          <a class="btn btn-go btn-block" data-wa href="#"><span class="wa" aria-hidden="true"></span><span class="promo-only">Réserver ma place sur WhatsApp</span><span class="ended-only" style="display:none;">Connaître la prochaine session</span></a>
+          <p class="note">Aucun paiement sur cette page. L'inscription se fait sur WhatsApp.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section id="faq" style="background:var(--bg2);">
+<section style="padding-top:0;">
   <div class="wrap">
-    <div class="sec-head center rv">
-      <span class="eyebrow"><i></i>FAQ</span>
-      <h2 class="h2">Questions fréquentes</h2>
-    </div>
-    <div class="faq rv">
+    <div class="head"><h2 class="title title-sm">Questions fréquentes</h2></div>
+    <div class="faq">
       <details><summary>Faut-il déjà s'y connaître en IA&nbsp;?</summary><p>Le programme part du choix de votre niche et avance étape par étape jusqu'à la publication. Pour savoir si la formation correspond à votre niveau, écrivez-nous sur WhatsApp.</p></details>
       <details><summary>Quels types de contenus vais-je apprendre à créer&nbsp;?</summary><p>Des images et des vidéos ultra-réalistes générées par l'IA, avec une voix IA naturelle, montées en vidéos professionnelles prêtes à publier sur vos réseaux sociaux.</p></details>
       <details><summary>Le clonage de voix, c'est quoi exactement&nbsp;?</summary><p>Le module Voice Cloning &amp; Voice Cover vous apprend à créer et utiliser une voix IA naturelle pour vos contenus, par exemple à partir de votre propre voix.</p></details>
       <details><summary>Les outils d'IA changent vite. La formation sera-t-elle dépassée&nbsp;?</summary><p>Non&nbsp;: le module AI Updates et les mises à jour gratuites à vie vous permettent de suivre les nouveaux outils et techniques au fur et à mesure.</p></details>
-      <details><summary>Dois-je montrer mon visage&nbsp;?</summary><p>Non. La méthode permet de créer des vidéos avec l'IA sans apparaître à l'écran&nbsp;: c'est exactement ce que fait le formateur sur son propre compte TikTok.</p></details>
-      <details><summary>Suis-je accompagné&nbsp;?</summary><p>Oui. Un accompagnement personnalisé fait partie des bonus VIP.</p></details>
+      <details><summary>Dois-je montrer mon visage&nbsp;?</summary><p>Non. La méthode permet de créer des vidéos avec l'IA sans apparaître à l'écran&nbsp;: c'est ce que fait le formateur sur son propre compte TikTok.</p></details>
+      <details><summary>Suis-je accompagné&nbsp;?</summary><p>Oui. Un accompagnement personnalisé fait partie de la formation.</p></details>
       <details><summary>Combien coûte la formation&nbsp;?</summary><p>Le prix normal est de 50 000 FCFA. Avec l'offre en cours (−50 %), elle est à 24 999 FCFA.</p></details>
       <details><summary>Comment fonctionnent les sessions&nbsp;?</summary><p>Une nouvelle session démarre chaque semaine. Les inscriptions de la session en cours ferment le dimanche à 23h59 (heure du Niger), comme indiqué par le compte à rebours. Passé ce délai, vous serez inscrit à la session suivante.</p></details>
       <details><summary>Comment s'inscrire&nbsp;?</summary><p>Cliquez sur l'un des boutons WhatsApp de la page&nbsp;: un message est déjà préparé. Notre équipe vous explique comment finaliser votre inscription, le mode de paiement et l'accès à la formation.</p></details>
@@ -536,23 +493,11 @@ html.anim .rv.in{opacity:1; transform:none;}
   </div>
 </section>
 
-<!-- FINAL -->
-<section class="final">
-  <div class="aurora" aria-hidden="true" style="opacity:.35; top:30%;"><i></i><i></i><i></i></div>
-  <div class="grid-bg" aria-hidden="true"></div>
+<section class="end">
   <div class="wrap">
-    <span class="eyebrow rv"><i></i>Vos concurrents utilisent déjà l'IA</span>
-    <h2 class="h2 rv">À votre tour de créer des vidéos <span class="grad-text">qui marquent</span></h2>
-    <div class="offer rv"><div class="offer-in">
-      <div class="offer-top"><span>VIP AI Video Training</span><span class="pct promo-only">−50 %</span></div>
-      <div class="old"><s>50 000 FCFA</s></div>
-      <div class="price promo-only">24 999<small>FCFA</small></div>
-      <div class="cd-label promo-only">Inscriptions jusqu'à dimanche 23h59</div>
-      <div class="cd promo-only" data-cd="full"></div>
-      <div class="ended-msg">L'offre à 24 999 FCFA est terminée. Écrivez-nous sur WhatsApp pour connaître la prochaine session.</div>
-      <a class="btn btn-primary btn-block" data-wa href="#"><span class="wa" aria-hidden="true"></span><span class="promo-only">Je veux ma place</span><span class="ended-only" style="display:none;">Nous écrire sur WhatsApp</span></a>
-      <p class="note">Redirection immédiate vers WhatsApp</p>
-    </div></div>
+    <h2 class="title">Votre première vidéo IA commence ici</h2>
+    <p>Inscriptions de la session ouvertes jusqu'à dimanche 23h59. 24 999 FCFA au lieu de 50 000 FCFA.</p>
+    <a class="btn btn-go" data-wa href="#"><span class="wa" aria-hidden="true"></span>Réserver ma place sur WhatsApp</a>
   </div>
 </section>
 
@@ -561,10 +506,9 @@ html.anim .rv.in{opacity:1; transform:none;}
 <footer><div class="wrap">© 2026 Rougatech Academy · <a href="/academy/">Toutes les formations</a> · <a href="/">rougatech.com</a></div></footer>
 
 <div class="sticky" id="sticky">
-  <div class="sp promo-only"><s>50 000</s><b>24 999 F</b><small data-cd="compact">--:--:--</small></div>
-  <a class="btn btn-primary" data-wa href="#"><span class="wa" aria-hidden="true"></span><span class="promo-only">S'inscrire sur WhatsApp</span><span class="ended-only" style="display:none;">Nous écrire</span></a>
+  <div class="sp promo-only"><s>50 000 F</s><b>24 999 F</b></div>
+  <a class="btn btn-go" data-wa href="#"><span class="wa" aria-hidden="true"></span>S'inscrire sur WhatsApp</a>
 </div>
-
 <div class="lightbox" id="lightbox" aria-hidden="true"><img alt=""></div>
 
 <script>
@@ -578,104 +522,87 @@ function nextSessionClose(){
   if(end <= now) end += 7 * 86400000;
   return end;
 }
+var MODULES = [
+  {t:'Niche Mastering', d:"Choisir une niche rentable et construire une stratégie de contenu.", c:'var(--c1)', w:1.0},
+  {t:'Brand Setup', d:"Créer une identité visuelle et une présence digitale cohérente.", c:'var(--c2)', w:1.0},
+  {t:'Voice Cloning & Voice Cover', d:"Créer et utiliser une voix IA naturelle pour vos contenus.", c:'var(--c3)', w:1.2, audio:true},
+  {t:'Prompt Engineering', d:"Maîtriser les prompts pour générer des images et des vidéos ultra-réalistes.", c:'var(--c4)', w:1.4},
+  {t:'Video Editing', d:"Transformer vos créations IA en vidéos professionnelles prêtes à publier.", c:'var(--c5)', w:1.3},
+  {t:'Social Media', d:"Publier pour gagner des abonnés engagés et vendre vos produits ou services.", c:'var(--c6)', w:1.0},
+  {t:'AI Updates', d:"Découvrir les nouveaux outils et techniques IA au fur et à mesure de leur évolution.", c:'var(--c7)', w:0.9}
+];
 /* =================================================== */
 (function(){
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(!reduce) document.documentElement.classList.add('anim');
-
-  var MSG_PROMO = "Bonjour RougaTech Academy 👋\nJe suis intéressé(e) par la formation VIP AI Video Training à 24 999 FCFA au lieu de 50 000 FCFA.\nJe souhaite m'inscrire à la session de cette semaine.\nPouvez-vous m'indiquer comment procéder ?";
-  var deadline = nextSessionClose();
-  function setLinks(msg){ var url='https://wa.me/'+WHATSAPP_NUMBER+'?text='+encodeURIComponent(msg); document.querySelectorAll('[data-wa]').forEach(function(a){ a.href=url; a.target='_blank'; a.rel='noopener'; }); }
   function pad(n){ return (n<10?'0':'')+n; }
-  var fulls=document.querySelectorAll('[data-cd="full"]'), compacts=document.querySelectorAll('[data-cd="compact"]');
-  fulls.forEach(function(el){ el.innerHTML='<div class="u"><div class="n" data-d>0</div><div class="l">Jours</div></div><span class="sep">:</span><div class="u"><div class="n" data-h>00</div><div class="l">Heures</div></div><span class="sep">:</span><div class="u"><div class="n" data-m>00</div><div class="l">Min</div></div><span class="sep">:</span><div class="u"><div class="n" data-s>00</div><div class="l">Sec</div></div>'; });
-  function tick(){
-    var left=Math.max(0,deadline-Date.now()), t=Math.floor(left/1000), dd=Math.floor(t/86400), h=Math.floor(t%86400/3600), m=Math.floor(t%3600/60), s=t%60;
-    fulls.forEach(function(el){ el.querySelector('[data-d]').textContent=dd; el.querySelector('[data-h]').textContent=pad(h); el.querySelector('[data-m]').textContent=pad(m); el.querySelector('[data-s]').textContent=pad(s); });
-    compacts.forEach(function(el){ el.textContent=(dd?dd+'j ':'')+pad(h)+':'+pad(m)+':'+pad(s); });
-    if(left<=0) deadline=nextSessionClose();
+
+  /* WhatsApp + compte à rebours */
+  var MSG = "Bonjour RougaTech Academy 👋\nJe suis intéressé(e) par la formation VIP AI Video Training à 24 999 FCFA au lieu de 50 000 FCFA.\nJe souhaite m'inscrire à la session de cette semaine.\nPouvez-vous m'indiquer comment procéder ?";
+  var url='https://wa.me/'+WHATSAPP_NUMBER+'?text='+encodeURIComponent(MSG);
+  document.querySelectorAll('[data-wa]').forEach(function(a){ a.href=url; a.target='_blank'; a.rel='noopener'; });
+  var deadline=nextSessionClose(), fulls=document.querySelectorAll('[data-cd="full"]');
+  fulls.forEach(function(el){ el.innerHTML='<div class="u"><div class="n" data-d>0</div><div class="l">jours</div></div><span class="sep">:</span><div class="u"><div class="n" data-h>00</div><div class="l">heures</div></div><span class="sep">:</span><div class="u"><div class="n" data-m>00</div><div class="l">min</div></div><span class="sep">:</span><div class="u"><div class="n" data-s>00</div><div class="l">sec</div></div>'; });
+  function tick(){ var left=Math.max(0,deadline-Date.now()), t=Math.floor(left/1000);
+    fulls.forEach(function(el){ el.querySelector('[data-d]').textContent=Math.floor(t/86400); el.querySelector('[data-h]').textContent=pad(Math.floor(t%86400/3600)); el.querySelector('[data-m]').textContent=pad(Math.floor(t%3600/60)); el.querySelector('[data-s]').textContent=pad(t%60); });
+    if(left<=0) deadline=nextSessionClose(); }
+  tick(); setInterval(tick,1000);
+
+  /* moniteur : ouverture, timecode lié à la vidéo, langue des sous-titres */
+  var screen=document.getElementById('screen'), hv=screen.querySelector('video');
+  var tcS=document.getElementById('tc-screen'), tcA=document.getElementById('tc-app'), sb=document.getElementById('scrub-b'), si=document.getElementById('scrub-i');
+  requestAnimationFrame(function(){ requestAnimationFrame(function(){ screen.classList.add('rolling'); }); });
+  function tcode(s){ var f=Math.floor((s%1)*25); s=Math.floor(s); return '00:'+pad(Math.floor(s/60))+':'+pad(s%60)+':'+pad(f); }
+  (function loop(){ var t=hv.currentTime||0, d=hv.duration||27.9; var c=tcode(t); tcS.textContent=c; tcA.textContent=c; var p=(t/d*100)+'%'; sb.style.width=p; si.style.left=p; requestAnimationFrame(loop); })();
+  var pl=hv.play(); if(pl&&pl.catch) pl.catch(function(){});
+  if(!reduce){ var langs=['français','anglais','espagnol','arabe','portugais'], li=0, le=document.getElementById('lang');
+    setInterval(function(){ li=(li+1)%langs.length; le.textContent=langs[li]; },2400); }
+
+  /* timeline du programme */
+  var v2=document.getElementById('lane-v2'), v1=document.getElementById('lane-v1'), a1=document.getElementById('lane-a1'), ruler=document.getElementById('ruler');
+  var total=MODULES.reduce(function(s,m){ return s+m.w; },0), x=0, clips=[];
+  MODULES.forEach(function(m,i){
+    var left=x/total*100, w=m.w/total*100; x+=m.w;
+    var lane=(i%2===0)?v1:v2;
+    var c=document.createElement('button'); c.type='button'; c.className='clip'; c.style.left='calc('+left+'% + 2px)'; c.style.width='calc('+w+'% - 4px)'; c.style.backgroundColor=m.c; c.textContent=m.t;
+    lane.appendChild(c);
+    var a=document.createElement('span'); a.className='clip'; a.style.left='calc('+left+'% + 2px)'; a.style.width='calc('+w+'% - 4px)'; a.style.backgroundColor=m.audio?m.c:'#3a3a3a'; a1.appendChild(a);
+    clips.push({el:c,au:a,start:left/100,end:(left+w)/100});
+    var r=document.createElement('span'); r.style.left=left+'%'; r.textContent='00:'+pad(Math.round(left/100*20))+':00'; ruler.appendChild(r);
+  });
+  var ml=document.getElementById('mlist');
+  MODULES.forEach(function(m,i){ var li=document.createElement('li'); li.style.setProperty('--c',m.c); li.innerHTML='<i></i><div><span class="tc">Module '+(i+1)+' sur 7</span><h3></h3><p></p></div>'; li.querySelector('h3').textContent=m.t; li.querySelector('p').textContent=m.d; ml.appendChild(li); });
+  var pin=document.getElementById('tl-pin'), ph=document.getElementById('playhead'), tl=document.getElementById('timeline');
+  var insTc=document.getElementById('ins-tc'), insT=document.getElementById('ins-t'), insD=document.getElementById('ins-d'), cur=-1;
+  function setActive(i){ if(i===cur) return; cur=i; clips.forEach(function(c,k){ c.el.classList.toggle('on',k===i); c.au.classList.toggle('on',k===i); }); insTc.textContent='Module '+(i+1)+' sur 7'; insT.textContent=MODULES[i].t; insD.textContent=MODULES[i].d; }
+  function onTl(){
+    if(window.innerWidth<900) return;
+    var r=pin.getBoundingClientRect(), span=pin.offsetHeight-window.innerHeight, prog=Math.max(0,Math.min(.999,-r.top/span));
+    var laneW=tl.clientWidth-56; ph.style.left=(56+prog*laneW)+'px';
+    for(var i=0;i<clips.length;i++){ if(prog>=clips[i].start && prog<clips[i].end){ setActive(i); break; } }
   }
-  setLinks(MSG_PROMO); tick(); setInterval(tick,1000);
+  clips.forEach(function(c){ c.el.addEventListener('click',function(){ var span=pin.offsetHeight-window.innerHeight; window.scrollTo({top:pin.getBoundingClientRect().top+window.scrollY+span*((c.start+c.end)/2),behavior:reduce?'auto':'smooth'}); }); });
+  setActive(0); window.addEventListener('scroll',onTl,{passive:true}); window.addEventListener('resize',onTl); onTl();
 
-  /* mot qui change dans le titre */
-  (function(){ var el=document.getElementById('rot'); if(!el||reduce) return; var w=['français','anglais','espagnol','arabe','portugais'], i=0;
-    setInterval(function(){ el.style.transition='opacity .3s, transform .3s'; el.style.opacity=0; el.style.transform='translateY(10px)'; setTimeout(function(){ i=(i+1)%w.length; el.textContent=w[i]; el.style.opacity=1; el.style.transform='none'; },300); },2200); })();
-
-  /* studio IA : prompt tapé, génération, rendu */
-  (function(){
-    var typed=document.getElementById('typed'), prev=document.getElementById('preview'), bar=document.getElementById('pbar'), pct=document.getElementById('ppct'), stat=document.getElementById('pstat'), tag=document.getElementById('ptag'), chip=document.getElementById('langchip');
-    if(!typed) return;
-    var vids=[].slice.call(prev.querySelectorAll('video'));
-    var jobs=[
-      {p:"Scène cinématique en première classe, lumière dorée, réalisme 4K", t:'Scène cinéma', l:'FR'},
-      {p:"Spot publicitaire pour une entreprise, voix off professionnelle en français", t:'Spot entreprise', l:'FR'},
-      {p:"Avatar présentateur pour TikTok, voix IA naturelle, format vertical", t:'Avatar IA', l:'EN'}
-    ];
-    function load(v){ if(!v.src && v.dataset.src){ v.src=v.dataset.src; } }
-    if(reduce){ typed.textContent=jobs[0].p; vids[0].classList.add('on'); bar.style.width='100%'; pct.textContent='100 %'; stat.textContent='Terminé'; return; }
-    vids[0].classList.add('on');
-    var k=0;
-    function run(){
-      var j=jobs[k], v=vids[k], i=0; typed.textContent=''; chip.textContent=j.l; tag.textContent='Rendu IA'; stat.textContent='Écriture du prompt…'; bar.style.transition='none'; bar.style.width='0'; pct.textContent='0 %';
-      load(v);
-      var ti=setInterval(function(){ typed.textContent=j.p.slice(0,++i); if(i>=j.p.length){ clearInterval(ti); gen(); } },32);
-      function gen(){
-        prev.classList.add('loading'); stat.textContent='Génération de la vidéo…';
-        var p=0; var gi=setInterval(function(){ p=Math.min(100,p+4+Math.random()*7); bar.style.transition='width .2s linear'; bar.style.width=p+'%'; pct.textContent=Math.round(p)+' %'; if(p>=100){ clearInterval(gi); done(); } },110);
-      }
-      function done(){
-        prev.classList.remove('loading'); vids.forEach(function(x){ if(x!==v){ x.classList.remove('on'); x.pause(); } });
-        v.classList.add('on'); var pr=v.play(); if(pr&&pr.catch) pr.catch(function(){});
-        stat.textContent='Terminé ✓'; tag.textContent=j.t;
-        setTimeout(function(){ k=(k+1)%jobs.length; run(); },5200);
-      }
-    }
-    var started=false;
-    if('IntersectionObserver' in window){ new IntersectionObserver(function(es,o){ if(es[0].isIntersecting && !started){ started=true; run(); o.disconnect(); } }).observe(prev); } else run();
-  })();
-
-  /* langues qui s'allument */
-  (function(){ var ls=[].slice.call(document.querySelectorAll('#langs span')); if(!ls.length) return; var i=0; ls[0].classList.add('on'); if(reduce) return;
-    setInterval(function(){ ls[i].classList.remove('on'); i=(i+1)%(ls.length-1); ls[i].classList.add('on'); },1300); })();
-
-  /* lumière qui suit la souris sur les cartes */
-  document.querySelectorAll('.card').forEach(function(c){ c.addEventListener('pointermove',function(e){ var r=c.getBoundingClientRect(); c.style.setProperty('--mx',(e.clientX-r.left)+'px'); c.style.setProperty('--my',(e.clientY-r.top)+'px'); }); });
-
-  /* compteurs */
-  function countUp(el){ var to=parseFloat(el.dataset.count), pre=el.dataset.prefix||'', suf=el.dataset.suffix||'', dec=(String(to).split('.')[1]||'').length, t0=null;
-    function step(ts){ if(!t0) t0=ts; var p=Math.min(1,(ts-t0)/1400), e=1-Math.pow(1-p,3), v=(to*e).toFixed(dec).replace('.',','); el.textContent=pre+v+suf; if(p<1) requestAnimationFrame(step); }
-    requestAnimationFrame(step); }
-
-  /* vidéos d'exemple : lecture quand visibles, bouton son */
-  (function(){
-    var vids=[].slice.call(document.querySelectorAll('.vcard video'));
-    if('IntersectionObserver' in window){
-      var io=new IntersectionObserver(function(es){ es.forEach(function(e){ var v=e.target; if(e.isIntersecting){ if(!reduce || !v.muted){ var p=v.play(); if(p&&p.catch) p.catch(function(){}); } } else v.pause(); }); },{threshold:.35});
-      vids.forEach(function(v){ io.observe(v); });
-    }
-    document.querySelectorAll('.vsound').forEach(function(b){
-      b.addEventListener('click',function(){
-        var v=b.parentNode.querySelector('video'), on=v.muted;
-        vids.forEach(function(o){ o.muted=true; }); document.querySelectorAll('.vsound').forEach(function(x){ x.classList.remove('on'); x.textContent='Son'; });
-        if(on){ v.muted=false; v.currentTime=0; var p=v.play(); if(p&&p.catch) p.catch(function(){}); b.classList.add('on'); b.textContent='Couper'; }
-      });
-    });
-  })();
+  /* chutier : lecture quand visible, bouton son */
+  var vids=[].slice.call(document.querySelectorAll('.rush video'));
+  if('IntersectionObserver' in window){ var vio=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ if(!reduce || !e.target.muted){ var p=e.target.play(); if(p&&p.catch) p.catch(function(){}); } } else e.target.pause(); }); },{threshold:.4}); vids.forEach(function(v){ vio.observe(v); }); }
+  document.querySelectorAll('.snd').forEach(function(b){ b.addEventListener('click',function(){ var v=b.parentNode.querySelector('video'), on=v.muted;
+    vids.forEach(function(o){ o.muted=true; }); document.querySelectorAll('.snd').forEach(function(x){ x.classList.remove('on'); x.textContent='Son'; });
+    if(on){ v.muted=false; v.currentTime=0; var p=v.play(); if(p&&p.catch) p.catch(function(){}); b.classList.add('on'); b.textContent='Couper'; } }); });
 
   /* captures en grand */
-  (function(){ var sh=document.querySelector('.shots'), lb=document.getElementById('lightbox'); if(!sh||!lb) return; var im=lb.querySelector('img');
-    sh.addEventListener('click',function(e){ var b=e.target.closest('button'); if(!b) return; im.src=b.dataset.full; im.alt=b.querySelector('img').alt; lb.classList.add('open'); });
-    lb.addEventListener('click',function(){ lb.classList.remove('open'); }); document.addEventListener('keydown',function(e){ if(e.key==='Escape') lb.classList.remove('open'); }); })();
+  var lb=document.getElementById('lightbox'), lim=lb.querySelector('img');
+  document.querySelector('.shots').addEventListener('click',function(e){ var b=e.target.closest('button'); if(!b) return; lim.src=b.dataset.full; lim.alt=b.querySelector('img').alt; lb.classList.add('open'); });
+  lb.addEventListener('click',function(){ lb.classList.remove('open'); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') lb.classList.remove('open'); });
 
-  /* apparitions */
-  var rv=document.querySelectorAll('.rv, .card');
-  if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); e.target.querySelectorAll('[data-count]').forEach(countUp); io.unobserve(e.target); } }); },{rootMargin:'0px 0px -8% 0px'});
-    rv.forEach(function(el){ io.observe(el); });
-  } else rv.forEach(function(el){ el.classList.add('in'); });
+  /* clap qui claque quand le tarif apparaît */
+  var slate=document.getElementById('slate');
+  if('IntersectionObserver' in window){ new IntersectionObserver(function(es,o){ if(es[0].isIntersecting){ slate.classList.add('in'); o.disconnect(); } },{threshold:.4}).observe(slate); } else slate.classList.add('in');
 
-  var sticky=document.getElementById('sticky'), hero=document.querySelector('.hero-ctas');
-  function onScroll(){ sticky.classList.toggle('show', hero.getBoundingClientRect().bottom<0); }
+  var sticky=document.getElementById('sticky'), heroCta=document.getElementById('hero-cta');
+  function onScroll(){ sticky.classList.toggle('show', heroCta.getBoundingClientRect().bottom<0); }
   window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
 })();
 </script>
