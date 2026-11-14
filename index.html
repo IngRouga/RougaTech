@@ -116,8 +116,39 @@
  ]
 }
 </script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2907317212987763');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
+<script>
+/* Meta Pixel : événement Contact sur les boutons WhatsApp (un seul envoi par clic, anti double-clic) */
+(function(){
+  if(window.__rtContactTracking) return; window.__rtContactTracking=true;
+  var last=0;
+  window.rtTrackContact=function(){ var now=Date.now(); if(now-last<2000) return; last=now; if(typeof fbq==='function') fbq('track','Contact'); };
+  document.addEventListener('click',function(e){
+    var a=e.target && e.target.closest && e.target.closest('a[href*="wa.me/"],a[href*="api.whatsapp.com"],a[href*="whatsapp.com/send"],a[data-wa]');
+    if(a) window.rtTrackContact();
+  },true);
+})();
+</script>
 </head>
 <body data-lang="fr">
+<!-- Meta Pixel (noscript) -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2907317212987763&ev=PageView&noscript=1"
+/></noscript>
+
 <a class="skip" href="#main"><span class="fr" lang="fr">Aller au contenu</span><span class="en" lang="en">Skip to content</span></a>
 
 <header id="site-header">
@@ -777,6 +808,7 @@
       // Sans clé Web3Forms : la demande part sur WhatsApp, message déjà rempli.
       const waText = 'Bonjour ROUGATECH, je vous contacte depuis rougatech.com.\n\n' + bodyText;
       showFormStatus('Ouverture de WhatsApp…', 'Opening WhatsApp…', true);
+      if(window.rtTrackContact) window.rtTrackContact();
       window.location.href = 'https://wa.me/22791340905?text=' + encodeURIComponent(waText);
       return;
     }
