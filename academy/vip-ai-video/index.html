@@ -180,7 +180,10 @@ section{padding:clamp(80px,10vw,128px) 0; position:relative;}
 @media (max-width:899px){
   .tl-pin{height:auto;} .tl-stage{position:static; height:auto; padding:40px 0 80px;}
   .timeline,.inspector,.tl-hint{display:none;}
-  .mlist{display:grid; gap:10px;}
+  .mlist{display:grid; gap:14px; padding-bottom:40px;}
+  /* cartes empilées : chaque module se pose sur le précédent */
+  .mlist li{position:sticky; top:calc(70px + var(--i) * 12px); min-height:200px; border:1px solid var(--rule2); box-shadow:0 -12px 30px -8px rgba(0,0,0,.7); transform-origin:50% 0; transition:transform .25s, filter .25s;}
+  .mlist li.under{transform:scale(.96); filter:brightness(.7);}
 }
 
 /* chutier d'exemples */
@@ -575,7 +578,10 @@ var MODULES = [
     var r=document.createElement('span'); r.style.left=left+'%'; r.textContent='00:'+pad(Math.round(left/100*20))+':00'; ruler.appendChild(r);
   });
   var ml=document.getElementById('mlist');
-  MODULES.forEach(function(m,i){ var li=document.createElement('li'); li.style.setProperty('--c',m.c); li.innerHTML='<i></i><div><span class="tc">Module '+(i+1)+' sur 7</span><h3></h3><p></p></div>'; li.querySelector('h3').textContent=m.t; li.querySelector('p').textContent=m.d; ml.appendChild(li); });
+  MODULES.forEach(function(m,i){ var li=document.createElement('li'); li.style.setProperty('--c',m.c); li.style.setProperty('--i',i); li.innerHTML='<i></i><div><span class="tc">Module '+(i+1)+' sur 7</span><h3></h3><p></p></div>'; li.querySelector('h3').textContent=m.t; li.querySelector('p').textContent=m.d; ml.appendChild(li); });
+  var mItems=[].slice.call(ml.children);
+  function onStack(){ if(window.innerWidth>=900) return; for(var k=0;k<mItems.length-1;k++){ var a=mItems[k].getBoundingClientRect(), b=mItems[k+1].getBoundingClientRect(); mItems[k].classList.toggle('under', b.top-a.top<40); } }
+  window.addEventListener('scroll',onStack,{passive:true}); onStack();
   var pin=document.getElementById('tl-pin'), ph=document.getElementById('playhead'), tl=document.getElementById('timeline');
   var insTc=document.getElementById('ins-tc'), insT=document.getElementById('ins-t'), insD=document.getElementById('ins-d'), cur=-1;
   function setActive(i){ if(i===cur) return; cur=i; clips.forEach(function(c,k){ c.el.classList.toggle('on',k===i); c.au.classList.toggle('on',k===i); }); insTc.textContent='Module '+(i+1)+' sur 7'; insT.textContent=MODULES[i].t; insD.textContent=MODULES[i].d; }
