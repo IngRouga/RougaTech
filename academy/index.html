@@ -243,6 +243,127 @@
   .ebook-cta svg{width:18px; height:18px;}
   @media (max-width:760px){ .ebook-grid{grid-template-columns:1fr;} .ebook-body{padding:22px;} .ebook-cta{width:100%; justify-content:center;} }
 
+
+  /* ===== Refonte inspirée de Domestika ===== */
+  .a-hero{padding:120px 0 0; border-bottom:0;}
+  .hx{display:grid; grid-template-columns:1fr; gap:40px; align-items:center;}
+  @media (min-width:1000px){ .hx{grid-template-columns:1.05fr .95fr; gap:56px;} }
+  .hx > *{min-width:0;}
+  @media (max-width:420px){ .search{padding-left:14px;} .search button{padding:11px 14px; font-size:14px;} }
+  .hx h1{font-size:clamp(40px,5.4vw,74px); font-weight:800; letter-spacing:-.04em; line-height:1.02;}
+  .hx h1 .accent{position:relative; display:inline-block;}
+  .hx h1 .accent::after{content:''; position:absolute; left:-2%; right:-2%; bottom:.06em; height:.26em; background:var(--saffron); z-index:-1; border-radius:4px; transform:skewX(-6deg);}
+  .hx .a-hero-sub{margin:20px 0 26px; max-width:52ch; text-align:left;}
+  .search{display:flex; align-items:center; gap:10px; background:#fff; border-radius:999px; padding:6px 6px 6px 20px; box-shadow:inset 0 0 0 1.5px var(--line), 0 18px 40px -28px rgba(13,27,52,.5); max-width:560px; transition:box-shadow .2s;}
+  .search:focus-within{box-shadow:inset 0 0 0 2px var(--blue), 0 18px 40px -28px rgba(13,27,52,.5);}
+  .search svg{width:20px; height:20px; flex:0 0 20px; color:var(--ink-3);}
+  .search input{flex:1; min-width:0; border:0; outline:0; font:500 16.5px var(--text); color:var(--ink); background:transparent; padding:10px 0;}
+  .search button{background:var(--blue); color:#fff; font-weight:600; font-size:15px; padding:12px 20px; border-radius:999px;}
+  .search button:hover{background:var(--blue-deep);}
+  .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px;}
+  .chips button{font-size:14.5px; font-weight:600; padding:8px 14px; border-radius:999px; background:var(--mist); color:var(--ink-2);}
+  .chips button:hover{background:var(--ink); color:#fff;}
+  .stats{display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin-top:34px; border-top:1px solid var(--line);}
+  .stats div{padding:16px 16px 0 0;}
+  .stats div + div{padding-left:16px; border-left:1px solid var(--line);}
+  .stats b{display:block; font-family:var(--display); font-weight:800; font-size:clamp(26px,2.6vw,34px); letter-spacing:-.02em; color:var(--ink); line-height:1;}
+  .stats span{display:block; font-size:14px; color:var(--ink-3); margin-top:6px; line-height:1.35;}
+  @media (max-width:520px){ .stats{grid-template-columns:1fr 1fr;} .stats div:nth-child(3){grid-column:1 / -1; border-left:0; padding-left:0; border-top:1px solid var(--line); margin-top:14px;} }
+
+  .feat{position:relative; display:block; border-radius:26px; overflow:hidden; background:var(--ink); color:#fff; box-shadow:0 40px 80px -40px rgba(13,27,52,.7);}
+  .feat-media{position:relative; aspect-ratio:16/10; background:#000;}
+  .feat-media video,.feat-media img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;}
+  .feat-media::after{content:''; position:absolute; inset:0; background:linear-gradient(180deg,transparent 45%,rgba(13,27,52,.92));}
+  .feat-tag{position:absolute; z-index:2; top:16px; left:16px; background:var(--saffron); color:var(--ink); font-weight:700; font-size:13.5px; padding:6px 12px; border-radius:999px;}
+  .feat-body{position:relative; z-index:2; padding:0 24px 24px; margin-top:-86px;}
+  .feat-body h2{color:#fff; font-size:clamp(26px,2.6vw,34px); font-weight:800;}
+  .feat-body p{color:rgba(255,255,255,.78); font-size:15.5px; margin-top:6px;}
+  .feat-row{display:flex; align-items:center; justify-content:space-between; gap:14px; margin-top:16px; flex-wrap:wrap;}
+  .feat-price s{color:rgba(255,255,255,.55); font-size:14px; margin-right:8px;}
+  .feat-price b{font-family:var(--display); font-size:26px; font-weight:800;}
+  .feat-go{background:#fff; color:var(--ink); font-weight:700; font-size:15px; padding:12px 18px; border-radius:999px; transition:background .2s;}
+  .feat:hover .feat-go{background:var(--saffron);}
+  .topics{margin-top:72px;}
+
+  /* catalogue façon Domestika */
+  .cat-head{display:flex; align-items:flex-end; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-bottom:28px;}
+  .cat-head .section-head{margin-bottom:0;}
+  .filter-row{margin-bottom:0;}
+  .course-grid{grid-template-columns:repeat(4,minmax(0,1fr)); gap:22px;}
+  @media (max-width:1180px){ .course-grid{grid-template-columns:repeat(2,minmax(0,1fr));} }
+  @media (max-width:640px){ .course-grid{grid-template-columns:1fr;} }
+  .ccard{display:flex; flex-direction:column; background:#fff; border-radius:18px; overflow:hidden; box-shadow:0 0 0 1px var(--line); transition:box-shadow .25s var(--ease), transform .25s var(--ease);}
+  .ccard:hover{box-shadow:0 0 0 1px var(--line), 0 26px 50px -30px rgba(13,27,52,.55); transform:translateY(-3px);}
+  .cmedia{position:relative; display:block; aspect-ratio:1; background:#0b1f8f; overflow:hidden;}
+  .cmedia img,.cmedia video{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;}
+  .cmedia video{opacity:0; transition:opacity .35s;}
+  .ccard.playing .cmedia video{opacity:1;}
+  .cbadge{position:absolute; z-index:2; top:12px; left:12px; display:flex; gap:6px; flex-wrap:wrap;}
+  .cbadge span{font-size:12.5px; font-weight:700; padding:5px 10px; border-radius:999px; background:#fff; color:var(--ink);}
+  .cbadge .off{background:var(--saffron);}
+  .cprev{position:absolute; z-index:2; right:12px; bottom:12px; font-size:12.5px; font-weight:700; padding:6px 10px; border-radius:999px; background:rgba(13,27,52,.78); color:#fff; display:flex; align-items:center; gap:6px;}
+  .cprev::before{content:''; border-left:8px solid #fff; border-top:5px solid transparent; border-bottom:5px solid transparent;}
+  @media (hover:none){ .cprev{display:none;} }
+  .cbody{display:flex; flex-direction:column; gap:8px; padding:16px 18px 18px; flex:1;}
+  .cteach{display:flex; align-items:center; gap:8px; font-size:13.5px; color:var(--ink-3);}
+  .cteach img{width:26px; height:26px; border-radius:50%; object-fit:cover; object-position:top; background:var(--mist);}
+  .cteach b{color:var(--ink); font-weight:600;}
+  .ccard h3{font-size:21px; font-weight:800; line-height:1.15;}
+  .ccard h3 a:hover{color:var(--blue);}
+  .cdesc{font-size:15px; color:var(--ink-2); display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;}
+  .cperks{display:flex; flex-wrap:wrap; gap:6px; margin-top:2px;}
+  .cperks span{font-size:12.5px; font-weight:600; color:var(--ink-2); background:var(--mist); border-radius:999px; padding:4px 9px;}
+  .cfoot{display:flex; flex-direction:column; align-items:stretch; gap:12px; margin-top:auto; padding-top:14px; border-top:1px solid var(--line);}
+  .cprice{display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;}
+  .cprice b{white-space:nowrap;}
+  .cprice{line-height:1.1;}
+  .cprice s{font-size:13.5px; color:var(--ink-3); white-space:nowrap; order:2;}
+  .cprice b{font-family:var(--display); font-size:24px; font-weight:800; color:var(--ink);}
+  .cprice b small{font-size:13px; font-weight:700; margin-left:3px;}
+  .cgo{text-align:center; font-size:15px; font-weight:700; color:#fff; background:var(--blue); padding:12px 16px; border-radius:999px; white-space:nowrap; transition:background .2s;}
+  .cgo:hover{background:var(--blue-deep);}
+  .cempty{grid-column:1 / -1; padding:40px; text-align:center; color:var(--ink-2); background:var(--mist); border-radius:18px;}
+
+  /* comment ça marche */
+  .how{display:grid; grid-template-columns:repeat(4,1fr); gap:20px; counter-reset:how;}
+  @media (max-width:980px){ .how{grid-template-columns:1fr 1fr;} }
+  @media (max-width:560px){ .how{grid-template-columns:1fr;} }
+  .how li{list-style:none; background:#fff; border-radius:20px; padding:26px 24px; box-shadow:0 0 0 1px var(--line); counter-increment:how;}
+  .how li::before{content:counter(how); display:grid; place-items:center; width:40px; height:40px; border-radius:50%; background:var(--blue); color:#fff; font-family:var(--display); font-weight:800; font-size:18px; margin-bottom:16px;}
+  .how li:nth-child(4)::before{background:var(--saffron); color:var(--ink);}
+  .how h3{font-size:21px; margin-bottom:8px;}
+  .how p{font-size:15.5px; color:var(--ink-2);}
+
+  /* formateur */
+  .teacher{display:grid; gap:40px; align-items:center;}
+  @media (min-width:900px){ .teacher{grid-template-columns:420px 1fr; gap:64px;} }
+  .teacher figure{position:relative; border-radius:26px; overflow:hidden; aspect-ratio:4/5; background:#0d1f4f; max-width:420px;}
+  .teacher figure img{width:100%; height:100%; object-fit:cover; object-position:top;}
+  .teacher figcaption{position:absolute; left:14px; bottom:14px; background:#fff; color:var(--ink); font-weight:700; font-size:14px; padding:8px 14px; border-radius:999px;}
+  .teacher h2{font-size:clamp(34px,4.4vw,56px); font-weight:800; letter-spacing:-.03em; margin-top:10px;}
+  .teacher .role{color:var(--ink-3); font-size:17px; margin-top:6px;}
+  .teacher p.bio{color:var(--ink-2); font-size:17.5px; margin-top:18px; max-width:60ch;}
+  .tstats{display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-top:26px; max-width:560px;}
+  .tstats div{background:var(--mist); border-radius:16px; padding:16px 18px;}
+  .tstats b{display:block; font-family:var(--display); font-size:28px; font-weight:800; line-height:1;}
+  .tstats span{display:block; font-size:14px; color:var(--ink-2); margin-top:6px;}
+
+  /* réalisations */
+  .proofs{columns:4 220px; column-gap:14px;}
+  .proofs figure{break-inside:avoid; margin:0 0 14px; border-radius:16px; overflow:hidden; background:#fff; box-shadow:0 0 0 1px var(--line);}
+  .proofs img,.proofs video{width:100%; display:block;}
+  .proofs figcaption{font-size:13.5px; color:var(--ink-2); padding:10px 12px;}
+  .proofs figcaption b{color:var(--ink);}
+
+  /* faq */
+  .faq{max-width:820px; border-top:1px solid var(--line);}
+  .faq details{border-bottom:1px solid var(--line);}
+  .faq summary{list-style:none; cursor:pointer; display:flex; justify-content:space-between; gap:20px; padding:20px 0; font-family:var(--display); font-weight:700; font-size:19px;}
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary::after{content:'+'; color:var(--blue); font-size:26px; line-height:1; transition:transform .3s var(--ease);}
+  .faq details[open] summary::after{transform:rotate(45deg);}
+  .faq p{color:var(--ink-2); padding:0 0 20px; max-width:66ch;}
+
 /* ===== menu mobile « verre » : boutons en pilule empilés ===== */
 @media (max-width:1000px){
   nav.a-nav{background:radial-gradient(120% 55% at 50% 0%,rgba(31,94,255,.38),transparent 62%),radial-gradient(90% 50% at 50% 100%,rgba(255,176,32,.16),transparent 65%),rgba(8,17,34,.84) !important;
@@ -315,7 +436,8 @@ src="https://www.facebook.com/tr?id=2907317212987763&ev=PageView&noscript=1"
     <a href="#hero">Accueil</a>
     <a href="#courses">Formations</a>
     <a href="#ebooks">Ebooks</a>
-    <a href="#about-academy">À propos</a>
+    <a href="#about-academy">Formateur</a>
+    <a href="#faq">FAQ</a>
     <a href="../index.html#contact">Contact</a>
   </nav>
   <div class="header-right">
@@ -329,18 +451,36 @@ src="https://www.facebook.com/tr?id=2907317212987763&ev=PageView&noscript=1"
 
   <!-- HERO -->
   <section class="a-hero" id="hero">
-    <div class="a-hero-bg" aria-hidden="true"><span></span><span></span></div>
-    <div class="wrap">
-      <div class="a-hero-grid">
-        <div>
-          <h1>Apprenez<br>Entreprenez<br><span class="accent">Réussissez</span></h1>
-          <p class="a-hero-sub">Des formations pratiques en <b>e-commerce</b>, <b>intelligence artificielle</b>, <b>crypto</b> et <b>bourse</b> pour les entrepreneurs africains&nbsp;: vendre en ligne, utiliser l'IA et investir avec méthode.</p>
-          <div class="a-hero-ctas">
-            <a href="#courses" class="btn btn-primary">Voir les formations</a>
-            <a href="#why-academy" class="btn btn-outline">Notre approche</a>
-          </div>
+    <div class="wrap hx">
+      <div>
+        <h1>Apprenez les compétences qui <span class="accent">font vendre</span></h1>
+        <p class="a-hero-sub">Des formations pratiques en <b>e-commerce</b>, <b>intelligence artificielle</b>, <b>crypto</b> et <b>bourse</b>, pensées pour les entrepreneurs africains.</p>
+        <form class="search" id="search" role="search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input type="search" id="q" placeholder="Que voulez-vous apprendre ?" aria-label="Rechercher une formation" autocomplete="off">
+          <button type="submit">Rechercher</button>
+        </form>
+        <div class="chips" id="chips"></div>
+        <div class="stats">
+          <div><b>4</b><span>formations disponibles</span></div>
+          <div><b>+96</b><span>entrepreneurs formés en e-commerce</span></div>
+          <div><b>400</b><span>entrepreneurs accompagnés au Ghana</span></div>
         </div>
       </div>
+      <a class="feat" href="/academy/vip-ai-video/" aria-label="Formation à la une : VIP AI Video Training">
+        <div class="feat-media">
+          <video src="/academy/vip-ai-video/videos/cinema-premiere-classe.mp4" poster="/academy/vip-ai-video/videos/cinema-premiere-classe.jpg" muted loop playsinline autoplay preload="metadata" aria-hidden="true"></video>
+          <span class="feat-tag">À la une</span>
+        </div>
+        <div class="feat-body">
+          <h2>VIP AI Video Training</h2>
+          <p>Créez des vidéos professionnelles avec l'IA, sans caméra ni studio. Scène ci-dessus générée par IA.</p>
+          <div class="feat-row">
+            <span class="feat-price" data-feat-price></span>
+            <span class="feat-go">Voir la formation</span>
+          </div>
+        </div>
+      </a>
     </div>
   <div class="topics" aria-label="Thèmes des formations : E-commerce, Marketing digital, AI, Blockchain, Bitcoin, Stock Market">
     <div class="topics-row r1"><div class="topics-track"><span class="tb tb0">E-commerce</span><span class="tb tb1">Marketing digital</span><span class="tb tb2">AI</span><span class="tb tb3">Blockchain</span><span class="tb tb0">Bitcoin</span><span class="tb tb1">Stock Market</span><span class="tb tb0">E-commerce</span><span class="tb tb1">Marketing digital</span><span class="tb tb2">AI</span><span class="tb tb3">Blockchain</span><span class="tb tb0">Bitcoin</span><span class="tb tb1">Stock Market</span><span class="tb tb0">E-commerce</span><span class="tb tb1">Marketing digital</span><span class="tb tb2">AI</span><span class="tb tb3">Blockchain</span><span class="tb tb0">Bitcoin</span><span class="tb tb1">Stock Market</span><span class="tb tb0">E-commerce</span><span class="tb tb1">Marketing digital</span><span class="tb tb2">AI</span><span class="tb tb3">Blockchain</span><span class="tb tb0">Bitcoin</span><span class="tb tb1">Stock Market</span></div></div>
@@ -351,11 +491,13 @@ src="https://www.facebook.com/tr?id=2907317212987763&ev=PageView&noscript=1"
   <!-- COURSE CATALOG -->
   <section class="section" id="courses">
     <div class="wrap">
-      <div class="section-head reveal">
-        <div class="eyebrow">Formations</div>
-        <h2>Nos formations</h2>
+      <div class="cat-head">
+        <div class="section-head reveal">
+          <h2>Nos formations</h2>
+          <p>Choisissez une compétence, découvrez le programme et inscrivez-vous sur WhatsApp.</p>
+        </div>
+        <div class="filter-row reveal" id="filter-row"></div>
       </div>
-      <div class="filter-row reveal" id="filter-row"></div>
       <div class="course-grid reveal" id="course-grid"></div>
     </div>
   </section>
@@ -374,37 +516,71 @@ src="https://www.facebook.com/tr?id=2907317212987763&ev=PageView&noscript=1"
     </div>
   </section>
 
-  <!-- WHY ACADEMY -->
-  <section class="section" id="why-academy">
+  <!-- COMMENT ÇA MARCHE -->
+  <section class="section section-alt" id="why-academy">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="eyebrow">Notre approche</div>
-        <h2>Des compétences qui rapportent</h2>
+        <h2>Comment ça marche</h2>
+        <p>De votre choix de formation à vos premiers résultats, en quatre étapes.</p>
       </div>
-      <div class="why-grid reveal">
-        <div class="why-card">
-          <h3>Pratique</h3>
-          <p>Des méthodes que vous appliquez tout de suite dans votre activité.</p>
-        </div>
-        <div class="why-card">
-          <h3>Orienté ventes</h3>
-          <p>E-commerce et IA enseignés à partir de cas réels de business.</p>
-        </div>
-        <div class="why-card">
-          <h3>Pensé pour l'Afrique</h3>
-          <p>Des solutions adaptées aux réalités des marchés africains.</p>
+      <ol class="how">
+        <li><h3>Choisissez votre formation</h3><p>Chaque page détaille le programme, les modules, les bonus et le prix de la session.</p></li>
+        <li><h3>Inscrivez-vous sur WhatsApp</h3><p>Un message est déjà préparé. Notre équipe vous explique le paiement et l'accès.</p></li>
+        <li><h3>Apprenez à votre rythme</h3><p>Des modules pratiques à suivre depuis votre téléphone ou votre ordinateur.</p></li>
+        <li><h3>Appliquez dans votre business</h3><p>Selon la formation : accompagnement, communauté, bonus, accès à vie et attestation.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- FORMATEUR -->
+  <section class="section" id="about-academy">
+    <div class="wrap teacher">
+      <figure><img src="/founder-amadou-portrait.jpg" alt="Amadou Rouga, formateur ROUGATECH Academy" loading="lazy"><figcaption>Formateur des 4 formations</figcaption></figure>
+      <div>
+        <div class="eyebrow">Votre formateur</div>
+        <h2>Amadou Rouga</h2>
+        <p class="role">Fondateur de ROUGATECH · intervenant sur l'IA à la télévision depuis 2023</p>
+        <p class="bio">Entrepreneur en e-commerce, investisseur crypto depuis 2021 et créateur de contenus avec l'IA, Amadou enseigne ce qu'il pratique lui-même. ROUGATECH Academy rend ces compétences accessibles aux entrepreneurs africains, avec des méthodes concrètes à appliquer dès le premier module.</p>
+        <div class="tstats">
+          <div><b>+96</b><span>entrepreneurs formés en e-commerce</span></div>
+          <div><b>400</b><span>entrepreneurs accompagnés au Ghana</span></div>
+          <div><b>15 200+</b><span>abonnés TikTok en deux mois</span></div>
+          <div><b>Depuis 2023</b><span>à la télévision sur l'intelligence artificielle</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT ACADEMY -->
-  <section class="section section-alt" id="about-academy">
+  <!-- RÉALISATIONS -->
+  <section class="section section-alt" id="realisations">
     <div class="wrap">
-      <div class="about-a-wrap reveal">
-        <div class="eyebrow">À propos</div>
-        <h2 style="margin-top:20px; font-size:clamp(26px,3.4vw,40px);">Pourquoi ROUGATECH Academy</h2>
-        <p>ROUGATECH Academy a été créée pour rendre l'e-commerce et l'intelligence artificielle accessibles aux entrepreneurs africains, avec des formations concrètes, orientées résultats.</p>
+      <div class="section-head reveal">
+        <h2>Résultats et réalisations</h2>
+        <p>Des commandes réelles de nos apprenants en e-commerce et des vidéos créées avec la méthode VIP AI Video Training.</p>
+      </div>
+      <div class="proofs">
+        <figure><img src="/academy/ecommerce-premium-pro/preuves/whatsapp-awa.jpg" alt="Message WhatsApp d'Awa sur la formation" loading="lazy"><figcaption><b>E-commerce</b> · message d'une apprenante</figcaption></figure>
+        <figure><video src="/academy/vip-ai-video/videos/avatar-tiktok-1.mp4" poster="/academy/vip-ai-video/videos/avatar-tiktok-1.jpg" muted loop playsinline preload="none" data-auto></video><figcaption><b>IA</b> · avatar présentateur créé avec l'IA</figcaption></figure>
+        <figure><img src="/academy/ecommerce-premium-pro/preuves/colis-3.jpg" alt="Colis d'un apprenant prêt à l'expédition" loading="lazy"><figcaption><b>E-commerce</b> · colis d'un apprenant</figcaption></figure>
+        <figure><img src="/academy/ecommerce-premium-pro/preuves/whatsapp-commande.jpg" alt="Commande reçue par un apprenant" loading="lazy"><figcaption><b>E-commerce</b> · commande reçue</figcaption></figure>
+        <figure><video src="/academy/vip-ai-video/videos/spot-entreprise-kps.mp4" poster="/academy/vip-ai-video/videos/spot-entreprise-kps.jpg" muted loop playsinline preload="none" data-auto></video><figcaption><b>IA</b> · spot d'entreprise créé avec l'IA</figcaption></figure>
+        <figure><img src="/academy/ecommerce-premium-pro/preuves/colis-4.jpg" alt="Machine commandée en Chine par un apprenant" loading="lazy"><figcaption><b>E-commerce</b> · machine commandée en Chine</figcaption></figure>
+        <figure><img src="/academy/ecommerce-premium-pro/preuves/whatsapp-mahamadou.jpg" alt="Message de Mahamadou après réception de son colis" loading="lazy"><figcaption><b>E-commerce</b> · message de Mahamadou</figcaption></figure>
+        <figure><img src="/academy/ecommerce-premium-pro/preuves/colis-2.jpg" alt="Palette de marchandise d'un apprenant" loading="lazy"><figcaption><b>E-commerce</b> · palette de marchandise</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="wrap">
+      <div class="section-head reveal"><h2>Questions fréquentes</h2></div>
+      <div class="faq">
+        <details><summary>Comment s'inscrire à une formation ?</summary><p>Ouvrez la page de la formation et cliquez sur un bouton WhatsApp : un message est déjà préparé. Notre équipe vous explique comment finaliser votre inscription.</p></details>
+        <details><summary>Comment se passe le paiement ?</summary><p>Aucun paiement ne se fait sur le site. Les moyens de paiement vous sont indiqués sur WhatsApp au moment de l'inscription.</p></details>
+        <details><summary>Quand commencent les sessions ?</summary><p>Une nouvelle session démarre chaque semaine. Les inscriptions de la session en cours ferment le dimanche à 23h59 (heure du Niger).</p></details>
+        <details><summary>Faut-il un ordinateur ?</summary><p>Non. Les formations se suivent depuis un téléphone ou un ordinateur.</p></details>
+        <details><summary>Puis-je suivre plusieurs formations ?</summary><p>Oui. Chaque formation est indépendante : vous pouvez vous inscrire à celles qui correspondent à vos objectifs.</p></details>
       </div>
     </div>
   </section>
@@ -414,7 +590,7 @@ src="https://www.facebook.com/tr?id=2907317212987763&ev=PageView&noscript=1"
     <div class="a-final-glow"></div>
     <div class="wrap">
       <h2>Votre prochaine compétence peut transformer votre business</h2>
-      <p class="sub">E-commerce et intelligence artificielle : passez à l'action dès aujourd'hui.</p>
+      <p class="sub">E-commerce, intelligence artificielle, crypto et bourse : choisissez votre formation et passez à l'action.</p>
       <a href="#courses" class="btn btn-primary">Voir les formations</a>
     </div>
   </section>
@@ -426,7 +602,7 @@ src="https://www.facebook.com/tr?id=2907317212987763&ev=PageView&noscript=1"
     <div class="a-footer-top">
       <div class="a-footer-brand">
         <span class="brand-name" style="font-size:16px;">ROUGATECH <span class="accent" style="color:var(--saffron);">Academy</span></span>
-        <p>Formations E-commerce &amp; IA</p>
+        <p>Formations E-commerce, IA, Crypto &amp; Bourse</p>
       </div>
       <div class="a-footer-nav">
         <div class="a-footer-col">
@@ -450,20 +626,26 @@ src="https://www.facebook.com/tr?id=2907317212987763&ev=PageView&noscript=1"
 <!-- COURSE DATA — add a new course here and it renders automatically in
      both the catalog grid and the category links above render it. -->
 <script>
+  /* price / oldPrice : à garder identiques aux prix affichés sur la page de chaque formation */
   var ACADEMY_COURSES = [
     {
       slug: "ecommerce-premium-pro",
+      keywords: "alibaba chine importer importation vendre vente facebook tiktok whatsapp marketing digital",
       url: "/academy/ecommerce-premium-pro/",
       title: "E-commerce Premium",
       image: "/academy/ecommerce-premium-pro/vignette.jpg",
       category: "E-commerce",
-      desc: "Acheter en toute sécurité en Chine et vendre efficacement en ligne : Alibaba, Facebook, WhatsApp, TikTok et techniques de vente. +96 entrepreneurs déjà formés.",
+      desc: "Acheter en toute sécurité en Chine et vendre efficacement en ligne : Alibaba, Facebook, WhatsApp, TikTok et techniques de vente.",
       level: "Débutants bienvenus",
       duration: "3 modules + 10 bonus",
+      price: 29000, oldPrice: 60000,
+      perks: ["+96 apprenants", "Attestation"],
+      preview: "/academy/ecommerce-premium-pro/cas-reel/machine-en-marche.mp4",
       status: "Disponible"
     },
     {
       slug: "vip-ai-video",
+      keywords: "ia ai intelligence artificielle video vidéo tiktok avatar voix prompt contenu montage",
       url: "/academy/vip-ai-video/",
       title: "VIP AI Video Training",
       image: "/academy/vip-ai-video/vignette.jpg",
@@ -471,10 +653,14 @@ src="https://www.facebook.com/tr?id=2907317212987763&ev=PageView&noscript=1"
       desc: "Maîtrisez la création de vidéos ultra-réalistes avec l'IA : niche, marque, voix IA, prompts, montage et réseaux sociaux.",
       level: "Accès à vie",
       duration: "7 modules + bonus VIP",
+      price: 12500, oldPrice: 40000,
+      perks: ["Accès à vie", "Attestation"],
+      preview: "/academy/vip-ai-video/videos/cinema-premiere-classe.mp4",
       status: "Disponible"
     },
     {
       slug: "crypto-investisseur",
+      keywords: "bitcoin btc blockchain ethereum wallet cryptomonnaie investir",
       url: "/academy/crypto-investisseur/",
       title: "Crypto Investisseur",
       image: "/academy/crypto-investisseur/vignette.jpg",
@@ -482,10 +668,13 @@ src="https://www.facebook.com/tr?id=2907317212987763&ev=PageView&noscript=1"
       desc: "Blockchain, wallets, analyse de projets et stratégies d'investissement pour investir avec méthode dans les cryptos à fort potentiel.",
       level: "Débutants bienvenus",
       duration: "5 modules + bonus",
+      price: 30000, oldPrice: 100000,
+      perks: ["Communauté privée"],
       status: "Disponible"
     },
     {
       slug: "stock-market-investment",
+      keywords: "bourse actions etf apple nvidia microsoft amazon investir stock market dividendes",
       url: "/academy/stock-market-investment/",
       title: "Stock Market Investment",
       image: "/academy/stock-market-investment/vignette.jpg",
@@ -493,6 +682,8 @@ src="https://www.facebook.com/tr?id=2907317212987763&ev=PageView&noscript=1"
       desc: "Actions, indices, ETF et grandes entreprises (Apple, Microsoft, Nvidia, Amazon) : investir en bourse avec méthode et sur le long terme.",
       level: "Accès à vie",
       duration: "7 modules",
+      price: 19000, oldPrice: 40000,
+      perks: ["Accès à vie"],
       status: "Disponible"
     }
   ];
@@ -553,48 +744,66 @@ src="https://www.facebook.com/tr?id=2907317212987763&ev=PageView&noscript=1"
     var filterRow = document.getElementById('filter-row');
     var grid = document.getElementById('course-grid');
     if(!filterRow || !grid) return;
-
-    if(!ACADEMY_COURSES.length){
-      var c = document.getElementById('courses'); if(c) c.style.display='none';
-      document.querySelectorAll('a[href="#courses"]').forEach(function(a){ a.style.display='none'; });
-      return;
+    if(!ACADEMY_COURSES.length){ var c=document.getElementById('courses'); if(c) c.style.display='none'; return; }
+    function fmt(n){ return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,' '); }
+    function esc(t){ return String(t).replace(/[&<>"]/g,function(ch){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]; }); }
+    var vip=ACADEMY_COURSES.filter(function(c){ return c.slug==='vip-ai-video'; })[0], fp=document.querySelector('[data-feat-price]');
+    if(vip && fp && vip.price) fp.innerHTML=(vip.oldPrice?'<s>'+fmt(vip.oldPrice)+' FCFA</s>':'')+'<b>'+fmt(vip.price)+' FCFA</b>';
+    function card(c){
+      var off = (c.price && c.oldPrice) ? Math.round((1-c.price/c.oldPrice)*100) : 0;
+      return '<article class="ccard" data-category="'+esc(c.category)+'">'+
+        '<a class="cmedia" href="'+c.url+'" tabindex="-1" aria-hidden="true">'+
+          '<img src="'+c.image+'" alt="" loading="lazy" width="900" height="900">'+
+          (c.preview?'<video muted loop playsinline preload="none" data-src="'+c.preview+'"></video><span class="cprev">Aperçu</span>':'')+
+          '<span class="cbadge"><span>'+esc(c.category)+'</span>'+(off?'<span class="off">−'+off+' %</span>':'')+'</span>'+
+        '</a>'+
+        '<div class="cbody">'+
+          '<div class="cteach"><img src="/founder-amadou-portrait.jpg" alt="" loading="lazy">Un cours de <b>Amadou Rouga</b></div>'+
+          '<h3><a href="'+c.url+'">'+esc(c.title)+'</a></h3>'+
+          '<p class="cdesc">'+esc(c.desc)+'</p>'+
+          '<div class="cperks"><span>'+esc(c.duration)+'</span>'+(c.perks||[]).map(function(p){ return '<span>'+esc(p)+'</span>'; }).join('')+'</div>'+
+          '<div class="cfoot"><div class="cprice">'+(c.price?((c.oldPrice?'<s>'+fmt(c.oldPrice)+' FCFA</s>':'')+'<b>'+fmt(c.price)+'<small>FCFA</small></b>'):'<b>Sur WhatsApp</b>')+'</div>'+
+          '<a class="cgo" href="'+c.url+'">Voir la formation</a></div>'+
+        '</div></article>';
     }
-
-    function courseCard(c){
-      return '' +
-        '<article class="course-card' + (c.image ? ' has-img' : '') + '" data-category="' + c.category + '">' +
-          (c.image ? '<a class="course-img" href="' + c.url + '"><img src="' + c.image + '" alt="' + c.title + '" loading="lazy" width="900" height="900"></a>' : '') +
-          '<div class="course-top">' +
-            '<span class="course-category">' + c.category + '</span>' +
-            '<span class="course-status">' + c.status + '</span>' +
-          '</div>' +
-          '<h3>' + c.title + '</h3>' +
-          '<p class="course-desc">' + c.desc + '</p>' +
-          '<div class="course-meta"><span>' + c.level + '</span><span>' + c.duration + '</span></div>' +
-          '<a class="btn btn-primary course-cta" href="' + (c.url || ('courses/' + c.slug + '.html')) + '">Voir la formation</a>' +
-        '</article>';
-    }
-    function renderCourses(filter){
-      var list = filter === 'Tout' ? ACADEMY_COURSES : ACADEMY_COURSES.filter(function(c){ return c.category === filter; });
-      grid.innerHTML = list.map(courseCard).join('');
-    }
-
-    // Filtres uniquement s'il existe au moins 2 catégories réelles
-    var cats = [];
-    ACADEMY_COURSES.forEach(function(c){ if(cats.indexOf(c.category) < 0) cats.push(c.category); });
-    if(cats.length > 1){
-      filterRow.innerHTML = ['Tout'].concat(cats).map(function(f, i){
-        return '<button class="filter-pill' + (i === 0 ? ' active' : '') + '" data-filter="' + f + '">' + f + '</button>';
-      }).join('');
-      filterRow.addEventListener('click', function(e){
-        var btn = e.target.closest('.filter-pill'); if(!btn) return;
-        filterRow.querySelectorAll('.filter-pill').forEach(function(b){ b.classList.remove('active'); });
-        btn.classList.add('active'); renderCourses(btn.dataset.filter);
+    var state={cat:'Tout', q:''};
+    function norm(t){ return String(t).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,''); }
+    function render(){
+      var q=norm(state.q).trim();
+      var list=ACADEMY_COURSES.filter(function(c){
+        if(state.cat!=='Tout' && c.category!==state.cat) return false;
+        if(!q) return true;
+        return norm(c.title+' '+c.category+' '+c.desc+' '+(c.keywords||'')).indexOf(q)>=0;
       });
-    } else {
-      filterRow.style.display = 'none';
+      grid.innerHTML = list.length ? list.map(card).join('') : '<p class="cempty">Aucune formation ne correspond à « '+esc(state.q)+' ». Essayez « IA », « Alibaba », « Bitcoin » ou « bourse ».</p>';
+      bindPreviews();
     }
-    renderCourses('Tout');
+    function bindPreviews(){
+      if(!window.matchMedia('(hover:hover)').matches) return;
+      grid.querySelectorAll('.ccard').forEach(function(card){
+        var v=card.querySelector('video'); if(!v) return;
+        card.addEventListener('mouseenter',function(){ if(!v.src) v.src=v.dataset.src; var p=v.play(); if(p&&p.catch) p.catch(function(){}); card.classList.add('playing'); });
+        card.addEventListener('mouseleave',function(){ v.pause(); card.classList.remove('playing'); });
+      });
+    }
+    var cats=[]; ACADEMY_COURSES.forEach(function(c){ if(cats.indexOf(c.category)<0) cats.push(c.category); });
+    function setCat(cat){ state.cat=cat; filterRow.querySelectorAll('.filter-pill').forEach(function(b){ b.classList.toggle('active', b.dataset.filter===cat); }); render(); }
+    filterRow.innerHTML=['Tout'].concat(cats).map(function(f,i){ return '<button class="filter-pill'+(i===0?' active':'')+'" data-filter="'+esc(f)+'">'+esc(f)+'</button>'; }).join('');
+    filterRow.addEventListener('click',function(e){ var b=e.target.closest('.filter-pill'); if(b) setCat(b.dataset.filter); });
+    var chips=document.getElementById('chips'), courses=document.getElementById('courses'), q=document.getElementById('q');
+    if(chips){ chips.innerHTML=cats.map(function(f){ return '<button type="button" data-cat="'+esc(f)+'">'+esc(f)+'</button>'; }).join('');
+      chips.addEventListener('click',function(e){ var b=e.target.closest('button'); if(!b) return; state.q=''; if(q) q.value=''; setCat(b.dataset.cat); courses.scrollIntoView({behavior:'smooth'}); }); }
+    var form=document.getElementById('search');
+    if(form){ form.addEventListener('submit',function(e){ e.preventDefault(); state.q=q.value; setCat('Tout'); courses.scrollIntoView({behavior:'smooth'}); });
+      q.addEventListener('input',function(){ state.q=q.value; render(); }); }
+    render();
+  })();
+
+  /* vidéos des réalisations : lecture seulement quand elles sont visibles */
+  (function(){
+    var vs=document.querySelectorAll('video[data-auto]'); if(!('IntersectionObserver' in window)) return;
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ var p=e.target.play(); if(p&&p.catch) p.catch(function(){}); } else e.target.pause(); }); },{threshold:.35});
+    vs.forEach(function(v){ io.observe(v); });
   })();
 </script>
 
