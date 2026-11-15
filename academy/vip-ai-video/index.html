@@ -17,7 +17,7 @@
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://rougatech.com/academy/vip-ai-video/partage.jpg">
-<meta name="theme-color" content="#141414">
+<meta name="theme-color" content="#0d1b34">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -33,11 +33,12 @@
 /* Direction : la page est un logiciel de montage. Moniteur de programme en ouverture,
    timeline pour le programme, chutier pour les exemples, clap pour le tarif. */
 :root{
-  --deck:#141414; --deck2:#1B1B1B; --panel:#222222; --panel2:#2A2A2A;
-  --rule:#333333; --rule2:#444444;
-  --paper:#ECE9E2; --muted:#A39F96; --faint:#6F6B64;
-  --tungsten:#FFB238; --rec:#FF3B30;
-  --c1:#2A9D8F; --c2:#8E5BB5; --c3:#4A6FD1; --c4:#B0563A; --c5:#C8496E; --c6:#5E9C46; --c7:#3E8FB0;
+  --deck:#081226; --deck2:#0d1b34; --panel:#13264a; --panel2:#1a2f5a;
+  --rule:#1d3157; --rule2:#2b4372;
+  --paper:#ffffff; --muted:#a8b3c7; --faint:#71809c;
+  --tungsten:#ffb020; --rec:#FF3B30;
+  --c1:#1f5eff; --c2:#1646c9; --c3:#3d74ff; --c4:#2a4fb8; --c5:#1f5eff; --c6:#1646c9; --c7:#3d74ff;
+  --blue:#1f5eff; --blue-deep:#1646c9;
   --sans:"Archivo",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --tc:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
   --ease:cubic-bezier(.2,.7,.2,1);
@@ -62,11 +63,11 @@ section{padding:clamp(80px,10vw,128px) 0; position:relative;}
 .intro b{color:var(--paper); font-weight:600;}
 .head{margin-bottom:clamp(40px,6vw,64px);}
 
-.btn{white-space:nowrap; display:inline-flex; align-items:center; justify-content:center; gap:10px; height:54px; padding:0 26px; border:0; border-radius:4px; cursor:pointer; font-weight:700; font-stretch:90%; font-size:16px; transition:background .2s, transform .2s;}
-.btn-go{background:linear-gradient(180deg,#FFC457 0%,#FFAA2B 100%); color:#1A1206; box-shadow:inset 0 1px 0 rgba(255,255,255,.45), inset 0 -2px 0 rgba(0,0,0,.18), 0 10px 28px -10px rgba(255,170,43,.65);}
-.btn-go:hover{background:linear-gradient(180deg,#FFCD6E 0%,#FFB43F 100%); transform:translateY(-1px);}
-.btn-go:active{transform:translateY(1px); box-shadow:inset 0 2px 4px rgba(0,0,0,.2);}
-.btn-hero{height:60px; padding:0 32px; font-size:17px; border-radius:6px;}
+.btn{white-space:nowrap; display:inline-flex; align-items:center; justify-content:center; gap:10px; height:54px; padding:0 26px; border:0; border-radius:999px; cursor:pointer; font-weight:700; font-stretch:90%; font-size:16px; transition:background .2s, transform .2s;}
+.btn-go{background:linear-gradient(180deg,#3d74ff 0%,#1f5eff 100%); color:#fff; box-shadow:inset 0 1px 0 rgba(255,255,255,.3), 0 10px 28px -10px rgba(31,94,255,.8);}
+.btn-go:hover{background:var(--blue-deep); transform:translateY(-1px);}
+.btn-go:active{transform:translateY(1px); box-shadow:inset 0 2px 4px rgba(0,0,0,.25);}
+.btn-hero{height:60px; padding:0 34px; font-size:17px;}
 .btn-line{background:transparent; color:var(--paper); border:1px solid var(--rule2);}
 .btn-line:hover{border-color:var(--paper);}
 .btn-block{width:100%;}
@@ -112,8 +113,8 @@ section{padding:clamp(80px,10vw,128px) 0; position:relative;}
 .hero-snd{position:absolute; z-index:5; left:calc(4% + 8px); bottom:calc(6% + 6px); display:flex; align-items:center; gap:10px; height:48px; padding:0 20px 0 16px; border:1px solid rgba(255,255,255,.35); border-radius:999px; background:rgba(0,0,0,.6); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px); color:#fff; font-weight:700; font-stretch:90%; font-size:15px; cursor:pointer; transition:background .2s, opacity .3s;}
 .hero-snd::before{content:""; width:0; height:0; border-left:12px solid var(--tungsten); border-top:8px solid transparent; border-bottom:8px solid transparent;}
 .hero-snd:hover{background:rgba(0,0,0,.8);}
-.hero-snd.on{background:var(--tungsten); color:#1A1206; border-color:transparent;}
-.hero-snd.on::before{border:0; width:10px; height:10px; background:#1A1206; border-radius:2px;}
+.hero-snd.on{background:var(--tungsten); color:#0d1b34; border-color:transparent;}
+.hero-snd.on::before{border:0; width:10px; height:10px; background:#0d1b34; border-radius:2px;}
 @media (max-width:600px){ .hero-snd{height:38px; font-size:13px; padding:0 14px 0 12px;} }
 .scrub{position:relative; height:28px; margin-top:10px;}
 .scrub::before{content:""; position:absolute; left:0; right:0; top:13px; height:2px; background:var(--rule2);}
@@ -130,6 +131,10 @@ section{padding:clamp(80px,10vw,128px) 0; position:relative;}
 @media (max-width:420px){ .proof dd{font-size:14px;} }
 .facts{display:flex; flex-wrap:wrap; gap:8px 28px; margin-top:28px; color:var(--muted); font-size:15px;}
 .facts b{color:var(--paper); font-weight:600;}
+
+/* sections claires : blanc + navy, comme rougatech.com */
+.light{background:#fff; color:#0d1b34; --paper:#0d1b34; --muted:#3d4a63; --faint:#6b7489; --rule:#dde2ea; --rule2:#c9d1de; --deck2:#f1f3f7; --panel:#f1f3f7; --tungsten:#1f5eff;}
+.light .sheet-row .old{text-decoration-color:rgba(214,31,31,.55);}
 
 /* devis de production : tournage contre IA */
 .sheet{border:1px solid var(--rule); background:var(--deck2);}
@@ -201,7 +206,7 @@ section{padding:clamp(80px,10vw,128px) 0; position:relative;}
 .rush .meta b{color:var(--paper); font-weight:500; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
 .rush .what{padding:0 12px 14px; font-size:15px; color:var(--muted);}
 .snd{position:absolute; right:10px; bottom:10px; z-index:2; height:34px; padding:0 12px; border-radius:3px; border:0; cursor:pointer; background:rgba(0,0,0,.7); color:#fff; font-size:13px; font-weight:600;}
-.snd.on{background:var(--tungsten); color:#1A1206;}
+.snd.on{background:var(--tungsten); color:#0d1b34;}
 
 /* résultats */
 .results{display:grid; gap:40px; align-items:start;}
@@ -238,8 +243,8 @@ section{padding:clamp(80px,10vw,128px) 0; position:relative;}
 @media (min-width:900px){ .offer-grid{grid-template-columns:1fr 460px; gap:64px;} }
 .inc li{padding:15px 0; border-bottom:1px solid var(--rule); display:flex; gap:14px;}
 .inc li::before{content:""; flex:0 0 14px; height:2px; margin-top:13px; background:var(--tungsten);}
-.slate{background:#101010; border:1px solid var(--rule2); border-radius:6px; overflow:hidden; box-shadow:0 40px 80px -40px #000;}
-.clapper{height:44px; background:repeating-linear-gradient(-45deg,#ECE9E2 0 22px,#101010 22px 44px); transform-origin:0 100%; border-bottom:2px solid #000;}
+.slate{background:#0a1630; border:1px solid var(--rule2); border-radius:6px; overflow:hidden; box-shadow:0 40px 80px -40px #000;}
+.clapper{height:44px; background:repeating-linear-gradient(-45deg,#ffffff 0 22px,#0d1b34 22px 44px); transform-origin:0 100%; border-bottom:2px solid #000;}
 html.anim .slate .clapper{transform:rotate(-14deg);}
 html.anim .slate.in .clapper{animation:clap .7s cubic-bezier(.5,0,.3,1.4) .2s both;}
 @keyframes clap{0%{transform:rotate(-14deg)}60%{transform:rotate(0)}75%{transform:rotate(-3deg)}100%{transform:rotate(0)}}
@@ -368,7 +373,7 @@ src="https://www.facebook.com/tr?id=2907317212987763&ev=PageView&noscript=1"
 </section>
 
 <!-- POURQUOI L'IA -->
-<section id="pourquoi">
+<section id="pourquoi" class="light">
   <div class="wrap">
     <div class="head">
       <h2 class="title title-sm">Ce que coûte une vidéo, avant et après l'IA</h2>
@@ -458,7 +463,7 @@ src="https://www.facebook.com/tr?id=2907317212987763&ev=PageView&noscript=1"
 </section>
 
 <!-- POUR QUI -->
-<section>
+<section class="light">
   <div class="wrap">
     <div class="head"><h2 class="title title-sm">Pour vous si vous voulez</h2></div>
     <ul class="who">
@@ -521,7 +526,7 @@ src="https://www.facebook.com/tr?id=2907317212987763&ev=PageView&noscript=1"
 </section>
 
 <!-- FAQ -->
-<section style="padding-top:0;">
+<section class="light">
   <div class="wrap">
     <div class="head"><h2 class="title title-sm">Questions fréquentes</h2></div>
     <div class="faq">
@@ -611,7 +616,7 @@ var MODULES = [
     var lane=(i%2===0)?v1:v2;
     var c=document.createElement('button'); c.type='button'; c.className='clip'; c.style.left='calc('+left+'% + 2px)'; c.style.width='calc('+w+'% - 4px)'; c.style.backgroundColor=m.c; c.textContent=m.t;
     lane.appendChild(c);
-    var a=document.createElement('span'); a.className='clip'; a.style.left='calc('+left+'% + 2px)'; a.style.width='calc('+w+'% - 4px)'; a.style.backgroundColor=m.audio?m.c:'#3a3a3a'; a1.appendChild(a);
+    var a=document.createElement('span'); a.className='clip'; a.style.left='calc('+left+'% + 2px)'; a.style.width='calc('+w+'% - 4px)'; a.style.backgroundColor=m.audio?m.c:'#2b4372'; a1.appendChild(a);
     clips.push({el:c,au:a,start:left/100,end:(left+w)/100});
     var r=document.createElement('span'); r.style.left=left+'%'; r.textContent='00:'+pad(Math.round(left/100*20))+':00'; ruler.appendChild(r);
   });
