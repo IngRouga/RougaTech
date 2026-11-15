@@ -249,8 +249,9 @@
   .hx{display:grid; grid-template-columns:1fr; gap:40px; align-items:center;}
   @media (min-width:1000px){ .hx{grid-template-columns:1.05fr .95fr; gap:56px;} }
   .hx > *{min-width:0;}
+  @media (max-width:600px){ .hx h1{font-size:46px;} .a-hero{padding-top:104px;} }
   @media (max-width:420px){ .search{padding-left:14px;} .search button{padding:11px 14px; font-size:14px;} }
-  .hx h1{font-size:clamp(40px,5.4vw,74px); font-weight:800; letter-spacing:-.04em; line-height:1.02;}
+  .hx h1{font-size:clamp(44px,6vw,84px); font-weight:800; letter-spacing:-.04em; line-height:1.02;}
   .hx h1 .accent{position:relative; display:inline-block;}
   .hx h1 .accent::after{content:''; position:absolute; left:-2%; right:-2%; bottom:.06em; height:.26em; background:var(--saffron); z-index:-1; border-radius:4px; transform:skewX(-6deg);}
   .hx .a-hero-sub{margin:20px 0 26px; max-width:52ch; text-align:left;}
@@ -461,7 +462,7 @@ src="https://www.facebook.com/tr?id=2907317212987763&ev=PageView&noscript=1"
   <section class="a-hero" id="hero">
     <div class="wrap hx">
       <div>
-        <h1>Apprenez les compétences qui <span class="accent">font vendre</span></h1>
+        <h1>Apprendre<br>Action<br><span class="accent">Résultat</span></h1>
         <p class="a-hero-sub">Des formations pratiques en <b>e-commerce</b>, <b>intelligence artificielle</b>, <b>crypto</b> et <b>bourse</b>, pensées pour les entrepreneurs africains.</p>
         <form class="search" id="search" role="search">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
