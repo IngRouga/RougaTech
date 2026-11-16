@@ -290,7 +290,7 @@
   .cat-head{display:flex; align-items:flex-end; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-bottom:28px;}
   .cat-head .section-head{margin-bottom:0;}
   .filter-row{margin-bottom:0;}
-  .course-grid{grid-template-columns:repeat(4,minmax(0,1fr)); gap:22px;}
+  .course-grid{grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px;}
   @media (max-width:1180px){ .course-grid{grid-template-columns:repeat(2,minmax(0,1fr));} }
   @media (max-width:640px){ .course-grid{grid-template-columns:1fr;} }
   .ccard{display:flex; flex-direction:column; background:#fff; border-radius:18px; overflow:hidden; box-shadow:0 0 0 1px var(--line); transition:box-shadow .25s var(--ease), transform .25s var(--ease);}
@@ -463,7 +463,7 @@ src="https://www.facebook.com/tr?id=2907317212987763&ev=PageView&noscript=1"
     <div class="wrap hx">
       <div>
         <h1>Apprendre<br>Action<br><span class="accent">Résultat</span></h1>
-        <p class="a-hero-sub">Des formations pratiques en <b>e-commerce</b>, <b>intelligence artificielle</b>, <b>crypto</b> et <b>bourse</b>, pensées pour les entrepreneurs africains.</p>
+        <p class="a-hero-sub">Des formations pratiques en <b>e-commerce</b>, <b>intelligence artificielle</b>, <b>création de sites web</b>, <b>crypto</b> et <b>bourse</b>, pensées pour les entrepreneurs africains.</p>
         <form class="search" id="search" role="search">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
           <input type="search" id="q" placeholder="Que voulez-vous apprendre ?" aria-label="Rechercher une formation" autocomplete="off">
@@ -471,7 +471,7 @@ src="https://www.facebook.com/tr?id=2907317212987763&ev=PageView&noscript=1"
         </form>
         <div class="chips" id="chips"></div>
         <div class="stats">
-          <div><b>4</b><span>formations disponibles</span></div>
+          <div><b>5</b><span>formations disponibles</span></div>
           <div><b>+96</b><span>entrepreneurs formés en e-commerce</span></div>
           <div><b>400</b><span>entrepreneurs accompagnés au Ghana</span></div>
         </div>
@@ -547,7 +547,7 @@ src="https://www.facebook.com/tr?id=2907317212987763&ev=PageView&noscript=1"
   <!-- FORMATEUR -->
   <section class="section" id="about-academy">
     <div class="wrap teacher">
-      <figure><img src="/founder-amadou-portrait.jpg" alt="Amadou Rouga, formateur ROUGATECH Academy" loading="lazy"><figcaption>Formateur des 4 formations</figcaption></figure>
+      <figure><img src="/founder-amadou-portrait.jpg" alt="Amadou Rouga, formateur ROUGATECH Academy" loading="lazy"><figcaption>Formateur des 5 formations</figcaption></figure>
       <div>
         <div class="eyebrow">Votre formateur</div>
         <h2>Amadou Rouga</h2>
@@ -602,7 +602,7 @@ src="https://www.facebook.com/tr?id=2907317212987763&ev=PageView&noscript=1"
     <div class="a-final-glow"></div>
     <div class="wrap">
       <h2>Votre prochaine compétence peut transformer votre business</h2>
-      <p class="sub">E-commerce, intelligence artificielle, crypto et bourse : choisissez votre formation et passez à l'action.</p>
+      <p class="sub">E-commerce, IA, sites web, crypto et bourse : choisissez votre formation et passez à l'action.</p>
       <a href="#courses" class="btn btn-primary">Voir les formations</a>
     </div>
   </section>
@@ -614,7 +614,7 @@ src="https://www.facebook.com/tr?id=2907317212987763&ev=PageView&noscript=1"
     <div class="a-footer-top">
       <div class="a-footer-brand">
         <span class="brand-name" style="font-size:16px;">ROUGATECH <span class="accent" style="color:var(--saffron);">Academy</span></span>
-        <p>Formations E-commerce, IA, Crypto &amp; Bourse</p>
+        <p>Formations E-commerce, IA, Web, Crypto &amp; Bourse</p>
       </div>
       <div class="a-footer-nav">
         <div class="a-footer-col">
@@ -640,6 +640,20 @@ src="https://www.facebook.com/tr?id=2907317212987763&ev=PageView&noscript=1"
 <script>
   /* price / oldPrice : à garder identiques aux prix affichés sur la page de chaque formation */
   var ACADEMY_COURSES = [
+    {
+      slug: "creation-site-web",
+      keywords: "site web internet html css javascript code développeur freelance clients google seo nom de domaine",
+      url: "/academy/creation-site-web/",
+      title: "Création de Site Web",
+      image: "/academy/creation-site-web/vignette.jpg",
+      category: "Web",
+      desc: "Créer des sites professionnels en HTML, CSS et JavaScript, les mettre en ligne, les référencer sur Google et trouver des clients.",
+      level: "Accès à vie",
+      duration: "7 modules + 2 bonus",
+      price: 149000, oldPrice: 300000,
+      perks: ["Accompagnement", "Attestation"],
+      status: "Disponible"
+    },
     {
       slug: "ecommerce-premium-pro",
       keywords: "alibaba chine importer importation vendre vente facebook tiktok whatsapp marketing digital",
