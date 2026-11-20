@@ -713,3 +713,6 @@ html.anim .letter-sign.in .sg-dot{opacity:1;}
 .ai-nudge.show{opacity:1; transform:none; pointer-events:auto;}
 .ai-widget.open .ai-nudge{display:none;}
 @media (prefers-reduced-motion:reduce){ .ai-nudge{transition:opacity .2s;} }
+
+/* pied de page : laisser la place à la bulle d'aide sur mobile */
+@media (max-width:760px){ .foot-bottom{padding-bottom:72px;} }
