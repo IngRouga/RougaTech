@@ -3,9 +3,11 @@
 
 /* ---------- héros cinéma ---------- */
 .hero-x{position:relative; isolation:isolate; overflow:hidden; background:var(--night); color:#fff;
-  min-height:100svh; display:flex; align-items:center; padding:0; margin-top:calc(-1 * var(--hdr-h, 88px)); padding-top:var(--hdr-h, 88px);}
-.hero-x .hx-inner{position:relative; z-index:2; padding-top:clamp(40px,8vh,90px); padding-bottom:clamp(80px,12vh,120px);}
-.hero-x .hero-text{max-width:720px;}
+  min-height:100svh; display:flex; flex-direction:column; justify-content:center; padding:0; margin-top:calc(-1 * var(--hdr-h, 88px)); padding-top:var(--hdr-h, 88px);}
+.hero-x .hx-inner{position:relative; z-index:2; width:100%; max-width:1240px; margin-left:auto; margin-right:auto; padding-left:max(20px,env(safe-area-inset-left)); padding-right:max(20px,env(safe-area-inset-right)); min-width:0; padding-top:clamp(40px,8vh,90px); padding-bottom:clamp(80px,12vh,120px);}
+.hero-x .hero-text{max-width:720px; min-width:0;}
+.hero-x h1,.hero-x .hero-sub{overflow-wrap:break-word;}
+@media (min-width:721px){ .hero-x .hx-inner{padding-left:32px; padding-right:32px;} }
 .hero-x h1{color:#fff; font-size:clamp(44px,6vw,92px); line-height:1.02; letter-spacing:-.045em; max-width:13ch; margin-bottom:28px;}
 .hero-x .scribble-line path{stroke:var(--saffron);}
 .hero-x .hero-sub{color:#c7d0e0; max-width:44ch;}
@@ -32,11 +34,12 @@
 .hx-scroll::after{content:''; width:1px; height:64px; background:linear-gradient(var(--saffron),transparent); animation:hxHint 2.2s var(--ease) infinite;}
 @keyframes hxHint{0%{transform:scaleY(0); transform-origin:top} 50%{transform:scaleY(1); transform-origin:top} 51%{transform-origin:bottom} 100%{transform:scaleY(0); transform-origin:bottom}}
 @media (max-width:1000px){
-  .hero-x{align-items:flex-end;}
+  .hero-x{justify-content:flex-end;}
+  .hero-x h1{font-size:clamp(34px,10.5vw,56px);}
   .hx-wall{width:140%; right:-48%; top:-8%; opacity:.5;}
   .hx-shade{background:linear-gradient(0deg,var(--night) 0%,rgba(7,15,34,.9) 50%,rgba(7,15,34,.45) 100%);}
   .hx-scroll{display:none;}
-  .hero-x .hx-inner{padding-top:40vh;}
+  .hero-x .hx-inner{padding-top:38vh; padding-bottom:56px;}
 }
 
 /* ---------- réalisations : défilement horizontal ---------- */
