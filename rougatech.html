@@ -60,6 +60,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/home.css?v=202611200559">
+<link rel="stylesheet" href="assets/home-fx.css?v=202611210328">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -175,8 +176,11 @@ src="https://www.facebook.com/tr?id=2907317212987763&ev=PageView&noscript=1"
 
 <main id="main">
 
-  <section class="hero" id="hero">
-    <div class="wrap hero-grid">
+  <section class="hero hero-x" id="hero">
+    <div class="hx-wall" id="hx-wall" aria-hidden="true"></div>
+    <div class="hx-shade" aria-hidden="true"></div>
+    <div class="hx-glow" aria-hidden="true"></div>
+    <div class="wrap hx-inner">
       <div class="hero-text">
         <h1><span class="fr" lang="fr">Nous aidons les entreprises à vendre plus grâce au <span class="scribble">Web<svg class="scribble-line" viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 13.5c22-4.2 46-6.6 71-6.9 26-.3 49 1.6 74 2.2 16 .4 32-.6 49-2.8M14 17c30-3.3 62-4.6 95-4.3 25 .2 47 1.2 74-.4"/></svg></span> et à l'<span class="scribble">IA<svg class="scribble-line" viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 13.5c22-4.2 46-6.6 71-6.9 26-.3 49 1.6 74 2.2 16 .4 32-.6 49-2.8M14 17c30-3.3 62-4.6 95-4.3 25 .2 47 1.2 74-.4"/></svg></span></span><span class="en" lang="en">We help businesses sell more with the <span class="scribble">Web<svg class="scribble-line" viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 13.5c22-4.2 46-6.6 71-6.9 26-.3 49 1.6 74 2.2 16 .4 32-.6 49-2.8M14 17c30-3.3 62-4.6 95-4.3 25 .2 47 1.2 74-.4"/></svg></span> and <span class="scribble">AI<svg class="scribble-line" viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 13.5c22-4.2 46-6.6 71-6.9 26-.3 49 1.6 74 2.2 16 .4 32-.6 49-2.8M14 17c30-3.3 62-4.6 95-4.3 25 .2 47 1.2 74-.4"/></svg></span></span></h1>
         <p class="hero-sub"><span class="fr" lang="fr">Des sites web qui convertissent, des plateformes sur mesure et un assistant IA pour attirer plus de clients, en Afrique et à l'international.</span><span class="en" lang="en">Websites that convert, custom platforms and an AI assistant to win more customers, in Africa and worldwide.</span></p>
@@ -185,12 +189,8 @@ src="https://www.facebook.com/tr?id=2907317212987763&ev=PageView&noscript=1"
           <a href="#work" class="btn btn-ghost"><span class="fr" lang="fr">Voir nos réalisations</span><span class="en" lang="en">See our work</span></a>
         </div>
       </div>
-      <div class="hero-stack" aria-hidden="true">
-        <figure class="shot shot-1"><img src="work-gcap11.jpg" alt="" width="1200" height="900"></figure>
-        <figure class="shot shot-2"><img src="work-marina.jpg" alt="" width="1200" height="900"></figure>
-        <figure class="shot shot-3"><img src="work-ipstg.jpg" alt="" width="1200" height="900"></figure>
-      </div>
     </div>
+    <a href="#work" class="hx-scroll" aria-hidden="true" tabindex="-1"><span class="fr" lang="fr">Défiler</span><span class="en" lang="en">Scroll</span></a>
   </section>
 
   <section class="trust" aria-label="Clients">
@@ -332,13 +332,15 @@ src="https://www.facebook.com/tr?id=2907317212987763&ev=PageView&noscript=1"
     </div>
   </section>
 
-  <section class="sec" id="work">
+  <section class="sec sec-night" id="work">
     <div class="wrap">
       <div class="sec-head">
         <h2><span class="fr" lang="fr">Nos réalisations récentes</span><span class="en" lang="en">Our recent work</span></h2>
         <p><span class="fr" lang="fr">Des sites et des plateformes réels, conçus et mis en ligne pour nos clients.</span><span class="en" lang="en">Real websites and platforms, designed and launched for our clients.</span></p>
       </div>
-      <div class="work-grid work-stack">
+    </div>
+    <div class="hs-pin" id="work-pin">
+      <div class="work-hs" id="work-track">
         <article class="proj proj-feature">
           <div class="proj-img"><img src="work-gcap11.jpg" alt="GCAP11 — Page de vente · Événement" loading="lazy" width="1200" height="900"></div>
           <div class="proj-txt">
@@ -403,6 +405,9 @@ src="https://www.facebook.com/tr?id=2907317212987763&ev=PageView&noscript=1"
           </div>
         </article>
       </div>
+      <div class="hs-meta" aria-hidden="true"><span class="hs-count"><b id="work-cnt">01</b> / <span id="work-tot">07</span></span><span class="hs-bar"><i id="work-bar"></i></span></div>
+    </div>
+    <div class="wrap">
       <div class="sec-cta"><a href="#contact" class="btn btn-ink"><span class="fr" lang="fr">Je veux un site comme ça</span><span class="en" lang="en">I want a site like this</span></a></div>
     </div>
   </section>
@@ -1028,5 +1033,8 @@ src="https://www.facebook.com/tr?id=2907317212987763&ev=PageView&noscript=1"
     if(e.key === 'Escape' && nav.classList.contains('open')) toggle.click();
   });
 </script>
+<script src="/assets/vendor/gsap.min.js"></script>
+<script src="/assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/home-fx.js?v=202611210328"></script>
 </body>
 </html>

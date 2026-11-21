@@ -1,0 +1,81 @@
+/* ROUGATECH — couche haut de gamme : héros cinéma, réalisations en défilement horizontal */
+:root{ --night:#070f22; --navy2:#13264a; }
+
+/* ---------- héros cinéma ---------- */
+.hero-x{position:relative; isolation:isolate; overflow:hidden; background:var(--night); color:#fff;
+  min-height:100svh; display:flex; align-items:center; padding:0; margin-top:calc(-1 * var(--hdr-h, 88px)); padding-top:var(--hdr-h, 88px);}
+.hero-x .hx-inner{position:relative; z-index:2; padding-top:clamp(40px,8vh,90px); padding-bottom:clamp(80px,12vh,120px);}
+.hero-x .hero-text{max-width:720px;}
+.hero-x h1{color:#fff; font-size:clamp(44px,6vw,92px); line-height:1.02; letter-spacing:-.045em; max-width:13ch; margin-bottom:28px;}
+.hero-x .scribble-line path{stroke:var(--saffron);}
+.hero-x .hero-sub{color:#c7d0e0; max-width:44ch;}
+.hero-x .btn-ghost{box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.4); color:#fff;}
+.hero-x .btn-ghost:hover{background:#fff; color:var(--ink);}
+.hero-x .btn-blue{box-shadow:0 18px 44px -16px rgba(31,94,255,.95);}
+
+.hx-wall{position:absolute; z-index:-3; top:-18%; right:-10%; width:66%; height:150%; display:grid; grid-template-columns:repeat(3,1fr); gap:20px;
+  transform:perspective(1600px) rotateX(20deg) rotateY(-20deg) rotateZ(9deg); transform-origin:center;}
+.hx-col{display:flex; flex-direction:column; gap:20px; animation:hxUp 60s linear infinite;}
+.hx-col:nth-child(2){animation-name:hxDown; animation-duration:72s;}
+.hx-col:nth-child(3){animation-duration:52s;}
+@keyframes hxUp{from{transform:translateY(0)} to{transform:translateY(-50%)}}
+@keyframes hxDown{from{transform:translateY(-50%)} to{transform:translateY(0)}}
+.hx-tile{flex:none; border-radius:16px; overflow:hidden; background:var(--navy2); box-shadow:0 40px 70px -35px #000, inset 0 0 0 1px rgba(255,255,255,.08);}
+.hx-tile i{display:flex; gap:5px; padding:8px 10px; background:#13264a;}
+.hx-tile i b{width:7px; height:7px; border-radius:50%; background:#2b4372;}
+.hx-tile img{width:100%; aspect-ratio:4/3; object-fit:cover; object-position:top;}
+.hx-shade{position:absolute; inset:0; z-index:-2; pointer-events:none;
+  background:linear-gradient(90deg,var(--night) 0%,rgba(7,15,34,.95) 34%,rgba(7,15,34,.4) 66%,rgba(7,15,34,.6) 100%), linear-gradient(0deg,var(--night) 0%,transparent 30%);}
+.hx-glow{position:absolute; z-index:-1; left:-15%; bottom:-40%; width:70vw; height:70vw; border-radius:50%; pointer-events:none;
+  background:radial-gradient(circle,rgba(31,94,255,.38),transparent 62%); filter:blur(10px);}
+.hx-scroll{position:absolute; z-index:2; right:clamp(20px,4vw,40px); bottom:36px; display:flex; align-items:center; gap:10px; writing-mode:vertical-rl; font-size:13px; color:#8f9bb3;}
+.hx-scroll::after{content:''; width:1px; height:64px; background:linear-gradient(var(--saffron),transparent); animation:hxHint 2.2s var(--ease) infinite;}
+@keyframes hxHint{0%{transform:scaleY(0); transform-origin:top} 50%{transform:scaleY(1); transform-origin:top} 51%{transform-origin:bottom} 100%{transform:scaleY(0); transform-origin:bottom}}
+@media (max-width:1000px){
+  .hero-x{align-items:flex-end;}
+  .hx-wall{width:140%; right:-48%; top:-8%; opacity:.5;}
+  .hx-shade{background:linear-gradient(0deg,var(--night) 0%,rgba(7,15,34,.9) 50%,rgba(7,15,34,.45) 100%);}
+  .hx-scroll{display:none;}
+  .hero-x .hx-inner{padding-top:40vh;}
+}
+
+/* ---------- réalisations : défilement horizontal ---------- */
+.sec-night{background:var(--night); color:#fff;}
+.sec-night .sec-head p{color:#a8b3c7;}
+.sec-night .btn-ink{background:#fff; color:var(--ink);}
+.sec-night .btn-ink:hover{background:var(--saffron);}
+.hs-pin{position:relative;}
+.work-hs{display:flex; gap:28px; width:max-content; padding:0 clamp(20px,4vw,40px);}
+.work-hs > .proj{flex:none; width:min(1060px,80vw); height:min(600px,calc(100vh - 220px)); min-height:460px; display:grid; grid-template-columns:1.35fr 1fr; gap:0;
+  border-radius:30px; overflow:hidden; background:#0d1b34; box-shadow:inset 0 0 0 1px rgba(255,255,255,.1); opacity:1 !important; transform:none !important;}
+.work-hs .proj-img{aspect-ratio:auto; height:100%; border-radius:0; background:#000; box-shadow:none; position:relative;}
+.work-hs .proj-img img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:top; transform:scale(1.1);}
+.work-hs .proj-img .badge{position:absolute; z-index:2;}
+.work-hs .proj-txt{padding:clamp(28px,3.4vw,48px); display:flex; flex-direction:column; justify-content:center;}
+.work-hs .proj-txt::before{content:attr(data-n); font-family:var(--display); font-weight:800; font-size:clamp(56px,6vw,96px); line-height:.9; letter-spacing:-.05em; color:transparent; -webkit-text-stroke:1.5px rgba(255,255,255,.28); margin-bottom:22px;}
+.work-hs .proj-cat{color:var(--saffron);}
+.work-hs .proj h3{color:#fff; font-size:clamp(32px,3.6vw,54px); font-weight:800; letter-spacing:-.035em;}
+.work-hs .proj-desc{color:#c7d0e0; font-size:17px;}
+.work-hs .proj-links a{border-color:rgba(255,255,255,.6); color:#fff;}
+.work-hs .proj-links a:hover{border-color:var(--saffron); color:var(--saffron);}
+.hs-meta{display:flex; align-items:center; gap:24px; padding:34px clamp(20px,4vw,40px) 0; max-width:1240px; margin:0 auto;}
+.hs-count{font-family:var(--display); font-weight:800; font-size:20px; color:#5d6c8a; white-space:nowrap;}
+.hs-count b{color:#fff;}
+.hs-bar{flex:1; height:3px; background:#1d3157; border-radius:3px; overflow:hidden;}
+.hs-bar i{display:block; height:100%; width:0; background:linear-gradient(90deg,var(--blue),var(--saffron));}
+@media (max-width:900px){
+  .work-hs{display:flex; flex-direction:column; width:auto; gap:22px;}
+  .work-hs > .proj{width:auto; height:auto; min-height:0; grid-template-columns:1fr; border-radius:24px;}
+  .work-hs .proj-img{aspect-ratio:16/11; height:auto;}
+  .work-hs .proj-img img{transform:none;}
+  .work-hs .proj-txt::before{font-size:52px; margin-bottom:14px;}
+  .hs-meta{display:none;}
+}
+
+/* fondateur : photo révélée */
+.fx2 .letter-photo{clip-path:inset(14% 14% 14% 14% round 32px);}
+
+@media (prefers-reduced-motion:reduce){
+  .hx-col,.hx-scroll::after{animation:none !important;}
+  .fx2 .letter-photo{clip-path:none;}
+}
