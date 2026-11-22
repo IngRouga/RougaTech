@@ -22,7 +22,7 @@
     var imgs = [].slice.call(document.querySelectorAll('#work .proj-img img')).map(function(i){ return i.getAttribute('src'); });
     if(!imgs.length) imgs = ['work-gcap11.jpg','work-marina.jpg','work-ipstg.jpg','work-iphec.jpg','work-hgc.jpg','work-digitalcampus.jpg','work-scolpay.jpg'];
     var cols = [[],[],[]];
-    for(var k=0;k<9;k++){ cols[k%3].push('<div class="hx-tile"><i><b></b><b></b><b></b></i><img src="'+imgs[(k*2)%imgs.length]+'" alt=""></div>'); }
+    for(var k=0;k<9;k++){ cols[k%3].push('<div class="hx-tile"><i><b></b><b></b><b></b></i><img src="'+imgs[k%imgs.length]+'" alt=""></div>'); }
     wall.innerHTML = cols.map(function(c){ var h=c.join(''); return '<div class="hx-col">'+h+h+'</div>'; }).join('');
   }
 

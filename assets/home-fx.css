@@ -101,14 +101,15 @@ body.on-hero .ai-nudge{display:none;}
 
 /* ---------- héros mobile : texte en haut, lisible dès l'arrivée ; réalisations en dessous ---------- */
 @media (max-width:1000px){
-  .hero-x{min-height:100svh; justify-content:flex-start;}
-  .hx-wall{top:auto; bottom:-30%; right:-60%; width:170%; height:80%; opacity:1; gap:12px;
+  .hero-x{min-height:0; justify-content:flex-start;}
+  .hx-wall{top:-6%; bottom:auto; right:-58%; width:170%; height:118%; opacity:1; gap:12px;
     transform:perspective(1100px) rotateX(24deg) rotateY(-14deg) rotateZ(10deg);}
   .hx-col{gap:12px;}
   .hx-tile{border-radius:12px;}
-  .hx-shade{background:linear-gradient(180deg,var(--night) 0%,var(--night) 50%,rgba(7,15,34,.55) 68%,rgba(7,15,34,.1) 86%,rgba(7,15,34,.35) 100%);}
+  .hx-shade{background:linear-gradient(180deg,rgba(7,15,34,.55) 0%,rgba(7,15,34,.82) 18%,rgba(7,15,34,.86) 50%,rgba(7,15,34,.55) 72%,rgba(7,15,34,.2) 88%,rgba(7,15,34,.6) 100%);}
   .hx-glow{left:-40%; top:10%; bottom:auto; width:120vw; height:120vw; opacity:.8;}
-  .hero-x .hx-inner{padding-top:22px; padding-bottom:42vh;}
+  .hero-x .hx-inner{padding-top:22px; padding-bottom:64px;}
+  .hero-x h1,.hero-x .hero-sub{text-shadow:0 2px 18px rgba(7,15,34,.8);}
   .hero-x h1{font-size:clamp(32px,9vw,46px); line-height:1.04; margin-bottom:14px;}
   .hero-x .hero-sub{font-size:16.5px; line-height:1.5;}
   .hero-x .hero-ctas{margin-top:22px; gap:10px;}
