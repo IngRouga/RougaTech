@@ -22,7 +22,10 @@
     var imgs = [].slice.call(document.querySelectorAll('#work .proj-img img')).map(function(i){ return i.getAttribute('src'); });
     if(!imgs.length) imgs = ['work-gcap11.jpg','work-marina.jpg','work-ipstg.jpg','work-iphec.jpg','work-hgc.jpg','work-digitalcampus.jpg','work-scolpay.jpg'];
     var cols = [[],[],[]];
-    for(var k=0;k<9;k++){ cols[k%3].push('<div class="hx-tile"><i><b></b><b></b><b></b></i><img src="'+imgs[k%imgs.length]+'" alt=""></div>'); }
+    /* chaque projet une seule fois ; GCAP11 (très coloré) une seule fois, les autres complètent */
+    var gc = imgs.filter(function(x){ return /gcap/i.test(x); }), others = imgs.filter(function(x){ return !/gcap/i.test(x); });
+    var order = [others[0], others[1], others[2], others[3], gc[0]||others[4], others[4], others[5], others[0], others[1]].filter(Boolean);
+    order.forEach(function(src,k){ cols[k%3].push('<div class="hx-tile"><i><b></b><b></b><b></b></i><img src="'+src+'" alt=""></div>'); });
     wall.innerHTML = cols.map(function(c){ var h=c.join(''); return '<div class="hx-col">'+h+h+'</div>'; }).join('');
   }
 
