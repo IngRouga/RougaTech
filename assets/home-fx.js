@@ -35,6 +35,17 @@
   panels.forEach(function(p,i){ var t=p.querySelector('.proj-txt'); if(t) t.setAttribute('data-n', pad(i+1)); });
   var tot = document.getElementById('work-tot'); if(tot) tot.textContent = pad(panels.length);
 
+  /* comparatif mobile : cartes empilées, la carte recouverte recule */
+  var rows = [].slice.call(document.querySelectorAll('.cmp tbody tr'));
+  rows.forEach(function(r,i){ r.style.setProperty('--i', i); });
+  if(rows.length && !reduce){
+    var stackTick = false;
+    var stack = function(){ stackTick = false; if(window.innerWidth > 720){ rows.forEach(function(r){ r.classList.remove('under'); }); return; }
+      for(var i=0;i<rows.length-1;i++){ var a=rows[i].getBoundingClientRect(), b=rows[i+1].getBoundingClientRect(); rows[i].classList.toggle('under', b.top - a.top < 60); } };
+    window.addEventListener('scroll', function(){ if(!stackTick){ stackTick = true; requestAnimationFrame(stack); } }, {passive:true});
+    window.addEventListener('resize', stack); stack();
+  }
+
   if(reduce || !window.gsap || !window.ScrollTrigger) return;
   gsap.registerPlugin(ScrollTrigger);
   document.documentElement.classList.add('fx2');

@@ -115,3 +115,12 @@ body.on-hero .ai-nudge{display:none;}
   .hero-x .hero-ctas{margin-top:22px; gap:10px;}
   .hero-x .hero-ctas .btn{padding:15px 20px; font-size:16px;}
 }
+
+/* ---------- comparatif mobile : cartes empilées ---------- */
+@media (max-width:720px){
+  .cmp tbody{gap:18px; padding-bottom:30px;}
+  .cmp tbody tr{position:sticky; top:calc(var(--hdr-h,72px) + 10px + var(--i,0) * 12px); background:#fff;
+    box-shadow:0 -14px 30px -18px rgba(13,27,52,.45), 0 0 0 1px var(--line); border:0;
+    transform-origin:50% 0; transition:transform .3s var(--ease), filter .3s var(--ease);}
+  .cmp tbody tr.under{transform:scale(.95); filter:brightness(.94);}
+}
