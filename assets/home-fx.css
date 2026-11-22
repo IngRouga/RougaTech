@@ -82,3 +82,35 @@
   .hx-col,.hx-scroll::after{animation:none !important;}
   .fx2 .letter-photo{clip-path:none;}
 }
+
+/* ---------- en-tête sombre au-dessus du héros ---------- */
+body.on-hero #site-header::before{background:transparent; backdrop-filter:none; -webkit-backdrop-filter:none;}
+body.on-hero #site-header{border-bottom-color:transparent !important;}
+body.on-hero .brand img{filter:brightness(0) invert(1);}
+body.on-hero .lang-switch{border-color:rgba(255,255,255,.22);}
+body.on-hero .lang-switch button{color:rgba(255,255,255,.65);}
+body.on-hero .lang-switch button.active{background:#fff; color:var(--ink);}
+body.on-hero .menu-toggle span{background:#fff;}
+@media (min-width:1001px){
+  body.on-hero #site-header .bar{background:rgba(7,15,34,.45); box-shadow:inset 0 0 0 1px rgba(255,255,255,.14);}
+  body.on-hero .main-nav a{color:rgba(255,255,255,.82);}
+  body.on-hero .main-nav a:hover{color:#fff;}
+}
+#site-header::before,#site-header .bar,.brand img,.lang-switch button,.menu-toggle span{transition:background .35s, color .35s, filter .35s, box-shadow .35s;}
+body.on-hero .ai-nudge{display:none;}
+
+/* ---------- héros mobile : mur net en haut, texte compact en bas ---------- */
+@media (max-width:1000px){
+  .hero-x{min-height:100svh;}
+  .hx-wall{top:-4%; right:-62%; width:170%; height:78%; opacity:1; gap:12px;
+    transform:perspective(1100px) rotateX(24deg) rotateY(-14deg) rotateZ(10deg);}
+  .hx-col{gap:12px;}
+  .hx-tile{border-radius:12px;}
+  .hx-shade{background:linear-gradient(0deg,var(--night) 0%,var(--night) 42%,rgba(7,15,34,.55) 62%,rgba(7,15,34,.15) 82%,rgba(7,15,34,.5) 100%);}
+  .hx-glow{left:-40%; bottom:-10%; width:120vw; height:120vw;}
+  .hero-x .hx-inner{padding-top:44vh; padding-bottom:40px;}
+  .hero-x h1{font-size:clamp(34px,9.6vw,50px); line-height:1.02; margin-bottom:18px;}
+  .hero-x .hero-sub{font-size:17px; line-height:1.5;}
+  .hero-x .hero-ctas{margin-top:26px; gap:10px;}
+  .hero-x .hero-ctas .btn{padding:15px 20px; font-size:16px;}
+}

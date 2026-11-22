@@ -9,6 +9,13 @@
   function setHdr(){ if(header) document.documentElement.style.setProperty('--hdr-h', header.offsetHeight+'px'); }
   setHdr(); window.addEventListener('resize', setHdr);
 
+  /* en-tête et bulle d'aide adaptés tant qu'on est sur le héros sombre */
+  var heroEl = document.querySelector('.hero-x');
+  if(heroEl){
+    var onHero = function(){ var b = heroEl.getBoundingClientRect().bottom; document.body.classList.toggle('on-hero', b > (header ? header.offsetHeight : 80) + 10); };
+    window.addEventListener('scroll', onHero, {passive:true}); window.addEventListener('resize', onHero); onHero();
+  }
+
   /* mur de réalisations du héros (vraies captures des sites clients) */
   var wall = document.getElementById('hx-wall');
   if(wall){
