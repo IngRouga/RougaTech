@@ -51,10 +51,10 @@
     langButtons.forEach(function(b){ b.classList.toggle('active', b.dataset.langBtn === lang); });
     try{ localStorage.setItem('rougatech-lang', lang); }catch(e){}
   }
-  langButtons.forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.langBtn); }); });
+  langButtons.forEach(function(b){ b.addEventListener('click', function(){ if(b.tagName === 'A') return; setLang(b.dataset.langBtn); }); });
   try{
     var saved = localStorage.getItem('rougatech-lang');
-    if(saved) setLang(saved);
+    if(saved && saved === document.body.getAttribute('data-lang')) setLang(saved);
   }catch(e){}
 
   // AI welcome widget

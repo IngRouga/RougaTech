@@ -322,3 +322,7 @@ textarea.cf-input{resize:vertical; min-height:120px;}
 .ai-nudge.show{opacity:1; transform:none; pointer-events:auto;}
 .ai-widget.open .ai-nudge{display:none;}
 @media (prefers-reduced-motion:reduce){ .ai-nudge{transition:opacity .2s;} }
+
+/* language switch: the other language is a link to its own site */
+.lang-switch a{color:var(--ink-3); padding:5px 10px; border-radius:999px; font-weight:600; text-decoration:none; line-height:normal;}
+.lang-switch a:hover{color:var(--ink);}

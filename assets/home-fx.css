@@ -124,3 +124,6 @@ body.on-hero .ai-nudge{display:none;}
     transform-origin:50% 0; transition:transform .3s var(--ease), filter .3s var(--ease);}
   .cmp tbody tr.under{transform:scale(.95); filter:brightness(.94);}
 }
+
+body.on-hero .lang-switch a{color:rgba(255,255,255,.65);}
+body.on-hero .lang-switch a:hover{color:#fff;}

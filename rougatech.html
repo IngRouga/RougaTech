@@ -59,8 +59,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/home.css?v=202611200559">
-<link rel="stylesheet" href="assets/home-fx.css?v=202611221553">
+<link rel="stylesheet" href="assets/home.css?v=202611240900">
+<link rel="stylesheet" href="assets/home-fx.css?v=202611240900">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -166,7 +166,7 @@ src="https://www.facebook.com/tr?id=2907317212987763&ev=PageView&noscript=1"
     </nav>
     <div class="header-right">
       <div class="lang-switch" role="group" aria-label="Langue / Language">
-        <button data-lang-btn="fr" class="active">FR</button><button data-lang-btn="en">EN</button>
+        <button data-lang-btn="fr" class="active">FR</button><a data-lang-btn="en" href="https://en.rougatech.com/" hreflang="en" lang="en" title="English version">EN</a>
       </div>
       <a href="#contact" class="btn btn-blue btn-sm btn-header"><span class="fr" lang="fr">Demander un audit gratuit</span><span class="en" lang="en">Get a free audit</span></a>
       <button class="menu-toggle" id="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="main-nav"><span></span><span></span></button>
@@ -788,10 +788,10 @@ src="https://www.facebook.com/tr?id=2907317212987763&ev=PageView&noscript=1"
     langButtons.forEach(b => b.classList.toggle('active', b.dataset.langBtn === lang));
     try{ localStorage.setItem('rougatech-lang', lang); }catch(e){}
   }
-  langButtons.forEach(b => b.addEventListener('click', () => setLang(b.dataset.langBtn)));
+  langButtons.forEach(b => b.addEventListener('click', () => { if(b.tagName === 'A') return; setLang(b.dataset.langBtn); }));
   try{
     const saved = localStorage.getItem('rougatech-lang');
-    if(saved) setLang(saved);
+    if(saved && saved === document.body.getAttribute('data-lang')) setLang(saved);
   }catch(e){}
 
   // Contact form — sends via Web3Forms when a key is set, otherwise falls back to the visitor's email app.

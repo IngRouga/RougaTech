@@ -716,3 +716,7 @@ html.anim .letter-sign.in .sg-dot{opacity:1;}
 
 /* pied de page : laisser la place à la bulle d'aide sur mobile */
 @media (max-width:760px){ .foot-bottom{padding-bottom:72px;} }
+
+/* language switch: the other language is a link to its own site */
+.lang-switch a{font-size:12.5px; font-weight:600; padding:5px 10px; border-radius:999px; color:var(--ink-3); text-decoration:none; line-height:normal;}
+.lang-switch a:hover{color:var(--ink);}
