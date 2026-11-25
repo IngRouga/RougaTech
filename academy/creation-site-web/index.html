@@ -126,8 +126,20 @@ h2{font-size:clamp(34px,4.6vw,58px); font-weight:800; letter-spacing:-.03em;}
 .pvid-snd::before{content:''; border-left:10px solid var(--saffron); border-top:6px solid transparent; border-bottom:6px solid transparent;}
 .pvid-snd[aria-pressed="true"]{background:var(--saffron); color:var(--ink);}
 .pvid-snd[aria-pressed="true"]::before{border:0; width:9px; height:9px; background:var(--ink); border-radius:2px;}
-@media (max-width:999px){ .hero-grid.has-vid{display:flex; flex-direction:column; gap:0;} .hero-grid.has-vid > div:first-child{display:contents;} .hero-grid.has-vid .pvid{order:2; width:min(300px,78vw); margin:30px auto 0;} .hero-grid.has-vid .facts{order:3; margin-top:26px;} }
+@media (max-width:999px){ .hero-grid.has-vid{display:flex; flex-direction:column; gap:0;} .hero-grid.has-vid > div:first-child{display:contents;} .hero-grid.has-vid .pvid{order:2; width:min(300px,78vw); margin:30px auto 0;} .hero-grid.has-vid .launch{order:3; margin-top:28px; max-width:none; width:100%;} }
 
+.launch{display:block; margin-top:30px; max-width:520px; padding:20px; border-radius:22px; background:var(--navy); color:#fff; box-shadow:0 30px 60px -34px rgba(13,27,52,.8);}
+.launch-t{font-size:14.5px; color:#a8b3c7; font-weight:600;}
+.launch-cd{display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-top:10px;}
+.launch-cd div{background:#13264a; border-radius:14px; padding:10px 4px 8px; text-align:center;}
+.launch-cd b{display:block; font:700 28px/1 var(--mono); font-variant-numeric:tabular-nums;}
+.launch-cd span{display:block; font-size:11.5px; color:#8f9bb3; margin-top:4px;}
+.seats-row{display:flex; justify-content:space-between; align-items:baseline; margin-top:18px; font-size:14.5px; font-weight:600; color:#c7d0e0;}
+.seats-row b{font:800 26px var(--display); color:var(--saffron);}
+.seats-bar{display:grid; grid-auto-flow:column; grid-auto-columns:1fr; gap:5px; margin-top:8px;}
+.seats-bar i{height:10px; border-radius:5px; background:var(--saffron); box-shadow:0 0 12px rgba(255,176,32,.45); transform-origin:left; animation:seatIn .5s var(--ease) both;}
+@keyframes seatIn{from{transform:scaleX(0); opacity:0}}
+@media (prefers-reduced-motion:reduce){ .seats-bar i{animation:none;} }
 /* réalisations */
 .port{overflow:hidden; -webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent); mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);}
 .port-track{display:flex; gap:20px; width:max-content; animation:port 60s linear infinite;}
@@ -293,7 +305,12 @@ src="https://www.facebook.com/tr?id=2907317212987763&ev=PageView&noscript=1"
         <a class="btn btn-go" id="hero-cta" data-wa href="#"><span class="wa" aria-hidden="true"></span>Réserver ma place</a>
         <a class="link" href="#programme">Voir le programme</a>
       </div>
-      <div class="facts"><span class="hot">Début en décembre · 9 places restantes</span><span>Paiement en 2 tranches</span><span>7 modules</span><span>Accès à vie</span><span>Accompagnement</span><span>Attestation</span></div>
+      <div class="launch" id="launch">
+        <p class="launch-t">La formation commence dans</p>
+        <div class="launch-cd" id="launch-cd"><div><b data-u="d">0</b><span>jours</span></div><div><b data-u="h">00</b><span>heures</span></div><div><b data-u="m">00</b><span>min</span></div><div><b data-u="s">00</b><span>sec</span></div></div>
+        <div class="seats-row"><span>Places restantes</span><b id="seats-n">9</b></div>
+        <div class="seats-bar" id="seats-bar" aria-hidden="true"></div>
+      </div>
     </div>
     <figure class="pvid">
       <video src="videos/presentation.mp4" poster="videos/presentation.jpg" muted loop playsinline autoplay preload="metadata" aria-label="Amadou Rouga présente la formation Création de Site Web"></video>
@@ -486,6 +503,21 @@ var SITES = [
     if(left<=0) deadline=nextSessionClose(); }
   tick(); setInterval(tick,1000);
 
+  /* compte à rebours du début de la formation + places restantes (à modifier ici) */
+  (function(){
+    var START = Date.UTC(2026,11,1,0,0,0) - 3600000;   // 1er décembre 2026, 00h00 heure du Niger
+    var PLACES = 9;                                       // places restantes
+    var n=document.getElementById('seats-n'), bar=document.getElementById('seats-bar'), cd=document.getElementById('launch-cd');
+    if(n) n.textContent=PLACES;
+    if(bar){ var h=''; for(var i=0;i<PLACES;i++) h+='<i style="animation-delay:'+(i*0.06).toFixed(2)+'s"></i>'; bar.innerHTML=h; }
+    if(!cd) return;
+    function p2(x){ return (x<10?'0':'')+x; }
+    function tick(){ var t=Math.max(0,Math.floor((START-Date.now())/1000));
+      cd.querySelector('[data-u="d"]').textContent=Math.floor(t/86400); cd.querySelector('[data-u="h"]').textContent=p2(Math.floor(t%86400/3600));
+      cd.querySelector('[data-u="m"]').textContent=p2(Math.floor(t%3600/60)); cd.querySelector('[data-u="s"]').textContent=p2(t%60);
+      if(t===0){ var lt=document.querySelector('.launch-t'); if(lt) lt.textContent='La formation a commencé : écrivez-nous pour la prochaine session'; } }
+    tick(); setInterval(tick,1000);
+  })();
   /* vidéo de présentation : bouton son */
   (function(){ var f=document.querySelector('.pvid'); if(!f) return; var v=f.querySelector('video'), b=f.querySelector('.pvid-snd');
     function mute(){ v.muted=true; b.setAttribute('aria-pressed','false'); b.textContent='Activer le son'; }
