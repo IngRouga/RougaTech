@@ -119,6 +119,15 @@ h2{font-size:clamp(34px,4.6vw,58px); font-weight:800; letter-spacing:-.03em;}
 .pv-live{align-self:flex-start; font-size:11.5px; font-weight:700; color:#15803d; display:flex; align-items:center; gap:6px;}
 .pv-live::before{content:''; width:8px; height:8px; border-radius:50%; background:#16a34a; box-shadow:0 0 0 4px rgba(22,163,74,.15);}
 
+.hero-grid.has-vid{grid-template-columns:minmax(0,1fr) 300px;}
+.pvid{position:relative; margin:0; border-radius:28px; overflow:hidden; aspect-ratio:9/16; background:var(--navy); box-shadow:0 40px 80px -36px rgba(13,27,52,.7), 0 0 0 6px #fff, 0 0 0 7px var(--line);}
+.pvid video{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;}
+.pvid-snd{position:absolute; left:50%; bottom:16px; transform:translateX(-50%); display:flex; align-items:center; gap:8px; white-space:nowrap; font-weight:700; font-size:14px; color:#fff; background:rgba(13,27,52,.6); -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px); border-radius:999px; padding:10px 16px; box-shadow:inset 0 0 0 1px rgba(255,255,255,.3);}
+.pvid-snd::before{content:''; border-left:10px solid var(--saffron); border-top:6px solid transparent; border-bottom:6px solid transparent;}
+.pvid-snd[aria-pressed="true"]{background:var(--saffron); color:var(--ink);}
+.pvid-snd[aria-pressed="true"]::before{border:0; width:9px; height:9px; background:var(--ink); border-radius:2px;}
+@media (max-width:999px){ .hero-grid.has-vid{grid-template-columns:1fr;} .pvid{width:min(300px,78vw); margin:0 auto;} }
+
 /* réalisations */
 .port{overflow:hidden; -webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent); mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);}
 .port-track{display:flex; gap:20px; width:max-content; animation:port 60s linear infinite;}
@@ -276,7 +285,7 @@ src="https://www.facebook.com/tr?id=2907317212987763&ev=PageView&noscript=1"
 
 <main>
 <section class="hero">
-  <div class="wrap hero-grid">
+  <div class="wrap hero-grid has-vid">
     <div>
       <h1>Créez des sites web pros et <span class="u">vendez-les</span></h1>
       <p class="lead"><b class="biz">Un business rentable qui peut vous rapporter 300 000 FCFA par mois en Afrique.</b> Apprenez à créer des sites en HTML, CSS et JavaScript, à les mettre en ligne et à trouver vos clients.</p>
@@ -287,23 +296,11 @@ src="https://www.facebook.com/tr?id=2907317212987763&ev=PageView&noscript=1"
       </div>
       <div class="facts"><span class="hot">Début en décembre · 9 places restantes</span><span>Paiement en 2 tranches</span><span>7 modules</span><span>Accès à vie</span><span>Accompagnement</span><span>Attestation</span></div>
     </div>
-    <div class="studio" aria-hidden="true">
-      <div class="code">
-        <div class="code-tabs"><span class="on">index.html</span><span>style.css</span></div>
-        <pre id="code"></pre>
-      </div>
-      <div class="preview">
-        <div class="pbar"><i></i><i></i><i></i><span>www.votre-client.com</span></div>
-        <div class="pv" id="pv">
-          <div class="pv-nav"><b>Boutique Awa</b><span><i></i><i></i><i></i></span></div>
-          <div class="pv-hero"><b>Vos produits livrés à Niamey</b><small>Commandez en 2 minutes sur WhatsApp</small></div>
-          <span class="pv-btn">Commander sur WhatsApp</span>
-          <div class="pv-cards"><i></i><i></i><i></i></div>
-          <span class="pv-live">Site en ligne</span>
-        </div>
-      </div>
-    </div>
-  </div>
+    <figure class="pvid">
+      <video src="videos/presentation.mp4" poster="videos/presentation.jpg" muted loop playsinline autoplay preload="metadata" aria-label="Amadou Rouga présente la formation Création de Site Web"></video>
+      <button type="button" class="pvid-snd" aria-pressed="false">Activer le son</button>
+    </figure>
+</div>
 </section>
 
 <section class="dark" id="realisations" style="padding-bottom:clamp(64px,8vw,96px);">
@@ -490,6 +487,12 @@ var SITES = [
     if(left<=0) deadline=nextSessionClose(); }
   tick(); setInterval(tick,1000);
 
+  /* vidéo de présentation : bouton son */
+  (function(){ var f=document.querySelector('.pvid'); if(!f) return; var v=f.querySelector('video'), b=f.querySelector('.pvid-snd');
+    function mute(){ v.muted=true; b.setAttribute('aria-pressed','false'); b.textContent='Activer le son'; }
+    b.addEventListener('click',function(){ if(v.muted){ v.muted=false; v.currentTime=0; var p=v.play(); if(p&&p.catch) p.catch(function(){}); b.setAttribute('aria-pressed','true'); b.textContent='Couper le son'; } else mute(); });
+    if('IntersectionObserver' in window){ new IntersectionObserver(function(es){ if(!es[0].isIntersecting && !v.muted) mute(); },{threshold:0}).observe(f); }
+  })();
   /* réalisations */
   var port=document.getElementById('port');
   function siteCard(s){ return '<figure class="site"><div class="pbar"><i></i><i></i><i></i><span>'+s.url+'</span></div><img src="'+s.img+'" alt="Site '+s.name+'" loading="lazy"><figcaption><b>'+s.name+'</b><span>'+s.type+'</span></figcaption></figure>'; }
@@ -497,7 +500,9 @@ var SITES = [
   port.querySelectorAll('figure').forEach(function(f,i){ if(i>=SITES.length) f.setAttribute('aria-hidden','true'); });
 
   /* éditeur : le code s'écrit, le site se construit */
-  var codeEl=document.getElementById('code'), parts=[].slice.call(document.getElementById('pv').children);
+  var codeEl=document.getElementById('code'), pvEl=document.getElementById('pv');
+  if(!codeEl||!pvEl) return finish();
+  var parts=[].slice.call(pvEl.children);
   var LINES=[
     ['<span class="t">&lt;nav&gt;</span>Boutique Awa<span class="t">&lt;/nav&gt;</span>\n',0],
     ['<span class="t">&lt;section</span> <span class="a">class</span>=<span class="s">"hero"</span><span class="t">&gt;</span>\n  <span class="t">&lt;h1&gt;</span>Vos produits livrés<span class="t">&lt;/h1&gt;</span>\n<span class="t">&lt;/section&gt;</span>\n',1],
